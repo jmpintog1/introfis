@@ -1,11 +1,3 @@
-# Welcome to your Jupyter Book
+# Bienvenidos al Curso de Introducción a la Física
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
-
-Check out the content pages bundled with this sample book to see more.
-
-```{tableofcontents}
-```
+Este espacio no es un libro de texto convencional; es un entorno interactivo diseñado específicamente para los desafíos de la ingeniería en la Universidad. Aquí, la teoría deja de ser estática para convertirse en una herramienta de experimentación.
