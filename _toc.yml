@@ -3,5 +3,8 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: encuentro
+
+parts:
+  - caption: Cinemática
+    chapters:
+      - file: encuentro

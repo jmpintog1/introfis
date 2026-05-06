@@ -1,8 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
+title: Curso de Introducción a la Física
+author: José Miguel Pinto
+copyright: "2026"
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -19,11 +20,18 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
-# Information about where the book exists on the web
+# Información del repositorio (NECESARIO para que Colab encuentre tus archivos)
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/jmpintog1/introfis  # Corregido a tu repo actual
+  path_to_book: "."  
+  branch: main
+
+# Configuración de los botones de lanzamiento
+launch_buttons:
+  notebook_interface: "classic" 
+  colab_url: "https://colab.research.google.com"
+  # Muestra el botón de Colab
+  colab: true
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
