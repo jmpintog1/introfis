@@ -1,0 +1,1645 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'encuentro';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fencuentro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/encuentro.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="c1"># UID para evitar colisiones en Jupyter Book</span>
+<span class="n">uid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">99999</span><span class="p">))</span>
+
+<span class="n">simulacion_html</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;div style=&quot;border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, sans-serif;&quot;&gt;</span>
+<span class="s2">    &lt;h3 style=&quot;margin-top:0; color: #2c3e50;&quot;&gt;Simulación: Persecución Automóvil vs Policía&lt;/h3&gt;</span>
+<span class="s2">    &lt;p style=&quot;font-size: 0.95em; color: #555; margin-bottom: 15px;&quot;&gt;Observa cómo avanza el tiempo.&lt;/p&gt;</span>
+<span class="s2">    </span>
+<span class="s2">    &lt;div style=&quot;display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; align-items: center; justify-content: space-between;&quot;&gt;</span>
+<span class="s2">        &lt;div style=&quot;display: flex; gap: 15px; align-items: center;&quot;&gt;</span>
+<span class="s2">            &lt;button id=&quot;play_UID&quot; style=&quot;background-color: #f73bc5; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;&quot;&gt;▶ Reproducir / Pausar&lt;/button&gt;</span>
+<span class="s2">            &lt;button id=&quot;reset_UID&quot; style=&quot;background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;&quot;&gt;⏹ Reiniciar&lt;/button&gt;</span>
+<span class="s2">            &lt;div style=&quot;font-size: 1.1em; font-weight: bold; margin-left: 10px;&quot;&gt;</span>
+<span class="s2">                Tiempo: &lt;span id=&quot;time_display_UID&quot; style=&quot;color: #dc3545;&quot;&gt;0.0&lt;/span&gt; s</span>
+<span class="s2">            &lt;/div&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">        </span>
+<span class="s2">        &lt;!-- Control de velocidad de la simulación --&gt;</span>
+<span class="s2">        &lt;div style=&quot;display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;&quot;&gt;</span>
+<span class="s2">            &lt;label style=&quot;font-weight: 600; font-size: 0.9em; margin: 0;&quot;&gt;Velocidad de Simulación:&lt;/label&gt;</span>
+<span class="s2">            &lt;input type=&quot;range&quot; id=&quot;speed_UID&quot; min=&quot;0.2&quot; max=&quot;2&quot; step=&quot;0.2&quot; value=&quot;1.0&quot; style=&quot;vertical-align: middle;&quot;&gt;</span>
+<span class="s2">            &lt;span id=&quot;speed_val_UID&quot; style=&quot;font-weight: bold; font-family: monospace; width: 35px;&quot;&gt;1.0x&lt;/span&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+<span class="s2">    </span>
+<span class="s2">    &lt;div style=&quot;text-align: center; position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 10px;&quot;&gt;</span>
+<span class="s2">        &lt;!-- Canvas de la persecución física --&gt;</span>
+<span class="s2">        &lt;canvas id=&quot;canvas_sim_UID&quot; width=&quot;950&quot; height=&quot;120&quot; style=&quot;background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;&quot;&gt;&lt;/canvas&gt;</span>
+<span class="s2">        &lt;!-- Canvas de los gráficos --&gt;</span>
+<span class="s2">        &lt;canvas id=&quot;canvas_graphs_UID&quot; width=&quot;950&quot; height=&quot;300&quot; style=&quot;background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;&quot;&gt;&lt;/canvas&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+<span class="s2">    </span>
+<span class="s2">    &lt;div style=&quot;margin-top: 15px; font-size: 0.9em; display: flex; justify-content: center; gap: 30px;&quot;&gt;</span>
+<span class="s2">        &lt;div&gt;&lt;span style=&quot;display:inline-block; width:15px; height:15px; background:#0000FF; border-radius:3px; vertical-align:middle;&quot;&gt;&lt;/span&gt; Automóvil (v cte = 22 m/s)&lt;/div&gt;</span>
+<span class="s2">        &lt;div&gt;&lt;span style=&quot;display:inline-block; width:15px; height:15px; background:#FF0000; border-radius:3px; vertical-align:middle;&quot;&gt;&lt;/span&gt; Policía (Espera 4 s, acelera a 30 m/s)&lt;/div&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+<span class="s2">&lt;/div&gt;</span>
+
+<span class="s2">&lt;script&gt;</span>
+<span class="s2">    (function() {</span>
+<span class="s2">        function initSimulation() {</span>
+<span class="s2">            const canvasSim = document.getElementById(&#39;canvas_sim_UID&#39;);</span>
+<span class="s2">            const canvasGraph = document.getElementById(&#39;canvas_graphs_UID&#39;);</span>
+<span class="s2">            if (!canvasSim || !canvasGraph) {</span>
+<span class="s2">                setTimeout(initSimulation, 50); </span>
+<span class="s2">                return;</span>
+<span class="s2">            }</span>
+<span class="s2">            </span>
+<span class="s2">            const ctxSim = canvasSim.getContext(&#39;2d&#39;);</span>
+<span class="s2">            const ctxG = canvasGraph.getContext(&#39;2d&#39;);</span>
+<span class="s2">            </span>
+<span class="s2">            const btn_play = document.getElementById(&#39;play_UID&#39;);</span>
+<span class="s2">            const btn_reset = document.getElementById(&#39;reset_UID&#39;);</span>
+<span class="s2">            const time_display = document.getElementById(&#39;time_display_UID&#39;);</span>
+<span class="s2">            const speed_slider = document.getElementById(&#39;speed_UID&#39;);</span>
+<span class="s2">            const speed_val = document.getElementById(&#39;speed_val_UID&#39;);</span>
+<span class="s2">            </span>
+<span class="s2">            let t = 0;</span>
+<span class="s2">            let isPlaying = false;</span>
+<span class="s2">            let animationId;</span>
+<span class="s2">            let lastTime = 0; </span>
+<span class="s2">            const tMax = 34; </span>
+<span class="s2">            </span>
+<span class="s2">            // --- Variables de Audio Web API ---</span>
+<span class="s2">            let audioCtx = null;</span>
+<span class="s2">            let osc = null;</span>
+<span class="s2">            let gainNode = null;</span>
+<span class="s2">            let isSirenPlaying = false;</span>
+<span class="s2">            </span>
+<span class="s2">            function initAudio() {</span>
+<span class="s2">                if (!audioCtx) {</span>
+<span class="s2">                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();</span>
+<span class="s2">                }</span>
+<span class="s2">                if (audioCtx.state === &#39;suspended&#39;) {</span>
+<span class="s2">                    audioCtx.resume();</span>
+<span class="s2">                }</span>
+<span class="s2">            }</span>
+
+<span class="s2">            function startSiren() {</span>
+<span class="s2">                if (isSirenPlaying) return;</span>
+<span class="s2">                initAudio();</span>
+<span class="s2">                osc = audioCtx.createOscillator();</span>
+<span class="s2">                gainNode = audioCtx.createGain();</span>
+<span class="s2">                </span>
+<span class="s2">                osc.type = &#39;square&#39;; // Sonido estridente tipo alarma</span>
+<span class="s2">                osc.connect(gainNode);</span>
+<span class="s2">                gainNode.connect(audioCtx.destination);</span>
+<span class="s2">                </span>
+<span class="s2">                gainNode.gain.value = 0; // Inicia en silencio</span>
+<span class="s2">                osc.start();</span>
+<span class="s2">                isSirenPlaying = true;</span>
+<span class="s2">            }</span>
+
+<span class="s2">            function stopSiren() {</span>
+<span class="s2">                if (osc) {</span>
+<span class="s2">                    osc.stop();</span>
+<span class="s2">                    osc.disconnect();</span>
+<span class="s2">                    osc = null;</span>
+<span class="s2">                }</span>
+<span class="s2">                if (gainNode) {</span>
+<span class="s2">                    gainNode.disconnect();</span>
+<span class="s2">                    gainNode = null;</span>
+<span class="s2">                }</span>
+<span class="s2">                isSirenPlaying = false;</span>
+<span class="s2">            }</span>
+
+<span class="s2">            function updateSiren(currentTime_s, xAuto, xPolice) {</span>
+<span class="s2">                // Solo encender sirena si está en play y pasó el tiempo de espera (t=4)</span>
+<span class="s2">                if (isPlaying &amp;&amp; currentTime_s &gt;= 4 &amp;&amp; currentTime_s &lt; tMax) {</span>
+<span class="s2">                    if (!isSirenPlaying) startSiren();</span>
+<span class="s2">                    </span>
+<span class="s2">                    // Calcular distancia (máximo en t=4 es 88m, disminuye hasta 0)</span>
+<span class="s2">                    let distance = Math.max(0, xAuto - xPolice);</span>
+<span class="s2">                    </span>
+<span class="s2">                    // Volumen: aumenta a medida que la distancia disminuye (máx vol 0.15 para no ensordecer)</span>
+<span class="s2">                    let maxDist = 88;</span>
+<span class="s2">                    let vol = 0.02 + 0.13 * (1 - Math.min(distance, maxDist) / maxDist);</span>
+<span class="s2">                    </span>
+<span class="s2">                    // Frecuencia alternante tipo sirena europea (Wee-Woo)</span>
+<span class="s2">                    let pitch = (Math.floor(Date.now() / 350) % 2 === 0) ? 800 : 600;</span>
+<span class="s2">                    </span>
+<span class="s2">                    osc.frequency.setTargetAtTime(pitch, audioCtx.currentTime, 0.05);</span>
+<span class="s2">                    gainNode.gain.setTargetAtTime(vol, audioCtx.currentTime, 0.1);</span>
+<span class="s2">                } else {</span>
+<span class="s2">                    stopSiren();</span>
+<span class="s2">                }</span>
+<span class="s2">            }</span>
+<span class="s2">            // ----------------------------------</span>
+
+<span class="s2">            speed_slider.addEventListener(&#39;input&#39;, () =&gt; {</span>
+<span class="s2">                speed_val.innerText = parseFloat(speed_slider.value).toFixed(1) + &#39;x&#39;;</span>
+<span class="s2">            });</span>
+<span class="s2">            </span>
+<span class="s2">            // Funciones físicas</span>
+<span class="s2">            function getAutoState(time) {</span>
+<span class="s2">                return { x: 22 * time, v: 22, a: 0 };</span>
+<span class="s2">            }</span>
+<span class="s2">            </span>
+<span class="s2">            function getPoliceState(time) {</span>
+<span class="s2">                if (time &lt;= 4) return { x: 0, v: 0, a: 0 };</span>
+<span class="s2">                if (time &lt;= 14) {</span>
+<span class="s2">                    let a = 3.0; </span>
+<span class="s2">                    let dt_p = time - 4;</span>
+<span class="s2">                    return { x: 0.5 * a * dt_p * dt_p, v: a * dt_p, a: a };</span>
+<span class="s2">                }</span>
+<span class="s2">                let d_accel = 0.5 * 3.0 * Math.pow(10, 2); </span>
+<span class="s2">                let dt_const = time - 14;</span>
+<span class="s2">                return { x: d_accel + 30 * dt_const, v: 30, a: 0 };</span>
+<span class="s2">            }</span>
+
+<span class="s2">            // --- Funciones para dibujar vehículos ---</span>
+<span class="s2">            function drawModernCar(ctx, x, y) {</span>
+<span class="s2">                ctx.save();</span>
+<span class="s2">                ctx.translate(x, y);</span>
+<span class="s2">                </span>
+<span class="s2">                // Sombra</span>
+<span class="s2">                ctx.fillStyle = &quot;rgba(0,0,0,0.3)&quot;;</span>
+<span class="s2">                ctx.beginPath(); ctx.ellipse(20, 6, 22, 4, 0, 0, Math.PI*2); ctx.fill();</span>
+
+<span class="s2">                // Carrocería con gradiente moderno y aerodinámico</span>
+<span class="s2">                let grad = ctx.createLinearGradient(0, -10, 40, -10);</span>
+<span class="s2">                grad.addColorStop(0, &#39;#ff0055&#39;); // Magenta trasero</span>
+<span class="s2">                grad.addColorStop(0.5, &#39;#ff4400&#39;);</span>
+<span class="s2">                grad.addColorStop(1, &#39;#ffaa00&#39;); // Naranja delantero</span>
+<span class="s2">                </span>
+<span class="s2">                ctx.fillStyle = grad;</span>
+<span class="s2">                ctx.beginPath();</span>
+<span class="s2">                ctx.moveTo(0, -2);</span>
+<span class="s2">                ctx.lineTo(3, -10);  // maletero</span>
+<span class="s2">                ctx.lineTo(15, -14); // techo trasero</span>
+<span class="s2">                ctx.lineTo(25, -14); // techo delantero</span>
+<span class="s2">                ctx.lineTo(38, -6);  // capó inclinado</span>
+<span class="s2">                ctx.lineTo(42, -2);  // parachoques delantero</span>
+<span class="s2">                ctx.lineTo(42, 4);</span>
+<span class="s2">                ctx.lineTo(0, 4);</span>
+<span class="s2">                ctx.fill();</span>
+<span class="s2">                </span>
+<span class="s2">                // Ventanas oscuras</span>
+<span class="s2">                ctx.fillStyle = &#39;#222&#39;;</span>
+<span class="s2">                ctx.beginPath();</span>
+<span class="s2">                ctx.moveTo(7, -9);</span>
+<span class="s2">                ctx.lineTo(15, -12);</span>
+<span class="s2">                ctx.lineTo(23, -12);</span>
+<span class="s2">                ctx.lineTo(32, -6);</span>
+<span class="s2">                ctx.lineTo(24, -6);</span>
+<span class="s2">                ctx.lineTo(14, -6);</span>
+<span class="s2">                ctx.fill();</span>
+<span class="s2">                </span>
+<span class="s2">                // Detalles (Luces)</span>
+<span class="s2">                ctx.fillStyle = &#39;#ff0000&#39;; // luz trasera</span>
+<span class="s2">                ctx.fillRect(0, -2, 2, 4);</span>
+<span class="s2">                ctx.fillStyle = &#39;#ffffff&#39;; // luz delantera</span>
+<span class="s2">                ctx.beginPath(); ctx.moveTo(40, -2); ctx.lineTo(42, -2); ctx.lineTo(42, 2); ctx.fill();</span>
+
+<span class="s2">                // Ruedas deportivas</span>
+<span class="s2">                ctx.fillStyle = &#39;#111&#39;;</span>
+<span class="s2">                ctx.beginPath(); ctx.arc(8, 4, 5, 0, Math.PI*2); ctx.fill();</span>
+<span class="s2">                ctx.beginPath(); ctx.arc(33, 4, 5, 0, Math.PI*2); ctx.fill();</span>
+<span class="s2">                </span>
+<span class="s2">                // Rines</span>
+<span class="s2">                ctx.fillStyle = &#39;#dddddd&#39;;</span>
+<span class="s2">                ctx.beginPath(); ctx.arc(8, 4, 2.5, 0, Math.PI*2); ctx.fill();</span>
+<span class="s2">                ctx.beginPath(); ctx.arc(33, 4, 2.5, 0, Math.PI*2); ctx.fill();</span>
+
+<span class="s2">                ctx.restore();</span>
+<span class="s2">            }</span>
+
+<span class="s2">            function drawPoliceMoto(ctx, x, y, currentTime) {</span>
+<span class="s2">                ctx.save();</span>
+<span class="s2">                ctx.translate(x, y);</span>
+<span class="s2">                </span>
+<span class="s2">                // Sombra</span>
+<span class="s2">                ctx.fillStyle = &quot;rgba(0,0,0,0.3)&quot;;</span>
+<span class="s2">                ctx.beginPath(); ctx.ellipse(12, 6, 12, 3, 0, 0, Math.PI*2); ctx.fill();</span>
+
+<span class="s2">                // Ruedas</span>
+<span class="s2">                ctx.fillStyle = &#39;#111&#39;;</span>
+<span class="s2">                ctx.beginPath(); ctx.arc(4, 4, 4.5, 0, Math.PI*2); ctx.fill();</span>
+<span class="s2">                ctx.beginPath(); ctx.arc(20, 4, 4.5, 0, Math.PI*2); ctx.fill();</span>
+<span class="s2">                </span>
+<span class="s2">                // Rines</span>
+<span class="s2">                ctx.fillStyle = &#39;#fff&#39;;</span>
+<span class="s2">                ctx.beginPath(); ctx.arc(4, 4, 2, 0, Math.PI*2); ctx.fill();</span>
+<span class="s2">                ctx.beginPath(); ctx.arc(20, 4, 2, 0, Math.PI*2); ctx.fill();</span>
+<span class="s2">                </span>
+<span class="s2">                // Chasis principal</span>
+<span class="s2">                ctx.fillStyle = &#39;#ffffff&#39;;</span>
+<span class="s2">                ctx.beginPath();</span>
+<span class="s2">                ctx.moveTo(2, 0);</span>
+<span class="s2">                ctx.lineTo(8, -8);</span>
+<span class="s2">                ctx.lineTo(16, -6);</span>
+<span class="s2">                ctx.lineTo(22, 0);</span>
+<span class="s2">                ctx.fill();</span>
+<span class="s2">                </span>
+<span class="s2">                // Detalles azules de la policía</span>
+<span class="s2">                ctx.fillStyle = &#39;#0d6efd&#39;;</span>
+<span class="s2">                ctx.beginPath(); ctx.moveTo(8, -8); ctx.lineTo(14, -6); ctx.lineTo(14, -2); ctx.lineTo(6, -2); ctx.fill();</span>
+
+<span class="s2">                // Parabrisas</span>
+<span class="s2">                ctx.strokeStyle = &#39;rgba(173, 216, 230, 0.8)&#39;;</span>
+<span class="s2">                ctx.lineWidth = 2.5;</span>
+<span class="s2">                ctx.beginPath(); ctx.moveTo(16, -6); ctx.lineTo(19, -13); ctx.stroke();</span>
+<span class="s2">                </span>
+<span class="s2">                // Baliza de Sirena parpadeante</span>
+<span class="s2">                let isRed = Math.floor(currentTime * 6) % 2 === 0; // Parpadeo basado en el tiempo</span>
+<span class="s2">                ctx.fillStyle = isRed ? &#39;#dc3545&#39; : &#39;#0d6efd&#39;;</span>
+<span class="s2">                ctx.beginPath(); ctx.arc(2, -9, 2.5, 0, Math.PI*2); ctx.fill();</span>
+<span class="s2">                // Destello luminoso</span>
+<span class="s2">                if (isPlaying &amp;&amp; currentTime &gt;= 4) {</span>
+<span class="s2">                    ctx.fillStyle = isRed ? &#39;rgba(220, 53, 69, 0.4)&#39; : &#39;rgba(13, 110, 253, 0.4)&#39;;</span>
+<span class="s2">                    ctx.beginPath(); ctx.arc(2, -9, 6, 0, Math.PI*2); ctx.fill();</span>
+<span class="s2">                }</span>
+
+<span class="s2">                // Policía (Piloto)</span>
+<span class="s2">                ctx.fillStyle = &#39;#111&#39;; // Traje negro</span>
+<span class="s2">                ctx.beginPath(); ctx.arc(10, -14, 3, 0, Math.PI*2); ctx.fill(); // Casco</span>
+<span class="s2">                // Brazo y torso</span>
+<span class="s2">                ctx.strokeStyle = &#39;#222&#39;;</span>
+<span class="s2">                ctx.lineWidth = 3;</span>
+<span class="s2">                ctx.lineCap = &#39;round&#39;;</span>
+<span class="s2">                ctx.beginPath(); </span>
+<span class="s2">                ctx.moveTo(8, -8); // Asiento</span>
+<span class="s2">                ctx.lineTo(10, -12); // Hombro</span>
+<span class="s2">                ctx.lineTo(15, -9); // Manubrio</span>
+<span class="s2">                ctx.stroke();</span>
+
+<span class="s2">                ctx.restore();</span>
+<span class="s2">            }</span>
+<span class="s2">            // ----------------------------------------</span>
+
+<span class="s2">            function drawSim() {</span>
+<span class="s2">                ctxSim.clearRect(0, 0, canvasSim.width, canvasSim.height);</span>
+<span class="s2">                </span>
+<span class="s2">                // Dibujar calle</span>
+<span class="s2">                ctxSim.fillStyle = &quot;#e9ecef&quot;;</span>
+<span class="s2">                ctxSim.fillRect(0, 30, canvasSim.width, 70); </span>
+<span class="s2">                ctxSim.strokeStyle = &quot;#adb5bd&quot;;</span>
+<span class="s2">                ctxSim.lineWidth = 2;</span>
+<span class="s2">                ctxSim.beginPath();</span>
+<span class="s2">                ctxSim.setLineDash([20, 20]);</span>
+<span class="s2">                ctxSim.moveTo(0, 65); </span>
+<span class="s2">                ctxSim.lineTo(canvasSim.width, 65);</span>
+<span class="s2">                ctxSim.stroke();</span>
+<span class="s2">                ctxSim.setLineDash([]);</span>
+<span class="s2">                </span>
+<span class="s2">                let sA = getAutoState(t);</span>
+<span class="s2">                let sP = getPoliceState(t);</span>
+<span class="s2">                </span>
+<span class="s2">                let scaleX = canvasSim.width / 850; </span>
+<span class="s2">                </span>
+<span class="s2">                // Dibujar Vehículos</span>
+<span class="s2">                drawModernCar(ctxSim, sA.x * scaleX, 48); </span>
+<span class="s2">                drawPoliceMoto(ctxSim, sP.x * scaleX, 85, t); </span>
+<span class="s2">                </span>
+<span class="s2">                // Marcador de meta (748m)</span>
+<span class="s2">                ctxSim.fillStyle = &quot;#198754&quot;;</span>
+<span class="s2">                ctxSim.fillRect(748 * scaleX, 25, 6, 80);</span>
+<span class="s2">                </span>
+<span class="s2">                ctxSim.fillStyle = &quot;#111&quot;;</span>
+<span class="s2">                ctxSim.font = &quot;bold 13px Arial&quot;;</span>
+<span class="s2">                ctxSim.fillText(&quot;748 m&quot;, 748 * scaleX - 15, 18);</span>
+
+<span class="s2">                // Llamar a la actualización de audio</span>
+<span class="s2">                updateSiren(t, sA.x, sP.x);</span>
+<span class="s2">            }</span>
+
+<span class="s2">            function drawGraphs() {</span>
+<span class="s2">                ctxG.clearRect(0, 0, canvasGraph.width, canvasGraph.height);</span>
+<span class="s2">                </span>
+<span class="s2">                let margin = 40;</span>
+<span class="s2">                let w1 = 230; </span>
+<span class="s2">                let h1 = 200; </span>
+<span class="s2">                </span>
+<span class="s2">                let offsetX = 50;  </span>
+<span class="s2">                let offsetV = 360; </span>
+<span class="s2">                let offsetA = 670; </span>
+<span class="s2">                </span>
+<span class="s2">                // --- Ejes ---</span>
+<span class="s2">                ctxG.strokeStyle = &quot;#000&quot;;</span>
+<span class="s2">                </span>
+<span class="s2">                // Posición</span>
+<span class="s2">                ctxG.beginPath();</span>
+<span class="s2">                ctxG.moveTo(offsetX, margin); ctxG.lineTo(offsetX, margin + h1);</span>
+<span class="s2">                ctxG.lineTo(offsetX + w1, margin + h1);</span>
+<span class="s2">                ctxG.stroke();</span>
+<span class="s2">                ctxG.fillStyle = &quot;#000&quot;;</span>
+<span class="s2">                ctxG.fillText(&quot;Posición (m)&quot;, offsetX - 20, margin - 10);</span>
+<span class="s2">                ctxG.fillText(&quot;Tiempo (s)&quot;, offsetX + w1 - 30, margin + h1 + 20);</span>
+<span class="s2">                </span>
+<span class="s2">                // Velocidad</span>
+<span class="s2">                ctxG.beginPath();</span>
+<span class="s2">                ctxG.moveTo(offsetV, margin); ctxG.lineTo(offsetV, margin + h1); </span>
+<span class="s2">                ctxG.lineTo(offsetV + w1, margin + h1); </span>
+<span class="s2">                ctxG.stroke();</span>
+<span class="s2">                ctxG.fillText(&quot;Velocidad (m/s)&quot;, offsetV - 20, margin - 10);</span>
+<span class="s2">                ctxG.fillText(&quot;Tiempo (s)&quot;, offsetV + w1 - 30, margin + h1 + 20);</span>
+
+<span class="s2">                // Aceleración</span>
+<span class="s2">                ctxG.beginPath();</span>
+<span class="s2">                ctxG.moveTo(offsetA, margin); ctxG.lineTo(offsetA, margin + h1); </span>
+<span class="s2">                ctxG.lineTo(offsetA + w1, margin + h1); </span>
+<span class="s2">                ctxG.stroke();</span>
+<span class="s2">                ctxG.fillText(&quot;Aceleración (m/s²)&quot;, offsetA - 20, margin - 10);</span>
+<span class="s2">                ctxG.fillText(&quot;Tiempo (s)&quot;, offsetA + w1 - 30, margin + h1 + 20);</span>
+<span class="s2">                </span>
+<span class="s2">                let scaleT = w1 / 40; </span>
+<span class="s2">                let scalePos = h1 / 850; </span>
+<span class="s2">                let scaleVel = h1 / 40;  </span>
+<span class="s2">                let scaleAcc = h1 / 5;   </span>
+<span class="s2">                </span>
+<span class="s2">                ctxG.lineWidth = 2.5;</span>
+<span class="s2">                </span>
+<span class="s2">                // --- Posición ---</span>
+<span class="s2">                ctxG.beginPath(); ctxG.strokeStyle = &quot;#0000FF&quot;; // Color Auto (Azul)</span>
+<span class="s2">                for(let i=0; i&lt;=t; i+=0.5) {</span>
+<span class="s2">                    let val = getAutoState(i);</span>
+<span class="s2">                    let px = offsetX + i * scaleT;</span>
+<span class="s2">                    let py = margin + h1 - val.x * scalePos;</span>
+<span class="s2">                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);</span>
+<span class="s2">                } ctxG.stroke();</span>
+<span class="s2">                </span>
+<span class="s2">                ctxG.beginPath(); ctxG.strokeStyle = &quot;#FF0000&quot;; // Color Moto (Rojo)</span>
+<span class="s2">                for(let i=0; i&lt;=t; i+=0.5) {</span>
+<span class="s2">                    let val = getPoliceState(i);</span>
+<span class="s2">                    let px = offsetX + i * scaleT;</span>
+<span class="s2">                    let py = margin + h1 - val.x * scalePos;</span>
+<span class="s2">                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);</span>
+<span class="s2">                } ctxG.stroke();</span>
+
+<span class="s2">                // --- Velocidad ---</span>
+<span class="s2">                ctxG.beginPath(); ctxG.strokeStyle = &quot;#0000FF&quot;; </span>
+<span class="s2">                for(let i=0; i&lt;=t; i+=0.5) {</span>
+<span class="s2">                    let val = getAutoState(i);</span>
+<span class="s2">                    let px = offsetV + i * scaleT;</span>
+<span class="s2">                    let py = margin + h1 - val.v * scaleVel;</span>
+<span class="s2">                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);</span>
+<span class="s2">                } ctxG.stroke();</span>
+
+<span class="s2">                ctxG.beginPath(); ctxG.strokeStyle = &quot;#FF0000&quot;; </span>
+<span class="s2">                for(let i=0; i&lt;=t; i+=0.5) {</span>
+<span class="s2">                    let val = getPoliceState(i);</span>
+<span class="s2">                    let px = offsetV + i * scaleT;</span>
+<span class="s2">                    let py = margin + h1 - val.v * scaleVel;</span>
+<span class="s2">                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);</span>
+<span class="s2">                } ctxG.stroke();</span>
+
+<span class="s2">                // --- Aceleración ---</span>
+<span class="s2">                ctxG.beginPath(); ctxG.strokeStyle = &quot;#0000FF&quot;; </span>
+<span class="s2">                for(let i=0; i&lt;=t; i+=0.1) {</span>
+<span class="s2">                    let val = getAutoState(i);</span>
+<span class="s2">                    let px = offsetA + i * scaleT;</span>
+<span class="s2">                    let py = margin + h1 - val.a * scaleAcc;</span>
+<span class="s2">                    i===0 ? ctxG.moveTo(px, py - 1) : ctxG.lineTo(px, py - 1);</span>
+<span class="s2">                } ctxG.stroke();</span>
+
+<span class="s2">                ctxG.beginPath(); ctxG.strokeStyle = &quot;#FF0000&quot;; </span>
+<span class="s2">                for(let i=0; i&lt;=t; i+=0.1) {</span>
+<span class="s2">                    let val = getPoliceState(i);</span>
+<span class="s2">                    let px = offsetA + i * scaleT;</span>
+<span class="s2">                    let py = margin + h1 - val.a * scaleAcc;</span>
+<span class="s2">                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);</span>
+<span class="s2">                } ctxG.stroke();</span>
+<span class="s2">                </span>
+<span class="s2">                // Marcar punto de encuentro</span>
+<span class="s2">                if (t &gt;= 34) {</span>
+<span class="s2">                    let pxMeet = offsetX + 34 * scaleT;</span>
+<span class="s2">                    let pyMeet = margin + h1 - 748 * scalePos;</span>
+<span class="s2">                    ctxG.fillStyle = &quot;#dc3545&quot;; </span>
+<span class="s2">                    ctxG.beginPath(); ctxG.arc(pxMeet, pyMeet, 5, 0, Math.PI*2); ctxG.fill();</span>
+<span class="s2">                    ctxG.fillText(&quot;¡Encuentro!&quot;, pxMeet - 25, pyMeet - 15);</span>
+<span class="s2">                }</span>
+<span class="s2">            }</span>
+
+<span class="s2">            function animate(timestamp) {</span>
+<span class="s2">                if (!isPlaying) return;</span>
+<span class="s2">                </span>
+<span class="s2">                if (!lastTime) lastTime = timestamp;</span>
+<span class="s2">                </span>
+<span class="s2">                let deltaTime = (timestamp - lastTime) / 1000;</span>
+<span class="s2">                lastTime = timestamp;</span>
+<span class="s2">                </span>
+<span class="s2">                let speed_multiplier = parseFloat(speed_slider.value);</span>
+<span class="s2">                </span>
+<span class="s2">                t += deltaTime * speed_multiplier;</span>
+<span class="s2">                </span>
+<span class="s2">                if (t &gt;= tMax) {</span>
+<span class="s2">                    t = tMax;</span>
+<span class="s2">                    isPlaying = false;</span>
+<span class="s2">                    stopSiren(); // Detener audio al terminar</span>
+<span class="s2">                }</span>
+<span class="s2">                </span>
+<span class="s2">                time_display.innerText = t.toFixed(1);</span>
+<span class="s2">                drawSim();</span>
+<span class="s2">                drawGraphs();</span>
+<span class="s2">                </span>
+<span class="s2">                if(isPlaying) {</span>
+<span class="s2">                    animationId = requestAnimationFrame(animate);</span>
+<span class="s2">                }</span>
+<span class="s2">            }</span>
+
+<span class="s2">            btn_play.addEventListener(&#39;click&#39;, () =&gt; {</span>
+<span class="s2">                initAudio(); // Requisito de navegadores: inicializar contexto de audio con un click</span>
+<span class="s2">                </span>
+<span class="s2">                isPlaying = !isPlaying;</span>
+<span class="s2">                if (t &gt;= tMax) {</span>
+<span class="s2">                    t = 0; </span>
+<span class="s2">                }</span>
+<span class="s2">                </span>
+<span class="s2">                if (isPlaying) {</span>
+<span class="s2">                    lastTime = 0; </span>
+<span class="s2">                    animationId = requestAnimationFrame(animate);</span>
+<span class="s2">                } else {</span>
+<span class="s2">                    stopSiren();</span>
+<span class="s2">                }</span>
+<span class="s2">            });</span>
+
+<span class="s2">            btn_reset.addEventListener(&#39;click&#39;, () =&gt; {</span>
+<span class="s2">                isPlaying = false;</span>
+<span class="s2">                t = 0;</span>
+<span class="s2">                lastTime = 0;</span>
+<span class="s2">                time_display.innerText = &quot;0.0&quot;;</span>
+<span class="s2">                speed_slider.value = 1.0; </span>
+<span class="s2">                speed_val.innerText = &quot;1.0x&quot;;</span>
+<span class="s2">                stopSiren();</span>
+<span class="s2">                drawSim();</span>
+<span class="s2">                drawGraphs();</span>
+<span class="s2">            });</span>
+<span class="s2">            </span>
+<span class="s2">            drawSim();</span>
+<span class="s2">            drawGraphs();</span>
+<span class="s2">        }</span>
+<span class="s2">        </span>
+<span class="s2">        initSimulation();</span>
+<span class="s2">    })();</span>
+<span class="s2">&lt;/script&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;UID&#39;</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">simulacion_html</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div style="border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, sans-serif;">
+    <h3 style="margin-top:0; color: #2c3e50;">Simulación: Persecución Automóvil vs Policía</h3>
+    <p style="font-size: 0.95em; color: #555; margin-bottom: 15px;">Observa cómo avanza el tiempo.</p>
+    
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; align-items: center; justify-content: space-between;">
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <button id="play_41316" style="background-color: #f73bc5; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
+            <button id="reset_41316" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
+            <div style="font-size: 1.1em; font-weight: bold; margin-left: 10px;">
+                Tiempo: <span id="time_display_41316" style="color: #dc3545;">0.0</span> s
+            </div>
+        </div>
+        
+        <!-- Control de velocidad de la simulación -->
+        <div style="display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;">
+            <label style="font-weight: 600; font-size: 0.9em; margin: 0;">Velocidad de Simulación:</label>
+            <input type="range" id="speed_41316" min="0.2" max="2" step="0.2" value="1.0" style="vertical-align: middle;">
+            <span id="speed_val_41316" style="font-weight: bold; font-family: monospace; width: 35px;">1.0x</span>
+        </div>
+    </div>
+    
+    <div style="text-align: center; position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 10px;">
+        <!-- Canvas de la persecución física -->
+        <canvas id="canvas_sim_41316" width="950" height="120" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+        <!-- Canvas de los gráficos -->
+        <canvas id="canvas_graphs_41316" width="950" height="300" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+    </div>
+    
+    <div style="margin-top: 15px; font-size: 0.9em; display: flex; justify-content: center; gap: 30px;">
+        <div><span style="display:inline-block; width:15px; height:15px; background:#0000FF; border-radius:3px; vertical-align:middle;"></span> Automóvil (v cte = 22 m/s)</div>
+        <div><span style="display:inline-block; width:15px; height:15px; background:#FF0000; border-radius:3px; vertical-align:middle;"></span> Policía (Espera 4 s, acelera a 30 m/s)</div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        function initSimulation() {
+            const canvasSim = document.getElementById('canvas_sim_41316');
+            const canvasGraph = document.getElementById('canvas_graphs_41316');
+            if (!canvasSim || !canvasGraph) {
+                setTimeout(initSimulation, 50); 
+                return;
+            }
+            
+            const ctxSim = canvasSim.getContext('2d');
+            const ctxG = canvasGraph.getContext('2d');
+            
+            const btn_play = document.getElementById('play_41316');
+            const btn_reset = document.getElementById('reset_41316');
+            const time_display = document.getElementById('time_display_41316');
+            const speed_slider = document.getElementById('speed_41316');
+            const speed_val = document.getElementById('speed_val_41316');
+            
+            let t = 0;
+            let isPlaying = false;
+            let animationId;
+            let lastTime = 0; 
+            const tMax = 34; 
+            
+            // --- Variables de Audio Web API ---
+            let audioCtx = null;
+            let osc = null;
+            let gainNode = null;
+            let isSirenPlaying = false;
+            
+            function initAudio() {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+            }
+
+            function startSiren() {
+                if (isSirenPlaying) return;
+                initAudio();
+                osc = audioCtx.createOscillator();
+                gainNode = audioCtx.createGain();
+                
+                osc.type = 'square'; // Sonido estridente tipo alarma
+                osc.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                
+                gainNode.gain.value = 0; // Inicia en silencio
+                osc.start();
+                isSirenPlaying = true;
+            }
+
+            function stopSiren() {
+                if (osc) {
+                    osc.stop();
+                    osc.disconnect();
+                    osc = null;
+                }
+                if (gainNode) {
+                    gainNode.disconnect();
+                    gainNode = null;
+                }
+                isSirenPlaying = false;
+            }
+
+            function updateSiren(currentTime_s, xAuto, xPolice) {
+                // Solo encender sirena si está en play y pasó el tiempo de espera (t=4)
+                if (isPlaying && currentTime_s >= 4 && currentTime_s < tMax) {
+                    if (!isSirenPlaying) startSiren();
+                    
+                    // Calcular distancia (máximo en t=4 es 88m, disminuye hasta 0)
+                    let distance = Math.max(0, xAuto - xPolice);
+                    
+                    // Volumen: aumenta a medida que la distancia disminuye (máx vol 0.15 para no ensordecer)
+                    let maxDist = 88;
+                    let vol = 0.02 + 0.13 * (1 - Math.min(distance, maxDist) / maxDist);
+                    
+                    // Frecuencia alternante tipo sirena europea (Wee-Woo)
+                    let pitch = (Math.floor(Date.now() / 350) % 2 === 0) ? 800 : 600;
+                    
+                    osc.frequency.setTargetAtTime(pitch, audioCtx.currentTime, 0.05);
+                    gainNode.gain.setTargetAtTime(vol, audioCtx.currentTime, 0.1);
+                } else {
+                    stopSiren();
+                }
+            }
+            // ----------------------------------
+
+            speed_slider.addEventListener('input', () => {
+                speed_val.innerText = parseFloat(speed_slider.value).toFixed(1) + 'x';
+            });
+            
+            // Funciones físicas
+            function getAutoState(time) {
+                return { x: 22 * time, v: 22, a: 0 };
+            }
+            
+            function getPoliceState(time) {
+                if (time <= 4) return { x: 0, v: 0, a: 0 };
+                if (time <= 14) {
+                    let a = 3.0; 
+                    let dt_p = time - 4;
+                    return { x: 0.5 * a * dt_p * dt_p, v: a * dt_p, a: a };
+                }
+                let d_accel = 0.5 * 3.0 * Math.pow(10, 2); 
+                let dt_const = time - 14;
+                return { x: d_accel + 30 * dt_const, v: 30, a: 0 };
+            }
+
+            // --- Funciones para dibujar vehículos ---
+            function drawModernCar(ctx, x, y) {
+                ctx.save();
+                ctx.translate(x, y);
+                
+                // Sombra
+                ctx.fillStyle = "rgba(0,0,0,0.3)";
+                ctx.beginPath(); ctx.ellipse(20, 6, 22, 4, 0, 0, Math.PI*2); ctx.fill();
+
+                // Carrocería con gradiente moderno y aerodinámico
+                let grad = ctx.createLinearGradient(0, -10, 40, -10);
+                grad.addColorStop(0, '#ff0055'); // Magenta trasero
+                grad.addColorStop(0.5, '#ff4400');
+                grad.addColorStop(1, '#ffaa00'); // Naranja delantero
+                
+                ctx.fillStyle = grad;
+                ctx.beginPath();
+                ctx.moveTo(0, -2);
+                ctx.lineTo(3, -10);  // maletero
+                ctx.lineTo(15, -14); // techo trasero
+                ctx.lineTo(25, -14); // techo delantero
+                ctx.lineTo(38, -6);  // capó inclinado
+                ctx.lineTo(42, -2);  // parachoques delantero
+                ctx.lineTo(42, 4);
+                ctx.lineTo(0, 4);
+                ctx.fill();
+                
+                // Ventanas oscuras
+                ctx.fillStyle = '#222';
+                ctx.beginPath();
+                ctx.moveTo(7, -9);
+                ctx.lineTo(15, -12);
+                ctx.lineTo(23, -12);
+                ctx.lineTo(32, -6);
+                ctx.lineTo(24, -6);
+                ctx.lineTo(14, -6);
+                ctx.fill();
+                
+                // Detalles (Luces)
+                ctx.fillStyle = '#ff0000'; // luz trasera
+                ctx.fillRect(0, -2, 2, 4);
+                ctx.fillStyle = '#ffffff'; // luz delantera
+                ctx.beginPath(); ctx.moveTo(40, -2); ctx.lineTo(42, -2); ctx.lineTo(42, 2); ctx.fill();
+
+                // Ruedas deportivas
+                ctx.fillStyle = '#111';
+                ctx.beginPath(); ctx.arc(8, 4, 5, 0, Math.PI*2); ctx.fill();
+                ctx.beginPath(); ctx.arc(33, 4, 5, 0, Math.PI*2); ctx.fill();
+                
+                // Rines
+                ctx.fillStyle = '#dddddd';
+                ctx.beginPath(); ctx.arc(8, 4, 2.5, 0, Math.PI*2); ctx.fill();
+                ctx.beginPath(); ctx.arc(33, 4, 2.5, 0, Math.PI*2); ctx.fill();
+
+                ctx.restore();
+            }
+
+            function drawPoliceMoto(ctx, x, y, currentTime) {
+                ctx.save();
+                ctx.translate(x, y);
+                
+                // Sombra
+                ctx.fillStyle = "rgba(0,0,0,0.3)";
+                ctx.beginPath(); ctx.ellipse(12, 6, 12, 3, 0, 0, Math.PI*2); ctx.fill();
+
+                // Ruedas
+                ctx.fillStyle = '#111';
+                ctx.beginPath(); ctx.arc(4, 4, 4.5, 0, Math.PI*2); ctx.fill();
+                ctx.beginPath(); ctx.arc(20, 4, 4.5, 0, Math.PI*2); ctx.fill();
+                
+                // Rines
+                ctx.fillStyle = '#fff';
+                ctx.beginPath(); ctx.arc(4, 4, 2, 0, Math.PI*2); ctx.fill();
+                ctx.beginPath(); ctx.arc(20, 4, 2, 0, Math.PI*2); ctx.fill();
+                
+                // Chasis principal
+                ctx.fillStyle = '#ffffff';
+                ctx.beginPath();
+                ctx.moveTo(2, 0);
+                ctx.lineTo(8, -8);
+                ctx.lineTo(16, -6);
+                ctx.lineTo(22, 0);
+                ctx.fill();
+                
+                // Detalles azules de la policía
+                ctx.fillStyle = '#0d6efd';
+                ctx.beginPath(); ctx.moveTo(8, -8); ctx.lineTo(14, -6); ctx.lineTo(14, -2); ctx.lineTo(6, -2); ctx.fill();
+
+                // Parabrisas
+                ctx.strokeStyle = 'rgba(173, 216, 230, 0.8)';
+                ctx.lineWidth = 2.5;
+                ctx.beginPath(); ctx.moveTo(16, -6); ctx.lineTo(19, -13); ctx.stroke();
+                
+                // Baliza de Sirena parpadeante
+                let isRed = Math.floor(currentTime * 6) % 2 === 0; // Parpadeo basado en el tiempo
+                ctx.fillStyle = isRed ? '#dc3545' : '#0d6efd';
+                ctx.beginPath(); ctx.arc(2, -9, 2.5, 0, Math.PI*2); ctx.fill();
+                // Destello luminoso
+                if (isPlaying && currentTime >= 4) {
+                    ctx.fillStyle = isRed ? 'rgba(220, 53, 69, 0.4)' : 'rgba(13, 110, 253, 0.4)';
+                    ctx.beginPath(); ctx.arc(2, -9, 6, 0, Math.PI*2); ctx.fill();
+                }
+
+                // Policía (Piloto)
+                ctx.fillStyle = '#111'; // Traje negro
+                ctx.beginPath(); ctx.arc(10, -14, 3, 0, Math.PI*2); ctx.fill(); // Casco
+                // Brazo y torso
+                ctx.strokeStyle = '#222';
+                ctx.lineWidth = 3;
+                ctx.lineCap = 'round';
+                ctx.beginPath(); 
+                ctx.moveTo(8, -8); // Asiento
+                ctx.lineTo(10, -12); // Hombro
+                ctx.lineTo(15, -9); // Manubrio
+                ctx.stroke();
+
+                ctx.restore();
+            }
+            // ----------------------------------------
+
+            function drawSim() {
+                ctxSim.clearRect(0, 0, canvasSim.width, canvasSim.height);
+                
+                // Dibujar calle
+                ctxSim.fillStyle = "#e9ecef";
+                ctxSim.fillRect(0, 30, canvasSim.width, 70); 
+                ctxSim.strokeStyle = "#adb5bd";
+                ctxSim.lineWidth = 2;
+                ctxSim.beginPath();
+                ctxSim.setLineDash([20, 20]);
+                ctxSim.moveTo(0, 65); 
+                ctxSim.lineTo(canvasSim.width, 65);
+                ctxSim.stroke();
+                ctxSim.setLineDash([]);
+                
+                let sA = getAutoState(t);
+                let sP = getPoliceState(t);
+                
+                let scaleX = canvasSim.width / 850; 
+                
+                // Dibujar Vehículos
+                drawModernCar(ctxSim, sA.x * scaleX, 48); 
+                drawPoliceMoto(ctxSim, sP.x * scaleX, 85, t); 
+                
+                // Marcador de meta (748m)
+                ctxSim.fillStyle = "#198754";
+                ctxSim.fillRect(748 * scaleX, 25, 6, 80);
+                
+                ctxSim.fillStyle = "#111";
+                ctxSim.font = "bold 13px Arial";
+                ctxSim.fillText("748 m", 748 * scaleX - 15, 18);
+
+                // Llamar a la actualización de audio
+                updateSiren(t, sA.x, sP.x);
+            }
+
+            function drawGraphs() {
+                ctxG.clearRect(0, 0, canvasGraph.width, canvasGraph.height);
+                
+                let margin = 40;
+                let w1 = 230; 
+                let h1 = 200; 
+                
+                let offsetX = 50;  
+                let offsetV = 360; 
+                let offsetA = 670; 
+                
+                // --- Ejes ---
+                ctxG.strokeStyle = "#000";
+                
+                // Posición
+                ctxG.beginPath();
+                ctxG.moveTo(offsetX, margin); ctxG.lineTo(offsetX, margin + h1);
+                ctxG.lineTo(offsetX + w1, margin + h1);
+                ctxG.stroke();
+                ctxG.fillStyle = "#000";
+                ctxG.fillText("Posición (m)", offsetX - 20, margin - 10);
+                ctxG.fillText("Tiempo (s)", offsetX + w1 - 30, margin + h1 + 20);
+                
+                // Velocidad
+                ctxG.beginPath();
+                ctxG.moveTo(offsetV, margin); ctxG.lineTo(offsetV, margin + h1); 
+                ctxG.lineTo(offsetV + w1, margin + h1); 
+                ctxG.stroke();
+                ctxG.fillText("Velocidad (m/s)", offsetV - 20, margin - 10);
+                ctxG.fillText("Tiempo (s)", offsetV + w1 - 30, margin + h1 + 20);
+
+                // Aceleración
+                ctxG.beginPath();
+                ctxG.moveTo(offsetA, margin); ctxG.lineTo(offsetA, margin + h1); 
+                ctxG.lineTo(offsetA + w1, margin + h1); 
+                ctxG.stroke();
+                ctxG.fillText("Aceleración (m/s²)", offsetA - 20, margin - 10);
+                ctxG.fillText("Tiempo (s)", offsetA + w1 - 30, margin + h1 + 20);
+                
+                let scaleT = w1 / 40; 
+                let scalePos = h1 / 850; 
+                let scaleVel = h1 / 40;  
+                let scaleAcc = h1 / 5;   
+                
+                ctxG.lineWidth = 2.5;
+                
+                // --- Posición ---
+                ctxG.beginPath(); ctxG.strokeStyle = "#0000FF"; // Color Auto (Azul)
+                for(let i=0; i<=t; i+=0.5) {
+                    let val = getAutoState(i);
+                    let px = offsetX + i * scaleT;
+                    let py = margin + h1 - val.x * scalePos;
+                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);
+                } ctxG.stroke();
+                
+                ctxG.beginPath(); ctxG.strokeStyle = "#FF0000"; // Color Moto (Rojo)
+                for(let i=0; i<=t; i+=0.5) {
+                    let val = getPoliceState(i);
+                    let px = offsetX + i * scaleT;
+                    let py = margin + h1 - val.x * scalePos;
+                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);
+                } ctxG.stroke();
+
+                // --- Velocidad ---
+                ctxG.beginPath(); ctxG.strokeStyle = "#0000FF"; 
+                for(let i=0; i<=t; i+=0.5) {
+                    let val = getAutoState(i);
+                    let px = offsetV + i * scaleT;
+                    let py = margin + h1 - val.v * scaleVel;
+                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);
+                } ctxG.stroke();
+
+                ctxG.beginPath(); ctxG.strokeStyle = "#FF0000"; 
+                for(let i=0; i<=t; i+=0.5) {
+                    let val = getPoliceState(i);
+                    let px = offsetV + i * scaleT;
+                    let py = margin + h1 - val.v * scaleVel;
+                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);
+                } ctxG.stroke();
+
+                // --- Aceleración ---
+                ctxG.beginPath(); ctxG.strokeStyle = "#0000FF"; 
+                for(let i=0; i<=t; i+=0.1) {
+                    let val = getAutoState(i);
+                    let px = offsetA + i * scaleT;
+                    let py = margin + h1 - val.a * scaleAcc;
+                    i===0 ? ctxG.moveTo(px, py - 1) : ctxG.lineTo(px, py - 1);
+                } ctxG.stroke();
+
+                ctxG.beginPath(); ctxG.strokeStyle = "#FF0000"; 
+                for(let i=0; i<=t; i+=0.1) {
+                    let val = getPoliceState(i);
+                    let px = offsetA + i * scaleT;
+                    let py = margin + h1 - val.a * scaleAcc;
+                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);
+                } ctxG.stroke();
+                
+                // Marcar punto de encuentro
+                if (t >= 34) {
+                    let pxMeet = offsetX + 34 * scaleT;
+                    let pyMeet = margin + h1 - 748 * scalePos;
+                    ctxG.fillStyle = "#dc3545"; 
+                    ctxG.beginPath(); ctxG.arc(pxMeet, pyMeet, 5, 0, Math.PI*2); ctxG.fill();
+                    ctxG.fillText("¡Encuentro!", pxMeet - 25, pyMeet - 15);
+                }
+            }
+
+            function animate(timestamp) {
+                if (!isPlaying) return;
+                
+                if (!lastTime) lastTime = timestamp;
+                
+                let deltaTime = (timestamp - lastTime) / 1000;
+                lastTime = timestamp;
+                
+                let speed_multiplier = parseFloat(speed_slider.value);
+                
+                t += deltaTime * speed_multiplier;
+                
+                if (t >= tMax) {
+                    t = tMax;
+                    isPlaying = false;
+                    stopSiren(); // Detener audio al terminar
+                }
+                
+                time_display.innerText = t.toFixed(1);
+                drawSim();
+                drawGraphs();
+                
+                if(isPlaying) {
+                    animationId = requestAnimationFrame(animate);
+                }
+            }
+
+            btn_play.addEventListener('click', () => {
+                initAudio(); // Requisito de navegadores: inicializar contexto de audio con un click
+                
+                isPlaying = !isPlaying;
+                if (t >= tMax) {
+                    t = 0; 
+                }
+                
+                if (isPlaying) {
+                    lastTime = 0; 
+                    animationId = requestAnimationFrame(animate);
+                } else {
+                    stopSiren();
+                }
+            });
+
+            btn_reset.addEventListener('click', () => {
+                isPlaying = false;
+                t = 0;
+                lastTime = 0;
+                time_display.innerText = "0.0";
+                speed_slider.value = 1.0; 
+                speed_val.innerText = "1.0x";
+                stopSiren();
+                drawSim();
+                drawGraphs();
+            });
+            
+            drawSim();
+            drawGraphs();
+        }
+        
+        initSimulation();
+    })();
+</script>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># UID para evitar colisiones en Jupyter Book</span>
+<span class="n">uid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">99999</span><span class="p">))</span>
+
+<span class="n">quiz_cinematica_html</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;style&gt;</span>
+<span class="s2">    .fisi-quiz-container { border: 1px solid #e0e0e0; padding: 15px; margin-bottom: 25px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Arial, sans-serif; }</span>
+<span class="s2">    .fisi-question { font-weight: 600; margin-bottom: 15px; color: #2c3e50; }</span>
+<span class="s2">    .fisi-option { margin-bottom: 10px; display: flex; align-items: flex-start; cursor: pointer; }</span>
+<span class="s2">    .fisi-option input { margin-top: 4px; margin-right: 10px; }</span>
+<span class="s2">    .fisi-check-btn { background-color: #f73bc5; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; font-size: 14px; margin-top: 10px; font-weight: 500; }</span>
+<span class="s2">    .fisi-check-btn:hover { background-color: #ab2988; }</span>
+<span class="s2">    .fisi-feedback { margin-top: 15px; padding: 12px; border-radius: 6px; display: none; font-size: 0.95em; }</span>
+<span class="s2">&lt;/style&gt;</span>
+
+<span class="s2">&lt;!-- Pregunta 1: Análisis visual básico --&gt;</span>
+<span class="s2">&lt;div class=&quot;fisi-quiz-container&quot; id=&quot;quiz-cin-1&quot;&gt;</span>
+<span class="s2">    &lt;div class=&quot;fisi-question&quot;&gt;1. De acuerdo a la simulación y a los gráficos generados, ¿qué tipo de movimiento describe el automóvil desde t = 0 s y cómo se representa en el gráfico de velocidad vs. tiempo?&lt;/div&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin1&quot; value=&quot;a&quot; data-fb=&quot;Incorrecto. Una recta diagonal indicaría que la velocidad está cambiando (aceleración).&quot;&gt; &lt;span&gt;Movimiento con aceleración constante, representado por una línea recta diagonal creciente.&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin1&quot; value=&quot;b&quot; data-correct=&quot;true&quot; data-fb=&quot;¡Correcto! El automóvil viaja a una rapidez constante de 22.0 m/s, por lo que su velocidad no cambia, trazando una línea completamente horizontal a lo largo del tiempo.&quot;&gt; &lt;span&gt;Movimiento Rectilíneo Uniforme (MRU), representado por una línea recta horizontal.&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin1&quot; value=&quot;c&quot; data-fb=&quot;Incorrecto. El automóvil no parte del reposo; tiene velocidad desde el instante inicial.&quot;&gt; &lt;span&gt;Movimiento desde el reposo, representado por una curva parabólica.&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;button class=&quot;fisi-check-btn&quot; id=&quot;btn-check-cin1&quot;&gt;Comprobar&lt;/button&gt;&lt;div class=&quot;fisi-feedback&quot; id=&quot;feedback-cin1&quot;&gt;&lt;/div&gt;</span>
+<span class="s2">&lt;/div&gt;</span>
+
+<span class="s2">&lt;!-- Pregunta 2: Extracción de información temporal --&gt;</span>
+<span class="s2">&lt;div class=&quot;fisi-quiz-container&quot; id=&quot;quiz-cin-2&quot;&gt;</span>
+<span class="s2">    &lt;div class=&quot;fisi-question&quot;&gt;2. Observando el comportamiento de la motocicleta de policía, ¿qué ocurre físicamente durante los primeros 4 segundos de la simulación?&lt;/div&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin2&quot; value=&quot;a&quot; data-fb=&quot;Incorrecto. Durante este tiempo el gráfico de velocidad de la policía se mantiene en cero.&quot;&gt; &lt;span&gt;Se mueve a la misma velocidad constante que el automóvil.&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin2&quot; value=&quot;b&quot; data-fb=&quot;Incorrecto. La aceleración ocurre después de este período de tiempo.&quot;&gt; &lt;span&gt;Comienza a acelerar inmediatamente desde t = 0 s.&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin2&quot; value=&quot;c&quot; data-correct=&quot;true&quot; data-fb=&quot;¡Correcto! El policía parte del reposo 4 s después de que el automóvil pasa frente a él. En el gráfico de posición y velocidad, sus valores son cero durante este tramo.&quot;&gt; &lt;span&gt;Permanece en reposo en la posición inicial (x = 0 m).&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;button class=&quot;fisi-check-btn&quot; id=&quot;btn-check-cin2&quot;&gt;Comprobar&lt;/button&gt;&lt;div class=&quot;fisi-feedback&quot; id=&quot;feedback-cin2&quot;&gt;&lt;/div&gt;</span>
+<span class="s2">&lt;/div&gt;</span>
+
+<span class="s2">&lt;!-- Pregunta 3: Interpretación geométrica (Áreas) --&gt;</span>
+<span class="s2">&lt;div class=&quot;fisi-quiz-container&quot; id=&quot;quiz-cin-3&quot;&gt;</span>
+<span class="s2">    &lt;div class=&quot;fisi-question&quot;&gt;3. ¿Qué representa físicamente el área bajo la curva en el gráfico de velocidad vs. tiempo para ambos vehículos en el instante en que se encuentran (t = 34 s)?&lt;/div&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin3&quot; value=&quot;a&quot; data-correct=&quot;true&quot; data-fb=&quot;¡Excelente! El área bajo la curva en un gráfico de velocidad-tiempo representa la distancia recorrida o el desplazamiento. Como se encuentran a los 34 s, ambas áreas deben ser iguales y corresponden a 748 m.&quot;&gt; &lt;span&gt;La distancia total recorrida por cada vehículo desde el inicio.&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin3&quot; value=&quot;b&quot; data-fb=&quot;Incorrecto. La aceleración se asocia a la pendiente de la curva de velocidad, no al área bajo ella.&quot;&gt; &lt;span&gt;La aceleración instantánea de los vehículos en ese segundo.&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin3&quot; value=&quot;c&quot; data-fb=&quot;Incorrecto. La diferencia de velocidades se lee directamente observando los valores en el eje Y del gráfico de velocidad.&quot;&gt; &lt;span&gt;La diferencia de velocidades entre el automóvil y la policía.&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;button class=&quot;fisi-check-btn&quot; id=&quot;btn-check-cin3&quot;&gt;Comprobar&lt;/button&gt;&lt;div class=&quot;fisi-feedback&quot; id=&quot;feedback-cin3&quot;&gt;&lt;/div&gt;</span>
+<span class="s2">&lt;/div&gt;</span>
+
+<span class="s2">&lt;!-- Pregunta 4: Cálculo de aceleración --&gt;</span>
+<span class="s2">&lt;div class=&quot;fisi-quiz-container&quot; id=&quot;quiz-cin-4&quot;&gt;</span>
+<span class="s2">    &lt;div class=&quot;fisi-question&quot;&gt;4. La motocicleta de policía inicia su persecución en t = 4 s y alcanza una velocidad constante de 30.0 m/s tras acelerar por 10 s. ¿Cuál es la magnitud de su aceleración durante ese intervalo?&lt;/div&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin4&quot; value=&quot;a&quot; data-fb=&quot;Incorrecto. Recuerda que la aceleración se calcula como &lt;span&gt;a = &amp;Delta;v / &amp;Delta;t&lt;/span&gt;. Revisa tus cálculos.&quot;&gt; &lt;span&gt;7.5 m/s&lt;sup&gt;2&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin4&quot; value=&quot;b&quot; data-fb=&quot;Incorrecto. El intervalo de tiempo de aceleración es de 10 s, no de 14 s.&quot;&gt; &lt;span&gt;2.1 m/s&lt;sup&gt;2&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin4&quot; value=&quot;c&quot; data-correct=&quot;true&quot; data-fb=&quot;¡Correcto! Utilizando la pendiente del gráfico de velocidad vs. tiempo: a = (30 - 0) m/s / (14 - 4) s = 3.0 m/s&lt;sup&gt;2&quot;&gt; &lt;span&gt;3.0 m/s&lt;sup&gt;2&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;button class=&quot;fisi-check-btn&quot; id=&quot;btn-check-cin4&quot;&gt;Comprobar&lt;/button&gt;&lt;div class=&quot;fisi-feedback&quot; id=&quot;feedback-cin4&quot;&gt;&lt;/div&gt;</span>
+<span class="s2">&lt;/div&gt;</span>
+
+<span class="s2">&lt;!-- Pregunta 5: Análisis avanzado (Intersección gráfica) --&gt;</span>
+<span class="s2">&lt;div class=&quot;fisi-quiz-container&quot; id=&quot;quiz-cin-5&quot;&gt;</span>
+<span class="s2">    &lt;div class=&quot;fisi-question&quot;&gt;5. En el análisis geométrico de estos movimientos, ¿cómo podemos identificar con precisión el instante exacto y la ubicación del encuentro utilizando el gráfico de Posición vs. Tiempo?&lt;/div&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin5&quot; value=&quot;a&quot; data-correct=&quot;true&quot; data-fb=&quot;¡Perfecto! El encuentro ocurre en el instante en que ambos vehículos ocupan el mismo lugar en el espacio. Gráficamente, esto es la intersección de ambas curvas en el gráfico de Posición vs. Tiempo.&quot;&gt; &lt;span&gt;Buscando el punto coordenado exacto donde ambas curvas se interceptan o cruzan.&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin5&quot; value=&quot;b&quot; data-fb=&quot;Incorrecto. Cuando las pendientes son iguales, significa que ambos vehículos van a la misma velocidad, pero no necesariamente ocupan la misma posición.&quot;&gt; &lt;span&gt;Identificando el punto donde ambas curvas tienen exactamente la misma pendiente.&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;label class=&quot;fisi-option&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;qcin5&quot; value=&quot;c&quot; data-fb=&quot;Incorrecto. Cuando la curva de velocidad de la policía cruza la del auto, significa que alcanzaron la misma rapidez (22 m/s), pero en ese momento el auto aún va metros por delante.&quot;&gt; &lt;span&gt;Ubicando el momento en que la curva de la policía supera en altura a la curva del automóvil en el gráfico de velocidad.&lt;/span&gt;&lt;/label&gt;</span>
+<span class="s2">    &lt;button class=&quot;fisi-check-btn&quot; id=&quot;btn-check-cin5&quot;&gt;Comprobar&lt;/button&gt;&lt;div class=&quot;fisi-feedback&quot; id=&quot;feedback-cin5&quot;&gt;&lt;/div&gt;</span>
+<span class="s2">&lt;/div&gt;</span>
+
+<span class="s2">&lt;script&gt;</span>
+<span class="s2">    (function() {</span>
+<span class="s2">        function setupQuiz(btnId, radioName, feedbackId) {</span>
+<span class="s2">            var btn = document.getElementById(btnId);</span>
+<span class="s2">            if (!btn) return;</span>
+<span class="s2">            btn.addEventListener(&#39;click&#39;, function() {</span>
+<span class="s2">                var radios = document.getElementsByName(radioName);</span>
+<span class="s2">                var selected = null;</span>
+<span class="s2">                var feedbackDiv = document.getElementById(feedbackId);</span>
+<span class="s2">                for (var i = 0; i &lt; radios.length; i++) { if (radios[i].checked) { selected = radios[i]; break; } }</span>
+<span class="s2">                feedbackDiv.style.display = &#39;block&#39;;</span>
+<span class="s2">                if (!selected) {</span>
+<span class="s2">                    feedbackDiv.style.backgroundColor = &#39;#fff3cd&#39;; feedbackDiv.style.color = &#39;#856404&#39;; feedbackDiv.style.border = &#39;1px solid #ffeeba&#39;; feedbackDiv.innerHTML = &#39;⚠️ Por favor, selecciona una opción.&#39;; return;</span>
+<span class="s2">                }</span>
+<span class="s2">                var isCorrect = selected.getAttribute(&#39;data-correct&#39;) === &#39;true&#39;;</span>
+<span class="s2">                var msg = selected.getAttribute(&#39;data-fb&#39;);</span>
+<span class="s2">                if (isCorrect) {</span>
+<span class="s2">                    feedbackDiv.style.backgroundColor = &#39;#d4edda&#39;; feedbackDiv.style.color = &#39;#155724&#39;; feedbackDiv.style.border = &#39;1px solid #c3e6cb&#39;; feedbackDiv.innerHTML = &#39;✅ &lt;strong&gt;¡Correcto!&lt;/strong&gt;&lt;br&gt;&#39; + msg;</span>
+<span class="s2">                } else {</span>
+<span class="s2">                    feedbackDiv.style.backgroundColor = &#39;#f8d7da&#39;; feedbackDiv.style.color = &#39;#721c24&#39;; feedbackDiv.style.border = &#39;1px solid #f5c6cb&#39;; feedbackDiv.innerHTML = &#39;❌ &lt;strong&gt;Incorrecto.&lt;/strong&gt;&lt;br&gt;&#39; + msg;</span>
+<span class="s2">                }</span>
+<span class="s2">            });</span>
+<span class="s2">        }</span>
+<span class="s2">        setTimeout(function() { </span>
+<span class="s2">            setupQuiz(&#39;btn-check-cin1&#39;, &#39;qcin1&#39;, &#39;feedback-cin1&#39;); </span>
+<span class="s2">            setupQuiz(&#39;btn-check-cin2&#39;, &#39;qcin2&#39;, &#39;feedback-cin2&#39;); </span>
+<span class="s2">            setupQuiz(&#39;btn-check-cin3&#39;, &#39;qcin3&#39;, &#39;feedback-cin3&#39;); </span>
+<span class="s2">            setupQuiz(&#39;btn-check-cin4&#39;, &#39;qcin4&#39;, &#39;feedback-cin4&#39;); </span>
+<span class="s2">            setupQuiz(&#39;btn-check-cin5&#39;, &#39;qcin5&#39;, &#39;feedback-cin5&#39;); </span>
+<span class="s2">        }, 500);</span>
+<span class="s2">    })();</span>
+<span class="s2">&lt;/script&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">quiz_cinematica_html</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+    .fisi-quiz-container { border: 1px solid #e0e0e0; padding: 15px; margin-bottom: 25px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    .fisi-question { font-weight: 600; margin-bottom: 15px; color: #2c3e50; }
+    .fisi-option { margin-bottom: 10px; display: flex; align-items: flex-start; cursor: pointer; }
+    .fisi-option input { margin-top: 4px; margin-right: 10px; }
+    .fisi-check-btn { background-color: #f73bc5; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; font-size: 14px; margin-top: 10px; font-weight: 500; }
+    .fisi-check-btn:hover { background-color: #ab2988; }
+    .fisi-feedback { margin-top: 15px; padding: 12px; border-radius: 6px; display: none; font-size: 0.95em; }
+</style>
+
+<!-- Pregunta 1: Análisis visual básico -->
+<div class="fisi-quiz-container" id="quiz-cin-1">
+    <div class="fisi-question">1. De acuerdo a la simulación y a los gráficos generados, ¿qué tipo de movimiento describe el automóvil desde t = 0 s y cómo se representa en el gráfico de velocidad vs. tiempo?</div>
+    <label class="fisi-option"><input type="radio" name="qcin1" value="a" data-fb="Incorrecto. Una recta diagonal indicaría que la velocidad está cambiando (aceleración)."> <span>Movimiento con aceleración constante, representado por una línea recta diagonal creciente.</span></label>
+    <label class="fisi-option"><input type="radio" name="qcin1" value="b" data-correct="true" data-fb="¡Correcto! El automóvil viaja a una rapidez constante de 22.0 m/s, por lo que su velocidad no cambia, trazando una línea completamente horizontal a lo largo del tiempo."> <span>Movimiento Rectilíneo Uniforme (MRU), representado por una línea recta horizontal.</span></label>
+    <label class="fisi-option"><input type="radio" name="qcin1" value="c" data-fb="Incorrecto. El automóvil no parte del reposo; tiene velocidad desde el instante inicial."> <span>Movimiento desde el reposo, representado por una curva parabólica.</span></label>
+    <button class="fisi-check-btn" id="btn-check-cin1">Comprobar</button><div class="fisi-feedback" id="feedback-cin1"></div>
+</div>
+
+<!-- Pregunta 2: Extracción de información temporal -->
+<div class="fisi-quiz-container" id="quiz-cin-2">
+    <div class="fisi-question">2. Observando el comportamiento de la motocicleta de policía, ¿qué ocurre físicamente durante los primeros 4 segundos de la simulación?</div>
+    <label class="fisi-option"><input type="radio" name="qcin2" value="a" data-fb="Incorrecto. Durante este tiempo el gráfico de velocidad de la policía se mantiene en cero."> <span>Se mueve a la misma velocidad constante que el automóvil.</span></label>
+    <label class="fisi-option"><input type="radio" name="qcin2" value="b" data-fb="Incorrecto. La aceleración ocurre después de este período de tiempo."> <span>Comienza a acelerar inmediatamente desde t = 0 s.</span></label>
+    <label class="fisi-option"><input type="radio" name="qcin2" value="c" data-correct="true" data-fb="¡Correcto! El policía parte del reposo 4 s después de que el automóvil pasa frente a él. En el gráfico de posición y velocidad, sus valores son cero durante este tramo."> <span>Permanece en reposo en la posición inicial (x = 0 m).</span></label>
+    <button class="fisi-check-btn" id="btn-check-cin2">Comprobar</button><div class="fisi-feedback" id="feedback-cin2"></div>
+</div>
+
+<!-- Pregunta 3: Interpretación geométrica (Áreas) -->
+<div class="fisi-quiz-container" id="quiz-cin-3">
+    <div class="fisi-question">3. ¿Qué representa físicamente el área bajo la curva en el gráfico de velocidad vs. tiempo para ambos vehículos en el instante en que se encuentran (t = 34 s)?</div>
+    <label class="fisi-option"><input type="radio" name="qcin3" value="a" data-correct="true" data-fb="¡Excelente! El área bajo la curva en un gráfico de velocidad-tiempo representa la distancia recorrida o el desplazamiento. Como se encuentran a los 34 s, ambas áreas deben ser iguales y corresponden a 748 m."> <span>La distancia total recorrida por cada vehículo desde el inicio.</span></label>
+    <label class="fisi-option"><input type="radio" name="qcin3" value="b" data-fb="Incorrecto. La aceleración se asocia a la pendiente de la curva de velocidad, no al área bajo ella."> <span>La aceleración instantánea de los vehículos en ese segundo.</span></label>
+    <label class="fisi-option"><input type="radio" name="qcin3" value="c" data-fb="Incorrecto. La diferencia de velocidades se lee directamente observando los valores en el eje Y del gráfico de velocidad."> <span>La diferencia de velocidades entre el automóvil y la policía.</span></label>
+    <button class="fisi-check-btn" id="btn-check-cin3">Comprobar</button><div class="fisi-feedback" id="feedback-cin3"></div>
+</div>
+
+<!-- Pregunta 4: Cálculo de aceleración -->
+<div class="fisi-quiz-container" id="quiz-cin-4">
+    <div class="fisi-question">4. La motocicleta de policía inicia su persecución en t = 4 s y alcanza una velocidad constante de 30.0 m/s tras acelerar por 10 s. ¿Cuál es la magnitud de su aceleración durante ese intervalo?</div>
+    <label class="fisi-option"><input type="radio" name="qcin4" value="a" data-fb="Incorrecto. Recuerda que la aceleración se calcula como <span>a = &Delta;v / &Delta;t</span>. Revisa tus cálculos."> <span>7.5 m/s<sup>2</span></label>
+    <label class="fisi-option"><input type="radio" name="qcin4" value="b" data-fb="Incorrecto. El intervalo de tiempo de aceleración es de 10 s, no de 14 s."> <span>2.1 m/s<sup>2</span></label>
+    <label class="fisi-option"><input type="radio" name="qcin4" value="c" data-correct="true" data-fb="¡Correcto! Utilizando la pendiente del gráfico de velocidad vs. tiempo: a = (30 - 0) m/s / (14 - 4) s = 3.0 m/s<sup>2"> <span>3.0 m/s<sup>2</span></label>
+    <button class="fisi-check-btn" id="btn-check-cin4">Comprobar</button><div class="fisi-feedback" id="feedback-cin4"></div>
+</div>
+
+<!-- Pregunta 5: Análisis avanzado (Intersección gráfica) -->
+<div class="fisi-quiz-container" id="quiz-cin-5">
+    <div class="fisi-question">5. En el análisis geométrico de estos movimientos, ¿cómo podemos identificar con precisión el instante exacto y la ubicación del encuentro utilizando el gráfico de Posición vs. Tiempo?</div>
+    <label class="fisi-option"><input type="radio" name="qcin5" value="a" data-correct="true" data-fb="¡Perfecto! El encuentro ocurre en el instante en que ambos vehículos ocupan el mismo lugar en el espacio. Gráficamente, esto es la intersección de ambas curvas en el gráfico de Posición vs. Tiempo."> <span>Buscando el punto coordenado exacto donde ambas curvas se interceptan o cruzan.</span></label>
+    <label class="fisi-option"><input type="radio" name="qcin5" value="b" data-fb="Incorrecto. Cuando las pendientes son iguales, significa que ambos vehículos van a la misma velocidad, pero no necesariamente ocupan la misma posición."> <span>Identificando el punto donde ambas curvas tienen exactamente la misma pendiente.</span></label>
+    <label class="fisi-option"><input type="radio" name="qcin5" value="c" data-fb="Incorrecto. Cuando la curva de velocidad de la policía cruza la del auto, significa que alcanzaron la misma rapidez (22 m/s), pero en ese momento el auto aún va metros por delante."> <span>Ubicando el momento en que la curva de la policía supera en altura a la curva del automóvil en el gráfico de velocidad.</span></label>
+    <button class="fisi-check-btn" id="btn-check-cin5">Comprobar</button><div class="fisi-feedback" id="feedback-cin5"></div>
+</div>
+
+<script>
+    (function() {
+        function setupQuiz(btnId, radioName, feedbackId) {
+            var btn = document.getElementById(btnId);
+            if (!btn) return;
+            btn.addEventListener('click', function() {
+                var radios = document.getElementsByName(radioName);
+                var selected = null;
+                var feedbackDiv = document.getElementById(feedbackId);
+                for (var i = 0; i < radios.length; i++) { if (radios[i].checked) { selected = radios[i]; break; } }
+                feedbackDiv.style.display = 'block';
+                if (!selected) {
+                    feedbackDiv.style.backgroundColor = '#fff3cd'; feedbackDiv.style.color = '#856404'; feedbackDiv.style.border = '1px solid #ffeeba'; feedbackDiv.innerHTML = '⚠️ Por favor, selecciona una opción.'; return;
+                }
+                var isCorrect = selected.getAttribute('data-correct') === 'true';
+                var msg = selected.getAttribute('data-fb');
+                if (isCorrect) {
+                    feedbackDiv.style.backgroundColor = '#d4edda'; feedbackDiv.style.color = '#155724'; feedbackDiv.style.border = '1px solid #c3e6cb'; feedbackDiv.innerHTML = '✅ <strong>¡Correcto!</strong><br>' + msg;
+                } else {
+                    feedbackDiv.style.backgroundColor = '#f8d7da'; feedbackDiv.style.color = '#721c24'; feedbackDiv.style.border = '1px solid #f5c6cb'; feedbackDiv.innerHTML = '❌ <strong>Incorrecto.</strong><br>' + msg;
+                }
+            });
+        }
+        setTimeout(function() { 
+            setupQuiz('btn-check-cin1', 'qcin1', 'feedback-cin1'); 
+            setupQuiz('btn-check-cin2', 'qcin2', 'feedback-cin2'); 
+            setupQuiz('btn-check-cin3', 'qcin3', 'feedback-cin3'); 
+            setupQuiz('btn-check-cin4', 'qcin4', 'feedback-cin4'); 
+            setupQuiz('btn-check-cin5', 'qcin5', 'feedback-cin5'); 
+        }, 500);
+    })();
+</script>
+</div></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="markdown-notebooks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
