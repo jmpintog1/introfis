@@ -62,8 +62,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'circular';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -375,9 +373,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -393,17 +389,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supuestos-del-modelo">Supuestos del Modelo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-de-velocidad-y-aceleracion">Gráficos de velocidad y aceleración</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-de-las-graficas-areas-y-pendientes">Interpretación de las gráficas: áreas y pendientes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-areas-y-pendientes">Cálculo de áreas y pendientes</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -816,28 +801,28 @@ document.write(`
     <div style="display: flex; gap: 20px; margin-bottom: 20px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center;">
         <div>
             <label style="font-weight: bold;">Radio (r, m): </label>
-            <input type="number" id="radio_15647" value="2.0" step="0.5" min="0.5" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+            <input type="number" id="radio_24931" value="2.0" step="0.5" min="0.5" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
         </div>
         <div>
             <label style="font-weight: bold;">Velocidad angular (ω, rad/s): </label>
-            <input type="number" id="omega_15647" value="1.5" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+            <input type="number" id="omega_24931" value="1.5" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
         </div>
-        <button id="update_params_15647" style="background-color: #0d6efd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">Actualizar Parámetros</button>
+        <button id="update_params_24931" style="background-color: #0d6efd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">Actualizar Parámetros</button>
     </div>
 
     <!-- Controles de Reproducción -->
     <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; align-items: center; justify-content: space-between;">
         <div style="display: flex; gap: 15px; align-items: center;">
-            <button id="play_15647" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
-            <button id="reset_15647" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
+            <button id="play_24931" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
+            <button id="reset_24931" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
             <div style="font-size: 1.1em; font-weight: bold; margin-left: 10px;">
-                Tiempo: <span id="time_display_15647" style="color: #dc3545;">0.00</span> s
+                Tiempo: <span id="time_display_24931" style="color: #dc3545;">0.00</span> s
             </div>
         </div>
         <div style="display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;">
             <label style="font-weight: 600; font-size: 0.9em; margin: 0;">Velocidad Animación:</label>
-            <input type="range" id="speed_15647" min="0.1" max="1.5" step="0.1" value="0.5" style="vertical-align: middle;">
-            <span id="speed_val_15647" style="font-weight: bold; font-family: monospace; width: 35px;">0.5x</span>
+            <input type="range" id="speed_24931" min="0.1" max="1.5" step="0.1" value="0.5" style="vertical-align: middle;">
+            <span id="speed_val_24931" style="font-weight: bold; font-family: monospace; width: 35px;">0.5x</span>
         </div>
     </div>
     
@@ -845,15 +830,15 @@ document.write(`
     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
         <!-- Canvas de la persecución física -->
         <div style="flex: 1; min-width: 300px; max-width: 350px;">
-            <canvas id="canvas_sim_15647" width="350" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
+            <canvas id="canvas_sim_24931" width="350" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
         </div>
         <!-- Canvas de los gráficos -->
         <div style="flex: 2; min-width: 450px;">
-            <canvas id="canvas_graphs_15647" width="600" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
+            <canvas id="canvas_graphs_24931" width="600" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
         </div>
     </div>
     
-    <div id="results_15647" style="margin-top: 15px; font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41;">
+    <div id="results_24931" style="margin-top: 15px; font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41;">
         <!-- Resultados dinámicos -->
     </div>
 </div>
@@ -861,8 +846,8 @@ document.write(`
 <script>
     (function() {
         function initSimulation() {
-            const canvasSim = document.getElementById('canvas_sim_15647');
-            const canvasGraph = document.getElementById('canvas_graphs_15647');
+            const canvasSim = document.getElementById('canvas_sim_24931');
+            const canvasGraph = document.getElementById('canvas_graphs_24931');
             if (!canvasSim || !canvasGraph) {
                 setTimeout(initSimulation, 50); 
                 return;
@@ -871,17 +856,17 @@ document.write(`
             const ctxSim = canvasSim.getContext('2d');
             const ctxG = canvasGraph.getContext('2d');
             
-            const btn_play = document.getElementById('play_15647');
-            const btn_reset = document.getElementById('reset_15647');
-            const btn_update = document.getElementById('update_params_15647');
-            const time_display = document.getElementById('time_display_15647');
-            const speed_slider = document.getElementById('speed_15647');
-            const speed_val = document.getElementById('speed_val_15647');
-            const results_div = document.getElementById('results_15647');
+            const btn_play = document.getElementById('play_24931');
+            const btn_reset = document.getElementById('reset_24931');
+            const btn_update = document.getElementById('update_params_24931');
+            const time_display = document.getElementById('time_display_24931');
+            const speed_slider = document.getElementById('speed_24931');
+            const speed_val = document.getElementById('speed_val_24931');
+            const results_div = document.getElementById('results_24931');
             
             // Entradas
-            const input_r = document.getElementById('radio_15647');
-            const input_omega = document.getElementById('omega_15647');
+            const input_r = document.getElementById('radio_24931');
+            const input_omega = document.getElementById('omega_24931');
 
             let isPlaying = false;
             let animationId;
@@ -1178,64 +1163,7 @@ document.write(`
 </script>
 </div></div>
 </div>
-<section id="supuestos-del-modelo">
-<h2>Supuestos del Modelo<a class="headerlink" href="#supuestos-del-modelo" title="Permalink to this heading">#</a></h2>
-<p>Para modelar este problema de forma analítica, consideraremos los siguientes supuestos físicos:</p>
-<ul class="simple">
-<li><p><strong>Aceleración constante en el empuje:</strong> Asumimos que la mano aplica una fuerza constante sobre el objeto, lo que genera una aceleración constante (<span class="math notranslate nohighlight">\(a_{\text{empuje}}\)</span>) hacia arriba durante el trayecto <span class="math notranslate nohighlight">\(h_1\)</span>.</p></li>
-<li><p><strong>Resistencia del aire nula:</strong> Despreciamos los efectos de la fricción con el aire.</p></li>
-<li><p><strong>Aceleración de gravedad (<span class="math notranslate nohighlight">\(g\)</span>):</strong> Una vez que el objeto abandona la mano, la única aceleración que actúa sobre él es la de gravedad (<span class="math notranslate nohighlight">\(g \approx 9.81\)</span> m/s²), dirigida hacia abajo.</p></li>
-</ul>
-<p> </p>
-<a class="reference internal image-reference" href="_images/01.svg"><img alt="Esquema estroboscópico" class="align-center" src="_images/01.svg" width="70%" /></a>
-<p> </p>
-</section>
-<section id="graficos-de-velocidad-y-aceleracion">
-<h2>Gráficos de velocidad y aceleración<a class="headerlink" href="#graficos-de-velocidad-y-aceleracion" title="Permalink to this heading">#</a></h2>
-<p>A continuación, se representan las curvas de velocidad y aceleración en función del tiempo para ambas fases del movimiento. Se puede observar geométricamente cómo el área bajo la curva en el gráfico de velocidad corresponde a los desplazamientos <span class="math notranslate nohighlight">\(h_1\)</span> (fase de empuje) y <span class="math notranslate nohighlight">\(h_2\)</span> (vuelo libre).</p>
-<p> </p>
-<a class="reference internal image-reference" href="_images/02.svg"><img alt="Gráficos" class="align-center" src="_images/02.svg" width="70%" /></a>
-<p> </p>
-</section>
-<section id="interpretacion-de-las-graficas-areas-y-pendientes">
-<h2>Interpretación de las gráficas: áreas y pendientes<a class="headerlink" href="#interpretacion-de-las-graficas-areas-y-pendientes" title="Permalink to this heading">#</a></h2>
-<p>Al graficar el movimiento, podemos observar propiedades fundamentales de la cinemática:</p>
-<ul class="simple">
-<li><p><strong>Gráfica de Velocidad vs. Tiempo (<span class="math notranslate nohighlight">\(v-t\)</span>):</strong></p>
-<ul>
-<li><p><strong>Pendientes:</strong> La pendiente de esta gráfica representa la aceleración. Durante la Fase 1, la pendiente es positiva y constante (el valor es <span class="math notranslate nohighlight">\(a_{\text{empuje}}\)</span>). Durante la Fase 2, la pendiente es negativa y constante (el valor es <span class="math notranslate nohighlight">\(-g\)</span>).</p></li>
-<li><p><strong>Áreas:</strong> El área bajo la curva de velocidad representa el desplazamiento (<span class="math notranslate nohighlight">\(\Delta y\)</span>). El área del primer triángulo formado (base <span class="math notranslate nohighlight">\(t_1\)</span>, altura <span class="math notranslate nohighlight">\(v_1\)</span>) es exactamente igual a <span class="math notranslate nohighlight">\(h_1\)</span>. El área del segundo triángulo (base <span class="math notranslate nohighlight">\(t_2\)</span>, altura <span class="math notranslate nohighlight">\(v_1\)</span>) es exactamente <span class="math notranslate nohighlight">\(h_2\)</span>.</p></li>
-</ul>
-</li>
-<li><p><strong>Gráfica de Aceleración vs. Tiempo (<span class="math notranslate nohighlight">\(a-t\)</span>):</strong></p>
-<ul>
-<li><p><strong>Áreas:</strong> El área bajo la curva de aceleración representa el cambio de velocidad (<span class="math notranslate nohighlight">\(\Delta v\)</span>). El área del rectángulo positivo correspondiente a la Fase 1 es igual a <span class="math notranslate nohighlight">\(v_1\)</span> (la rapidez que gana). El área del rectángulo negativo de la Fase 2 es <span class="math notranslate nohighlight">\(-v_1\)</span> (la rapidez que pierde hasta detenerse por completo).</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="calculo-de-areas-y-pendientes">
-<h2>Cálculo de áreas y pendientes<a class="headerlink" href="#calculo-de-areas-y-pendientes" title="Permalink to this heading">#</a></h2>
-<p>Calculando las áreas bajo la curva en el gráfico de velocidad, es decir, el área de los triángulos obtenemos las siguientes relaciones:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned} h_1 &amp;= \frac{1}{2} t_1 v_1 \\
-h_2 &amp;= \frac{1}{2} (t_2 - t_1) v_1 \end{aligned}\end{split}\]</div>
-<p>Y calculando las pendientes en el mismo gráfico se obtiene:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned} a_{\text{empuje}} &amp;= \frac{v_1}{t_1} \\
-g &amp;= \frac{v_1}{t_2 - t_1} \end{aligned}\end{split}\]</div>
-<p>A partir de estas ecuaciones obtenemos los parámetros en función de las distancias <span class="math notranslate nohighlight">\(h_1\)</span> y <span class="math notranslate nohighlight">\(h_2\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned} v_1 &amp;= \sqrt{2 g h_2} \\
-t_1 &amp;= \frac{2 h_1}{\sqrt{2 g h_2}} \\
-t_2 &amp;= \frac{2}{\sqrt{2 g h_2}} (h_1 + h_2) \\
-a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
@@ -1245,331 +1173,279 @@ a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
 
 <span class="n">simulacion_html</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">&lt;div style=&quot;border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, sans-serif;&quot;&gt;</span>
-<span class="s2">    &lt;h3 style=&quot;margin-top:0; color: #2c3e50;&quot;&gt;Simulación: Lanzamiento Vertical&lt;/h3&gt;</span>
-<span class="s2">    &lt;p style=&quot;font-size: 0.95em; color: #555; margin-bottom: 15px;&quot;&gt;Ingresa los valores de h₁ y h₂, y observa el comportamiento de las gráficas.&lt;/p&gt;</span>
+<span class="s2">    &lt;h3 style=&quot;margin-top:0; color: #2c3e50;&quot;&gt;Simulación: Origen de la Aceleración Centrípeta&lt;/h3&gt;</span>
+<span class="s2">    &lt;p style=&quot;font-size: 0.95em; color: #555; margin-bottom: 15px;&quot;&gt;</span>
+<span class="s2">        Observa cómo la resta de dos vectores de velocidad en instantes diferentes (&lt;strong&gt;Δv = v₂ - v₁&lt;/strong&gt;) da origen a la aceleración. Reduce &lt;strong&gt;Δt&lt;/strong&gt; para ver cómo el vector aceleración media converge a la aceleración centrípeta instantánea.</span>
+<span class="s2">    &lt;/p&gt;</span>
 <span class="s2">    </span>
-<span class="s2">    &lt;!-- Controles de Parámetros --&gt;</span>
-<span class="s2">    &lt;div style=&quot;display: flex; gap: 20px; margin-bottom: 20px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center;&quot;&gt;</span>
-<span class="s2">        &lt;div&gt;</span>
-<span class="s2">            &lt;label style=&quot;font-weight: bold;&quot;&gt;h₁ (Distancia empuje, m): &lt;/label&gt;</span>
-<span class="s2">            &lt;input type=&quot;number&quot; id=&quot;h1_UID&quot; value=&quot;0.4&quot; step=&quot;0.1&quot; min=&quot;0.1&quot; style=&quot;width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;&quot;&gt;</span>
-<span class="s2">        &lt;/div&gt;</span>
-<span class="s2">        &lt;div&gt;</span>
-<span class="s2">            &lt;label style=&quot;font-weight: bold;&quot;&gt;h₂ (Vuelo libre, m): &lt;/label&gt;</span>
-<span class="s2">            &lt;input type=&quot;number&quot; id=&quot;h2_UID&quot; value=&quot;1.2&quot; step=&quot;0.1&quot; min=&quot;0.1&quot; style=&quot;width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;&quot;&gt;</span>
-<span class="s2">        &lt;/div&gt;</span>
-<span class="s2">        &lt;button id=&quot;update_params_UID&quot; style=&quot;background-color: #0d6efd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;&quot;&gt;Actualizar Parámetros&lt;/button&gt;</span>
-<span class="s2">    &lt;/div&gt;</span>
-
-<span class="s2">    &lt;!-- Controles de Reproducción --&gt;</span>
-<span class="s2">    &lt;div style=&quot;display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; align-items: center; justify-content: space-between;&quot;&gt;</span>
+<span class="s2">    &lt;!-- Controles --&gt;</span>
+<span class="s2">    &lt;div style=&quot;display: flex; gap: 20px; margin-bottom: 20px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center; justify-content: space-between;&quot;&gt;</span>
 <span class="s2">        &lt;div style=&quot;display: flex; gap: 15px; align-items: center;&quot;&gt;</span>
-<span class="s2">            &lt;button id=&quot;play_UID&quot; style=&quot;background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;&quot;&gt;▶ Reproducir / Pausar&lt;/button&gt;</span>
-<span class="s2">            &lt;button id=&quot;reset_UID&quot; style=&quot;background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;&quot;&gt;⏹ Reiniciar&lt;/button&gt;</span>
-<span class="s2">            &lt;div style=&quot;font-size: 1.1em; font-weight: bold; margin-left: 10px;&quot;&gt;</span>
-<span class="s2">                Tiempo: &lt;span id=&quot;time_display_UID&quot; style=&quot;color: #dc3545;&quot;&gt;0.00&lt;/span&gt; s</span>
+<span class="s2">            &lt;button id=&quot;play_UID&quot; style=&quot;background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;&quot;&gt;▶ Reproducir Giro&lt;/button&gt;</span>
+<span class="s2">            &lt;button id=&quot;limit_btn_UID&quot; style=&quot;background-color: #6f42c1; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;&quot;&gt;🎯 Animar Límite (Δt → 0)&lt;/button&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">        </span>
+<span class="s2">        &lt;div style=&quot;display: flex; gap: 20px; align-items: center;&quot;&gt;</span>
+<span class="s2">            &lt;div style=&quot;display: flex; flex-direction: column; align-items: center; background: #fff; padding: 8px 15px; border-radius: 5px; border: 1px solid #ccc;&quot;&gt;</span>
+<span class="s2">                &lt;label style=&quot;font-weight: 600; font-size: 0.85em; margin-bottom: 5px; color: #dc3545;&quot;&gt;Intervalo de Tiempo (Δt)&lt;/label&gt;</span>
+<span class="s2">                &lt;input type=&quot;range&quot; id=&quot;dt_slider_UID&quot; min=&quot;0.001&quot; max=&quot;1.5&quot; step=&quot;0.01&quot; value=&quot;1.0&quot; style=&quot;width: 150px;&quot;&gt;</span>
+<span class="s2">                &lt;span id=&quot;dt_val_UID&quot; style=&quot;font-weight: bold; font-family: monospace; font-size: 0.9em;&quot;&gt;1.000 s&lt;/span&gt;</span>
 <span class="s2">            &lt;/div&gt;</span>
 <span class="s2">        &lt;/div&gt;</span>
-<span class="s2">        &lt;div style=&quot;display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;&quot;&gt;</span>
-<span class="s2">            &lt;label style=&quot;font-weight: 600; font-size: 0.9em; margin: 0;&quot;&gt;Velocidad Animación:&lt;/label&gt;</span>
-<span class="s2">            &lt;input type=&quot;range&quot; id=&quot;speed_UID&quot; min=&quot;0.1&quot; max=&quot;1&quot; step=&quot;0.1&quot; value=&quot;0.2&quot; style=&quot;vertical-align: middle;&quot;&gt;</span>
-<span class="s2">            &lt;span id=&quot;speed_val_UID&quot; style=&quot;font-weight: bold; font-family: monospace; width: 35px;&quot;&gt;0.2x&lt;/span&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+<span class="s2">    </span>
+<span class="s2">    &lt;!-- Contenedor Principal (2 Canvas) --&gt;</span>
+<span class="s2">    &lt;div style=&quot;display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;&quot;&gt;</span>
+<span class="s2">        &lt;!-- Espacio de Posición --&gt;</span>
+<span class="s2">        &lt;div style=&quot;flex: 1; min-width: 350px; max-width: 450px; text-align: center;&quot;&gt;</span>
+<span class="s2">            &lt;h4 style=&quot;margin-bottom: 10px; color: #333;&quot;&gt;Espacio de Posición&lt;/h4&gt;</span>
+<span class="s2">            &lt;canvas id=&quot;canvas_pos_UID&quot; width=&quot;400&quot; height=&quot;400&quot; style=&quot;background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;&quot;&gt;&lt;/canvas&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">        &lt;!-- Espacio de Velocidades (Hodógrafa) --&gt;</span>
+<span class="s2">        &lt;div style=&quot;flex: 1; min-width: 350px; max-width: 450px; text-align: center;&quot;&gt;</span>
+<span class="s2">            &lt;h4 style=&quot;margin-bottom: 10px; color: #333;&quot;&gt;Espacio de Velocidades (Δv)&lt;/h4&gt;</span>
+<span class="s2">            &lt;canvas id=&quot;canvas_vel_UID&quot; width=&quot;400&quot; height=&quot;400&quot; style=&quot;background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;&quot;&gt;&lt;/canvas&gt;</span>
 <span class="s2">        &lt;/div&gt;</span>
 <span class="s2">    &lt;/div&gt;</span>
 <span class="s2">    </span>
-<span class="s2">    &lt;!-- Contenedor Principal (Simulación + Gráficos) --&gt;</span>
-<span class="s2">    &lt;div style=&quot;display: flex; gap: 20px; flex-wrap: wrap;&quot;&gt;</span>
-<span class="s2">        &lt;!-- Canvas de la persecución física --&gt;</span>
-<span class="s2">        &lt;div style=&quot;flex: 1; min-width: 200px; max-width: 250px;&quot;&gt;</span>
-<span class="s2">            &lt;canvas id=&quot;canvas_sim_UID&quot; width=&quot;250&quot; height=&quot;400&quot; style=&quot;background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;&quot;&gt;&lt;/canvas&gt;</span>
-<span class="s2">        &lt;/div&gt;</span>
-<span class="s2">        &lt;!-- Canvas de los gráficos --&gt;</span>
-<span class="s2">        &lt;div style=&quot;flex: 3; min-width: 500px;&quot;&gt;</span>
-<span class="s2">            &lt;canvas id=&quot;canvas_graphs_UID&quot; width=&quot;700&quot; height=&quot;400&quot; style=&quot;background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;&quot;&gt;&lt;/canvas&gt;</span>
-<span class="s2">        &lt;/div&gt;</span>
-<span class="s2">    &lt;/div&gt;</span>
-<span class="s2">    </span>
-<span class="s2">    &lt;div id=&quot;results_UID&quot; style=&quot;margin-top: 15px; font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41;&quot;&gt;</span>
-<span class="s2">        &lt;!-- Resultados dinámicos --&gt;</span>
+<span class="s2">    &lt;div id=&quot;results_UID&quot; style=&quot;margin-top: 15px; font-size: 0.9em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41; display: flex; justify-content: space-around;&quot;&gt;</span>
+<span class="s2">        &lt;span&gt;&lt;b style=&quot;color:#0d6efd;&quot;&gt;▬ v₁ (Tiempo t)&lt;/b&gt;&lt;/span&gt;</span>
+<span class="s2">        &lt;span&gt;&lt;b style=&quot;color:#0dcaf0;&quot;&gt;▬ v₂ (Tiempo t + Δt)&lt;/b&gt;&lt;/span&gt;</span>
+<span class="s2">        &lt;span&gt;&lt;b style=&quot;color:#6f42c1;&quot;&gt;▬ Δv (Cambio vel.)&lt;/b&gt; / a_media&lt;/span&gt;</span>
+<span class="s2">        &lt;span&gt;&lt;b style=&quot;color:#dc3545;&quot;&gt;▬ a_c (Acel. instantánea)&lt;/b&gt;&lt;/span&gt;</span>
 <span class="s2">    &lt;/div&gt;</span>
 <span class="s2">&lt;/div&gt;</span>
 
 <span class="s2">&lt;script&gt;</span>
 <span class="s2">    (function() {</span>
 <span class="s2">        function initSimulation() {</span>
-<span class="s2">            const canvasSim = document.getElementById(&#39;canvas_sim_UID&#39;);</span>
-<span class="s2">            const canvasGraph = document.getElementById(&#39;canvas_graphs_UID&#39;);</span>
-<span class="s2">            if (!canvasSim || !canvasGraph) {</span>
+<span class="s2">            const canvasPos = document.getElementById(&#39;canvas_pos_UID&#39;);</span>
+<span class="s2">            const canvasVel = document.getElementById(&#39;canvas_vel_UID&#39;);</span>
+<span class="s2">            if (!canvasPos || !canvasVel) {</span>
 <span class="s2">                setTimeout(initSimulation, 50); </span>
 <span class="s2">                return;</span>
 <span class="s2">            }</span>
 <span class="s2">            </span>
-<span class="s2">            const ctxSim = canvasSim.getContext(&#39;2d&#39;);</span>
-<span class="s2">            const ctxG = canvasGraph.getContext(&#39;2d&#39;);</span>
+<span class="s2">            const ctxP = canvasPos.getContext(&#39;2d&#39;);</span>
+<span class="s2">            const ctxV = canvasVel.getContext(&#39;2d&#39;);</span>
 <span class="s2">            </span>
 <span class="s2">            const btn_play = document.getElementById(&#39;play_UID&#39;);</span>
-<span class="s2">            const btn_reset = document.getElementById(&#39;reset_UID&#39;);</span>
-<span class="s2">            const btn_update = document.getElementById(&#39;update_params_UID&#39;);</span>
-<span class="s2">            const time_display = document.getElementById(&#39;time_display_UID&#39;);</span>
-<span class="s2">            const speed_slider = document.getElementById(&#39;speed_UID&#39;);</span>
-<span class="s2">            const speed_val = document.getElementById(&#39;speed_val_UID&#39;);</span>
-<span class="s2">            const results_div = document.getElementById(&#39;results_UID&#39;);</span>
+<span class="s2">            const btn_limit = document.getElementById(&#39;limit_btn_UID&#39;);</span>
+<span class="s2">            const dt_slider = document.getElementById(&#39;dt_slider_UID&#39;);</span>
+<span class="s2">            const dt_val = document.getElementById(&#39;dt_val_UID&#39;);</span>
 <span class="s2">            </span>
-<span class="s2">            // Entradas</span>
-<span class="s2">            const input_h1 = document.getElementById(&#39;h1_UID&#39;);</span>
-<span class="s2">            const input_h2 = document.getElementById(&#39;h2_UID&#39;);</span>
-
 <span class="s2">            let isPlaying = false;</span>
+<span class="s2">            let limitAnimationActive = false;</span>
 <span class="s2">            let animationId;</span>
 <span class="s2">            let lastTime = 0; </span>
 <span class="s2">            </span>
-<span class="s2">            // Físicas</span>
-<span class="s2">            const g = 9.81;</span>
-<span class="s2">            let h1, h2, v1, a_imp, t1, t2, tMax, hTotal;</span>
-<span class="s2">            let t = 0;</span>
-
-<span class="s2">            function calculatePhysics() {</span>
-<span class="s2">                h1 = parseFloat(input_h1.value);</span>
-<span class="s2">                h2 = parseFloat(input_h2.value);</span>
-<span class="s2">                </span>
-<span class="s2">                if(h1 &lt;= 0) h1 = 0.1;</span>
-<span class="s2">                if(h2 &lt;= 0) h2 = 0.1;</span>
-<span class="s2">                input_h1.value = h1;</span>
-<span class="s2">                input_h2.value = h2;</span>
-
-<span class="s2">                hTotal = h1 + h2;</span>
-<span class="s2">                v1 = Math.sqrt(2 * g * h2);</span>
-<span class="s2">                a_imp = g * (h2 / h1);</span>
-<span class="s2">                t1 = h1 * Math.sqrt(2 / (g * h2));</span>
-<span class="s2">                t2 = Math.sqrt(2 * h2 / g);</span>
-<span class="s2">                tMax = t1 + t2;</span>
-
-<span class="s2">                results_div.innerHTML = `</span>
-<span class="s2">                    &lt;strong&gt;Resultados calculados:&lt;/strong&gt;&lt;br&gt;</span>
-<span class="s2">                    • Rapidez de despegue (v₁): &lt;b&gt;${v1.toFixed(2)} m/s&lt;/b&gt;&lt;br&gt;</span>
-<span class="s2">                    • Aceleración de empuje (a): &lt;b&gt;${a_imp.toFixed(2)} m/s²&lt;/b&gt;&lt;br&gt;</span>
-<span class="s2">                    • Tiempo de empuje (t₁): &lt;b&gt;${t1.toFixed(3)} s&lt;/b&gt; | Tiempo de vuelo libre (t₂): &lt;b&gt;${t2.toFixed(3)} s&lt;/b&gt;&lt;br&gt;</span>
-<span class="s2">                    • Tiempo total a altura máxima: &lt;b&gt;${tMax.toFixed(3)} s&lt;/b&gt;</span>
-<span class="s2">                `;</span>
-<span class="s2">            }</span>
-
-<span class="s2">            function getState(currentTime) {</span>
-<span class="s2">                if (currentTime &lt;= t1) {</span>
-<span class="s2">                    // Fase 1: Empuje</span>
-<span class="s2">                    let currentY = 0.5 * a_imp * currentTime * currentTime;</span>
-<span class="s2">                    let currentV = a_imp * currentTime;</span>
-<span class="s2">                    return { y: currentY, v: currentV, a: a_imp, phase: 1 };</span>
-<span class="s2">                } else if (currentTime &lt;= tMax) {</span>
-<span class="s2">                    // Fase 2: Vuelo libre</span>
-<span class="s2">                    let dt = currentTime - t1;</span>
-<span class="s2">                    let currentY = h1 + (v1 * dt) - (0.5 * g * dt * dt);</span>
-<span class="s2">                    let currentV = v1 - g * dt;</span>
-<span class="s2">                    return { y: currentY, v: currentV, a: -g, phase: 2 };</span>
-<span class="s2">                } else {</span>
-<span class="s2">                    // Fin (Altura máxima alcanzada)</span>
-<span class="s2">                    return { y: hTotal, v: 0, a: -g, phase: 3 };</span>
-<span class="s2">                }</span>
-<span class="s2">            }</span>
-
-<span class="s2">            speed_slider.addEventListener(&#39;input&#39;, () =&gt; {</span>
-<span class="s2">                speed_val.innerText = parseFloat(speed_slider.value).toFixed(1) + &#39;x&#39;;</span>
-<span class="s2">            });</span>
+<span class="s2">            // Físicas Base Fijas (Para enfocar visualmente en los vectores)</span>
+<span class="s2">            const r = 2.0;       // Radio</span>
+<span class="s2">            const omega = 1.0;   // Velocidad angular (1 rad/s)</span>
+<span class="s2">            const v = omega * r;</span>
+<span class="s2">            const ac = omega * omega * r;</span>
 <span class="s2">            </span>
-<span class="s2">            function drawSim() {</span>
-<span class="s2">                ctxSim.clearRect(0, 0, canvasSim.width, canvasSim.height);</span>
-<span class="s2">                let state = getState(t);</span>
+<span class="s2">            let t = 0;           // Tiempo actual</span>
+<span class="s2">            let dt = parseFloat(dt_slider.value); // Intervalo delta t</span>
+<span class="s2">            </span>
+<span class="s2">            // Dibuja flechas con estilo en el canvas</span>
+<span class="s2">            function drawArrow(ctx, fromx, fromy, tox, toy, color, lineWidth=3, dashed=false) {</span>
+<span class="s2">                const headlen = 10;</span>
+<span class="s2">                const angle = Math.atan2(toy - fromy, tox - fromx);</span>
 <span class="s2">                </span>
-<span class="s2">                // Márgenes y escala</span>
-<span class="s2">                let marginY = 30;</span>
-<span class="s2">                let pxPerMeter = (canvasSim.height - 2 * marginY) / (hTotal * 1.2); </span>
-<span class="s2">                let groundY = canvasSim.height - marginY;</span>
-
-<span class="s2">                // Dibujar Suelo/Origen</span>
-<span class="s2">                ctxSim.fillStyle = &quot;#adb5bd&quot;;</span>
-<span class="s2">                ctxSim.fillRect(0, groundY, canvasSim.width, marginY);</span>
-<span class="s2">                ctxSim.fillStyle = &quot;#000&quot;;</span>
-<span class="s2">                ctxSim.font = &quot;12px Arial&quot;;</span>
-<span class="s2">                ctxSim.fillText(&quot;y = 0&quot;, 10, groundY + 15);</span>
-
-<span class="s2">                // Dibujar marcas de h1 y altura máxima</span>
-<span class="s2">                let h1Px = groundY - (h1 * pxPerMeter);</span>
-<span class="s2">                let hMaxPx = groundY - (hTotal * pxPerMeter);</span>
-
-<span class="s2">                ctxSim.strokeStyle = &quot;#0d6efd&quot;;</span>
-<span class="s2">                ctxSim.setLineDash([5, 5]);</span>
-<span class="s2">                ctxSim.beginPath(); ctxSim.moveTo(0, h1Px); ctxSim.lineTo(canvasSim.width, h1Px); ctxSim.stroke();</span>
-<span class="s2">                ctxSim.fillText(`h₁ ($</span><span class="si">{h1}</span><span class="s2">m) - Despegue`, 10, h1Px - 5);</span>
-
-<span class="s2">                ctxSim.strokeStyle = &quot;#dc3545&quot;;</span>
-<span class="s2">                ctxSim.beginPath(); ctxSim.moveTo(0, hMaxPx); ctxSim.lineTo(canvasSim.width, hMaxPx); ctxSim.stroke();</span>
-<span class="s2">                ctxSim.fillText(`h₁ + h₂ ($</span><span class="si">{hTotal}</span><span class="s2">m) - Max`, 10, hMaxPx - 5);</span>
-<span class="s2">                ctxSim.setLineDash([]);</span>
-
-<span class="s2">                // Dibujar la &quot;Mano&quot; (solo sube hasta h1)</span>
-<span class="s2">                let handY = (state.phase === 1) ? state.y : h1;</span>
-<span class="s2">                let handYPx = groundY - (handY * pxPerMeter);</span>
-<span class="s2">                ctxSim.fillStyle = &quot;#ffc107&quot;; </span>
-<span class="s2">                ctxSim.fillRect(canvasSim.width/2 - 25, handYPx, 50, 10);</span>
-
-<span class="s2">                // Dibujar el Objeto (Bola)</span>
-<span class="s2">                let ballYPx = groundY - (state.y * pxPerMeter);</span>
-<span class="s2">                ctxSim.fillStyle = &quot;#198754&quot;;</span>
-<span class="s2">                ctxSim.beginPath();</span>
-<span class="s2">                ctxSim.arc(canvasSim.width/2, ballYPx - 10, 10, 0, Math.PI*2);</span>
-<span class="s2">                ctxSim.fill();</span>
-<span class="s2">                ctxSim.stroke();</span>
+<span class="s2">                ctx.beginPath();</span>
+<span class="s2">                ctx.strokeStyle = color;</span>
+<span class="s2">                ctx.lineWidth = lineWidth;</span>
+<span class="s2">                if(dashed) ctx.setLineDash([5, 5]);</span>
+<span class="s2">                else ctx.setLineDash([]);</span>
+<span class="s2">                </span>
+<span class="s2">                ctx.moveTo(fromx, fromy);</span>
+<span class="s2">                ctx.lineTo(tox, toy);</span>
+<span class="s2">                ctx.stroke();</span>
+<span class="s2">                ctx.setLineDash([]); // Reset</span>
+<span class="s2">                </span>
+<span class="s2">                ctx.beginPath();</span>
+<span class="s2">                ctx.fillStyle = color;</span>
+<span class="s2">                ctx.moveTo(tox, toy);</span>
+<span class="s2">                ctx.lineTo(tox - headlen * Math.cos(angle - Math.PI / 6), toy - headlen * Math.sin(angle - Math.PI / 6));</span>
+<span class="s2">                ctx.lineTo(tox - headlen * Math.cos(angle + Math.PI / 6), toy - headlen * Math.sin(angle + Math.PI / 6));</span>
+<span class="s2">                ctx.fill();</span>
 <span class="s2">            }</span>
 
-<span class="s2">            function drawGraphs() {</span>
-<span class="s2">                ctxG.clearRect(0, 0, canvasGraph.width, canvasGraph.height);</span>
+<span class="s2">            function drawSim() {</span>
+<span class="s2">                // --- CÁLCULOS FÍSICOS (Coordenadas Reales) ---</span>
+<span class="s2">                const t2 = t + dt;</span>
+<span class="s2">                const theta1 = omega * t;</span>
+<span class="s2">                const theta2 = omega * t2;</span>
 <span class="s2">                </span>
-<span class="s2">                let margin = 40;</span>
-<span class="s2">                let graphW = 180; </span>
-<span class="s2">                let graphH = 280; </span>
+<span class="s2">                // Posiciones</span>
+<span class="s2">                const x1 = r * Math.cos(theta1),  y1 = r * Math.sin(theta1);</span>
+<span class="s2">                const x2 = r * Math.cos(theta2),  y2 = r * Math.sin(theta2);</span>
 <span class="s2">                </span>
-<span class="s2">                let offY = 50;  </span>
-<span class="s2">                let offV = 280; </span>
-<span class="s2">                let offA = 510; </span>
+<span class="s2">                // Velocidades (v = w x r -&gt; vx = -w*r*sin, vy = w*r*cos)</span>
+<span class="s2">                const v1x = -v * Math.sin(theta1), v1y = v * Math.cos(theta1);</span>
+<span class="s2">                const v2x = -v * Math.sin(theta2), v2y = v * Math.cos(theta2);</span>
 <span class="s2">                </span>
-<span class="s2">                let bottomY = margin + graphH;</span>
+<span class="s2">                // Variación de velocidad y aceleración media</span>
+<span class="s2">                const dvx = v2x - v1x, dvy = v2y - v1y;</span>
+<span class="s2">                const amx = dvx / dt,  amy = dvy / dt;</span>
+<span class="s2">                </span>
+<span class="s2">                // Aceleración instantánea exacta en t1</span>
+<span class="s2">                const acx = -ac * Math.cos(theta1), acy = -ac * Math.sin(theta1);</span>
+<span class="s2">                </span>
+<span class="s2">                // --- RENDERIZADO ESPACIO DE POSICIÓN ---</span>
+<span class="s2">                ctxP.clearRect(0, 0, canvasPos.width, canvasPos.height);</span>
+<span class="s2">                const cxP = canvasPos.width / 2;</span>
+<span class="s2">                const cyP = canvasPos.height / 2;</span>
+<span class="s2">                </span>
+<span class="s2">                // Factores de escala para visualización en Posición</span>
+<span class="s2">                const Sp = 120 / r;           // Escala posición (px/m)</span>
+<span class="s2">                const Sv = 70 / v;            // Escala velocidad (px/(m/s))</span>
+<span class="s2">                const Sa = 80 / ac;           // Escala aceleración (px/(m/s²))</span>
 
-<span class="s2">                // --- Ejes Comunes ---</span>
-<span class="s2">                ctxG.strokeStyle = &quot;#000&quot;;</span>
-<span class="s2">                ctxG.fillStyle = &quot;#000&quot;;</span>
-<span class="s2">                ctxG.font = &quot;12px Arial&quot;;</span>
+<span class="s2">                // Ejes</span>
+<span class="s2">                ctxP.strokeStyle = &quot;#eee&quot;; ctxP.lineWidth = 1;</span>
+<span class="s2">                ctxP.beginPath(); ctxP.moveTo(0, cyP); ctxP.lineTo(canvasPos.width, cyP);</span>
+<span class="s2">                ctxP.moveTo(cxP, 0); ctxP.lineTo(cxP, canvasPos.height); ctxP.stroke();</span>
 
-<span class="s2">                [</span>
-<span class="s2">                    {x: offY, title: &quot;Posición y(t) [m]&quot;}, </span>
-<span class="s2">                    {x: offV, title: &quot;Velocidad v(t) [m/s]&quot;}, </span>
-<span class="s2">                    {x: offA, title: &quot;Aceleración a(t) [m/s²]&quot;}</span>
-<span class="s2">                ].forEach(ax =&gt; {</span>
-<span class="s2">                    ctxG.beginPath();</span>
-<span class="s2">                    ctxG.moveTo(ax.x, margin); ctxG.lineTo(ax.x, bottomY); </span>
-<span class="s2">                    ctxG.lineTo(ax.x + graphW, bottomY); </span>
-<span class="s2">                    ctxG.stroke();</span>
-<span class="s2">                    ctxG.fillText(ax.title, ax.x - 10, margin - 15);</span>
-<span class="s2">                    ctxG.fillText(&quot;t (s)&quot;, ax.x + graphW - 20, bottomY + 20);</span>
-<span class="s2">                });</span>
+<span class="s2">                // Trayectoria</span>
+<span class="s2">                ctxP.beginPath(); ctxP.strokeStyle = &quot;#aaa&quot;; ctxP.setLineDash([4, 4]);</span>
+<span class="s2">                ctxP.arc(cxP, cyP, r * Sp, 0, 2 * Math.PI); ctxP.stroke(); ctxP.setLineDash([]);</span>
 
-<span class="s2">                // Escalas</span>
-<span class="s2">                let scaleT = graphW / (tMax * 1.1); </span>
-<span class="s2">                let scalePos = graphH / (hTotal * 1.2); </span>
-<span class="s2">                let scaleVel = graphH / (v1 * 1.5);  </span>
-<span class="s2">                </span>
-<span class="s2">                let maxA = Math.max(a_imp, g);</span>
-<span class="s2">                let scaleAcc = (graphH / 2) / (maxA * 1.2); </span>
-<span class="s2">                let midA_Y = margin + graphH / 2; </span>
-<span class="s2">                </span>
-<span class="s2">                ctxG.strokeStyle = &quot;#ccc&quot;;</span>
-<span class="s2">                ctxG.beginPath(); ctxG.moveTo(offA, midA_Y); ctxG.lineTo(offA + graphW, midA_Y); ctxG.stroke();</span>
-<span class="s2">                ctxG.fillText(&quot;0&quot;, offA - 15, midA_Y + 5);</span>
+<span class="s2">                // Coordenadas en canvas (Recordar que el eje Y de canvas es invertido)</span>
+<span class="s2">                const c_x1 = cxP + x1 * Sp, c_y1 = cyP - y1 * Sp;</span>
+<span class="s2">                const c_x2 = cxP + x2 * Sp, c_y2 = cyP - y2 * Sp;</span>
 
-<span class="s2">                ctxG.lineWidth = 2.5;</span>
-<span class="s2">                </span>
-<span class="s2">                // Dibujar Curvas</span>
-<span class="s2">                ctxG.beginPath(); ctxG.strokeStyle = &quot;#198754&quot;; </span>
-<span class="s2">                for(let i=0; i&lt;=t; i+=0.01) {</span>
-<span class="s2">                    let s = getState(i);</span>
-<span class="s2">                    let px = offY + i * scaleT;</span>
-<span class="s2">                    let py = bottomY - s.y * scalePos;</span>
-<span class="s2">                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);</span>
-<span class="s2">                } ctxG.stroke();</span>
-<span class="s2">                </span>
-<span class="s2">                ctxG.beginPath(); ctxG.strokeStyle = &quot;#0d6efd&quot;; </span>
-<span class="s2">                for(let i=0; i&lt;=t; i+=0.01) {</span>
-<span class="s2">                    let s = getState(i);</span>
-<span class="s2">                    let px = offV + i * scaleT;</span>
-<span class="s2">                    let py = bottomY - s.v * scaleVel;</span>
-<span class="s2">                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);</span>
-<span class="s2">                } ctxG.stroke();</span>
-
-<span class="s2">                ctxG.beginPath(); ctxG.strokeStyle = &quot;#dc3545&quot;; </span>
-<span class="s2">                for(let i=0; i&lt;=t; i+=0.005) {</span>
-<span class="s2">                    let s = getState(i);</span>
-<span class="s2">                    let px = offA + i * scaleT;</span>
-<span class="s2">                    let py = midA_Y - s.a * scaleAcc;</span>
+<span class="s2">                // Dibujar Vectores Velocidad (desde sus posiciones)</span>
+<span class="s2">                drawArrow(ctxP, c_x1, c_y1, c_x1 + v1x * Sv, c_y1 - v1y * Sv, &quot;#0d6efd&quot;); // v1 (Azul)</span>
+<span class="s2">                if (dt &gt; 0.01) { // Mostrar v2 solo si no están encima</span>
+<span class="s2">                    drawArrow(ctxP, c_x2, c_y2, c_x2 + v2x * Sv, c_y2 - v2y * Sv, &quot;#0dcaf0&quot;, 2, true); // v2 (Cyan)</span>
 <span class="s2">                    </span>
-<span class="s2">                    if (i === 0) {</span>
-<span class="s2">                        ctxG.moveTo(px, py);</span>
-<span class="s2">                    } else {</span>
-<span class="s2">                        if (Math.abs(i - t1) &lt; 0.01) {</span>
-<span class="s2">                            ctxG.lineTo(px, midA_Y - (-g) * scaleAcc);</span>
-<span class="s2">                        } else {</span>
-<span class="s2">                            ctxG.lineTo(px, py);</span>
-<span class="s2">                        }</span>
-<span class="s2">                    }</span>
-<span class="s2">                } ctxG.stroke();</span>
-
-<span class="s2">                if (t &gt;= t1) {</span>
-<span class="s2">                    let pxT1 = t1 * scaleT;</span>
-<span class="s2">                    ctxG.fillStyle = &quot;rgba(0, 0, 0, 0.4)&quot;;</span>
-<span class="s2">                    ctxG.setLineDash([3, 3]);</span>
-<span class="s2">                    ctxG.beginPath(); ctxG.moveTo(offY + pxT1, margin); ctxG.lineTo(offY + pxT1, bottomY); ctxG.stroke();</span>
-<span class="s2">                    ctxG.beginPath(); ctxG.moveTo(offV + pxT1, margin); ctxG.lineTo(offV + pxT1, bottomY); ctxG.stroke();</span>
-<span class="s2">                    ctxG.beginPath(); ctxG.moveTo(offA + pxT1, margin); ctxG.lineTo(offA + pxT1, bottomY); ctxG.stroke();</span>
-<span class="s2">                    ctxG.setLineDash([]);</span>
+<span class="s2">                    // Bolita 2 (Sombra)</span>
+<span class="s2">                    ctxP.beginPath(); ctxP.fillStyle = &quot;rgba(0,0,0,0.3)&quot;;</span>
+<span class="s2">                    ctxP.arc(c_x2, c_y2, 7, 0, Math.PI * 2); ctxP.fill();</span>
 <span class="s2">                }</span>
+
+<span class="s2">                // Dibujar Vector Aceleración Exacta (desde posición 1 hacia el centro)</span>
+<span class="s2">                drawArrow(ctxP, c_x1, c_y1, c_x1 + acx * Sa, c_y1 - acy * Sa, &quot;#dc3545&quot;);</span>
+
+<span class="s2">                // Bolita 1 (Principal)</span>
+<span class="s2">                ctxP.beginPath(); ctxP.fillStyle = &quot;#333&quot;;</span>
+<span class="s2">                ctxP.arc(c_x1, c_y1, 10, 0, Math.PI * 2); ctxP.fill();</span>
+
+<span class="s2">                // --- RENDERIZADO ESPACIO DE VELOCIDADES ---</span>
+<span class="s2">                ctxV.clearRect(0, 0, canvasVel.width, canvasVel.height);</span>
+<span class="s2">                const cxV = canvasVel.width / 2;</span>
+<span class="s2">                const cyV = canvasVel.height / 2;</span>
+<span class="s2">                </span>
+<span class="s2">                // Escalas para Espacio de Velocidades</span>
+<span class="s2">                const Sv2 = 130 / v;           // Velocidades parten del origen</span>
+<span class="s2">                const Sa2 = 130 / ac;          // Para comparar aceleración media y exacta</span>
+<span class="s2">                </span>
+<span class="s2">                // Círculo de velocidades constantes (|v| es constante)</span>
+<span class="s2">                ctxV.beginPath(); ctxV.strokeStyle = &quot;#ddd&quot;; ctxV.setLineDash([2, 4]);</span>
+<span class="s2">                ctxV.arc(cxV, cyV, v * Sv2, 0, 2 * Math.PI); ctxV.stroke(); ctxV.setLineDash([]);</span>
+<span class="s2">                </span>
+<span class="s2">                // Vectores v1 y v2 desde el origen</span>
+<span class="s2">                const cv_x1 = cxV + v1x * Sv2, cv_y1 = cyV - v1y * Sv2;</span>
+<span class="s2">                const cv_x2 = cxV + v2x * Sv2, cv_y2 = cyV - v2y * Sv2;</span>
+<span class="s2">                </span>
+<span class="s2">                drawArrow(ctxV, cxV, cyV, cv_x1, cv_y1, &quot;#0d6efd&quot;); // v1</span>
+<span class="s2">                </span>
+<span class="s2">                if (dt &gt; 0.01) {</span>
+<span class="s2">                    drawArrow(ctxV, cxV, cyV, cv_x2, cv_y2, &quot;#0dcaf0&quot;); // v2</span>
+<span class="s2">                    // Vector Δv (cierra el triángulo de v1 a v2)</span>
+<span class="s2">                    drawArrow(ctxV, cv_x1, cv_y1, cv_x2, cv_y2, &quot;#6f42c1&quot;, 2);</span>
+<span class="s2">                    </span>
+<span class="s2">                    // Texto cerca de Δv</span>
+<span class="s2">                    ctxV.fillStyle = &quot;#6f42c1&quot;; ctxV.font = &quot;bold 14px Arial&quot;;</span>
+<span class="s2">                    ctxV.fillText(&quot;Δv&quot;, cv_x1 + (cv_x2 - cv_x1)/2 + 10, cv_y1 + (cv_y2 - cv_y1)/2);</span>
+<span class="s2">                }</span>
+
+<span class="s2">                // Vector Aceleración Instantánea (Exacta)</span>
+<span class="s2">                drawArrow(ctxV, cxV, cyV, cxV + acx * Sa2, cyV - acy * Sa2, &quot;rgba(220, 53, 69, 0.4)&quot;, 6);</span>
+
+<span class="s2">                // Vector Aceleración Media (Δv / Δt) desde el origen</span>
+<span class="s2">                // A medida que dt -&gt; 0, este vector se alinea perfectamente con la aceleración exacta</span>
+<span class="s2">                drawArrow(ctxV, cxV, cyV, cxV + amx * Sa2, cyV - amy * Sa2, &quot;#6f42c1&quot;, 3);</span>
+<span class="s2">                </span>
+<span class="s2">                // Etiquetas en Canvas Derecho</span>
+<span class="s2">                ctxV.fillStyle = &quot;#333&quot;; ctxV.font = &quot;12px Arial&quot;;</span>
+<span class="s2">                ctxV.fillText(&quot;Origen&quot;, cxV - 20, cyV + 20);</span>
+<span class="s2">                </span>
+<span class="s2">                ctxV.fillStyle = &quot;rgba(220, 53, 69, 0.8)&quot;;</span>
+<span class="s2">                ctxV.fillText(&quot;a_instantánea (Fondo rojo)&quot;, 10, 20);</span>
+<span class="s2">                </span>
+<span class="s2">                ctxV.fillStyle = &quot;#6f42c1&quot;;</span>
+<span class="s2">                ctxV.fillText(&quot;a_media = Δv/Δt (Morado)&quot;, 10, 40);</span>
 <span class="s2">            }</span>
 
 <span class="s2">            function animate(timestamp) {</span>
-<span class="s2">                if (!isPlaying) return;</span>
 <span class="s2">                if (!lastTime) lastTime = timestamp;</span>
-<span class="s2">                </span>
 <span class="s2">                let deltaTime = (timestamp - lastTime) / 1000;</span>
 <span class="s2">                lastTime = timestamp;</span>
 <span class="s2">                </span>
-<span class="s2">                let speed_multiplier = parseFloat(speed_slider.value);</span>
-<span class="s2">                t += deltaTime * speed_multiplier;</span>
-<span class="s2">                </span>
-<span class="s2">                if (t &gt;= tMax) {</span>
-<span class="s2">                    t = tMax;</span>
-<span class="s2">                    isPlaying = false;</span>
-<span class="s2">                    btn_play.innerText = &quot;▶ Reproducir / Pausar&quot;;</span>
+<span class="s2">                if (isPlaying) {</span>
+<span class="s2">                    t += deltaTime * 0.5; // Velocidad de giro</span>
 <span class="s2">                }</span>
 <span class="s2">                </span>
-<span class="s2">                time_display.innerText = t.toFixed(2);</span>
-<span class="s2">                drawSim();</span>
-<span class="s2">                drawGraphs();</span>
+<span class="s2">                if (limitAnimationActive) {</span>
+<span class="s2">                    dt = dt * 0.96; // Shrink dt exponencialmente</span>
+<span class="s2">                    if (dt &lt;= 0.005) {</span>
+<span class="s2">                        dt = 0.001; // Límite infinitesimal</span>
+<span class="s2">                        limitAnimationActive = false;</span>
+<span class="s2">                        btn_limit.innerText = &quot;🎯 Animar Límite (Δt → 0)&quot;;</span>
+<span class="s2">                        btn_limit.style.backgroundColor = &quot;#6f42c1&quot;;</span>
+<span class="s2">                    }</span>
+<span class="s2">                    dt_slider.value = dt;</span>
+<span class="s2">                    dt_val.innerText = dt.toFixed(3) + &quot; s&quot;;</span>
+<span class="s2">                }</span>
 <span class="s2">                </span>
-<span class="s2">                if(isPlaying) {</span>
+<span class="s2">                drawSim();</span>
+<span class="s2">                </span>
+<span class="s2">                if(isPlaying || limitAnimationActive) {</span>
 <span class="s2">                    animationId = requestAnimationFrame(animate);</span>
 <span class="s2">                }</span>
 <span class="s2">            }</span>
 
-<span class="s2">            btn_update.addEventListener(&#39;click&#39;, () =&gt; {</span>
-<span class="s2">                isPlaying = false;</span>
-<span class="s2">                t = 0;</span>
-<span class="s2">                lastTime = 0;</span>
-<span class="s2">                time_display.innerText = &quot;0.00&quot;;</span>
-<span class="s2">                calculatePhysics();</span>
-<span class="s2">                drawSim();</span>
-<span class="s2">                drawGraphs();</span>
-<span class="s2">                btn_play.innerText = &quot;▶ Reproducir / Pausar&quot;;</span>
+<span class="s2">            dt_slider.addEventListener(&#39;input&#39;, () =&gt; {</span>
+<span class="s2">                dt = parseFloat(dt_slider.value);</span>
+<span class="s2">                dt_val.innerText = dt.toFixed(3) + &quot; s&quot;;</span>
+<span class="s2">                limitAnimationActive = false;</span>
+<span class="s2">                btn_limit.innerText = &quot;🎯 Animar Límite (Δt → 0)&quot;;</span>
+<span class="s2">                btn_limit.style.backgroundColor = &quot;#6f42c1&quot;;</span>
+<span class="s2">                if(!isPlaying &amp;&amp; !limitAnimationActive) drawSim();</span>
 <span class="s2">            });</span>
 
 <span class="s2">            btn_play.addEventListener(&#39;click&#39;, () =&gt; {</span>
 <span class="s2">                isPlaying = !isPlaying;</span>
-<span class="s2">                if (t &gt;= tMax) {</span>
-<span class="s2">                    t = 0; </span>
-<span class="s2">                }</span>
 <span class="s2">                if (isPlaying) {</span>
+<span class="s2">                    btn_play.innerText = &quot;⏸ Pausar Giro&quot;;</span>
+<span class="s2">                    btn_play.style.backgroundColor = &quot;#ffc107&quot;;</span>
+<span class="s2">                    btn_play.style.color = &quot;#000&quot;;</span>
 <span class="s2">                    lastTime = 0; </span>
 <span class="s2">                    animationId = requestAnimationFrame(animate);</span>
+<span class="s2">                } else {</span>
+<span class="s2">                    btn_play.innerText = &quot;▶ Reproducir Giro&quot;;</span>
+<span class="s2">                    btn_play.style.backgroundColor = &quot;#198754&quot;;</span>
+<span class="s2">                    btn_play.style.color = &quot;#fff&quot;;</span>
 <span class="s2">                }</span>
 <span class="s2">            });</span>
 
-<span class="s2">            btn_reset.addEventListener(&#39;click&#39;, () =&gt; {</span>
-<span class="s2">                isPlaying = false;</span>
-<span class="s2">                t = 0;</span>
+<span class="s2">            btn_limit.addEventListener(&#39;click&#39;, () =&gt; {</span>
+<span class="s2">                if(dt &lt;= 0.01) {</span>
+<span class="s2">                    // Resetear slider para repetir</span>
+<span class="s2">                    dt = 1.0;</span>
+<span class="s2">                    dt_slider.value = dt;</span>
+<span class="s2">                }</span>
+<span class="s2">                limitAnimationActive = true;</span>
+<span class="s2">                btn_limit.innerText = &quot;⏳ Calculando Límite...&quot;;</span>
+<span class="s2">                btn_limit.style.backgroundColor = &quot;#6c757d&quot;;</span>
 <span class="s2">                lastTime = 0;</span>
-<span class="s2">                time_display.innerText = &quot;0.00&quot;;</span>
-<span class="s2">                drawSim();</span>
-<span class="s2">                drawGraphs();</span>
+<span class="s2">                if (!isPlaying) animationId = requestAnimationFrame(animate);</span>
 <span class="s2">            });</span>
 <span class="s2">            </span>
-<span class="s2">            calculatePhysics();</span>
 <span class="s2">            drawSim();</span>
-<span class="s2">            drawGraphs();</span>
 <span class="s2">        }</span>
 <span class="s2">        </span>
 <span class="s2">        initSimulation();</span>
@@ -1583,335 +1459,282 @@ a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <div style="border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, sans-serif;">
-    <h3 style="margin-top:0; color: #2c3e50;">Simulación: Lanzamiento Vertical</h3>
-    <p style="font-size: 0.95em; color: #555; margin-bottom: 15px;">Ingresa los valores de h₁ y h₂, y observa el comportamiento de las gráficas.</p>
+    <h3 style="margin-top:0; color: #2c3e50;">Simulación: Origen de la Aceleración Centrípeta</h3>
+    <p style="font-size: 0.95em; color: #555; margin-bottom: 15px;">
+        Observa cómo la resta de dos vectores de velocidad en instantes diferentes (<strong>Δv = v₂ - v₁</strong>) da origen a la aceleración. Reduce <strong>Δt</strong> para ver cómo el vector aceleración media converge a la aceleración centrípeta instantánea.
+    </p>
     
-    <!-- Controles de Parámetros -->
-    <div style="display: flex; gap: 20px; margin-bottom: 20px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center;">
-        <div>
-            <label style="font-weight: bold;">h₁ (Distancia empuje, m): </label>
-            <input type="number" id="h1_85855" value="0.4" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
-        </div>
-        <div>
-            <label style="font-weight: bold;">h₂ (Vuelo libre, m): </label>
-            <input type="number" id="h2_85855" value="1.2" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
-        </div>
-        <button id="update_params_85855" style="background-color: #0d6efd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">Actualizar Parámetros</button>
-    </div>
-
-    <!-- Controles de Reproducción -->
-    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; align-items: center; justify-content: space-between;">
+    <!-- Controles -->
+    <div style="display: flex; gap: 20px; margin-bottom: 20px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
         <div style="display: flex; gap: 15px; align-items: center;">
-            <button id="play_85855" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
-            <button id="reset_85855" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
-            <div style="font-size: 1.1em; font-weight: bold; margin-left: 10px;">
-                Tiempo: <span id="time_display_85855" style="color: #dc3545;">0.00</span> s
+            <button id="play_75246" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir Giro</button>
+            <button id="limit_btn_75246" style="background-color: #6f42c1; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">🎯 Animar Límite (Δt → 0)</button>
+        </div>
+        
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <div style="display: flex; flex-direction: column; align-items: center; background: #fff; padding: 8px 15px; border-radius: 5px; border: 1px solid #ccc;">
+                <label style="font-weight: 600; font-size: 0.85em; margin-bottom: 5px; color: #dc3545;">Intervalo de Tiempo (Δt)</label>
+                <input type="range" id="dt_slider_75246" min="0.001" max="1.5" step="0.01" value="1.0" style="width: 150px;">
+                <span id="dt_val_75246" style="font-weight: bold; font-family: monospace; font-size: 0.9em;">1.000 s</span>
             </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;">
-            <label style="font-weight: 600; font-size: 0.9em; margin: 0;">Velocidad Animación:</label>
-            <input type="range" id="speed_85855" min="0.1" max="1" step="0.1" value="0.2" style="vertical-align: middle;">
-            <span id="speed_val_85855" style="font-weight: bold; font-family: monospace; width: 35px;">0.2x</span>
+    </div>
+    
+    <!-- Contenedor Principal (2 Canvas) -->
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+        <!-- Espacio de Posición -->
+        <div style="flex: 1; min-width: 350px; max-width: 450px; text-align: center;">
+            <h4 style="margin-bottom: 10px; color: #333;">Espacio de Posición</h4>
+            <canvas id="canvas_pos_75246" width="400" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
+        </div>
+        <!-- Espacio de Velocidades (Hodógrafa) -->
+        <div style="flex: 1; min-width: 350px; max-width: 450px; text-align: center;">
+            <h4 style="margin-bottom: 10px; color: #333;">Espacio de Velocidades (Δv)</h4>
+            <canvas id="canvas_vel_75246" width="400" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
         </div>
     </div>
     
-    <!-- Contenedor Principal (Simulación + Gráficos) -->
-    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-        <!-- Canvas de la persecución física -->
-        <div style="flex: 1; min-width: 200px; max-width: 250px;">
-            <canvas id="canvas_sim_85855" width="250" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
-        </div>
-        <!-- Canvas de los gráficos -->
-        <div style="flex: 3; min-width: 500px;">
-            <canvas id="canvas_graphs_85855" width="700" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
-        </div>
-    </div>
-    
-    <div id="results_85855" style="margin-top: 15px; font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41;">
-        <!-- Resultados dinámicos -->
+    <div id="results_75246" style="margin-top: 15px; font-size: 0.9em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41; display: flex; justify-content: space-around;">
+        <span><b style="color:#0d6efd;">▬ v₁ (Tiempo t)</b></span>
+        <span><b style="color:#0dcaf0;">▬ v₂ (Tiempo t + Δt)</b></span>
+        <span><b style="color:#6f42c1;">▬ Δv (Cambio vel.)</b> / a_media</span>
+        <span><b style="color:#dc3545;">▬ a_c (Acel. instantánea)</b></span>
     </div>
 </div>
 
 <script>
     (function() {
         function initSimulation() {
-            const canvasSim = document.getElementById('canvas_sim_85855');
-            const canvasGraph = document.getElementById('canvas_graphs_85855');
-            if (!canvasSim || !canvasGraph) {
+            const canvasPos = document.getElementById('canvas_pos_75246');
+            const canvasVel = document.getElementById('canvas_vel_75246');
+            if (!canvasPos || !canvasVel) {
                 setTimeout(initSimulation, 50); 
                 return;
             }
             
-            const ctxSim = canvasSim.getContext('2d');
-            const ctxG = canvasGraph.getContext('2d');
+            const ctxP = canvasPos.getContext('2d');
+            const ctxV = canvasVel.getContext('2d');
             
-            const btn_play = document.getElementById('play_85855');
-            const btn_reset = document.getElementById('reset_85855');
-            const btn_update = document.getElementById('update_params_85855');
-            const time_display = document.getElementById('time_display_85855');
-            const speed_slider = document.getElementById('speed_85855');
-            const speed_val = document.getElementById('speed_val_85855');
-            const results_div = document.getElementById('results_85855');
+            const btn_play = document.getElementById('play_75246');
+            const btn_limit = document.getElementById('limit_btn_75246');
+            const dt_slider = document.getElementById('dt_slider_75246');
+            const dt_val = document.getElementById('dt_val_75246');
             
-            // Entradas
-            const input_h1 = document.getElementById('h1_85855');
-            const input_h2 = document.getElementById('h2_85855');
-
             let isPlaying = false;
+            let limitAnimationActive = false;
             let animationId;
             let lastTime = 0; 
             
-            // Físicas
-            const g = 9.81;
-            let h1, h2, v1, a_imp, t1, t2, tMax, hTotal;
-            let t = 0;
-
-            function calculatePhysics() {
-                h1 = parseFloat(input_h1.value);
-                h2 = parseFloat(input_h2.value);
-                
-                if(h1 <= 0) h1 = 0.1;
-                if(h2 <= 0) h2 = 0.1;
-                input_h1.value = h1;
-                input_h2.value = h2;
-
-                hTotal = h1 + h2;
-                v1 = Math.sqrt(2 * g * h2);
-                a_imp = g * (h2 / h1);
-                t1 = h1 * Math.sqrt(2 / (g * h2));
-                t2 = Math.sqrt(2 * h2 / g);
-                tMax = t1 + t2;
-
-                results_div.innerHTML = `
-                    <strong>Resultados calculados:</strong><br>
-                    • Rapidez de despegue (v₁): <b>${v1.toFixed(2)} m/s</b><br>
-                    • Aceleración de empuje (a): <b>${a_imp.toFixed(2)} m/s²</b><br>
-                    • Tiempo de empuje (t₁): <b>${t1.toFixed(3)} s</b> | Tiempo de vuelo libre (t₂): <b>${t2.toFixed(3)} s</b><br>
-                    • Tiempo total a altura máxima: <b>${tMax.toFixed(3)} s</b>
-                `;
-            }
-
-            function getState(currentTime) {
-                if (currentTime <= t1) {
-                    // Fase 1: Empuje
-                    let currentY = 0.5 * a_imp * currentTime * currentTime;
-                    let currentV = a_imp * currentTime;
-                    return { y: currentY, v: currentV, a: a_imp, phase: 1 };
-                } else if (currentTime <= tMax) {
-                    // Fase 2: Vuelo libre
-                    let dt = currentTime - t1;
-                    let currentY = h1 + (v1 * dt) - (0.5 * g * dt * dt);
-                    let currentV = v1 - g * dt;
-                    return { y: currentY, v: currentV, a: -g, phase: 2 };
-                } else {
-                    // Fin (Altura máxima alcanzada)
-                    return { y: hTotal, v: 0, a: -g, phase: 3 };
-                }
-            }
-
-            speed_slider.addEventListener('input', () => {
-                speed_val.innerText = parseFloat(speed_slider.value).toFixed(1) + 'x';
-            });
+            // Físicas Base Fijas (Para enfocar visualmente en los vectores)
+            const r = 2.0;       // Radio
+            const omega = 1.0;   // Velocidad angular (1 rad/s)
+            const v = omega * r;
+            const ac = omega * omega * r;
             
-            function drawSim() {
-                ctxSim.clearRect(0, 0, canvasSim.width, canvasSim.height);
-                let state = getState(t);
+            let t = 0;           // Tiempo actual
+            let dt = parseFloat(dt_slider.value); // Intervalo delta t
+            
+            // Dibuja flechas con estilo en el canvas
+            function drawArrow(ctx, fromx, fromy, tox, toy, color, lineWidth=3, dashed=false) {
+                const headlen = 10;
+                const angle = Math.atan2(toy - fromy, tox - fromx);
                 
-                // Márgenes y escala
-                let marginY = 30;
-                let pxPerMeter = (canvasSim.height - 2 * marginY) / (hTotal * 1.2); 
-                let groundY = canvasSim.height - marginY;
-
-                // Dibujar Suelo/Origen
-                ctxSim.fillStyle = "#adb5bd";
-                ctxSim.fillRect(0, groundY, canvasSim.width, marginY);
-                ctxSim.fillStyle = "#000";
-                ctxSim.font = "12px Arial";
-                ctxSim.fillText("y = 0", 10, groundY + 15);
-
-                // Dibujar marcas de h1 y altura máxima
-                let h1Px = groundY - (h1 * pxPerMeter);
-                let hMaxPx = groundY - (hTotal * pxPerMeter);
-
-                ctxSim.strokeStyle = "#0d6efd";
-                ctxSim.setLineDash([5, 5]);
-                ctxSim.beginPath(); ctxSim.moveTo(0, h1Px); ctxSim.lineTo(canvasSim.width, h1Px); ctxSim.stroke();
-                ctxSim.fillText(`h₁ (${h1}m) - Despegue`, 10, h1Px - 5);
-
-                ctxSim.strokeStyle = "#dc3545";
-                ctxSim.beginPath(); ctxSim.moveTo(0, hMaxPx); ctxSim.lineTo(canvasSim.width, hMaxPx); ctxSim.stroke();
-                ctxSim.fillText(`h₁ + h₂ (${hTotal}m) - Max`, 10, hMaxPx - 5);
-                ctxSim.setLineDash([]);
-
-                // Dibujar la "Mano" (solo sube hasta h1)
-                let handY = (state.phase === 1) ? state.y : h1;
-                let handYPx = groundY - (handY * pxPerMeter);
-                ctxSim.fillStyle = "#ffc107"; 
-                ctxSim.fillRect(canvasSim.width/2 - 25, handYPx, 50, 10);
-
-                // Dibujar el Objeto (Bola)
-                let ballYPx = groundY - (state.y * pxPerMeter);
-                ctxSim.fillStyle = "#198754";
-                ctxSim.beginPath();
-                ctxSim.arc(canvasSim.width/2, ballYPx - 10, 10, 0, Math.PI*2);
-                ctxSim.fill();
-                ctxSim.stroke();
+                ctx.beginPath();
+                ctx.strokeStyle = color;
+                ctx.lineWidth = lineWidth;
+                if(dashed) ctx.setLineDash([5, 5]);
+                else ctx.setLineDash([]);
+                
+                ctx.moveTo(fromx, fromy);
+                ctx.lineTo(tox, toy);
+                ctx.stroke();
+                ctx.setLineDash([]); // Reset
+                
+                ctx.beginPath();
+                ctx.fillStyle = color;
+                ctx.moveTo(tox, toy);
+                ctx.lineTo(tox - headlen * Math.cos(angle - Math.PI / 6), toy - headlen * Math.sin(angle - Math.PI / 6));
+                ctx.lineTo(tox - headlen * Math.cos(angle + Math.PI / 6), toy - headlen * Math.sin(angle + Math.PI / 6));
+                ctx.fill();
             }
 
-            function drawGraphs() {
-                ctxG.clearRect(0, 0, canvasGraph.width, canvasGraph.height);
+            function drawSim() {
+                // --- CÁLCULOS FÍSICOS (Coordenadas Reales) ---
+                const t2 = t + dt;
+                const theta1 = omega * t;
+                const theta2 = omega * t2;
                 
-                let margin = 40;
-                let graphW = 180; 
-                let graphH = 280; 
+                // Posiciones
+                const x1 = r * Math.cos(theta1),  y1 = r * Math.sin(theta1);
+                const x2 = r * Math.cos(theta2),  y2 = r * Math.sin(theta2);
                 
-                let offY = 50;  
-                let offV = 280; 
-                let offA = 510; 
+                // Velocidades (v = w x r -> vx = -w*r*sin, vy = w*r*cos)
+                const v1x = -v * Math.sin(theta1), v1y = v * Math.cos(theta1);
+                const v2x = -v * Math.sin(theta2), v2y = v * Math.cos(theta2);
                 
-                let bottomY = margin + graphH;
+                // Variación de velocidad y aceleración media
+                const dvx = v2x - v1x, dvy = v2y - v1y;
+                const amx = dvx / dt,  amy = dvy / dt;
+                
+                // Aceleración instantánea exacta en t1
+                const acx = -ac * Math.cos(theta1), acy = -ac * Math.sin(theta1);
+                
+                // --- RENDERIZADO ESPACIO DE POSICIÓN ---
+                ctxP.clearRect(0, 0, canvasPos.width, canvasPos.height);
+                const cxP = canvasPos.width / 2;
+                const cyP = canvasPos.height / 2;
+                
+                // Factores de escala para visualización en Posición
+                const Sp = 120 / r;           // Escala posición (px/m)
+                const Sv = 70 / v;            // Escala velocidad (px/(m/s))
+                const Sa = 80 / ac;           // Escala aceleración (px/(m/s²))
 
-                // --- Ejes Comunes ---
-                ctxG.strokeStyle = "#000";
-                ctxG.fillStyle = "#000";
-                ctxG.font = "12px Arial";
+                // Ejes
+                ctxP.strokeStyle = "#eee"; ctxP.lineWidth = 1;
+                ctxP.beginPath(); ctxP.moveTo(0, cyP); ctxP.lineTo(canvasPos.width, cyP);
+                ctxP.moveTo(cxP, 0); ctxP.lineTo(cxP, canvasPos.height); ctxP.stroke();
 
-                [
-                    {x: offY, title: "Posición y(t) [m]"}, 
-                    {x: offV, title: "Velocidad v(t) [m/s]"}, 
-                    {x: offA, title: "Aceleración a(t) [m/s²]"}
-                ].forEach(ax => {
-                    ctxG.beginPath();
-                    ctxG.moveTo(ax.x, margin); ctxG.lineTo(ax.x, bottomY); 
-                    ctxG.lineTo(ax.x + graphW, bottomY); 
-                    ctxG.stroke();
-                    ctxG.fillText(ax.title, ax.x - 10, margin - 15);
-                    ctxG.fillText("t (s)", ax.x + graphW - 20, bottomY + 20);
-                });
+                // Trayectoria
+                ctxP.beginPath(); ctxP.strokeStyle = "#aaa"; ctxP.setLineDash([4, 4]);
+                ctxP.arc(cxP, cyP, r * Sp, 0, 2 * Math.PI); ctxP.stroke(); ctxP.setLineDash([]);
 
-                // Escalas
-                let scaleT = graphW / (tMax * 1.1); 
-                let scalePos = graphH / (hTotal * 1.2); 
-                let scaleVel = graphH / (v1 * 1.5);  
-                
-                let maxA = Math.max(a_imp, g);
-                let scaleAcc = (graphH / 2) / (maxA * 1.2); 
-                let midA_Y = margin + graphH / 2; 
-                
-                ctxG.strokeStyle = "#ccc";
-                ctxG.beginPath(); ctxG.moveTo(offA, midA_Y); ctxG.lineTo(offA + graphW, midA_Y); ctxG.stroke();
-                ctxG.fillText("0", offA - 15, midA_Y + 5);
+                // Coordenadas en canvas (Recordar que el eje Y de canvas es invertido)
+                const c_x1 = cxP + x1 * Sp, c_y1 = cyP - y1 * Sp;
+                const c_x2 = cxP + x2 * Sp, c_y2 = cyP - y2 * Sp;
 
-                ctxG.lineWidth = 2.5;
-                
-                // Dibujar Curvas
-                ctxG.beginPath(); ctxG.strokeStyle = "#198754"; 
-                for(let i=0; i<=t; i+=0.01) {
-                    let s = getState(i);
-                    let px = offY + i * scaleT;
-                    let py = bottomY - s.y * scalePos;
-                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);
-                } ctxG.stroke();
-                
-                ctxG.beginPath(); ctxG.strokeStyle = "#0d6efd"; 
-                for(let i=0; i<=t; i+=0.01) {
-                    let s = getState(i);
-                    let px = offV + i * scaleT;
-                    let py = bottomY - s.v * scaleVel;
-                    i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);
-                } ctxG.stroke();
-
-                ctxG.beginPath(); ctxG.strokeStyle = "#dc3545"; 
-                for(let i=0; i<=t; i+=0.005) {
-                    let s = getState(i);
-                    let px = offA + i * scaleT;
-                    let py = midA_Y - s.a * scaleAcc;
+                // Dibujar Vectores Velocidad (desde sus posiciones)
+                drawArrow(ctxP, c_x1, c_y1, c_x1 + v1x * Sv, c_y1 - v1y * Sv, "#0d6efd"); // v1 (Azul)
+                if (dt > 0.01) { // Mostrar v2 solo si no están encima
+                    drawArrow(ctxP, c_x2, c_y2, c_x2 + v2x * Sv, c_y2 - v2y * Sv, "#0dcaf0", 2, true); // v2 (Cyan)
                     
-                    if (i === 0) {
-                        ctxG.moveTo(px, py);
-                    } else {
-                        if (Math.abs(i - t1) < 0.01) {
-                            ctxG.lineTo(px, midA_Y - (-g) * scaleAcc);
-                        } else {
-                            ctxG.lineTo(px, py);
-                        }
-                    }
-                } ctxG.stroke();
-
-                if (t >= t1) {
-                    let pxT1 = t1 * scaleT;
-                    ctxG.fillStyle = "rgba(0, 0, 0, 0.4)";
-                    ctxG.setLineDash([3, 3]);
-                    ctxG.beginPath(); ctxG.moveTo(offY + pxT1, margin); ctxG.lineTo(offY + pxT1, bottomY); ctxG.stroke();
-                    ctxG.beginPath(); ctxG.moveTo(offV + pxT1, margin); ctxG.lineTo(offV + pxT1, bottomY); ctxG.stroke();
-                    ctxG.beginPath(); ctxG.moveTo(offA + pxT1, margin); ctxG.lineTo(offA + pxT1, bottomY); ctxG.stroke();
-                    ctxG.setLineDash([]);
+                    // Bolita 2 (Sombra)
+                    ctxP.beginPath(); ctxP.fillStyle = "rgba(0,0,0,0.3)";
+                    ctxP.arc(c_x2, c_y2, 7, 0, Math.PI * 2); ctxP.fill();
                 }
+
+                // Dibujar Vector Aceleración Exacta (desde posición 1 hacia el centro)
+                drawArrow(ctxP, c_x1, c_y1, c_x1 + acx * Sa, c_y1 - acy * Sa, "#dc3545");
+
+                // Bolita 1 (Principal)
+                ctxP.beginPath(); ctxP.fillStyle = "#333";
+                ctxP.arc(c_x1, c_y1, 10, 0, Math.PI * 2); ctxP.fill();
+
+                // --- RENDERIZADO ESPACIO DE VELOCIDADES ---
+                ctxV.clearRect(0, 0, canvasVel.width, canvasVel.height);
+                const cxV = canvasVel.width / 2;
+                const cyV = canvasVel.height / 2;
+                
+                // Escalas para Espacio de Velocidades
+                const Sv2 = 130 / v;           // Velocidades parten del origen
+                const Sa2 = 130 / ac;          // Para comparar aceleración media y exacta
+                
+                // Círculo de velocidades constantes (|v| es constante)
+                ctxV.beginPath(); ctxV.strokeStyle = "#ddd"; ctxV.setLineDash([2, 4]);
+                ctxV.arc(cxV, cyV, v * Sv2, 0, 2 * Math.PI); ctxV.stroke(); ctxV.setLineDash([]);
+                
+                // Vectores v1 y v2 desde el origen
+                const cv_x1 = cxV + v1x * Sv2, cv_y1 = cyV - v1y * Sv2;
+                const cv_x2 = cxV + v2x * Sv2, cv_y2 = cyV - v2y * Sv2;
+                
+                drawArrow(ctxV, cxV, cyV, cv_x1, cv_y1, "#0d6efd"); // v1
+                
+                if (dt > 0.01) {
+                    drawArrow(ctxV, cxV, cyV, cv_x2, cv_y2, "#0dcaf0"); // v2
+                    // Vector Δv (cierra el triángulo de v1 a v2)
+                    drawArrow(ctxV, cv_x1, cv_y1, cv_x2, cv_y2, "#6f42c1", 2);
+                    
+                    // Texto cerca de Δv
+                    ctxV.fillStyle = "#6f42c1"; ctxV.font = "bold 14px Arial";
+                    ctxV.fillText("Δv", cv_x1 + (cv_x2 - cv_x1)/2 + 10, cv_y1 + (cv_y2 - cv_y1)/2);
+                }
+
+                // Vector Aceleración Instantánea (Exacta)
+                drawArrow(ctxV, cxV, cyV, cxV + acx * Sa2, cyV - acy * Sa2, "rgba(220, 53, 69, 0.4)", 6);
+
+                // Vector Aceleración Media (Δv / Δt) desde el origen
+                // A medida que dt -> 0, este vector se alinea perfectamente con la aceleración exacta
+                drawArrow(ctxV, cxV, cyV, cxV + amx * Sa2, cyV - amy * Sa2, "#6f42c1", 3);
+                
+                // Etiquetas en Canvas Derecho
+                ctxV.fillStyle = "#333"; ctxV.font = "12px Arial";
+                ctxV.fillText("Origen", cxV - 20, cyV + 20);
+                
+                ctxV.fillStyle = "rgba(220, 53, 69, 0.8)";
+                ctxV.fillText("a_instantánea (Fondo rojo)", 10, 20);
+                
+                ctxV.fillStyle = "#6f42c1";
+                ctxV.fillText("a_media = Δv/Δt (Morado)", 10, 40);
             }
 
             function animate(timestamp) {
-                if (!isPlaying) return;
                 if (!lastTime) lastTime = timestamp;
-                
                 let deltaTime = (timestamp - lastTime) / 1000;
                 lastTime = timestamp;
                 
-                let speed_multiplier = parseFloat(speed_slider.value);
-                t += deltaTime * speed_multiplier;
-                
-                if (t >= tMax) {
-                    t = tMax;
-                    isPlaying = false;
-                    btn_play.innerText = "▶ Reproducir / Pausar";
+                if (isPlaying) {
+                    t += deltaTime * 0.5; // Velocidad de giro
                 }
                 
-                time_display.innerText = t.toFixed(2);
-                drawSim();
-                drawGraphs();
+                if (limitAnimationActive) {
+                    dt = dt * 0.96; // Shrink dt exponencialmente
+                    if (dt <= 0.005) {
+                        dt = 0.001; // Límite infinitesimal
+                        limitAnimationActive = false;
+                        btn_limit.innerText = "🎯 Animar Límite (Δt → 0)";
+                        btn_limit.style.backgroundColor = "#6f42c1";
+                    }
+                    dt_slider.value = dt;
+                    dt_val.innerText = dt.toFixed(3) + " s";
+                }
                 
-                if(isPlaying) {
+                drawSim();
+                
+                if(isPlaying || limitAnimationActive) {
                     animationId = requestAnimationFrame(animate);
                 }
             }
 
-            btn_update.addEventListener('click', () => {
-                isPlaying = false;
-                t = 0;
-                lastTime = 0;
-                time_display.innerText = "0.00";
-                calculatePhysics();
-                drawSim();
-                drawGraphs();
-                btn_play.innerText = "▶ Reproducir / Pausar";
+            dt_slider.addEventListener('input', () => {
+                dt = parseFloat(dt_slider.value);
+                dt_val.innerText = dt.toFixed(3) + " s";
+                limitAnimationActive = false;
+                btn_limit.innerText = "🎯 Animar Límite (Δt → 0)";
+                btn_limit.style.backgroundColor = "#6f42c1";
+                if(!isPlaying && !limitAnimationActive) drawSim();
             });
 
             btn_play.addEventListener('click', () => {
                 isPlaying = !isPlaying;
-                if (t >= tMax) {
-                    t = 0; 
-                }
                 if (isPlaying) {
+                    btn_play.innerText = "⏸ Pausar Giro";
+                    btn_play.style.backgroundColor = "#ffc107";
+                    btn_play.style.color = "#000";
                     lastTime = 0; 
                     animationId = requestAnimationFrame(animate);
+                } else {
+                    btn_play.innerText = "▶ Reproducir Giro";
+                    btn_play.style.backgroundColor = "#198754";
+                    btn_play.style.color = "#fff";
                 }
             });
 
-            btn_reset.addEventListener('click', () => {
-                isPlaying = false;
-                t = 0;
+            btn_limit.addEventListener('click', () => {
+                if(dt <= 0.01) {
+                    // Resetear slider para repetir
+                    dt = 1.0;
+                    dt_slider.value = dt;
+                }
+                limitAnimationActive = true;
+                btn_limit.innerText = "⏳ Calculando Límite...";
+                btn_limit.style.backgroundColor = "#6c757d";
                 lastTime = 0;
-                time_display.innerText = "0.00";
-                drawSim();
-                drawGraphs();
+                if (!isPlaying) animationId = requestAnimationFrame(animate);
             });
             
-            calculatePhysics();
             drawSim();
-            drawGraphs();
         }
         
         initSimulation();
@@ -1919,7 +1742,6 @@ a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
 </script>
 </div></div>
 </div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1958,23 +1780,6 @@ a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supuestos-del-modelo">Supuestos del Modelo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-de-velocidad-y-aceleracion">Gráficos de velocidad y aceleración</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-de-las-graficas-areas-y-pendientes">Interpretación de las gráficas: áreas y pendientes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-areas-y-pendientes">Cálculo de áreas y pendientes</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
