@@ -399,10 +399,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supuestos-del-modelo">1. Supuestos del Modelo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-matematico-y-resoluciones">2. Modelo Matemático y Resoluciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-de-las-graficas-areas-y-pendientes">3. Interpretación de las Gráficas (Áreas y Pendientes)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos">4. Gráficos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supuestos-del-modelo">Supuestos del Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-de-velocidad-y-aceleracion">Gráficos de velocidad y aceleración</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-de-las-graficas-areas-y-pendientes">Interpretación de las gráficas: áreas y pendientes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-areas-y-pendientes">Cálculo de áreas y pendientes</a></li>
 </ul>
             </nav>
         </div>
@@ -417,58 +417,31 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="lanzamiento-de-objeto">
 <h1>Lanzamiento de Objeto<a class="headerlink" href="#lanzamiento-de-objeto" title="Permalink to this heading">#</a></h1>
 <section id="supuestos-del-modelo">
-<h2>1. Supuestos del Modelo<a class="headerlink" href="#supuestos-del-modelo" title="Permalink to this heading">#</a></h2>
+<h2>Supuestos del Modelo<a class="headerlink" href="#supuestos-del-modelo" title="Permalink to this heading">#</a></h2>
 <p>Para modelar este problema de forma analítica, consideraremos los siguientes supuestos físicos:</p>
 <ul class="simple">
 <li><p><strong>Aceleración constante en el empuje:</strong> Asumimos que la mano aplica una fuerza constante sobre el objeto, lo que genera una aceleración constante (<span class="math notranslate nohighlight">\(a_{\text{empuje}}\)</span>) hacia arriba durante el trayecto <span class="math notranslate nohighlight">\(h_1\)</span>.</p></li>
 <li><p><strong>Resistencia del aire nula:</strong> Despreciamos los efectos de la fricción con el aire.</p></li>
 <li><p><strong>Aceleración de gravedad (<span class="math notranslate nohighlight">\(g\)</span>):</strong> Una vez que el objeto abandona la mano, la única aceleración que actúa sobre él es la de gravedad (<span class="math notranslate nohighlight">\(g \approx 9.81\)</span> m/s²), dirigida hacia abajo.</p></li>
 </ul>
+<p> </p>
+<a class="reference internal image-reference" href="_images/01.svg"><img alt="Esquema estroboscópico" class="align-center" src="_images/01.svg" width="50%" /></a>
+<p> </p>
 </section>
-<section id="modelo-matematico-y-resoluciones">
-<h2>2. Modelo Matemático y Resoluciones<a class="headerlink" href="#modelo-matematico-y-resoluciones" title="Permalink to this heading">#</a></h2>
-<p>El movimiento se divide en dos fases claramente distintas:</p>
-<ul class="simple">
-<li><p><strong>Fase 1 (Impulso):</strong> Desde la posición inicial (<span class="math notranslate nohighlight">\(y=0\)</span>) hasta que el objeto abandona la mano (<span class="math notranslate nohighlight">\(y=h_1\)</span>).</p></li>
-<li><p><strong>Fase 2 (Vuelo libre):</strong> Desde que abandona la mano (<span class="math notranslate nohighlight">\(y=h_1\)</span>) hasta alcanzar su altura máxima (<span class="math notranslate nohighlight">\(y = h_1 + h_2\)</span>).</p></li>
-</ul>
-<p><strong>A. Rapidez con que el objeto abandona la mano (<span class="math notranslate nohighlight">\(v_1\)</span>)</strong>
-Para encontrar esta velocidad, es más fácil analizar primero la <strong>Fase 2</strong>. El objeto parte con una velocidad <span class="math notranslate nohighlight">\(v_1\)</span> y alcanza su altura máxima donde su velocidad final es cero (<span class="math notranslate nohighlight">\(v_2 = 0\)</span>). Sabiendo que recorre una distancia <span class="math notranslate nohighlight">\(h_2\)</span> con aceleración <span class="math notranslate nohighlight">\(-g\)</span>, usamos la ecuación independiente del tiempo de la cinemática:</p>
-<div class="math notranslate nohighlight">
-\[v_2^2 = v_1^2 + 2(-g)h_2\]</div>
-<p>Como la velocidad final en el punto más alto es <span class="math notranslate nohighlight">\(0\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[0 = v_1^2 - 2gh_2 \implies v_1 = \sqrt{2gh_2}\]</div>
-<p><em>Esta es la rapidez con la que el objeto abandona la mano.</em></p>
-<p><strong>B. Tiempo que demora en alcanzar la altura máxima (<span class="math notranslate nohighlight">\(t_{total}\)</span>)</strong>
-El tiempo total es la suma del tiempo de empuje (<span class="math notranslate nohighlight">\(t_1\)</span>) y el tiempo de vuelo libre (<span class="math notranslate nohighlight">\(t_2\)</span>).</p>
-<ul>
-<li><p><strong>Cálculo de <span class="math notranslate nohighlight">\(t_2\)</span> (Vuelo libre):</strong>
-Usando la ecuación de velocidad para la Fase 2:</p>
-<div class="math notranslate nohighlight">
-\[v_2 = v_1 - g t_2 \implies 0 = \sqrt{2gh_2} - g t_2 \implies t_2 = \frac{\sqrt{2gh_2}}{g} = \sqrt{\frac{2h_2}{g}}\]</div>
-</li>
-<li><p><strong>Cálculo de <span class="math notranslate nohighlight">\(t_1\)</span> (Empuje):</strong>
-Primero necesitamos la aceleración de la mano (<span class="math notranslate nohighlight">\(a_{empuje}\)</span>). Usando la Fase 1 (parte del reposo <span class="math notranslate nohighlight">\(v_0 = 0\)</span> hasta llegar a <span class="math notranslate nohighlight">\(v_1\)</span> en una distancia <span class="math notranslate nohighlight">\(h_1\)</span>):</p>
-<div class="math notranslate nohighlight">
-\[v_1^2 = v_0^2 + 2a_{empuje}h_1 \implies 2gh_2 = 2a_{empuje}h_1 \implies a_{empuje} = g \frac{h_2}{h_1}\]</div>
-<p>Ahora, obtenemos el tiempo <span class="math notranslate nohighlight">\(t_1\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[v_1 = v_0 + a_{empuje} t_1 \implies \sqrt{2gh_2} = \left(g \frac{h_2}{h_1}\right) t_1 \implies t_1 = \frac{h_1}{g h_2} \sqrt{2g h_2} = h_1 \sqrt{\frac{2}{g h_2}}\]</div>
-</li>
-<li><p><strong>Tiempo Total (<span class="math notranslate nohighlight">\(t_{total}\)</span>):</strong></p>
-<div class="math notranslate nohighlight">
-\[t_{total} = t_1 + t_2 = h_1 \sqrt{\frac{2}{g h_2}} + \sqrt{\frac{2h_2}{g}}\]</div>
-</li>
-</ul>
+<section id="graficos-de-velocidad-y-aceleracion">
+<h2>Gráficos de velocidad y aceleración<a class="headerlink" href="#graficos-de-velocidad-y-aceleracion" title="Permalink to this heading">#</a></h2>
+<p>A continuación, se representan las curvas de velocidad y aceleración en función del tiempo para ambas fases del movimiento. Se puede observar geométricamente cómo el área bajo la curva en el gráfico de velocidad corresponde a los desplazamientos <span class="math notranslate nohighlight">\(h_1\)</span> (fase de empuje) y <span class="math notranslate nohighlight">\(h_2\)</span> (vuelo libre).</p>
+<p> </p>
+<a class="reference internal image-reference" href="_images/02.svg"><img alt="Gráficos" class="align-center" src="_images/02.svg" width="70%" /></a>
+<p> </p>
 </section>
 <section id="interpretacion-de-las-graficas-areas-y-pendientes">
-<h2>3. Interpretación de las Gráficas (Áreas y Pendientes)<a class="headerlink" href="#interpretacion-de-las-graficas-areas-y-pendientes" title="Permalink to this heading">#</a></h2>
+<h2>Interpretación de las gráficas: áreas y pendientes<a class="headerlink" href="#interpretacion-de-las-graficas-areas-y-pendientes" title="Permalink to this heading">#</a></h2>
 <p>Al graficar el movimiento, podemos observar propiedades fundamentales de la cinemática:</p>
 <ul class="simple">
 <li><p><strong>Gráfica de Velocidad vs. Tiempo (<span class="math notranslate nohighlight">\(v-t\)</span>):</strong></p>
 <ul>
-<li><p><strong>Pendientes:</strong> La pendiente de esta gráfica representa la aceleración. Durante la Fase 1, la pendiente es positiva y constante (el valor es <span class="math notranslate nohighlight">\(a_{empuje}\)</span>). Durante la Fase 2, la pendiente es negativa y constante (el valor es <span class="math notranslate nohighlight">\(-g\)</span>).</p></li>
+<li><p><strong>Pendientes:</strong> La pendiente de esta gráfica representa la aceleración. Durante la Fase 1, la pendiente es positiva y constante (el valor es <span class="math notranslate nohighlight">\(a_{\text{empuje}}\)</span>). Durante la Fase 2, la pendiente es negativa y constante (el valor es <span class="math notranslate nohighlight">\(-g\)</span>).</p></li>
 <li><p><strong>Áreas:</strong> El área bajo la curva de velocidad representa el desplazamiento (<span class="math notranslate nohighlight">\(\Delta y\)</span>). El área del primer triángulo formado (base <span class="math notranslate nohighlight">\(t_1\)</span>, altura <span class="math notranslate nohighlight">\(v_1\)</span>) es exactamente igual a <span class="math notranslate nohighlight">\(h_1\)</span>. El área del segundo triángulo (base <span class="math notranslate nohighlight">\(t_2\)</span>, altura <span class="math notranslate nohighlight">\(v_1\)</span>) es exactamente <span class="math notranslate nohighlight">\(h_2\)</span>.</p></li>
 </ul>
 </li>
@@ -479,12 +452,25 @@ Primero necesitamos la aceleración de la mano (<span class="math notranslate no
 </li>
 </ul>
 </section>
-<section id="graficos">
-<h2>4. Gráficos<a class="headerlink" href="#graficos" title="Permalink to this heading">#</a></h2>
-<p>A continuación, se representan las curvas de velocidad y aceleración en función del tiempo para ambas fases del movimiento. Se puede observar geométricamente cómo el área bajo la curva en el gráfico de velocidad corresponde a los desplazamientos <span class="math notranslate nohighlight">\(h_1\)</span> (fase de empuje) y <span class="math notranslate nohighlight">\(h_2\)</span> (vuelo libre).</p>
-<p> </p>
-<a class="reference internal image-reference" href="_images/01.svg"><img alt="Gráficos" class="align-center" src="_images/01.svg" width="70%" /></a>
-<p> </p>
+<section id="calculo-de-areas-y-pendientes">
+<h2>Cálculo de áreas y pendientes<a class="headerlink" href="#calculo-de-areas-y-pendientes" title="Permalink to this heading">#</a></h2>
+<p>Calculando las áreas bajo la curva en el gráfico de velocidad, es decir, el área de los triángulos obtenemos las siguientes relaciones:</p>
+<p>\begin{aligned}
+h_1 &amp;= \frac{1}{2} t_1 v_1 \
+h_2 &amp;= \frac{1}{2} (t_2 - t_1) v_1
+\end{aligned}</p>
+<p>Y calculando las pendientes en el mismo gráfico se obtiene:</p>
+<p>\begin{aligned}
+a_{\text{empuje}} &amp;= \frac{v_1}{t_1} \
+g &amp;= \frac{v_1}{t_2 - t_1}
+\end{aligned}</p>
+<p>A partir de estas ecuaciones obtenemos los parámetros en función de las distancias <span class="math notranslate nohighlight">\(h_1\)</span> y <span class="math notranslate nohighlight">\(h_2\)</span>:</p>
+<p>\begin{aligned}
+v_1 &amp;= \sqrt{2 g h_2} \
+t_1 &amp;= \frac{2 h_1}{\sqrt{2 g h_2}} \
+t_2 &amp;= \frac{2}{\sqrt{2 g h_2}} (h_1 + h_2) \
+a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g
+\end{aligned}</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -527,7 +513,7 @@ Primero necesitamos la aceleración de la mano (<span class="math notranslate no
 <span class="s2">        &lt;/div&gt;</span>
 <span class="s2">        &lt;div style=&quot;display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;&quot;&gt;</span>
 <span class="s2">            &lt;label style=&quot;font-weight: 600; font-size: 0.9em; margin: 0;&quot;&gt;Velocidad Animación:&lt;/label&gt;</span>
-<span class="s2">            &lt;input type=&quot;range&quot; id=&quot;speed_UID&quot; min=&quot;0.1&quot; max=&quot;1&quot; step=&quot;0.1&quot; value=&quot;0.5&quot; style=&quot;vertical-align: middle;&quot;&gt;</span>
+<span class="s2">            &lt;input type=&quot;range&quot; id=&quot;speed_UID&quot; min=&quot;0.1&quot; max=&quot;1&quot; step=&quot;0.1&quot; value=&quot;0.3&quot; style=&quot;vertical-align: middle;&quot;&gt;</span>
 <span class="s2">            &lt;span id=&quot;speed_val_UID&quot; style=&quot;font-weight: bold; font-family: monospace; width: 35px;&quot;&gt;0.5x&lt;/span&gt;</span>
 <span class="s2">        &lt;/div&gt;</span>
 <span class="s2">    &lt;/div&gt;</span>
@@ -849,28 +835,28 @@ Primero necesitamos la aceleración de la mano (<span class="math notranslate no
     <div style="display: flex; gap: 20px; margin-bottom: 20px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center;">
         <div>
             <label style="font-weight: bold;">h₁ (Distancia empuje, m): </label>
-            <input type="number" id="h1_27931" value="0.4" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+            <input type="number" id="h1_67608" value="0.4" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
         </div>
         <div>
             <label style="font-weight: bold;">h₂ (Vuelo libre, m): </label>
-            <input type="number" id="h2_27931" value="1.2" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+            <input type="number" id="h2_67608" value="1.2" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
         </div>
-        <button id="update_params_27931" style="background-color: #0d6efd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">Actualizar Parámetros</button>
+        <button id="update_params_67608" style="background-color: #0d6efd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">Actualizar Parámetros</button>
     </div>
 
     <!-- Controles de Reproducción -->
     <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; align-items: center; justify-content: space-between;">
         <div style="display: flex; gap: 15px; align-items: center;">
-            <button id="play_27931" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
-            <button id="reset_27931" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
+            <button id="play_67608" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
+            <button id="reset_67608" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
             <div style="font-size: 1.1em; font-weight: bold; margin-left: 10px;">
-                Tiempo: <span id="time_display_27931" style="color: #dc3545;">0.00</span> s
+                Tiempo: <span id="time_display_67608" style="color: #dc3545;">0.00</span> s
             </div>
         </div>
         <div style="display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;">
             <label style="font-weight: 600; font-size: 0.9em; margin: 0;">Velocidad Animación:</label>
-            <input type="range" id="speed_27931" min="0.1" max="1" step="0.1" value="0.5" style="vertical-align: middle;">
-            <span id="speed_val_27931" style="font-weight: bold; font-family: monospace; width: 35px;">0.5x</span>
+            <input type="range" id="speed_67608" min="0.1" max="1" step="0.1" value="0.3" style="vertical-align: middle;">
+            <span id="speed_val_67608" style="font-weight: bold; font-family: monospace; width: 35px;">0.5x</span>
         </div>
     </div>
     
@@ -878,15 +864,15 @@ Primero necesitamos la aceleración de la mano (<span class="math notranslate no
     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
         <!-- Canvas de la persecución física -->
         <div style="flex: 1; min-width: 200px; max-width: 250px;">
-            <canvas id="canvas_sim_27931" width="250" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
+            <canvas id="canvas_sim_67608" width="250" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
         </div>
         <!-- Canvas de los gráficos -->
         <div style="flex: 3; min-width: 500px;">
-            <canvas id="canvas_graphs_27931" width="700" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
+            <canvas id="canvas_graphs_67608" width="700" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
         </div>
     </div>
     
-    <div id="results_27931" style="margin-top: 15px; font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41;">
+    <div id="results_67608" style="margin-top: 15px; font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41;">
         <!-- Resultados dinámicos -->
     </div>
 </div>
@@ -894,8 +880,8 @@ Primero necesitamos la aceleración de la mano (<span class="math notranslate no
 <script>
     (function() {
         function initSimulation() {
-            const canvasSim = document.getElementById('canvas_sim_27931');
-            const canvasGraph = document.getElementById('canvas_graphs_27931');
+            const canvasSim = document.getElementById('canvas_sim_67608');
+            const canvasGraph = document.getElementById('canvas_graphs_67608');
             if (!canvasSim || !canvasGraph) {
                 setTimeout(initSimulation, 50); 
                 return;
@@ -904,17 +890,17 @@ Primero necesitamos la aceleración de la mano (<span class="math notranslate no
             const ctxSim = canvasSim.getContext('2d');
             const ctxG = canvasGraph.getContext('2d');
             
-            const btn_play = document.getElementById('play_27931');
-            const btn_reset = document.getElementById('reset_27931');
-            const btn_update = document.getElementById('update_params_27931');
-            const time_display = document.getElementById('time_display_27931');
-            const speed_slider = document.getElementById('speed_27931');
-            const speed_val = document.getElementById('speed_val_27931');
-            const results_div = document.getElementById('results_27931');
+            const btn_play = document.getElementById('play_67608');
+            const btn_reset = document.getElementById('reset_67608');
+            const btn_update = document.getElementById('update_params_67608');
+            const time_display = document.getElementById('time_display_67608');
+            const speed_slider = document.getElementById('speed_67608');
+            const speed_val = document.getElementById('speed_val_67608');
+            const results_div = document.getElementById('results_67608');
             
             // Entradas
-            const input_h1 = document.getElementById('h1_27931');
-            const input_h2 = document.getElementById('h2_27931');
+            const input_h1 = document.getElementById('h1_67608');
+            const input_h2 = document.getElementById('h2_67608');
 
             let isPlaying = false;
             let animationId;
@@ -1231,10 +1217,10 @@ Primero necesitamos la aceleración de la mano (<span class="math notranslate no
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supuestos-del-modelo">1. Supuestos del Modelo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-matematico-y-resoluciones">2. Modelo Matemático y Resoluciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-de-las-graficas-areas-y-pendientes">3. Interpretación de las Gráficas (Áreas y Pendientes)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos">4. Gráficos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supuestos-del-modelo">Supuestos del Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-de-velocidad-y-aceleracion">Gráficos de velocidad y aceleración</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-de-las-graficas-areas-y-pendientes">Interpretación de las gráficas: áreas y pendientes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-areas-y-pendientes">Cálculo de áreas y pendientes</a></li>
 </ul>
   </nav></div>
 
