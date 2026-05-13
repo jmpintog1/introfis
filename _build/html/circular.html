@@ -415,6 +415,769 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="movimiento-circular">
 <h1>Movimiento Circular<a class="headerlink" href="#movimiento-circular" title="Permalink to this heading">#</a></h1>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="c1"># UID para evitar colisiones en Jupyter Book</span>
+<span class="n">uid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">99999</span><span class="p">))</span>
+
+<span class="n">simulacion_html</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;div style=&quot;border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, sans-serif;&quot;&gt;</span>
+<span class="s2">    &lt;h3 style=&quot;margin-top:0; color: #2c3e50;&quot;&gt;Simulación: Movimiento Circular Uniforme (MCU)&lt;/h3&gt;</span>
+<span class="s2">    &lt;p style=&quot;font-size: 0.95em; color: #555; margin-bottom: 15px;&quot;&gt;Ingresa el radio y la velocidad angular. Observa cómo el vector velocidad siempre es tangente y la aceleración centrípeta apunta al centro.&lt;/p&gt;</span>
+<span class="s2">    </span>
+<span class="s2">    &lt;!-- Controles de Parámetros --&gt;</span>
+<span class="s2">    &lt;div style=&quot;display: flex; gap: 20px; margin-bottom: 20px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center;&quot;&gt;</span>
+<span class="s2">        &lt;div&gt;</span>
+<span class="s2">            &lt;label style=&quot;font-weight: bold;&quot;&gt;Radio (r, m): &lt;/label&gt;</span>
+<span class="s2">            &lt;input type=&quot;number&quot; id=&quot;radio_UID&quot; value=&quot;2.0&quot; step=&quot;0.5&quot; min=&quot;0.5&quot; style=&quot;width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;&quot;&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">        &lt;div&gt;</span>
+<span class="s2">            &lt;label style=&quot;font-weight: bold;&quot;&gt;Velocidad angular (ω, rad/s): &lt;/label&gt;</span>
+<span class="s2">            &lt;input type=&quot;number&quot; id=&quot;omega_UID&quot; value=&quot;1.5&quot; step=&quot;0.1&quot; min=&quot;0.1&quot; style=&quot;width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;&quot;&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">        &lt;button id=&quot;update_params_UID&quot; style=&quot;background-color: #0d6efd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;&quot;&gt;Actualizar Parámetros&lt;/button&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+
+<span class="s2">    &lt;!-- Controles de Reproducción --&gt;</span>
+<span class="s2">    &lt;div style=&quot;display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; align-items: center; justify-content: space-between;&quot;&gt;</span>
+<span class="s2">        &lt;div style=&quot;display: flex; gap: 15px; align-items: center;&quot;&gt;</span>
+<span class="s2">            &lt;button id=&quot;play_UID&quot; style=&quot;background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;&quot;&gt;▶ Reproducir / Pausar&lt;/button&gt;</span>
+<span class="s2">            &lt;button id=&quot;reset_UID&quot; style=&quot;background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;&quot;&gt;⏹ Reiniciar&lt;/button&gt;</span>
+<span class="s2">            &lt;div style=&quot;font-size: 1.1em; font-weight: bold; margin-left: 10px;&quot;&gt;</span>
+<span class="s2">                Tiempo: &lt;span id=&quot;time_display_UID&quot; style=&quot;color: #dc3545;&quot;&gt;0.00&lt;/span&gt; s</span>
+<span class="s2">            &lt;/div&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">        &lt;div style=&quot;display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;&quot;&gt;</span>
+<span class="s2">            &lt;label style=&quot;font-weight: 600; font-size: 0.9em; margin: 0;&quot;&gt;Velocidad Animación:&lt;/label&gt;</span>
+<span class="s2">            &lt;input type=&quot;range&quot; id=&quot;speed_UID&quot; min=&quot;0.1&quot; max=&quot;1.5&quot; step=&quot;0.1&quot; value=&quot;0.5&quot; style=&quot;vertical-align: middle;&quot;&gt;</span>
+<span class="s2">            &lt;span id=&quot;speed_val_UID&quot; style=&quot;font-weight: bold; font-family: monospace; width: 35px;&quot;&gt;0.5x&lt;/span&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+<span class="s2">    </span>
+<span class="s2">    &lt;!-- Contenedor Principal (Simulación + Gráficos) --&gt;</span>
+<span class="s2">    &lt;div style=&quot;display: flex; gap: 20px; flex-wrap: wrap;&quot;&gt;</span>
+<span class="s2">        &lt;!-- Canvas de la persecución física --&gt;</span>
+<span class="s2">        &lt;div style=&quot;flex: 1; min-width: 300px; max-width: 350px;&quot;&gt;</span>
+<span class="s2">            &lt;canvas id=&quot;canvas_sim_UID&quot; width=&quot;350&quot; height=&quot;400&quot; style=&quot;background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;&quot;&gt;&lt;/canvas&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">        &lt;!-- Canvas de los gráficos --&gt;</span>
+<span class="s2">        &lt;div style=&quot;flex: 2; min-width: 450px;&quot;&gt;</span>
+<span class="s2">            &lt;canvas id=&quot;canvas_graphs_UID&quot; width=&quot;600&quot; height=&quot;400&quot; style=&quot;background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;&quot;&gt;&lt;/canvas&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+<span class="s2">    </span>
+<span class="s2">    &lt;div id=&quot;results_UID&quot; style=&quot;margin-top: 15px; font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41;&quot;&gt;</span>
+<span class="s2">        &lt;!-- Resultados dinámicos --&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+<span class="s2">&lt;/div&gt;</span>
+
+<span class="s2">&lt;script&gt;</span>
+<span class="s2">    (function() {</span>
+<span class="s2">        function initSimulation() {</span>
+<span class="s2">            const canvasSim = document.getElementById(&#39;canvas_sim_UID&#39;);</span>
+<span class="s2">            const canvasGraph = document.getElementById(&#39;canvas_graphs_UID&#39;);</span>
+<span class="s2">            if (!canvasSim || !canvasGraph) {</span>
+<span class="s2">                setTimeout(initSimulation, 50); </span>
+<span class="s2">                return;</span>
+<span class="s2">            }</span>
+<span class="s2">            </span>
+<span class="s2">            const ctxSim = canvasSim.getContext(&#39;2d&#39;);</span>
+<span class="s2">            const ctxG = canvasGraph.getContext(&#39;2d&#39;);</span>
+<span class="s2">            </span>
+<span class="s2">            const btn_play = document.getElementById(&#39;play_UID&#39;);</span>
+<span class="s2">            const btn_reset = document.getElementById(&#39;reset_UID&#39;);</span>
+<span class="s2">            const btn_update = document.getElementById(&#39;update_params_UID&#39;);</span>
+<span class="s2">            const time_display = document.getElementById(&#39;time_display_UID&#39;);</span>
+<span class="s2">            const speed_slider = document.getElementById(&#39;speed_UID&#39;);</span>
+<span class="s2">            const speed_val = document.getElementById(&#39;speed_val_UID&#39;);</span>
+<span class="s2">            const results_div = document.getElementById(&#39;results_UID&#39;);</span>
+<span class="s2">            </span>
+<span class="s2">            // Entradas</span>
+<span class="s2">            const input_r = document.getElementById(&#39;radio_UID&#39;);</span>
+<span class="s2">            const input_omega = document.getElementById(&#39;omega_UID&#39;);</span>
+
+<span class="s2">            let isPlaying = false;</span>
+<span class="s2">            let animationId;</span>
+<span class="s2">            let lastTime = 0; </span>
+<span class="s2">            let t = 0;</span>
+<span class="s2">            </span>
+<span class="s2">            // Físicas</span>
+<span class="s2">            let r, omega, v, ac, T, freq, tMax;</span>
+
+<span class="s2">            function calculatePhysics() {</span>
+<span class="s2">                r = parseFloat(input_r.value);</span>
+<span class="s2">                omega = parseFloat(input_omega.value);</span>
+<span class="s2">                </span>
+<span class="s2">                if(r &lt;= 0) r = 0.5;</span>
+<span class="s2">                if(omega &lt;= 0) omega = 0.1;</span>
+<span class="s2">                input_r.value = r;</span>
+<span class="s2">                input_omega.value = omega;</span>
+
+<span class="s2">                v = omega * r;</span>
+<span class="s2">                ac = omega * omega * r;</span>
+<span class="s2">                T = 2 * Math.PI / omega;</span>
+<span class="s2">                freq = 1 / T;</span>
+<span class="s2">                </span>
+<span class="s2">                // Animamos hasta 2 revoluciones completas para ver bien las gráficas</span>
+<span class="s2">                tMax = 2 * T;</span>
+
+<span class="s2">                results_div.innerHTML = `</span>
+<span class="s2">                    &lt;strong&gt;Resultados calculados:&lt;/strong&gt;&lt;br&gt;</span>
+<span class="s2">                    • Rapidez Tangencial (|v|): &lt;b style=&quot;color:#0d6efd;&quot;&gt;${v.toFixed(2)} m/s&lt;/b&gt;&lt;br&gt;</span>
+<span class="s2">                    • Aceleración Centrípeta (|a_c|): &lt;b style=&quot;color:#dc3545;&quot;&gt;${ac.toFixed(2)} m/s²&lt;/b&gt;&lt;br&gt;</span>
+<span class="s2">                    • Período (T): &lt;b&gt;${T.toFixed(2)} s&lt;/b&gt; | Frecuencia (f): &lt;b&gt;${freq.toFixed(2)} Hz&lt;/b&gt;</span>
+<span class="s2">                `;</span>
+<span class="s2">            }</span>
+
+<span class="s2">            // Dibuja flechas con estilo en el canvas</span>
+<span class="s2">            function drawArrow(ctx, fromx, fromy, tox, toy, color) {</span>
+<span class="s2">                const headlen = 10;</span>
+<span class="s2">                const angle = Math.atan2(toy - fromy, tox - fromx);</span>
+<span class="s2">                </span>
+<span class="s2">                ctx.beginPath();</span>
+<span class="s2">                ctx.strokeStyle = color;</span>
+<span class="s2">                ctx.lineWidth = 3;</span>
+<span class="s2">                ctx.moveTo(fromx, fromy);</span>
+<span class="s2">                ctx.lineTo(tox, toy);</span>
+<span class="s2">                ctx.stroke();</span>
+<span class="s2">                </span>
+<span class="s2">                ctx.beginPath();</span>
+<span class="s2">                ctx.fillStyle = color;</span>
+<span class="s2">                ctx.moveTo(tox, toy);</span>
+<span class="s2">                ctx.lineTo(tox - headlen * Math.cos(angle - Math.PI / 6), toy - headlen * Math.sin(angle - Math.PI / 6));</span>
+<span class="s2">                ctx.lineTo(tox - headlen * Math.cos(angle + Math.PI / 6), toy - headlen * Math.sin(angle + Math.PI / 6));</span>
+<span class="s2">                ctx.fill();</span>
+<span class="s2">            }</span>
+
+<span class="s2">            function drawSim() {</span>
+<span class="s2">                ctxSim.clearRect(0, 0, canvasSim.width, canvasSim.height);</span>
+<span class="s2">                </span>
+<span class="s2">                const cx = canvasSim.width / 2;</span>
+<span class="s2">                const cy = canvasSim.height / 2;</span>
+<span class="s2">                const visual_R = 120; // Radio fijo en píxeles para visualización constante</span>
+<span class="s2">                </span>
+<span class="s2">                // Ángulo actual</span>
+<span class="s2">                const theta = omega * t;</span>
+<span class="s2">                </span>
+<span class="s2">                // Dibuja ejes cartesianos</span>
+<span class="s2">                ctxSim.beginPath();</span>
+<span class="s2">                ctxSim.strokeStyle = &quot;#e0e0e0&quot;;</span>
+<span class="s2">                ctxSim.moveTo(0, cy); ctxSim.lineTo(canvasSim.width, cy);</span>
+<span class="s2">                ctxSim.moveTo(cx, 0); ctxSim.lineTo(cx, canvasSim.height);</span>
+<span class="s2">                ctxSim.stroke();</span>
+
+<span class="s2">                // Trayectoria circular</span>
+<span class="s2">                ctxSim.beginPath();</span>
+<span class="s2">                ctxSim.strokeStyle = &quot;#aaa&quot;;</span>
+<span class="s2">                ctxSim.setLineDash([5, 5]);</span>
+<span class="s2">                ctxSim.arc(cx, cy, visual_R, 0, 2 * Math.PI);</span>
+<span class="s2">                ctxSim.stroke();</span>
+<span class="s2">                ctxSim.setLineDash([]);</span>
+
+<span class="s2">                // Posición del objeto</span>
+<span class="s2">                const obj_x = cx + visual_R * Math.cos(theta);</span>
+<span class="s2">                const obj_y = cy - visual_R * Math.sin(theta); // Resta porque el eje Y del canvas va hacia abajo</span>
+
+<span class="s2">                // Cálculo de direcciones normalizadas para los vectores</span>
+<span class="s2">                // Velocidad (tangente) -&gt; v_x = -v * sin(theta), v_y = v * cos(theta)</span>
+<span class="s2">                const dir_vx = -Math.sin(theta);</span>
+<span class="s2">                const dir_vy = Math.cos(theta);</span>
+<span class="s2">                </span>
+<span class="s2">                // Aceleración (al centro) -&gt; a_x = -cos(theta), a_y = -sin(theta)</span>
+<span class="s2">                const dir_ax = -Math.cos(theta);</span>
+<span class="s2">                const dir_ay = -Math.sin(theta);</span>
+
+<span class="s2">                // Longitudes fijas en pantalla para vectores (para que siempre se vean bien)</span>
+<span class="s2">                const vec_len = 65; </span>
+
+<span class="s2">                // Dibujar Vector Aceleración (Rojo, apunta al centro)</span>
+<span class="s2">                drawArrow(</span>
+<span class="s2">                    ctxSim, </span>
+<span class="s2">                    obj_x, obj_y, </span>
+<span class="s2">                    obj_x + dir_ax * vec_len, obj_y - dir_ay * vec_len, </span>
+<span class="s2">                    &quot;#dc3545&quot;</span>
+<span class="s2">                );</span>
+
+<span class="s2">                // Dibujar Vector Velocidad (Azul, tangente)</span>
+<span class="s2">                drawArrow(</span>
+<span class="s2">                    ctxSim, </span>
+<span class="s2">                    obj_x, obj_y, </span>
+<span class="s2">                    obj_x + dir_vx * vec_len, obj_y - dir_vy * vec_len, </span>
+<span class="s2">                    &quot;#0d6efd&quot;</span>
+<span class="s2">                );</span>
+
+<span class="s2">                // Dibujar Objeto (Bola)</span>
+<span class="s2">                ctxSim.beginPath();</span>
+<span class="s2">                ctxSim.fillStyle = &quot;#333&quot;;</span>
+<span class="s2">                ctxSim.arc(obj_x, obj_y, 10, 0, Math.PI * 2);</span>
+<span class="s2">                ctxSim.fill();</span>
+<span class="s2">                </span>
+<span class="s2">                // Leyenda en el canvas</span>
+<span class="s2">                ctxSim.fillStyle = &quot;#000&quot;;</span>
+<span class="s2">                ctxSim.font = &quot;12px Arial&quot;;</span>
+<span class="s2">                ctxSim.fillText(&quot;Vector Velocidad (v)&quot;, 10, 20);</span>
+<span class="s2">                ctxSim.fillStyle = &quot;#0d6efd&quot;;</span>
+<span class="s2">                ctxSim.fillRect(130, 10, 20, 10);</span>
+<span class="s2">                </span>
+<span class="s2">                ctxSim.fillStyle = &quot;#000&quot;;</span>
+<span class="s2">                ctxSim.fillText(&quot;Vector Aceleración (ac)&quot;, 10, 40);</span>
+<span class="s2">                ctxSim.fillStyle = &quot;#dc3545&quot;;</span>
+<span class="s2">                ctxSim.fillRect(145, 30, 20, 10);</span>
+<span class="s2">            }</span>
+
+<span class="s2">            function drawGraphs() {</span>
+<span class="s2">                ctxG.clearRect(0, 0, canvasGraph.width, canvasGraph.height);</span>
+<span class="s2">                </span>
+<span class="s2">                let marginX = 50;</span>
+<span class="s2">                let marginY = 30;</span>
+<span class="s2">                let graphW = 520; </span>
+<span class="s2">                let graphH = 90; // Altura para cada una de las 3 gráficas</span>
+<span class="s2">                let gapY = 35;</span>
+<span class="s2">                </span>
+<span class="s2">                let offPosY = marginY;                  // Gráfica de Posición</span>
+<span class="s2">                let offVelY = offPosY + graphH + gapY;  // Gráfica de Velocidad</span>
+<span class="s2">                let offAccY = offVelY + graphH + gapY;  // Gráfica de Aceleración</span>
+
+<span class="s2">                // --- Ejes Comunes ---</span>
+<span class="s2">                ctxG.strokeStyle = &quot;#000&quot;;</span>
+<span class="s2">                ctxG.fillStyle = &quot;#000&quot;;</span>
+<span class="s2">                ctxG.font = &quot;12px Arial&quot;;</span>
+
+<span class="s2">                [</span>
+<span class="s2">                    {y: offPosY, title: &quot;Posición (m)&quot;, color: &quot;#198754&quot;}, </span>
+<span class="s2">                    {y: offVelY, title: &quot;Velocidad (m/s)&quot;, color: &quot;#0d6efd&quot;}, </span>
+<span class="s2">                    {y: offAccY, title: &quot;Aceleración (m/s²)&quot;, color: &quot;#dc3545&quot;}</span>
+<span class="s2">                ].forEach(ax =&gt; {</span>
+<span class="s2">                    let midY = ax.y + graphH / 2;</span>
+<span class="s2">                    // Eje vertical y horizontal</span>
+<span class="s2">                    ctxG.beginPath(); ctxG.moveTo(marginX, ax.y); ctxG.lineTo(marginX, ax.y + graphH); ctxG.stroke();</span>
+<span class="s2">                    ctxG.beginPath(); ctxG.moveTo(marginX, midY); ctxG.lineTo(marginX + graphW, midY); ctxG.stroke();</span>
+<span class="s2">                    </span>
+<span class="s2">                    ctxG.fillStyle = ax.color;</span>
+<span class="s2">                    ctxG.fillText(ax.title, marginX, ax.y - 10);</span>
+<span class="s2">                    ctxG.fillStyle = &quot;#000&quot;;</span>
+<span class="s2">                    ctxG.fillText(&quot;0&quot;, marginX - 15, midY + 4);</span>
+<span class="s2">                });</span>
+<span class="s2">                </span>
+<span class="s2">                ctxG.fillText(&quot;t (s)&quot;, marginX + graphW - 20, offAccY + graphH / 2 + 25);</span>
+
+<span class="s2">                // Leyenda de Componentes</span>
+<span class="s2">                ctxG.fillText(&quot;Componentes:   Línea Continua = Eje X   |   Línea Punteada = Eje Y&quot;, marginX + 150, 15);</span>
+
+<span class="s2">                // Escalas</span>
+<span class="s2">                let scaleT = graphW / tMax; </span>
+<span class="s2">                let scalePos = (graphH / 2) / (r * 1.2); </span>
+<span class="s2">                let scaleVel = (graphH / 2) / (v * 1.2);  </span>
+<span class="s2">                let scaleAcc = (graphH / 2) / (ac * 1.2); </span>
+
+<span class="s2">                // Función auxiliar para dibujar componentes X (continua) e Y (punteada)</span>
+<span class="s2">                function drawComponentCurves(offsetY, scaleVal, valFuncX, valFuncY, color) {</span>
+<span class="s2">                    let midY = offsetY + graphH / 2;</span>
+<span class="s2">                    ctxG.lineWidth = 2;</span>
+<span class="s2">                    </span>
+<span class="s2">                    // Curva X (Continua)</span>
+<span class="s2">                    ctxG.beginPath(); </span>
+<span class="s2">                    ctxG.strokeStyle = color; </span>
+<span class="s2">                    ctxG.setLineDash([]);</span>
+<span class="s2">                    for(let i=0; i&lt;=t; i+=0.02) {</span>
+<span class="s2">                        let px = marginX + i * scaleT;</span>
+<span class="s2">                        let py = midY - valFuncX(i) * scaleVal;</span>
+<span class="s2">                        i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);</span>
+<span class="s2">                    } </span>
+<span class="s2">                    ctxG.stroke();</span>
+
+<span class="s2">                    // Curva Y (Punteada)</span>
+<span class="s2">                    ctxG.beginPath(); </span>
+<span class="s2">                    ctxG.strokeStyle = color; </span>
+<span class="s2">                    ctxG.setLineDash([5, 5]);</span>
+<span class="s2">                    for(let i=0; i&lt;=t; i+=0.02) {</span>
+<span class="s2">                        let px = marginX + i * scaleT;</span>
+<span class="s2">                        let py = midY - valFuncY(i) * scaleVal;</span>
+<span class="s2">                        i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);</span>
+<span class="s2">                    } </span>
+<span class="s2">                    ctxG.stroke();</span>
+<span class="s2">                    ctxG.setLineDash([]);</span>
+<span class="s2">                }</span>
+
+<span class="s2">                // Posición: x = r*cos(wt), y = r*sin(wt)</span>
+<span class="s2">                drawComponentCurves(offPosY, scalePos, </span>
+<span class="s2">                    (ti) =&gt; r * Math.cos(omega * ti), </span>
+<span class="s2">                    (ti) =&gt; r * Math.sin(omega * ti), </span>
+<span class="s2">                    &quot;#198754&quot;</span>
+<span class="s2">                );</span>
+
+<span class="s2">                // Velocidad: vx = -v*sin(wt), vy = v*cos(wt)</span>
+<span class="s2">                drawComponentCurves(offVelY, scaleVel, </span>
+<span class="s2">                    (ti) =&gt; -v * Math.sin(omega * ti), </span>
+<span class="s2">                    (ti) =&gt; v * Math.cos(omega * ti), </span>
+<span class="s2">                    &quot;#0d6efd&quot;</span>
+<span class="s2">                );</span>
+
+<span class="s2">                // Aceleración: ax = -ac*cos(wt), ay = -ac*sin(wt)</span>
+<span class="s2">                drawComponentCurves(offAccY, scaleAcc, </span>
+<span class="s2">                    (ti) =&gt; -ac * Math.cos(omega * ti), </span>
+<span class="s2">                    (ti) =&gt; -ac * Math.sin(omega * ti), </span>
+<span class="s2">                    &quot;#dc3545&quot;</span>
+<span class="s2">                );</span>
+<span class="s2">            }</span>
+
+<span class="s2">            function animate(timestamp) {</span>
+<span class="s2">                if (!isPlaying) return;</span>
+<span class="s2">                if (!lastTime) lastTime = timestamp;</span>
+<span class="s2">                </span>
+<span class="s2">                let deltaTime = (timestamp - lastTime) / 1000;</span>
+<span class="s2">                lastTime = timestamp;</span>
+<span class="s2">                </span>
+<span class="s2">                let speed_multiplier = parseFloat(speed_slider.value);</span>
+<span class="s2">                t += deltaTime * speed_multiplier;</span>
+<span class="s2">                </span>
+<span class="s2">                if (t &gt;= tMax) {</span>
+<span class="s2">                    t = tMax;</span>
+<span class="s2">                    isPlaying = false;</span>
+<span class="s2">                    btn_play.innerText = &quot;▶ Reproducir / Pausar&quot;;</span>
+<span class="s2">                }</span>
+<span class="s2">                </span>
+<span class="s2">                time_display.innerText = t.toFixed(2);</span>
+<span class="s2">                drawSim();</span>
+<span class="s2">                drawGraphs();</span>
+<span class="s2">                </span>
+<span class="s2">                if(isPlaying) {</span>
+<span class="s2">                    animationId = requestAnimationFrame(animate);</span>
+<span class="s2">                }</span>
+<span class="s2">            }</span>
+
+<span class="s2">            speed_slider.addEventListener(&#39;input&#39;, () =&gt; {</span>
+<span class="s2">                speed_val.innerText = parseFloat(speed_slider.value).toFixed(1) + &#39;x&#39;;</span>
+<span class="s2">            });</span>
+
+<span class="s2">            btn_update.addEventListener(&#39;click&#39;, () =&gt; {</span>
+<span class="s2">                isPlaying = false;</span>
+<span class="s2">                t = 0;</span>
+<span class="s2">                lastTime = 0;</span>
+<span class="s2">                time_display.innerText = &quot;0.00&quot;;</span>
+<span class="s2">                calculatePhysics();</span>
+<span class="s2">                drawSim();</span>
+<span class="s2">                drawGraphs();</span>
+<span class="s2">                btn_play.innerText = &quot;▶ Reproducir / Pausar&quot;;</span>
+<span class="s2">            });</span>
+
+<span class="s2">            btn_play.addEventListener(&#39;click&#39;, () =&gt; {</span>
+<span class="s2">                isPlaying = !isPlaying;</span>
+<span class="s2">                if (t &gt;= tMax) {</span>
+<span class="s2">                    t = 0; </span>
+<span class="s2">                }</span>
+<span class="s2">                if (isPlaying) {</span>
+<span class="s2">                    lastTime = 0; </span>
+<span class="s2">                    animationId = requestAnimationFrame(animate);</span>
+<span class="s2">                }</span>
+<span class="s2">            });</span>
+
+<span class="s2">            btn_reset.addEventListener(&#39;click&#39;, () =&gt; {</span>
+<span class="s2">                isPlaying = false;</span>
+<span class="s2">                t = 0;</span>
+<span class="s2">                lastTime = 0;</span>
+<span class="s2">                time_display.innerText = &quot;0.00&quot;;</span>
+<span class="s2">                drawSim();</span>
+<span class="s2">                drawGraphs();</span>
+<span class="s2">            });</span>
+<span class="s2">            </span>
+<span class="s2">            calculatePhysics();</span>
+<span class="s2">            drawSim();</span>
+<span class="s2">            drawGraphs();</span>
+<span class="s2">        }</span>
+<span class="s2">        </span>
+<span class="s2">        initSimulation();</span>
+<span class="s2">    })();</span>
+<span class="s2">&lt;/script&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># Reemplazamos el identificador para evitar conflictos en Jupyter y mostramos</span>
+<span class="n">html_final</span> <span class="o">=</span> <span class="n">simulacion_html</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;UID&#39;</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">html_final</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div style="border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, sans-serif;">
+    <h3 style="margin-top:0; color: #2c3e50;">Simulación: Movimiento Circular Uniforme (MCU)</h3>
+    <p style="font-size: 0.95em; color: #555; margin-bottom: 15px;">Ingresa el radio y la velocidad angular. Observa cómo el vector velocidad siempre es tangente y la aceleración centrípeta apunta al centro.</p>
+    
+    <!-- Controles de Parámetros -->
+    <div style="display: flex; gap: 20px; margin-bottom: 20px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center;">
+        <div>
+            <label style="font-weight: bold;">Radio (r, m): </label>
+            <input type="number" id="radio_15647" value="2.0" step="0.5" min="0.5" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+        </div>
+        <div>
+            <label style="font-weight: bold;">Velocidad angular (ω, rad/s): </label>
+            <input type="number" id="omega_15647" value="1.5" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+        </div>
+        <button id="update_params_15647" style="background-color: #0d6efd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">Actualizar Parámetros</button>
+    </div>
+
+    <!-- Controles de Reproducción -->
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; align-items: center; justify-content: space-between;">
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <button id="play_15647" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
+            <button id="reset_15647" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
+            <div style="font-size: 1.1em; font-weight: bold; margin-left: 10px;">
+                Tiempo: <span id="time_display_15647" style="color: #dc3545;">0.00</span> s
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;">
+            <label style="font-weight: 600; font-size: 0.9em; margin: 0;">Velocidad Animación:</label>
+            <input type="range" id="speed_15647" min="0.1" max="1.5" step="0.1" value="0.5" style="vertical-align: middle;">
+            <span id="speed_val_15647" style="font-weight: bold; font-family: monospace; width: 35px;">0.5x</span>
+        </div>
+    </div>
+    
+    <!-- Contenedor Principal (Simulación + Gráficos) -->
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <!-- Canvas de la persecución física -->
+        <div style="flex: 1; min-width: 300px; max-width: 350px;">
+            <canvas id="canvas_sim_15647" width="350" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
+        </div>
+        <!-- Canvas de los gráficos -->
+        <div style="flex: 2; min-width: 450px;">
+            <canvas id="canvas_graphs_15647" width="600" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
+        </div>
+    </div>
+    
+    <div id="results_15647" style="margin-top: 15px; font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41;">
+        <!-- Resultados dinámicos -->
+    </div>
+</div>
+
+<script>
+    (function() {
+        function initSimulation() {
+            const canvasSim = document.getElementById('canvas_sim_15647');
+            const canvasGraph = document.getElementById('canvas_graphs_15647');
+            if (!canvasSim || !canvasGraph) {
+                setTimeout(initSimulation, 50); 
+                return;
+            }
+            
+            const ctxSim = canvasSim.getContext('2d');
+            const ctxG = canvasGraph.getContext('2d');
+            
+            const btn_play = document.getElementById('play_15647');
+            const btn_reset = document.getElementById('reset_15647');
+            const btn_update = document.getElementById('update_params_15647');
+            const time_display = document.getElementById('time_display_15647');
+            const speed_slider = document.getElementById('speed_15647');
+            const speed_val = document.getElementById('speed_val_15647');
+            const results_div = document.getElementById('results_15647');
+            
+            // Entradas
+            const input_r = document.getElementById('radio_15647');
+            const input_omega = document.getElementById('omega_15647');
+
+            let isPlaying = false;
+            let animationId;
+            let lastTime = 0; 
+            let t = 0;
+            
+            // Físicas
+            let r, omega, v, ac, T, freq, tMax;
+
+            function calculatePhysics() {
+                r = parseFloat(input_r.value);
+                omega = parseFloat(input_omega.value);
+                
+                if(r <= 0) r = 0.5;
+                if(omega <= 0) omega = 0.1;
+                input_r.value = r;
+                input_omega.value = omega;
+
+                v = omega * r;
+                ac = omega * omega * r;
+                T = 2 * Math.PI / omega;
+                freq = 1 / T;
+                
+                // Animamos hasta 2 revoluciones completas para ver bien las gráficas
+                tMax = 2 * T;
+
+                results_div.innerHTML = `
+                    <strong>Resultados calculados:</strong><br>
+                    • Rapidez Tangencial (|v|): <b style="color:#0d6efd;">${v.toFixed(2)} m/s</b><br>
+                    • Aceleración Centrípeta (|a_c|): <b style="color:#dc3545;">${ac.toFixed(2)} m/s²</b><br>
+                    • Período (T): <b>${T.toFixed(2)} s</b> | Frecuencia (f): <b>${freq.toFixed(2)} Hz</b>
+                `;
+            }
+
+            // Dibuja flechas con estilo en el canvas
+            function drawArrow(ctx, fromx, fromy, tox, toy, color) {
+                const headlen = 10;
+                const angle = Math.atan2(toy - fromy, tox - fromx);
+                
+                ctx.beginPath();
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 3;
+                ctx.moveTo(fromx, fromy);
+                ctx.lineTo(tox, toy);
+                ctx.stroke();
+                
+                ctx.beginPath();
+                ctx.fillStyle = color;
+                ctx.moveTo(tox, toy);
+                ctx.lineTo(tox - headlen * Math.cos(angle - Math.PI / 6), toy - headlen * Math.sin(angle - Math.PI / 6));
+                ctx.lineTo(tox - headlen * Math.cos(angle + Math.PI / 6), toy - headlen * Math.sin(angle + Math.PI / 6));
+                ctx.fill();
+            }
+
+            function drawSim() {
+                ctxSim.clearRect(0, 0, canvasSim.width, canvasSim.height);
+                
+                const cx = canvasSim.width / 2;
+                const cy = canvasSim.height / 2;
+                const visual_R = 120; // Radio fijo en píxeles para visualización constante
+                
+                // Ángulo actual
+                const theta = omega * t;
+                
+                // Dibuja ejes cartesianos
+                ctxSim.beginPath();
+                ctxSim.strokeStyle = "#e0e0e0";
+                ctxSim.moveTo(0, cy); ctxSim.lineTo(canvasSim.width, cy);
+                ctxSim.moveTo(cx, 0); ctxSim.lineTo(cx, canvasSim.height);
+                ctxSim.stroke();
+
+                // Trayectoria circular
+                ctxSim.beginPath();
+                ctxSim.strokeStyle = "#aaa";
+                ctxSim.setLineDash([5, 5]);
+                ctxSim.arc(cx, cy, visual_R, 0, 2 * Math.PI);
+                ctxSim.stroke();
+                ctxSim.setLineDash([]);
+
+                // Posición del objeto
+                const obj_x = cx + visual_R * Math.cos(theta);
+                const obj_y = cy - visual_R * Math.sin(theta); // Resta porque el eje Y del canvas va hacia abajo
+
+                // Cálculo de direcciones normalizadas para los vectores
+                // Velocidad (tangente) -> v_x = -v * sin(theta), v_y = v * cos(theta)
+                const dir_vx = -Math.sin(theta);
+                const dir_vy = Math.cos(theta);
+                
+                // Aceleración (al centro) -> a_x = -cos(theta), a_y = -sin(theta)
+                const dir_ax = -Math.cos(theta);
+                const dir_ay = -Math.sin(theta);
+
+                // Longitudes fijas en pantalla para vectores (para que siempre se vean bien)
+                const vec_len = 65; 
+
+                // Dibujar Vector Aceleración (Rojo, apunta al centro)
+                drawArrow(
+                    ctxSim, 
+                    obj_x, obj_y, 
+                    obj_x + dir_ax * vec_len, obj_y - dir_ay * vec_len, 
+                    "#dc3545"
+                );
+
+                // Dibujar Vector Velocidad (Azul, tangente)
+                drawArrow(
+                    ctxSim, 
+                    obj_x, obj_y, 
+                    obj_x + dir_vx * vec_len, obj_y - dir_vy * vec_len, 
+                    "#0d6efd"
+                );
+
+                // Dibujar Objeto (Bola)
+                ctxSim.beginPath();
+                ctxSim.fillStyle = "#333";
+                ctxSim.arc(obj_x, obj_y, 10, 0, Math.PI * 2);
+                ctxSim.fill();
+                
+                // Leyenda en el canvas
+                ctxSim.fillStyle = "#000";
+                ctxSim.font = "12px Arial";
+                ctxSim.fillText("Vector Velocidad (v)", 10, 20);
+                ctxSim.fillStyle = "#0d6efd";
+                ctxSim.fillRect(130, 10, 20, 10);
+                
+                ctxSim.fillStyle = "#000";
+                ctxSim.fillText("Vector Aceleración (ac)", 10, 40);
+                ctxSim.fillStyle = "#dc3545";
+                ctxSim.fillRect(145, 30, 20, 10);
+            }
+
+            function drawGraphs() {
+                ctxG.clearRect(0, 0, canvasGraph.width, canvasGraph.height);
+                
+                let marginX = 50;
+                let marginY = 30;
+                let graphW = 520; 
+                let graphH = 90; // Altura para cada una de las 3 gráficas
+                let gapY = 35;
+                
+                let offPosY = marginY;                  // Gráfica de Posición
+                let offVelY = offPosY + graphH + gapY;  // Gráfica de Velocidad
+                let offAccY = offVelY + graphH + gapY;  // Gráfica de Aceleración
+
+                // --- Ejes Comunes ---
+                ctxG.strokeStyle = "#000";
+                ctxG.fillStyle = "#000";
+                ctxG.font = "12px Arial";
+
+                [
+                    {y: offPosY, title: "Posición (m)", color: "#198754"}, 
+                    {y: offVelY, title: "Velocidad (m/s)", color: "#0d6efd"}, 
+                    {y: offAccY, title: "Aceleración (m/s²)", color: "#dc3545"}
+                ].forEach(ax => {
+                    let midY = ax.y + graphH / 2;
+                    // Eje vertical y horizontal
+                    ctxG.beginPath(); ctxG.moveTo(marginX, ax.y); ctxG.lineTo(marginX, ax.y + graphH); ctxG.stroke();
+                    ctxG.beginPath(); ctxG.moveTo(marginX, midY); ctxG.lineTo(marginX + graphW, midY); ctxG.stroke();
+                    
+                    ctxG.fillStyle = ax.color;
+                    ctxG.fillText(ax.title, marginX, ax.y - 10);
+                    ctxG.fillStyle = "#000";
+                    ctxG.fillText("0", marginX - 15, midY + 4);
+                });
+                
+                ctxG.fillText("t (s)", marginX + graphW - 20, offAccY + graphH / 2 + 25);
+
+                // Leyenda de Componentes
+                ctxG.fillText("Componentes:   Línea Continua = Eje X   |   Línea Punteada = Eje Y", marginX + 150, 15);
+
+                // Escalas
+                let scaleT = graphW / tMax; 
+                let scalePos = (graphH / 2) / (r * 1.2); 
+                let scaleVel = (graphH / 2) / (v * 1.2);  
+                let scaleAcc = (graphH / 2) / (ac * 1.2); 
+
+                // Función auxiliar para dibujar componentes X (continua) e Y (punteada)
+                function drawComponentCurves(offsetY, scaleVal, valFuncX, valFuncY, color) {
+                    let midY = offsetY + graphH / 2;
+                    ctxG.lineWidth = 2;
+                    
+                    // Curva X (Continua)
+                    ctxG.beginPath(); 
+                    ctxG.strokeStyle = color; 
+                    ctxG.setLineDash([]);
+                    for(let i=0; i<=t; i+=0.02) {
+                        let px = marginX + i * scaleT;
+                        let py = midY - valFuncX(i) * scaleVal;
+                        i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);
+                    } 
+                    ctxG.stroke();
+
+                    // Curva Y (Punteada)
+                    ctxG.beginPath(); 
+                    ctxG.strokeStyle = color; 
+                    ctxG.setLineDash([5, 5]);
+                    for(let i=0; i<=t; i+=0.02) {
+                        let px = marginX + i * scaleT;
+                        let py = midY - valFuncY(i) * scaleVal;
+                        i===0 ? ctxG.moveTo(px, py) : ctxG.lineTo(px, py);
+                    } 
+                    ctxG.stroke();
+                    ctxG.setLineDash([]);
+                }
+
+                // Posición: x = r*cos(wt), y = r*sin(wt)
+                drawComponentCurves(offPosY, scalePos, 
+                    (ti) => r * Math.cos(omega * ti), 
+                    (ti) => r * Math.sin(omega * ti), 
+                    "#198754"
+                );
+
+                // Velocidad: vx = -v*sin(wt), vy = v*cos(wt)
+                drawComponentCurves(offVelY, scaleVel, 
+                    (ti) => -v * Math.sin(omega * ti), 
+                    (ti) => v * Math.cos(omega * ti), 
+                    "#0d6efd"
+                );
+
+                // Aceleración: ax = -ac*cos(wt), ay = -ac*sin(wt)
+                drawComponentCurves(offAccY, scaleAcc, 
+                    (ti) => -ac * Math.cos(omega * ti), 
+                    (ti) => -ac * Math.sin(omega * ti), 
+                    "#dc3545"
+                );
+            }
+
+            function animate(timestamp) {
+                if (!isPlaying) return;
+                if (!lastTime) lastTime = timestamp;
+                
+                let deltaTime = (timestamp - lastTime) / 1000;
+                lastTime = timestamp;
+                
+                let speed_multiplier = parseFloat(speed_slider.value);
+                t += deltaTime * speed_multiplier;
+                
+                if (t >= tMax) {
+                    t = tMax;
+                    isPlaying = false;
+                    btn_play.innerText = "▶ Reproducir / Pausar";
+                }
+                
+                time_display.innerText = t.toFixed(2);
+                drawSim();
+                drawGraphs();
+                
+                if(isPlaying) {
+                    animationId = requestAnimationFrame(animate);
+                }
+            }
+
+            speed_slider.addEventListener('input', () => {
+                speed_val.innerText = parseFloat(speed_slider.value).toFixed(1) + 'x';
+            });
+
+            btn_update.addEventListener('click', () => {
+                isPlaying = false;
+                t = 0;
+                lastTime = 0;
+                time_display.innerText = "0.00";
+                calculatePhysics();
+                drawSim();
+                drawGraphs();
+                btn_play.innerText = "▶ Reproducir / Pausar";
+            });
+
+            btn_play.addEventListener('click', () => {
+                isPlaying = !isPlaying;
+                if (t >= tMax) {
+                    t = 0; 
+                }
+                if (isPlaying) {
+                    lastTime = 0; 
+                    animationId = requestAnimationFrame(animate);
+                }
+            });
+
+            btn_reset.addEventListener('click', () => {
+                isPlaying = false;
+                t = 0;
+                lastTime = 0;
+                time_display.innerText = "0.00";
+                drawSim();
+                drawGraphs();
+            });
+            
+            calculatePhysics();
+            drawSim();
+            drawGraphs();
+        }
+        
+        initSimulation();
+    })();
+</script>
+</div></div>
+</div>
 <section id="supuestos-del-modelo">
 <h2>Supuestos del Modelo<a class="headerlink" href="#supuestos-del-modelo" title="Permalink to this heading">#</a></h2>
 <p>Para modelar este problema de forma analítica, consideraremos los siguientes supuestos físicos:</p>
@@ -831,28 +1594,28 @@ a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
     <div style="display: flex; gap: 20px; margin-bottom: 20px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center;">
         <div>
             <label style="font-weight: bold;">h₁ (Distancia empuje, m): </label>
-            <input type="number" id="h1_90485" value="0.4" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+            <input type="number" id="h1_85855" value="0.4" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
         </div>
         <div>
             <label style="font-weight: bold;">h₂ (Vuelo libre, m): </label>
-            <input type="number" id="h2_90485" value="1.2" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+            <input type="number" id="h2_85855" value="1.2" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
         </div>
-        <button id="update_params_90485" style="background-color: #0d6efd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">Actualizar Parámetros</button>
+        <button id="update_params_85855" style="background-color: #0d6efd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">Actualizar Parámetros</button>
     </div>
 
     <!-- Controles de Reproducción -->
     <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; align-items: center; justify-content: space-between;">
         <div style="display: flex; gap: 15px; align-items: center;">
-            <button id="play_90485" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
-            <button id="reset_90485" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
+            <button id="play_85855" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
+            <button id="reset_85855" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
             <div style="font-size: 1.1em; font-weight: bold; margin-left: 10px;">
-                Tiempo: <span id="time_display_90485" style="color: #dc3545;">0.00</span> s
+                Tiempo: <span id="time_display_85855" style="color: #dc3545;">0.00</span> s
             </div>
         </div>
         <div style="display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;">
             <label style="font-weight: 600; font-size: 0.9em; margin: 0;">Velocidad Animación:</label>
-            <input type="range" id="speed_90485" min="0.1" max="1" step="0.1" value="0.2" style="vertical-align: middle;">
-            <span id="speed_val_90485" style="font-weight: bold; font-family: monospace; width: 35px;">0.2x</span>
+            <input type="range" id="speed_85855" min="0.1" max="1" step="0.1" value="0.2" style="vertical-align: middle;">
+            <span id="speed_val_85855" style="font-weight: bold; font-family: monospace; width: 35px;">0.2x</span>
         </div>
     </div>
     
@@ -860,15 +1623,15 @@ a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
         <!-- Canvas de la persecución física -->
         <div style="flex: 1; min-width: 200px; max-width: 250px;">
-            <canvas id="canvas_sim_90485" width="250" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
+            <canvas id="canvas_sim_85855" width="250" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
         </div>
         <!-- Canvas de los gráficos -->
         <div style="flex: 3; min-width: 500px;">
-            <canvas id="canvas_graphs_90485" width="700" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
+            <canvas id="canvas_graphs_85855" width="700" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
         </div>
     </div>
     
-    <div id="results_90485" style="margin-top: 15px; font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41;">
+    <div id="results_85855" style="margin-top: 15px; font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41;">
         <!-- Resultados dinámicos -->
     </div>
 </div>
@@ -876,8 +1639,8 @@ a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
 <script>
     (function() {
         function initSimulation() {
-            const canvasSim = document.getElementById('canvas_sim_90485');
-            const canvasGraph = document.getElementById('canvas_graphs_90485');
+            const canvasSim = document.getElementById('canvas_sim_85855');
+            const canvasGraph = document.getElementById('canvas_graphs_85855');
             if (!canvasSim || !canvasGraph) {
                 setTimeout(initSimulation, 50); 
                 return;
@@ -886,17 +1649,17 @@ a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
             const ctxSim = canvasSim.getContext('2d');
             const ctxG = canvasGraph.getContext('2d');
             
-            const btn_play = document.getElementById('play_90485');
-            const btn_reset = document.getElementById('reset_90485');
-            const btn_update = document.getElementById('update_params_90485');
-            const time_display = document.getElementById('time_display_90485');
-            const speed_slider = document.getElementById('speed_90485');
-            const speed_val = document.getElementById('speed_val_90485');
-            const results_div = document.getElementById('results_90485');
+            const btn_play = document.getElementById('play_85855');
+            const btn_reset = document.getElementById('reset_85855');
+            const btn_update = document.getElementById('update_params_85855');
+            const time_display = document.getElementById('time_display_85855');
+            const speed_slider = document.getElementById('speed_85855');
+            const speed_val = document.getElementById('speed_val_85855');
+            const results_div = document.getElementById('results_85855');
             
             // Entradas
-            const input_h1 = document.getElementById('h1_90485');
-            const input_h2 = document.getElementById('h2_90485');
+            const input_h1 = document.getElementById('h1_85855');
+            const input_h2 = document.getElementById('h2_85855');
 
             let isPlaying = false;
             let animationId;
