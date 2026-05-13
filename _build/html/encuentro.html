@@ -65,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'encuentro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lanzamiento de Objeto" href="actividad.html" />
     <link rel="prev" title="Bienvenidos al Curso de Introducción a la Física" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -170,6 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cinemática</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Ejercicio de Persecusión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="actividad.html">Lanzamiento de Objeto</a></li>
 </ul>
 
     </div>
@@ -407,8 +409,8 @@ document.write(`
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
 
 <span class="c1"># UID para evitar colisiones en Jupyter Book</span>
 <span class="n">uid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">99999</span><span class="p">))</span>
@@ -900,26 +902,26 @@ document.write(`
     
     <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; align-items: center; justify-content: space-between;">
         <div style="display: flex; gap: 15px; align-items: center;">
-            <button id="play_24951" style="background-color: #f73bc5; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
-            <button id="reset_24951" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
+            <button id="play_47788" style="background-color: #f73bc5; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
+            <button id="reset_47788" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
             <div style="font-size: 1.1em; font-weight: bold; margin-left: 10px;">
-                Tiempo: <span id="time_display_24951" style="color: #dc3545;">0.0</span> s
+                Tiempo: <span id="time_display_47788" style="color: #dc3545;">0.0</span> s
             </div>
         </div>
         
         <!-- Control de velocidad de la simulación -->
         <div style="display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;">
             <label style="font-weight: 600; font-size: 0.9em; margin: 0;">Velocidad de Simulación:</label>
-            <input type="range" id="speed_24951" min="0.2" max="2" step="0.2" value="1.0" style="vertical-align: middle;">
-            <span id="speed_val_24951" style="font-weight: bold; font-family: monospace; width: 35px;">1.0x</span>
+            <input type="range" id="speed_47788" min="0.2" max="2" step="0.2" value="1.0" style="vertical-align: middle;">
+            <span id="speed_val_47788" style="font-weight: bold; font-family: monospace; width: 35px;">1.0x</span>
         </div>
     </div>
     
     <div style="text-align: center; position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 10px;">
         <!-- Canvas de la persecución física -->
-        <canvas id="canvas_sim_24951" width="950" height="120" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+        <canvas id="canvas_sim_47788" width="950" height="120" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
         <!-- Canvas de los gráficos -->
-        <canvas id="canvas_graphs_24951" width="950" height="300" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+        <canvas id="canvas_graphs_47788" width="950" height="300" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
     </div>
     
     <div style="margin-top: 15px; font-size: 0.9em; display: flex; justify-content: center; gap: 30px;">
@@ -931,8 +933,8 @@ document.write(`
 <script>
     (function() {
         function initSimulation() {
-            const canvasSim = document.getElementById('canvas_sim_24951');
-            const canvasGraph = document.getElementById('canvas_graphs_24951');
+            const canvasSim = document.getElementById('canvas_sim_47788');
+            const canvasGraph = document.getElementById('canvas_graphs_47788');
             if (!canvasSim || !canvasGraph) {
                 setTimeout(initSimulation, 50); 
                 return;
@@ -941,11 +943,11 @@ document.write(`
             const ctxSim = canvasSim.getContext('2d');
             const ctxG = canvasGraph.getContext('2d');
             
-            const btn_play = document.getElementById('play_24951');
-            const btn_reset = document.getElementById('reset_24951');
-            const time_display = document.getElementById('time_display_24951');
-            const speed_slider = document.getElementById('speed_24951');
-            const speed_val = document.getElementById('speed_val_24951');
+            const btn_play = document.getElementById('play_47788');
+            const btn_reset = document.getElementById('reset_47788');
+            const time_display = document.getElementById('time_display_47788');
+            const speed_slider = document.getElementById('speed_47788');
+            const speed_val = document.getElementById('speed_val_47788');
             
             let t = 0;
             let isPlaying = false;
@@ -1374,8 +1376,8 @@ document.write(`
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
-<span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
 <span class="c1"># UID para evitar colisiones en Jupyter Book</span>
 <span class="n">uid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">99999</span><span class="p">))</span>
@@ -1606,6 +1608,15 @@ document.write(`
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Bienvenidos al Curso de Introducción a la Física</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="actividad.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lanzamiento de Objeto</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
