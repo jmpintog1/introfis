@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lanzamiento de Objeto &#8212; Curso de Introducción a la Física</title>
+    <title>Movimiento Circular &#8212; Curso de Introducción a la Física</title>
   
   
   
@@ -388,7 +388,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lanzamiento de Objeto</h1>
+    <h1>Movimiento Circular</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -413,8 +413,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lanzamiento-de-objeto">
-<h1>Lanzamiento de Objeto<a class="headerlink" href="#lanzamiento-de-objeto" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="movimiento-circular">
+<h1>Movimiento Circular<a class="headerlink" href="#movimiento-circular" title="Permalink to this heading">#</a></h1>
 <section id="supuestos-del-modelo">
 <h2>Supuestos del Modelo<a class="headerlink" href="#supuestos-del-modelo" title="Permalink to this heading">#</a></h2>
 <p>Para modelar este problema de forma analítica, consideraremos los siguientes supuestos físicos:</p>
@@ -831,28 +831,28 @@ a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
     <div style="display: flex; gap: 20px; margin-bottom: 20px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center;">
         <div>
             <label style="font-weight: bold;">h₁ (Distancia empuje, m): </label>
-            <input type="number" id="h1_85253" value="0.4" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+            <input type="number" id="h1_90485" value="0.4" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
         </div>
         <div>
             <label style="font-weight: bold;">h₂ (Vuelo libre, m): </label>
-            <input type="number" id="h2_85253" value="1.2" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+            <input type="number" id="h2_90485" value="1.2" step="0.1" min="0.1" style="width: 70px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
         </div>
-        <button id="update_params_85253" style="background-color: #0d6efd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">Actualizar Parámetros</button>
+        <button id="update_params_90485" style="background-color: #0d6efd; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">Actualizar Parámetros</button>
     </div>
 
     <!-- Controles de Reproducción -->
     <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; align-items: center; justify-content: space-between;">
         <div style="display: flex; gap: 15px; align-items: center;">
-            <button id="play_85253" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
-            <button id="reset_85253" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
+            <button id="play_90485" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
+            <button id="reset_90485" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
             <div style="font-size: 1.1em; font-weight: bold; margin-left: 10px;">
-                Tiempo: <span id="time_display_85253" style="color: #dc3545;">0.00</span> s
+                Tiempo: <span id="time_display_90485" style="color: #dc3545;">0.00</span> s
             </div>
         </div>
         <div style="display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;">
             <label style="font-weight: 600; font-size: 0.9em; margin: 0;">Velocidad Animación:</label>
-            <input type="range" id="speed_85253" min="0.1" max="1" step="0.1" value="0.2" style="vertical-align: middle;">
-            <span id="speed_val_85253" style="font-weight: bold; font-family: monospace; width: 35px;">0.2x</span>
+            <input type="range" id="speed_90485" min="0.1" max="1" step="0.1" value="0.2" style="vertical-align: middle;">
+            <span id="speed_val_90485" style="font-weight: bold; font-family: monospace; width: 35px;">0.2x</span>
         </div>
     </div>
     
@@ -860,15 +860,15 @@ a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
         <!-- Canvas de la persecución física -->
         <div style="flex: 1; min-width: 200px; max-width: 250px;">
-            <canvas id="canvas_sim_85253" width="250" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
+            <canvas id="canvas_sim_90485" width="250" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
         </div>
         <!-- Canvas de los gráficos -->
         <div style="flex: 3; min-width: 500px;">
-            <canvas id="canvas_graphs_85253" width="700" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
+            <canvas id="canvas_graphs_90485" width="700" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); width: 100%;"></canvas>
         </div>
     </div>
     
-    <div id="results_85253" style="margin-top: 15px; font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41;">
+    <div id="results_90485" style="margin-top: 15px; font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41;">
         <!-- Resultados dinámicos -->
     </div>
 </div>
@@ -876,8 +876,8 @@ a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
 <script>
     (function() {
         function initSimulation() {
-            const canvasSim = document.getElementById('canvas_sim_85253');
-            const canvasGraph = document.getElementById('canvas_graphs_85253');
+            const canvasSim = document.getElementById('canvas_sim_90485');
+            const canvasGraph = document.getElementById('canvas_graphs_90485');
             if (!canvasSim || !canvasGraph) {
                 setTimeout(initSimulation, 50); 
                 return;
@@ -886,17 +886,17 @@ a_{\text{empuje}} &amp;= \frac{h_2}{h_1} g \end{aligned}\end{split}\]</div>
             const ctxSim = canvasSim.getContext('2d');
             const ctxG = canvasGraph.getContext('2d');
             
-            const btn_play = document.getElementById('play_85253');
-            const btn_reset = document.getElementById('reset_85253');
-            const btn_update = document.getElementById('update_params_85253');
-            const time_display = document.getElementById('time_display_85253');
-            const speed_slider = document.getElementById('speed_85253');
-            const speed_val = document.getElementById('speed_val_85253');
-            const results_div = document.getElementById('results_85253');
+            const btn_play = document.getElementById('play_90485');
+            const btn_reset = document.getElementById('reset_90485');
+            const btn_update = document.getElementById('update_params_90485');
+            const time_display = document.getElementById('time_display_90485');
+            const speed_slider = document.getElementById('speed_90485');
+            const speed_val = document.getElementById('speed_val_90485');
+            const results_div = document.getElementById('results_90485');
             
             // Entradas
-            const input_h1 = document.getElementById('h1_85253');
-            const input_h2 = document.getElementById('h2_85253');
+            const input_h1 = document.getElementById('h1_90485');
+            const input_h2 = document.getElementById('h2_90485');
 
             let isPlaying = false;
             let animationId;
