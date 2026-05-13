@@ -4,6 +4,6 @@ Este espacio no es un libro de texto convencional; es un entorno interactivo dis
 
 ```{image} qr_code.svg
 :alt: Código QR
-:width: 80%
+:width: 40%
 :align: center
 ```
