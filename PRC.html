@@ -1,0 +1,933 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Problemas Ricos en Contexto: Cinemática &#8212; Curso de Introducción a la Física</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"0e84ce6d5d254976b921927bc95fb861": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial", "handle_color": null}}, "24f0e3aeee0e436fbc47ad354e64c751": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "35af18db59914bc0bf31e94f93f8248a": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "v Kayak 1 (m/s):", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_24f0e3aeee0e436fbc47ad354e64c751", "max": 3.0, "min": 0.5, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_0e84ce6d5d254976b921927bc95fb861", "value": 1.5}}, "026771e601e845fc91eff68e5263e50e": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial", "handle_color": null}}, "1d386f7449b9498bbce6a173e34de4f8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7168bd5668794b3c9f4cb11dafac1f92": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "|v Kayak 2| (m/s):", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_1d386f7449b9498bbce6a173e34de4f8", "max": 3.0, "min": 0.5, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_026771e601e845fc91eff68e5263e50e", "value": 1.2}}, "a963c1fb11684f55af4c0a61dcd5ab4b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d09c838e5e1d43aeb3ddec8b04f26a1a": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_35af18db59914bc0bf31e94f93f8248a", "IPY_MODEL_7168bd5668794b3c9f4cb11dafac1f92", "IPY_MODEL_24b9f161dd074b77afa7d2115f9afdac"], "layout": "IPY_MODEL_a963c1fb11684f55af4c0a61dcd5ab4b"}}, "ada4973b4774469eb6d2da3ebf5d80f8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "24b9f161dd074b77afa7d2115f9afdac": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_ada4973b4774469eb6d2da3ebf5d80f8", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 720x432 with 1 Axes>", "image/png": "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AQP4+++/Wbx4MYMGDYq7Tr169Zg1a9YF1ze1WABojDHGZBDh4eFcccUViQK2JUuW0LhxY6pXr87QoUPjetvuvvtuhgwZAsCQIUPo3r37Wc8HeOmll9i/fz+DBg264MUKW7dupVChQnH3O3ToEDe3cOTIkbRr1y7RcypWrBg3VJvwyJs37wXVA3Q3mHnz5hEVFcVDDz3E6tWrkzwvdn5g9erVqVq1KsWKFSNr1qyULVuWjRs3AvDjjz/GBYA1atSgS5cufPvtt2TOfHrNbeHChdmyZcsF1ze1WABojDHGpDLnUnYcO3Y8xec6d+7XDQsLY+TIkcyZM4dXX301rrxbt24MHDiQf/75h+eeey4uxUijRo1Yt24dM2fO5NSpU1SrVu2s5wPUr1+f+fPns2fPngtun+zZs59xzcjISAoUKMDixYsZMWIEt956a6LnpFUPYGRkJABly5alSZMm/P3330meF9tbGRYWdkaOwrCwMKKjozly5Aj79u3jkksuAWDixIn07t2bBQsWUL9+faKjowHtccyePfsF1ze1WBoYY4wxISt+z0xGERERwcSJE2ncuDFFihThrrvu4uDBgxQrVoyTJ08ydOjQuKAH4M4776Rz584888wzcWVnO79ly5a0aNGCVq1aMXXqVHLlynXedaxQoQLr1q07o6xjx468/vrr7N+/n+rVqyd6TmwPYGrau3cvERERZM2alV27dvH777/z2GOPXdC1ZsyYQdOmTQGIiYlh48aNNG3alCuvvJLhw4dz6NAh8ubNy3///RcXaPvJegCNMcaErCZNmtCkSRO/q5Hq8ufPz5QpU3j55ZcZP348L730EpdddhmNGjU6Y24gQJcuXdi7dy+dOnWKKzvb+QC33norPXv2pHXr1hw9evSMx8aOHUvx4sX5448/aNWqFS1atEj0/Bw5clCuXDlWrVoVV9a+fXuGDx9Ohw4dLvbtA/D+++9TvHhxNm3aRI0aNbj77rsBmDdvXtztZcuWUa9ePWrWrEnTpk3p378/VapUuaDXiz//79SpU9x+++1Ur16d2rVr07dv37hh6hkzZtCqVauLf4MXSVxK+pQzqBo1arjFixf7XY2gsm7dulRbNZWRWLskzdoladYuiYVCmyxbtozKlSuf13OCYcuzUaNGMW7cOL755puAvu7YsWOZP38+L7/8cqLHgqFdzledOnX4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lCkULlz4vJ8f35QpU3jppZcA2LJlC/nz5+f2228nb968fP7553Hn/ffff75sRWg9gGnt0kvh6afh33/h77/hscd0wciGDfD661CrFlSrBq+8oquNjTHGBExERESyQUp6lj9/fqZMmcLLL7/M+PHjeemll7jsssto1KjRGXMDAbp06cLevXvp1KlTXNnZzge49dZb6dmzJ61bt+bo0aNnPNanTx8OHjxIs2bNqFWrFvfee2+i5+fIkYNy5cqxatWquLL27dszfPhwOnTocLFvP0mNGzfm1ltvZfr06RQvXpwff/wRgGeffTaul/DRRx/l0KFD3HrrrdSqVYvWrVtf0GudOnWKVatWxbXdP//8Q4MGDahVqxYvvPACTz/9NADbt28ne/bsFC1aNBXe4fkRF8JJjWvUqOEWL14c+BeOidGk01FRuohk9+7Tj112mfYKduigO5EE2Lp16yhdunTAXzfYWbskzdoladYuiYVCmyxbtozKlSuf13OOHz/ueyLqUaNGMW7cuHOmSEltY8eOZf78+bz88suJHguGdrkYv/32G99++y2DBg0663nvvPMOuXPn5q677kr0WFKfJxGZ75yrl+jkC2BDwH4IC4PGjfV4/32dNxgVBd9/D3/9pUe/fnDttRoMtmsH8SaMGmOMManhgQceYPLkyUyaNCngr92uXTt2x+8AyUCuvPJKrrzyynOelzdvXu64444A1CgxGwL2W3g43HCDLhTZvh2GDdN9iDNl0sCwe3dNK3PLLTB6NMSbNGuMMebizJ8/n/nz5/tdDd988MEHrFq1igoVKvjy+nfffbcvrxssunfvHpczMdAsAAwmOXLowpBx42DbNvj0U2jSBE6c0FQz7dtrMNi9O0ydCj4kjjTGmIxk79697LXk/SYEBSQAFJHBIrJDRJYk8djDIuJEpKB3X0TkfRFZJSKLRaROvHO7ishK7+gar7yuiPzjPed9OVtiovQif35NKj1jBmzceHof4gMHNAl1ixYQGQl9+8Kff6YoPYAxxpi0Fcrz6k3qCcTnKFA9gF8CLRMWikgJoDmwIV7x9UB57+gFfOydmx94DrgMaAA8JyL5vOd8DPSM97xEr5WuRUbC//2fbju3fDk89xyULw87duj2dJdfDuXKwVNPQbxkncYYYwInW7Zs7N6924JAc1Gcc+zevZts2bKl6esEZODZOfer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"}}]}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PRC';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Curso de Introducción a la Física - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Curso de Introducción a la Física - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Bienvenidos al Curso de Introducción a la Física
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cinemática</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="encuentro.html">Ejercicio de Persecusión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="actividad.html">Lanzamiento de Objeto</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jmpintog1/introfis/blob/main/./PRC.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jmpintog1/introfis" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jmpintog1/introfis/issues/new?title=Issue%20on%20page%20%2FPRC.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/PRC.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problemas Ricos en Contexto: Cinemática</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-submarinos">1. Los Submarinos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-rio">2. El Río</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-corredores">3. Los Corredores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-auto-solar">4. El Auto Solar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-de-problemas-equivalentes">Set de Problemas Equivalentes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pautas-de-correccion-problemas-ricos-en-contexto">Pautas de Corrección: Problemas Ricos en Contexto</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Los Submarinos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. El Río</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. Los Corredores</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4. El Auto Solar</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Set de Problemas Equivalentes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-a-las-llaves-olvidadas">Problema A: Las Llaves Olvidadas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-b-el-buque-factoria-y-el-iceberg">Problema B: El Buque Factoría y el Iceberg</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-c-el-murcielago-cola-de-raton">Problema C: El Murciélago Cola de Ratón</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-el-rio-kayaks-al-encuentro">Problema: El Río (Kayaks al encuentro)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-camino-tomar-para-tu-libro-digital">¿Qué camino tomar para tu Libro Digital?</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="problemas-ricos-en-contexto-cinematica">
+<h1>Problemas Ricos en Contexto: Cinemática<a class="headerlink" href="#problemas-ricos-en-contexto-cinematica" title="Permalink to this heading">#</a></h1>
+<section id="los-submarinos">
+<h2>1. Los Submarinos<a class="headerlink" href="#los-submarinos" title="Permalink to this heading">#</a></h2>
+<p>Estás escribiendo una historia de acción naval. En tu relato, dos submarinos de la Armada en una misión secreta en el Océano Pacífico deben llegar a un punto de encuentro al mismo tiempo. Ambos zarpan simultáneamente desde posiciones que están a la misma distancia del punto de encuentro. Viajan a distintas velocidades, pero ambos en línea recta. El primer submarino viaja a una velocidad media de 20 km/h durante los primeros 500 km, 40 km/h en los siguientes 500 km, 30 km/h en los terceros 500 km y 50 km/h en los 500 km finales. En la trama, se requiere que el segundo submarino viaje a una velocidad constante. Como autor de la historia, necesitas que la física tenga sentido: ¿cuál debe ser la magnitud de la velocidad constante del segundo submarino ordenado por su capitán?</p>
+</section>
+<section id="el-rio">
+<h2>2. El Río<a class="headerlink" href="#el-rio" title="Permalink to this heading">#</a></h2>
+<p>Es un hermoso fin de semana de primavera y, junto a cuatro amigos, deciden pasar el día al aire libre en el Cajón del Maipo. Dos de tus amigos solo quieren relajarse, mientras que los otros dos quieren hacer ejercicio. Por tu parte, necesitas un rato de tranquilidad para estudiar. Para dejar a todos contentos, el grupo decide pasar el día en el Río Maipo. Dos personas subirán a un kayak y simplemente se dejarán llevar río abajo por la corriente, que avanza a 1,5 m/s. El segundo par comenzará al mismo tiempo que el primero, pero desde un punto ubicado 15 km río abajo. Ellos remarán río arriba hasta que ambos kayaks se encuentren. Como ya has salido con ellos antes, sabes que remando contra la corriente logran mantener una velocidad media de 1,2 m/s respecto a la orilla. Cuando ambos grupos se encuentren, saldrán a la orilla y tú deberías estar ahí esperándolos con tu furgoneta. Decides ir a ese punto con anticipación para poder estudiar tranquilamente bajo un árbol. ¿A qué distancia del punto de partida del primer kayak debes estacionarte a esperar?</p>
+</section>
+<section id="los-corredores">
+<h2>3. Los Corredores<a class="headerlink" href="#los-corredores" title="Permalink to this heading">#</a></h2>
+<p>Es una soleada tarde de domingo, hacen unos agradables 18 °C, y estás caminando por los alrededores del Estadio Monumental en Macul. La vereda está llena de corredores y transeúntes. Notas que se acerca un corredor usando una camiseta con un texto llamativo impreso. Llegas a leer las dos primeras líneas, pero pasa junto a ti antes de que puedas leer la última. Piensas: “Si sigue dando la vuelta al recinto, de seguro lo volveré a ver, pero debería anticipar a qué hora nos cruzaremos de nuevo para estar atento”. Miras tu reloj y son las 15:07. Recuerdas que el perímetro que rodea el estadio y sus canchas de entrenamiento es de aproximadamente 3,5 km. Estimas que tu velocidad al caminar es de unos 5 km/h y la del corredor es de unos 12 km/h. ¿A qué hora deberías estar atento para leer el final de la camiseta?</p>
+</section>
+<section id="el-auto-solar">
+<h2>4. El Auto Solar<a class="headerlink" href="#el-auto-solar" title="Permalink to this heading">#</a></h2>
+<p>Te has unido al equipo universitario que competirá en la Carrera Solar Atacama. La velocidad media óptima del vehículo depende de la cantidad de sol que incide sobre sus paneles. Tu trabajo es definir la estrategia de carrera programando un script que calcule la velocidad media del auto para un día que presenta distintas condiciones meteorológicas. Para hacer esto, necesitas determinar la ecuación de la velocidad media del día basándote en la velocidad media del auto para cada tramo del viaje. A modo de prueba, imaginas que la carrera de hoy consiste en una cierta distancia bajo un sol radiante, la misma distancia con condiciones de nubosidad parcial, y el doble de esa distancia bajo cielos completamente nublados. Determina la expresión analítica para la velocidad media total en función de las velocidades de cada tramo.</p>
+</section>
+<hr class="docutils" />
+<section id="set-de-problemas-equivalentes">
+<h2>Set de Problemas Equivalentes<a class="headerlink" href="#set-de-problemas-equivalentes" title="Permalink to this heading">#</a></h2>
+<p><strong>Problema A: Las Llaves Olvidadas</strong>
+Tú y una amiga corren 10 km todos los días, sin importar el clima. Hoy es una gélida mañana de invierno en Peñalolén, con una temperatura de 2 °C. Tu amiga, una verdadera fanática del running, insiste en que es un buen día para salir. Aceptas esta locura con la condición de que ambos comiencen en tu casa y terminen el recorrido en su casa, que cuenta con una buena calefacción, de modo que ninguno tenga que esperar afuera en el frío. Sabes que ella corre a un ritmo muy constante de 3,0 m/s, mientras que tu velocidad media es de unos constantes 4,0 m/s. Tu amiga termina de calentar primero, así que sale con ventaja. El plan es que ella llegue primero a su casa para abrir la puerta antes de que tú llegues. Sin embargo, 5 minutos después de que ella sale, te das cuenta de que dejó caer sus llaves en la entrada de tu casa. Si ella termina su carrera primero, tendrá que quedarse congelándose afuera y no estará nada feliz. Si sales inmediatamente, corriendo a tu ritmo habitual y llevándole sus llaves, ¿a qué distancia de tu casa la alcanzarás?</p>
+<p><strong>Problema B: El Buque Factoría y el Iceberg</strong>
+Debido a tus conocimientos técnicos, te han contratado como asistente en un proyecto de investigación que desarrolla sistemas de evasión de accidentes navales en el extremo sur de Chile. Tu equipo está preocupado por los derrames de combustible en el Paso Drake causados por buques factoría que chocan con icebergs. Han estado desarrollando un nuevo radar que puede detectar masas de hielo grandes, pero les preocupa su alcance más bien corto: solo 3,0 km. El director de la investigación te ha recordado que la señal del radar viaja a la velocidad de la luz (300.000 km/s), pero una vez que la señal de rebote llega al buque, el computador de a bordo tarda 5,0 minutos en procesarla. Lamentablemente, los buques son tan masivos que tardan mucho tiempo en maniobrar para desviar su rumbo. Tu trabajo es determinar de cuánto tiempo se dispondrá para virar el barco y evitar la colisión una vez que el sistema detecta (procesa) un iceberg. Una velocidad de navegación típica en invierno en esa zona es de 25 km/h. Asume que el barco se dirige directamente hacia un iceberg que va a la deriva a 8,0 km/h en la misma dirección en que viaja el barco.</p>
+<p><strong>Problema C: El Murciélago Cola de Ratón</strong>
+Estás colaborando en un estudio sobre cómo los murciélagos evitan obstáculos. En tu investigación, un murciélago cola de ratón (especie típica chilena) es equipado con un micro-transmisor que envía la velocidad del animal a tus instrumentos en el laboratorio. La señal viaja a la velocidad de la luz (300.000.000 m/s). Sabes que el murciélago detecta obstáculos emitiendo un pulso de sonido hacia adelante (ecolocalización) que viaja a 340 m/s por el aire. El murciélago detecta el obstáculo cuando el pulso de sonido rebota en él y el eco llega de vuelta a sus oídos. Tu tarea es determinar la cantidad máxima de tiempo que tiene un murciélago, después de escuchar el eco de un obstáculo, para cambiar su trayectoria de vuelo y evitar chocar. En el experimento de hoy, tus instrumentos indican que un murciélago vuela en línea recta hacia una muralla a una velocidad constante de 6,0 m/s y emite un pulso de sonido cuando está exactamente a 3,0 m de dicha pared.</p>
+<section id="pautas-de-correccion-problemas-ricos-en-contexto">
+<h3>Pautas de Corrección: Problemas Ricos en Contexto<a class="headerlink" href="#pautas-de-correccion-problemas-ricos-en-contexto" title="Permalink to this heading">#</a></h3>
+<section id="id1">
+<h4>1. Los Submarinos<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<p><strong>Objetivo:</strong> Calcular la rapidez constante (<span class="math notranslate nohighlight">\(v_2\)</span>) del segundo submarino para que el tiempo de viaje sea igual al del primero.</p>
+<p>El tiempo total del primer submarino es la suma de los tiempos en cada tramo (<span class="math notranslate nohighlight">\(t_i = \frac{d_i}{v_i}\)</span>):
+$<span class="math notranslate nohighlight">\(t_{\text{total}} = \frac{500}{20} + \frac{500}{40} + \frac{500}{30} + \frac{500}{50}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(t_{\text{total}} = 25 + 12.5 + 16.67 + 10 = 64.17 \text{ h}\)</span>$</p>
+<p>La velocidad constante del segundo submarino para recorrer la distancia total (<span class="math notranslate nohighlight">\(d_{\text{total}} = 2000\)</span> km) en el mismo tiempo es:
+$<span class="math notranslate nohighlight">\(v_2 = \frac{d_{\text{total}}}{t_{\text{total}}} = \frac{2000}{64.17}\)</span><span class="math notranslate nohighlight">\(
+**Respuesta:** \)</span><span class="math notranslate nohighlight">\(v_2 \approx 31.17 \text{ km/h}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h4>2. El Río<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<p><strong>Objetivo:</strong> Determinar la posición de encuentro (<span class="math notranslate nohighlight">\(x\)</span>) respecto al punto de partida del primer kayak.</p>
+<p>Se definen las ecuaciones de itinerario para ambos kayaks. El kayak 1 se mueve con la corriente y el kayak 2 contra ella desde una distancia <span class="math notranslate nohighlight">\(d_0 = 15000\)</span> m:
+$<span class="math notranslate nohighlight">\(x_1(t) = 1.5 t\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(x_2(t) = 15000 - 1.2 t\)</span>$</p>
+<p>Igualando las posiciones para encontrar el tiempo de encuentro:
+$<span class="math notranslate nohighlight">\(1.5 t = 15000 - 1.2 t \implies 2.7 t = 15000 \implies t \approx 5555.56 \text{ s}\)</span>$</p>
+<p>Reemplazando en <span class="math notranslate nohighlight">\(x_1(t)\)</span> para encontrar la distancia:
+$<span class="math notranslate nohighlight">\(x = 1.5 \cdot 5555.56\)</span><span class="math notranslate nohighlight">\(
+**Respuesta:** \)</span><span class="math notranslate nohighlight">\(x \approx 8333.3 \text{ m} \approx 8.33 \text{ km}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h4>3. Los Corredores<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<p><strong>Objetivo:</strong> Determinar la hora exacta del próximo encuentro considerando trayectorias opuestas en un circuito cerrado.</p>
+<p>La distancia que deben cubrir juntos para volver a encontrarse es exactamente el perímetro del estadio (<span class="math notranslate nohighlight">\(L = 3.5\)</span> km). Al ir en sentidos opuestos, la velocidad relativa de acercamiento es la suma de sus magnitudes:
+$<span class="math notranslate nohighlight">\(v_{\text{rel}} = v_{\text{yo}} + v_{\text{corr}} = 5 + 12 = 17 \text{ km/h}\)</span>$</p>
+<p>El tiempo que tardarán en volver a cruzarse es:
+$<span class="math notranslate nohighlight">\(\Delta t = \frac{L}{v_{\text{rel}}} = \frac{3.5}{17} \approx 0.206 \text{ h}\)</span>$</p>
+<p>Convirtiendo a minutos: <span class="math notranslate nohighlight">\(0.206 \cdot 60 \approx 12.35\)</span> min (12 minutos y 21 segundos).
+Sumando este tiempo a las 15:07:
+<strong>Respuesta:</strong> El próximo cruce ocurrirá a las <strong>15:19 hrs</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h4>4. El Auto Solar<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<p><strong>Objetivo:</strong> Obtener la expresión analítica de la rapidez media total.</p>
+<p>La rapidez media es el cociente entre la distancia total y el tiempo total invertido. Las distancias de los tramos son <span class="math notranslate nohighlight">\(d_1 = d\)</span>, <span class="math notranslate nohighlight">\(d_2 = d\)</span> y <span class="math notranslate nohighlight">\(d_3 = 2d\)</span>, por lo que <span class="math notranslate nohighlight">\(d_{\text{total}} = 4d\)</span>.</p>
+<p>El tiempo total se expresa en función de las velocidades de cada tramo:
+$<span class="math notranslate nohighlight">\(t_{\text{total}} = t_1 + t_2 + t_3 = \frac{d}{v_1} + \frac{d}{v_2} + \frac{2d}{v_3}\)</span>$</p>
+<p>La rapidez media total es:
+$<span class="math notranslate nohighlight">\(v_{\text{media}} = \frac{4d}{d \left(\frac{1}{v_1} + \frac{1}{v_2} + \frac{2}{v_3}\right)}\)</span>$</p>
+<p>Cancelando la variable <span class="math notranslate nohighlight">\(d\)</span>:
+<strong>Respuesta:</strong> $<span class="math notranslate nohighlight">\(v_{\text{media}} = \frac{4}{\frac{1}{v_1} + \frac{1}{v_2} + \frac{2}{v_3}}\)</span>$</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h3>Set de Problemas Equivalentes<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<section id="problema-a-las-llaves-olvidadas">
+<h4>Problema A: Las Llaves Olvidadas<a class="headerlink" href="#problema-a-las-llaves-olvidadas" title="Permalink to this heading">#</a></h4>
+<p><strong>Objetivo:</strong> Calcular la posición de alcance.
+La amiga lleva una ventaja temporal de <span class="math notranslate nohighlight">\(\Delta t = 300\)</span> s (5 min).
+$<span class="math notranslate nohighlight">\(x_{\text{amiga}}(t) = 3.0(t + 300)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(x_{\text{yo}}(t) = 4.0 t\)</span><span class="math notranslate nohighlight">\(
+Igualando para el alcance:
+\)</span><span class="math notranslate nohighlight">\(3.0 t + 900 = 4.0 t \implies t = 900 \text{ s}\)</span><span class="math notranslate nohighlight">\(
+**Respuesta:** \)</span><span class="math notranslate nohighlight">\(x = 4.0 \cdot 900 = 3600 \text{ m} = 3.6 \text{ km}\)</span>$</p>
+</section>
+<section id="problema-b-el-buque-factoria-y-el-iceberg">
+<h4>Problema B: El Buque Factoría y el Iceberg<a class="headerlink" href="#problema-b-el-buque-factoria-y-el-iceberg" title="Permalink to this heading">#</a></h4>
+<p><strong>Objetivo:</strong> Calcular el tiempo remanente antes del impacto tras procesar la señal.
+La velocidad relativa de acercamiento (mismo sentido) es <span class="math notranslate nohighlight">\(v_{\text{rel}} = 25 - 8 = 17\)</span> km/h.
+El tiempo total hasta la colisión si no se hace nada es:
+$<span class="math notranslate nohighlight">\(t_{\text{colisión}} = \frac{d_0}{v_{\text{rel}}} = \frac{3.0}{17} \approx 0.176 \text{ h} \approx 10.6 \text{ min}\)</span><span class="math notranslate nohighlight">\(
+El tiempo de procesamiento consume 5.0 minutos de esa ventana.
+**Respuesta:** \)</span><span class="math notranslate nohighlight">\(t_{\text{disponible}} = 10.6 - 5.0 = 5.6 \text{ min}\)</span>$</p>
+</section>
+<section id="problema-c-el-murcielago-cola-de-raton">
+<h4>Problema C: El Murciélago Cola de Ratón<a class="headerlink" href="#problema-c-el-murcielago-cola-de-raton" title="Permalink to this heading">#</a></h4>
+<p><strong>Objetivo:</strong> Calcular el tiempo que le queda al murciélago para virar luego de percibir el eco.
+Tiempo en que el murciélago recibe el eco (considerando que el pulso y el murciélago se encuentran tras el rebote):
+$<span class="math notranslate nohighlight">\(t_{\text{eco}} = \frac{2d_0}{v_{\text{sonido}} + v_{\text{murc}}} = \frac{2 \cdot 3.0}{340 + 6.0} = \frac{6.0}{346} \approx 0.0173 \text{ s}\)</span><span class="math notranslate nohighlight">\(
+Tiempo total que le tomaría chocar con la pared desde \)</span>d_0<span class="math notranslate nohighlight">\(:
+\)</span><span class="math notranslate nohighlight">\(t_{\text{colisión}} = \frac{d_0}{v_{\text{murc}}} = \frac{3.0}{6.0} = 0.5 \text{ s}\)</span><span class="math notranslate nohighlight">\(
+**Respuesta:** \)</span><span class="math notranslate nohighlight">\(t_{\text{disponible}} = t_{\text{colisión}} - t_{\text{eco}} = 0.5 - 0.0173 \approx 0.483 \text{ s}\)</span>$</p>
+</section>
+</section>
+<section id="problema-el-rio-kayaks-al-encuentro">
+<h3>Problema: El Río (Kayaks al encuentro)<a class="headerlink" href="#problema-el-rio-kayaks-al-encuentro" title="Permalink to this heading">#</a></h3>
+<p><em>(Aquí va el enunciado del problema…)</em></p>
+<details>
+<summary><b>👉 1. Identificar (Clic para expandir)</b></summary>
+<br>
+Extraemos los datos relevantes y definimos nuestro sistema de referencia:
+<ul>
+    <li>Origen ($x = 0$): Punto de partida del primer kayak.</li>
+    <li>Velocidad del Kayak 1: $v_1 = 1.5$ m/s (se mueve con la corriente, velocidad positiva).</li>
+    <li>Posición inicial Kayak 2: $d_0 = 15000$ m.</li>
+    <li>Velocidad del Kayak 2: $v_2 = -1.2$ m/s (se mueve contra la corriente, se acerca al origen, velocidad negativa).</li>
+</ul>
+</details>
+<details>
+<summary><b>👉 2. Plantear (Clic para expandir)</b></summary>
+<br>
+Utilizamos la ecuación de itinerario para movimiento rectilíneo uniforme (MRU): 
+$x(t) = x_0 + v \cdot t$
+<p>Para cada kayak:
+$<span class="math notranslate nohighlight">\(x_1(t) = 1.5 \cdot t\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(x_2(t) = 15000 - 1.2 \cdot t\)</span>$</p>
+<p>La condición de encuentro es que ambos estén en la misma posición al mismo tiempo: <span class="math notranslate nohighlight">\(x_1(t) = x_2(t)\)</span>.</p>
+</details>
+<details>
+<summary><b>👉 3. Ejecutar (Clic para expandir)</b></summary>
+<br>
+Igualamos las ecuaciones para despejar el tiempo de encuentro ($t$):
+$$1.5 \cdot t = 15000 - 1.2 \cdot t$$
+$$2.7 \cdot t = 15000$$
+$$t \approx 5555.56 \text{ s}$$
+<p>Reemplazamos este tiempo en la ecuación del primer kayak para hallar la posición:
+$<span class="math notranslate nohighlight">\(x = 1.5 \cdot 5555.56 \approx 8333.3 \text{ m}\)</span>$</p>
+</details>
+<details>
+<summary><b>👉 4. Evaluar (Clic para expandir)</b></summary>
+<br>
+El punto de encuentro ocurre aproximadamente a los $8.33$ km del inicio. 
+¿Tiene sentido? Sí. Como el Kayak 1 va un poco más rápido (1.5 m/s vs 1.2 m/s), recorre una distancia ligeramente mayor que la mitad del camino total ($7.5$ km) antes de encontrarse con el Kayak 2. El signo del tiempo y la posición son positivos, lo cual es coherente con nuestro sistema de referencia.
+</details><div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># 1. Definición de parámetros (Los estudiantes pueden modificar esto)</span>
+<span class="n">v1</span> <span class="o">=</span> <span class="mf">1.5</span>          <span class="c1"># m/s (Kayak 1)</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.2</span>         <span class="c1"># m/s (Kayak 2, negativo porque va en sentido contrario)</span>
+<span class="n">x0_1</span> <span class="o">=</span> <span class="mi">0</span>          <span class="c1"># m (Posición inicial Kayak 1)</span>
+<span class="n">x0_2</span> <span class="o">=</span> <span class="mi">15000</span>      <span class="c1"># m (Posición inicial Kayak 2)</span>
+
+<span class="c1"># 2. Arreglo de tiempo (de 0 a 6000 segundos)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># 3. Ecuaciones de itinerario</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">x0_1</span> <span class="o">+</span> <span class="n">v1</span> <span class="o">*</span> <span class="n">t</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">x0_2</span> <span class="o">+</span> <span class="n">v2</span> <span class="o">*</span> <span class="n">t</span>
+
+<span class="c1"># 4. Cálculo analítico del punto de intersección (para el gráfico)</span>
+<span class="n">t_encuentro</span> <span class="o">=</span> <span class="p">(</span><span class="n">x0_2</span> <span class="o">-</span> <span class="n">x0_1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">v1</span> <span class="o">-</span> <span class="n">v2</span><span class="p">)</span>
+<span class="n">x_encuentro</span> <span class="o">=</span> <span class="n">x0_1</span> <span class="o">+</span> <span class="n">v1</span> <span class="o">*</span> <span class="n">t_encuentro</span>
+
+<span class="c1"># 5. Configuración del gráfico</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Kayak 1 (A favor de la corriente)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Kayak 2 (Contra la corriente)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Marcar el punto de encuentro</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t_encuentro</span><span class="p">,</span> <span class="n">x_encuentro</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t_encuentro</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">x_encuentro</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="c1"># Anotación del resultado</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Encuentro:</span><span class="se">\n</span><span class="s1"> t = </span><span class="si">{</span><span class="n">t_encuentro</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> s</span><span class="se">\n</span><span class="s1"> x = </span><span class="si">{</span><span class="n">x_encuentro</span><span class="o">/</span><span class="mi">1000</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> km&#39;</span><span class="p">,</span> 
+             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">t_encuentro</span><span class="p">,</span> <span class="n">x_encuentro</span><span class="p">),</span> 
+             <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">t_encuentro</span> <span class="o">-</span> <span class="mi">1500</span><span class="p">,</span> <span class="n">x_encuentro</span> <span class="o">+</span> <span class="mi">2000</span><span class="p">),</span>
+             <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s2">&quot;round,pad=0.3&quot;</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">),</span>
+             <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc3,rad=.2&quot;</span><span class="p">))</span>
+
+<span class="c1"># Detalles estéticos</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfico de Posición vs Tiempo: Encuentro de Kayaks&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tiempo (s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Posición (m)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16000</span><span class="p">)</span>
+
+<span class="c1"># Mostrar gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/88d336c62814bad25a07bd1c5a156da99ca1282bde674fa3f15d51102d446e5e.png" src="_images/88d336c62814bad25a07bd1c5a156da99ca1282bde674fa3f15d51102d446e5e.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">FloatSlider</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">grafico_interactivo</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">magnitud_v2</span><span class="p">):</span>
+    <span class="c1"># v1 es positiva (a favor de la corriente), v2 es negativa (contra la corriente)</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="o">-</span><span class="n">magnitud_v2</span> 
+    <span class="n">x0_1</span> <span class="o">=</span> <span class="mi">0</span>          <span class="c1"># Posición inicial Kayak 1 (m)</span>
+    <span class="n">x0_2</span> <span class="o">=</span> <span class="mi">15000</span>      <span class="c1"># Posición inicial Kayak 2 (m)</span>
+    
+    <span class="c1"># Arreglo de tiempo</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8000</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    
+    <span class="c1"># Ecuaciones de itinerario</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">x0_1</span> <span class="o">+</span> <span class="n">v1</span> <span class="o">*</span> <span class="n">t</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">x0_2</span> <span class="o">+</span> <span class="n">v2</span> <span class="o">*</span> <span class="n">t</span>
+    
+    <span class="c1"># Cálculo analítico del punto de intersección</span>
+    <span class="c1"># Verificamos que las velocidades no sean iguales para evitar división por cero</span>
+    <span class="k">if</span> <span class="n">v1</span> <span class="o">!=</span> <span class="n">v2</span><span class="p">:</span>
+        <span class="n">t_encuentro</span> <span class="o">=</span> <span class="p">(</span><span class="n">x0_2</span> <span class="o">-</span> <span class="n">x0_1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">v1</span> <span class="o">-</span> <span class="n">v2</span><span class="p">)</span>
+        <span class="n">x_encuentro</span> <span class="o">=</span> <span class="n">x0_1</span> <span class="o">+</span> <span class="n">v1</span> <span class="o">*</span> <span class="n">t_encuentro</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">t_encuentro</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># Valor arbitrario fuera de rango si no se encuentran</span>
+        <span class="n">x_encuentro</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        
+    <span class="c1"># Configuración del gráfico</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Kayak 1 (v = </span><span class="si">{</span><span class="n">v1</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> m/s)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Kayak 2 (v = </span><span class="si">{</span><span class="n">v2</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> m/s)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="c1"># Graficar el punto solo si el encuentro ocurre en un tiempo futuro y dentro del rango</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">t_encuentro</span> <span class="o">&lt;=</span> <span class="mi">8000</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t_encuentro</span><span class="p">,</span> <span class="n">x_encuentro</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t_encuentro</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">x_encuentro</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+        
+        <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Encuentro:</span><span class="se">\n</span><span class="s1"> t = </span><span class="si">{</span><span class="n">t_encuentro</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> s</span><span class="se">\n</span><span class="s1"> x = </span><span class="si">{</span><span class="n">x_encuentro</span><span class="o">/</span><span class="mi">1000</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> km&#39;</span><span class="p">,</span> 
+                     <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">t_encuentro</span><span class="p">,</span> <span class="n">x_encuentro</span><span class="p">),</span> 
+                     <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">t_encuentro</span> <span class="o">+</span> <span class="mi">300</span><span class="p">,</span> <span class="n">x_encuentro</span> <span class="o">+</span> <span class="mi">2500</span><span class="p">),</span>
+                     <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s2">&quot;round,pad=0.3&quot;</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">),</span>
+                     <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s2">&quot;arc3,rad=.2&quot;</span><span class="p">))</span>
+                     
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfico Dinámico: Encuentro de Kayaks&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tiempo (s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Posición (m)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8000</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16000</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Creación de los deslizadores (Sliders)</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">grafico_interactivo</span><span class="p">,</span> 
+         <span class="n">v1</span><span class="o">=</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> 
+                        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;v Kayak 1 (m/s):&#39;</span><span class="p">,</span> 
+                        <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;initial&#39;</span><span class="p">}),</span>
+         <span class="n">magnitud_v2</span><span class="o">=</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> 
+                                 <span class="n">description</span><span class="o">=</span><span class="s1">&#39;|v Kayak 2| (m/s):&#39;</span><span class="p">,</span> 
+                                 <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;description_width&#39;</span><span class="p">:</span> <span class="s1">&#39;initial&#39;</span><span class="p">}));</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "d09c838e5e1d43aeb3ddec8b04f26a1a"}</script></div>
+</div>
+<blockquote>
+<div><p>[!NOTE]
+<strong>Definición:</strong> La permitividad del vacío (<span class="math notranslate nohighlight">\(\varepsilon_0\)</span>) es una constante física que describe cómo un campo eléctrico afecta y es afectado por un medio al vacío.</p>
+</div></blockquote>
+<blockquote>
+<div><p>[!WARNING]
+<strong>Cuidado con la simetría:</strong> Al calcular el campo eléctrico en el centro exacto de un anillo de radio <span class="math notranslate nohighlight">\(R\)</span> con densidad de carga uniforme, recuerda que las componentes transversales se anulan. ¡El campo en ese punto es cero!</p>
+</div></blockquote>
+<blockquote>
+<div><p>[!TIP]
+Para este problema, conviene usar coordenadas cilíndricas en lugar de cartesianas para simplificar la integración.</p>
+</div></blockquote>
+<div class="alert alert-info">
+<b>Definición:</b> La permitividad del vacío ($\varepsilon_0$) es una constante física...
+</div>
+<div class="alert alert-warning">
+<b>Cuidado con la simetría:</b> Al calcular el campo eléctrico...
+</div>
+<div class="alert alert-success">
+<b>Tip:</b> Para este problema, conviene usar coordenadas cilíndricas...
+</div><div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>def procesar_evaluaciones_moodle(lista_archivos):
+<span class="w"> </span>   for estudiante in lista_archivos:
+<span class="w"> </span>       if tiene_archivo_respaldo(estudiante):
+<span class="gd">-           print(&quot;Ya terminó&quot;)</span>
+<span class="gd">-           break  # Este era el error: cortaba el ciclo y se saltaba al siguiente estudiante</span>
+<span class="gi">+           procesar_respaldo(estudiante)</span>
+<span class="gi">+           continue # Corrección: procesa el respaldo y continúa con el resto de la lista</span>
+<span class="w"> </span>       evaluar(estudiante)
+</pre></div>
+</div>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>def procesar_evaluaciones_moodle(lista_archivos):
+<span class="w"> </span>   for estudiante in lista_archivos:
+<span class="w"> </span>       if tiene_archivo_respaldo(estudiante):
+<span class="gd">-           print(&quot;Ya terminó&quot;)</span>
+<span class="gi">+           procesar_respaldo(estudiante)</span>
+<span class="w"> </span>       evaluar(estudiante)
+</pre></div>
+</div>
+<p><strong>Metodología para problemas de Cinemática:</strong></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <strong>Identificar:</strong> Leer el enunciado, extraer variables y definir el sistema de referencia.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Plantear:</strong> Escribir las ecuaciones de itinerario (ej. <span class="math notranslate nohighlight">\(x(t) = x_0 + v_0 t + \frac{1}{2}at^2\)</span>).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Ejecutar:</strong> Realizar el despeje algebraico sin reemplazar los números hasta el final.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Evaluar:</strong> Comprobar si las unidades cuadran y si la magnitud del resultado tiene sentido físico.</p></li>
+</ul>
+<p>El método de instrucción entre pares ha demostrado aumentar significativamente la ganancia conceptual en estudiantes de ingeniería en cursos de física introductoria.<a class="footnote-reference brackets" href="#id7" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Variable</p></th>
+<th class="head text-left"><p>Descripción (Alineado a la izq)</p></th>
+<th class="head text-center"><p>Unidad (Centrado)</p></th>
+<th class="head text-right"><p>Valor Típico (Der)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(t\)</span></p></td>
+<td class="text-left"><p>Tiempo de encuentro</p></td>
+<td class="text-center"><p>s</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(15.4\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(v\)</span></p></td>
+<td class="text-left"><p>Rapidez media</p></td>
+<td class="text-center"><p>m/s</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(3.0\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(x_f\)</span></p></td>
+<td class="text-left"><p>Posición final</p></td>
+<td class="text-center"><p>m</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(120.0\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="que-camino-tomar-para-tu-libro-digital">
+<h3>¿Qué camino tomar para tu Libro Digital?<a class="headerlink" href="#que-camino-tomar-para-tu-libro-digital" title="Permalink to this heading">#</a></h3>
+<p>Si estás construyendo tu libro digital usando la herramienta <strong>Jupyter Book</strong> (la más popular para esto), el estándar para crear alertas de colores que funcionen tanto al compilar el libro como en la web es usar la sintaxis <strong>MyST</strong> (Markedly Structured Text). Se escribe con acentos graves, así:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>```{note}
+<span class="gs">**Definición:**</span> La permitividad del vacío...
+</pre></div>
+</div>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="id7" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">1</a><span class="fn-bracket">]</span></span>
+<p>Mazur, E. (1997). <em>Peer Instruction: A User’s Manual</em>. Prentice Hall.</p>
+</aside>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-submarinos">1. Los Submarinos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-rio">2. El Río</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-corredores">3. Los Corredores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-auto-solar">4. El Auto Solar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-de-problemas-equivalentes">Set de Problemas Equivalentes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pautas-de-correccion-problemas-ricos-en-contexto">Pautas de Corrección: Problemas Ricos en Contexto</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Los Submarinos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. El Río</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. Los Corredores</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4. El Auto Solar</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Set de Problemas Equivalentes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-a-las-llaves-olvidadas">Problema A: Las Llaves Olvidadas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-b-el-buque-factoria-y-el-iceberg">Problema B: El Buque Factoría y el Iceberg</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-c-el-murcielago-cola-de-raton">Problema C: El Murciélago Cola de Ratón</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-el-rio-kayaks-al-encuentro">Problema: El Río (Kayaks al encuentro)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-camino-tomar-para-tu-libro-digital">¿Qué camino tomar para tu Libro Digital?</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Miguel Pinto
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
