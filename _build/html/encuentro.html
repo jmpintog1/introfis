@@ -172,6 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Ejercicio de Persecusión</a></li>
 <li class="toctree-l1"><a class="reference internal" href="actividad.html">Lanzamiento de Objeto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="circular.html">Movimiento Circular……</a></li>
 </ul>
 
     </div>
@@ -902,26 +903,26 @@ document.write(`
     
     <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; align-items: center; justify-content: space-between;">
         <div style="display: flex; gap: 15px; align-items: center;">
-            <button id="play_47788" style="background-color: #f73bc5; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
-            <button id="reset_47788" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
+            <button id="play_18289" style="background-color: #f73bc5; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir / Pausar</button>
+            <button id="reset_18289" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">⏹ Reiniciar</button>
             <div style="font-size: 1.1em; font-weight: bold; margin-left: 10px;">
-                Tiempo: <span id="time_display_47788" style="color: #dc3545;">0.0</span> s
+                Tiempo: <span id="time_display_18289" style="color: #dc3545;">0.0</span> s
             </div>
         </div>
         
         <!-- Control de velocidad de la simulación -->
         <div style="display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 8px 15px; border-radius: 5px;">
             <label style="font-weight: 600; font-size: 0.9em; margin: 0;">Velocidad de Simulación:</label>
-            <input type="range" id="speed_47788" min="0.2" max="2" step="0.2" value="1.0" style="vertical-align: middle;">
-            <span id="speed_val_47788" style="font-weight: bold; font-family: monospace; width: 35px;">1.0x</span>
+            <input type="range" id="speed_18289" min="0.2" max="2" step="0.2" value="1.0" style="vertical-align: middle;">
+            <span id="speed_val_18289" style="font-weight: bold; font-family: monospace; width: 35px;">1.0x</span>
         </div>
     </div>
     
     <div style="text-align: center; position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 10px;">
         <!-- Canvas de la persecución física -->
-        <canvas id="canvas_sim_47788" width="950" height="120" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+        <canvas id="canvas_sim_18289" width="950" height="120" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
         <!-- Canvas de los gráficos -->
-        <canvas id="canvas_graphs_47788" width="950" height="300" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+        <canvas id="canvas_graphs_18289" width="950" height="300" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
     </div>
     
     <div style="margin-top: 15px; font-size: 0.9em; display: flex; justify-content: center; gap: 30px;">
@@ -933,8 +934,8 @@ document.write(`
 <script>
     (function() {
         function initSimulation() {
-            const canvasSim = document.getElementById('canvas_sim_47788');
-            const canvasGraph = document.getElementById('canvas_graphs_47788');
+            const canvasSim = document.getElementById('canvas_sim_18289');
+            const canvasGraph = document.getElementById('canvas_graphs_18289');
             if (!canvasSim || !canvasGraph) {
                 setTimeout(initSimulation, 50); 
                 return;
@@ -943,11 +944,11 @@ document.write(`
             const ctxSim = canvasSim.getContext('2d');
             const ctxG = canvasGraph.getContext('2d');
             
-            const btn_play = document.getElementById('play_47788');
-            const btn_reset = document.getElementById('reset_47788');
-            const time_display = document.getElementById('time_display_47788');
-            const speed_slider = document.getElementById('speed_47788');
-            const speed_val = document.getElementById('speed_val_47788');
+            const btn_play = document.getElementById('play_18289');
+            const btn_reset = document.getElementById('reset_18289');
+            const time_display = document.getElementById('time_display_18289');
+            const speed_slider = document.getElementById('speed_18289');
+            const speed_val = document.getElementById('speed_val_18289');
             
             let t = 0;
             let isPlaying = false;

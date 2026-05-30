@@ -9,3 +9,4 @@ parts:
     chapters:
       - file: encuentro
       - file: actividad
+      - file: circular
