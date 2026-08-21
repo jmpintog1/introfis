@@ -31,7 +31,7 @@ launch_buttons:
   notebook_interface: "classic" 
   colab_url: "https://colab.research.google.com"
   # Muestra el botón de Colab
-  colab: true
+  colab: false
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
