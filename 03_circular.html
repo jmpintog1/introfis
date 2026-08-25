@@ -413,46 +413,46 @@ document.write(`
     
     <div style="display: flex; gap: 20px; margin-bottom: 20px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
         <div style="display: flex; gap: 15px; align-items: center;">
-            <button id="play_86511" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir Giro</button>
-            <button id="limit_btn_86511" style="background-color: #6f42c1; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">🎯 Animar Límite (Δt → 0)</button>
+            <button id="play_66632" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir Giro</button>
+            <button id="limit_btn_66632" style="background-color: #6f42c1; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">🎯 Animar Límite (Δt → 0)</button>
         </div>
         
         <div style="display: flex; gap: 20px; align-items: center;">
             <div style="display: flex; flex-direction: column; align-items: center; background: #fff; padding: 8px 15px; border-radius: 5px; border: 1px solid #ccc;">
                 <label style="font-weight: 600; font-size: 0.85em; margin-bottom: 5px; color: #dc3545;">Intervalo de Tiempo (Δt)</label>
-                <input type="range" id="dt_slider_86511" min="0.001" max="1.5" step="0.01" value="1.0" style="width: 150px;">
-                <span id="dt_val_86511" style="font-weight: bold; font-family: monospace; font-size: 0.9em;">1.000 s</span>
+                <input type="range" id="dt_slider_66632" min="0.001" max="1.5" step="0.01" value="1.0" style="width: 150px;">
+                <span id="dt_val_66632" style="font-weight: bold; font-family: monospace; font-size: 0.9em;">1.000 s</span>
             </div>
         </div>
     </div>
     
     <div style="display: flex; justify-content: center; margin-bottom: 15px;">
-        <canvas id="canvas_sim_86511" width="550" height="450" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+        <canvas id="canvas_sim_66632" width="550" height="450" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
     </div>
     
     <div style="font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_v1_86511" checked style="cursor: pointer;">
+            <input type="checkbox" id="chk_v1_66632" checked style="cursor: pointer;">
             <span><b style="color:#0d6efd;">▬ v₁</b> (Vel. actual)</span>
         </label>
         
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_v2_86511" checked style="cursor: pointer;">
+            <input type="checkbox" id="chk_v2_66632" checked style="cursor: pointer;">
             <span><b style="color:#0dcaf0;">▬ v₂</b> (Vel. futura)</span>
         </label>
         
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_dv_86511" style="cursor: pointer;">
+            <input type="checkbox" id="chk_dv_66632" style="cursor: pointer;">
             <span><b style="color:#fd7e14;">▬ Δv</b> (Resta de vectores)</span>
         </label>
         
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_am_86511" style="cursor: pointer;">
+            <input type="checkbox" id="chk_am_66632" style="cursor: pointer;">
             <span><b style="color:#6f42c1;">▬ a_media</b> (Δv/Δt)</span>
         </label>
         
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_ac_86511" style="cursor: pointer;">
+            <input type="checkbox" id="chk_ac_66632" style="cursor: pointer;">
             <span><b style="color:#dc3545;">▬ a_instantánea</b> (Real)</span>
         </label>
     </div>
@@ -461,24 +461,24 @@ document.write(`
 <script>
     (function() {
         function initSimulation() {
-            const canvas = document.getElementById('canvas_sim_86511');
+            const canvas = document.getElementById('canvas_sim_66632');
             if (!canvas) {
                 setTimeout(initSimulation, 50); 
                 return;
             }
             
             const ctx = canvas.getContext('2d');
-            const btn_play = document.getElementById('play_86511');
-            const btn_limit = document.getElementById('limit_btn_86511');
-            const dt_slider = document.getElementById('dt_slider_86511');
-            const dt_val = document.getElementById('dt_val_86511');
+            const btn_play = document.getElementById('play_66632');
+            const btn_limit = document.getElementById('limit_btn_66632');
+            const dt_slider = document.getElementById('dt_slider_66632');
+            const dt_val = document.getElementById('dt_val_66632');
             
             // Elementos de visibilidad (Checkboxes)
-            const chk_v1 = document.getElementById('chk_v1_86511');
-            const chk_v2 = document.getElementById('chk_v2_86511');
-            const chk_dv = document.getElementById('chk_dv_86511');
-            const chk_am = document.getElementById('chk_am_86511');
-            const chk_ac = document.getElementById('chk_ac_86511');
+            const chk_v1 = document.getElementById('chk_v1_66632');
+            const chk_v2 = document.getElementById('chk_v2_66632');
+            const chk_dv = document.getElementById('chk_dv_66632');
+            const chk_am = document.getElementById('chk_am_66632');
+            const chk_ac = document.getElementById('chk_ac_66632');
             
             let isPlaying = false;
             let limitAnimationActive = false;
@@ -693,30 +693,30 @@ document.write(`
     </p>
     
     <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
-        <button id="btn_reset_31199" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 180px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">▶ Iniciar / Reiniciar</button>
-        <button id="btn_pause_31199" style="background-color: #ffc107; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 180px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">⏸ Pausar</button>
-        <button id="btn_mute_31199" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 150px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">🔊 Silenciar</button>
+        <button id="btn_reset_26901" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 180px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">▶ Iniciar / Reiniciar</button>
+        <button id="btn_pause_26901" style="background-color: #ffc107; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 180px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">⏸ Pausar</button>
+        <button id="btn_mute_26901" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 150px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">🔊 Silenciar</button>
     </div>
     
     <div style="display: flex; justify-content: center; margin-bottom: 15px; position: relative;">
-        <canvas id="canvas_mcu_31199" width="550" height="450" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+        <canvas id="canvas_mcu_26901" width="550" height="450" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
     </div>
     
     <div style="font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_v_31199" checked>
+            <input type="checkbox" id="chk_v_26901" checked>
             <span><b style="color:#20c997;">▬ v</b> (Vel. Lineal)</span>
         </label>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_ac_31199">
+            <input type="checkbox" id="chk_ac_26901">
             <span><b style="color:#dc3545;">▬ a_c</b> (Centrípeta)</span>
         </label>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_at_31199">
+            <input type="checkbox" id="chk_at_26901">
             <span><b style="color:#fd7e14;">▬ a_t</b> (Tangencial)</span>
         </label>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_atot_31199">
+            <input type="checkbox" id="chk_atot_26901">
             <span><b style="color:#6f42c1;">▬ a_tot</b> (Total)</span>
         </label>
     </div>
@@ -725,21 +725,21 @@ document.write(`
 <script>
     (function() {
         function initSimulation() {
-            const canvas = document.getElementById('canvas_mcu_31199');
+            const canvas = document.getElementById('canvas_mcu_26901');
             if (!canvas) {
                 setTimeout(initSimulation, 50); 
                 return;
             }
             
             const ctx = canvas.getContext('2d');
-            const btn_reset = document.getElementById('btn_reset_31199');
-            const btn_pause = document.getElementById('btn_pause_31199');
-            const btn_mute = document.getElementById('btn_mute_31199');
+            const btn_reset = document.getElementById('btn_reset_26901');
+            const btn_pause = document.getElementById('btn_pause_26901');
+            const btn_mute = document.getElementById('btn_mute_26901');
             
-            const chk_v = document.getElementById('chk_v_31199');
-            const chk_ac = document.getElementById('chk_ac_31199');
-            const chk_at = document.getElementById('chk_at_31199');
-            const chk_atot = document.getElementById('chk_atot_31199');
+            const chk_v = document.getElementById('chk_v_26901');
+            const chk_ac = document.getElementById('chk_ac_26901');
+            const chk_at = document.getElementById('chk_at_26901');
+            const chk_atot = document.getElementById('chk_atot_26901');
             
             let lastTime = 0;
             let isRunning = false;
@@ -1027,30 +1027,30 @@ document.write(`
     </p>
     
     <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
-        <button id="btn_reset_74375" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 180px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">▶ Iniciar / Reiniciar</button>
-        <button id="btn_pause_74375" style="background-color: #ffc107; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 180px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">⏸ Pausar</button>
-        <button id="btn_mute_74375" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 150px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">🔊 Silenciar</button>
+        <button id="btn_reset_18980" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 180px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">▶ Iniciar / Reiniciar</button>
+        <button id="btn_pause_18980" style="background-color: #ffc107; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 180px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">⏸ Pausar</button>
+        <button id="btn_mute_18980" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 150px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">🔊 Silenciar</button>
     </div>
     
     <div style="display: flex; justify-content: center; margin-bottom: 15px; position: relative;">
-        <canvas id="canvas_mcu_74375" width="550" height="450" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+        <canvas id="canvas_mcu_18980" width="550" height="450" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
     </div>
     
     <div style="font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_v_74375" checked>
+            <input type="checkbox" id="chk_v_18980" checked>
             <span><b style="color:#20c997;">▬ v</b> (Vel. Lineal)</span>
         </label>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_ac_74375">
+            <input type="checkbox" id="chk_ac_18980">
             <span><b style="color:#dc3545;">▬ a_c</b> (Centrípeta)</span>
         </label>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_at_74375">
+            <input type="checkbox" id="chk_at_18980">
             <span><b style="color:#fd7e14;">▬ a_t</b> (Tangencial)</span>
         </label>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_atot_74375">
+            <input type="checkbox" id="chk_atot_18980">
             <span><b style="color:#6f42c1;">▬ a_tot</b> (Total)</span>
         </label>
     </div>
@@ -1059,21 +1059,21 @@ document.write(`
 <script>
     (function() {
         function initSimulation() {
-            const canvas = document.getElementById('canvas_mcu_74375');
+            const canvas = document.getElementById('canvas_mcu_18980');
             if (!canvas) {
                 setTimeout(initSimulation, 50); 
                 return;
             }
             
             const ctx = canvas.getContext('2d');
-            const btn_reset = document.getElementById('btn_reset_74375');
-            const btn_pause = document.getElementById('btn_pause_74375');
-            const btn_mute = document.getElementById('btn_mute_74375');
+            const btn_reset = document.getElementById('btn_reset_18980');
+            const btn_pause = document.getElementById('btn_pause_18980');
+            const btn_mute = document.getElementById('btn_mute_18980');
             
-            const chk_v = document.getElementById('chk_v_74375');
-            const chk_ac = document.getElementById('chk_ac_74375');
-            const chk_at = document.getElementById('chk_at_74375');
-            const chk_atot = document.getElementById('chk_atot_74375');
+            const chk_v = document.getElementById('chk_v_18980');
+            const chk_ac = document.getElementById('chk_ac_18980');
+            const chk_at = document.getElementById('chk_at_18980');
+            const chk_atot = document.getElementById('chk_atot_18980');
             
             let lastTime = 0;
             let isRunning = false;
@@ -1365,6 +1365,364 @@ document.write(`
             ctx.fillStyle = "#666";
             ctx.textAlign = "center";
             ctx.fillText("Presiona Iniciar para comenzar", canvas.width/2, canvas.height/2);
+
+            requestAnimationFrame(animate);
+        }
+        
+        initSimulation();
+    })();
+</script>
+</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div style="border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, sans-serif;">
+    <h3 style="margin-top:0; color: #2c3e50; text-align: center;">Simulación: Patinador en Pista Semicircular</h3>
+    <p style="font-size: 0.95em; color: #555; margin-bottom: 15px; text-align: center;">
+        La simulación corre en <strong>cámara lenta</strong> para que observes los vectores aplicados en el centro de masa. Nota cómo en los extremos la <strong>aceleración tangencial</strong> es máxima, mientras que en el fondo la <strong>aceleración centrípeta</strong> es la predominante.
+    </p>
+    
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+        <button id="btn_reset_47061" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 180px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">▶ Iniciar / Reiniciar</button>
+        <button id="btn_pause_47061" style="background-color: #ffc107; color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 180px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">⏸ Pausar</button>
+        <button id="btn_mute_47061" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 150px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 1.05em;">🔊 Silenciar</button>
+    </div>
+    
+    <div style="display: flex; justify-content: center; margin-bottom: 15px; position: relative;">
+        <canvas id="canvas_mcu_47061" width="600" height="400" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+    </div>
+    
+    <div style="font-size: 0.95em; padding: 15px; background: #e2e3e5; border-radius: 5px; color: #383d41; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
+        <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
+            <input type="checkbox" id="chk_v_47061" checked>
+            <span><b style="color:#20c997;">▬ v</b> (Vel. Lineal)</span>
+        </label>
+        <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
+            <input type="checkbox" id="chk_ac_47061">
+            <span><b style="color:#dc3545;">▬ a_c</b> (Centrípeta)</span>
+        </label>
+        <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
+            <input type="checkbox" id="chk_at_47061">
+            <span><b style="color:#fd7e14;">▬ a_t</b> (Tangencial)</span>
+        </label>
+        <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
+            <input type="checkbox" id="chk_atot_47061">
+            <span><b style="color:#6f42c1;">▬ a_tot</b> (Total)</span>
+        </label>
+    </div>
+</div>
+
+<script>
+    (function() {
+        function initSimulation() {
+            const canvas = document.getElementById('canvas_mcu_47061');
+            if (!canvas) {
+                setTimeout(initSimulation, 50); 
+                return;
+            }
+            
+            const ctx = canvas.getContext('2d');
+            const btn_reset = document.getElementById('btn_reset_47061');
+            const btn_pause = document.getElementById('btn_pause_47061');
+            const btn_mute = document.getElementById('btn_mute_47061');
+            
+            const chk_v = document.getElementById('chk_v_47061');
+            const chk_ac = document.getElementById('chk_ac_47061');
+            const chk_at = document.getElementById('chk_at_47061');
+            const chk_atot = document.getElementById('chk_atot_47061');
+            
+            let lastTime = 0;
+            let isRunning = false;
+            let isPaused = false;
+            let isMuted = false;
+            
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            let audioCtx = null;
+            let oscillator = null;
+            let filterNode = null;
+            let gainNode = null;
+            
+            // --- CONSTANTES DE FÍSICA Y VISUALIZACIÓN ---
+            const TIME_SCALE = 0.35; // Cámara lenta
+            const R_visual = 160; 
+            const R_fisico = 3.0; 
+            const g_sim = 9.8; 
+            
+            let ang = Math.PI; // Inicia en la izquierda
+            let omega = 0; 
+            
+            function initAudio() {
+                if (!audioCtx) audioCtx = new AudioContext();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+                
+                if (oscillator) {
+                    oscillator.stop();
+                    oscillator.disconnect();
+                }
+                
+                oscillator = audioCtx.createOscillator();
+                filterNode = audioCtx.createBiquadFilter();
+                gainNode = audioCtx.createGain();
+                
+                oscillator.type = 'sawtooth'; 
+                oscillator.frequency.value = 40; 
+                filterNode.type = 'lowpass';
+                filterNode.frequency.value = 100; 
+                gainNode.gain.value = isMuted ? 0 : 0.25; 
+                
+                oscillator.connect(filterNode);
+                filterNode.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                oscillator.start();
+            }
+
+            function updateAudio(currentOmega) {
+                if (oscillator && audioCtx && filterNode) {
+                    const absOmega = Math.abs(currentOmega);
+                    const targetFreq = 40 + (absOmega * 60);
+                    const filterTarget = 100 + (absOmega * 80);
+                    oscillator.frequency.setTargetAtTime(targetFreq, audioCtx.currentTime, 0.1);
+                    filterNode.frequency.setTargetAtTime(filterTarget, audioCtx.currentTime, 0.1);
+                }
+            }
+
+            function drawArrow(context, fromx, fromy, tox, toy, color, lineWidth=3, dashed=false) {
+                const headlen = 10;
+                const dx = tox - fromx;
+                const dy = toy - fromy;
+                const length = Math.sqrt(dx*dx + dy*dy);
+                if(length < 0.1) return; 
+                
+                const angle = Math.atan2(dy, dx);
+                context.beginPath();
+                context.strokeStyle = color;
+                context.lineWidth = lineWidth;
+                if(dashed) context.setLineDash([5, 5]);
+                else context.setLineDash([]);
+                
+                context.moveTo(fromx, fromy);
+                context.lineTo(tox, toy);
+                context.stroke();
+                context.setLineDash([]); 
+                
+                context.beginPath();
+                context.fillStyle = color;
+                context.moveTo(tox, toy);
+                context.lineTo(tox - headlen * Math.cos(angle - Math.PI / 6), toy - headlen * Math.sin(angle - Math.PI / 6));
+                context.lineTo(tox - headlen * Math.cos(angle + Math.PI / 6), toy - headlen * Math.sin(angle + Math.PI / 6));
+                context.fill();
+            }
+
+            function drawProjection(fromX, fromY, dirX, dirY, color) {
+                const extLen = 300; 
+                ctx.beginPath();
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 1.5;
+                ctx.setLineDash([4, 4]);
+                ctx.moveTo(fromX - dirX * extLen, fromY - dirY * extLen);
+                ctx.lineTo(fromX + dirX * extLen, fromY + dirY * extLen);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+
+            function animate(timestamp) {
+                if (!isRunning || isPaused) {
+                    lastTime = timestamp;
+                    requestAnimationFrame(animate);
+                    return;
+                }
+                
+                if (!lastTime) lastTime = timestamp;
+                let dt = ((timestamp - lastTime) / 1000) * TIME_SCALE;
+                lastTime = timestamp;
+                if(dt > 0.1) dt = 0.1; 
+                
+                const alpha = (g_sim / R_fisico) * Math.cos(ang);
+                omega += alpha * dt;
+                ang += omega * dt;
+
+                if (ang > Math.PI) { ang = Math.PI; omega = -omega * 0.99; }
+                if (ang < 0) { ang = 0; omega = -omega * 0.99; }
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const cx = canvas.width / 2;
+                const cy = 80; 
+                
+                // 1. Tubería
+                ctx.beginPath(); 
+                ctx.strokeStyle = "#444"; 
+                ctx.lineWidth = 5;
+                ctx.arc(cx, cy, R_visual, 0, Math.PI, false); 
+                ctx.stroke();
+
+                // 2. Línea horizontal punteada
+                ctx.beginPath();
+                ctx.strokeStyle = "#999"; 
+                ctx.lineWidth = 1.5;
+                ctx.setLineDash([8, 8]);
+                ctx.moveTo(cx - R_visual - 30, cy);
+                ctx.lineTo(cx + R_visual + 30, cy);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Puntos de referencia
+                function drawPoint(p_ang, label, align) {
+                    const px = cx + R_visual * Math.cos(p_ang);
+                    const py = cy + R_visual * Math.sin(p_ang);
+                    ctx.beginPath(); ctx.fillStyle = "#333"; ctx.arc(px, py, 4, 0, Math.PI*2); ctx.fill();
+                    ctx.font = "bold 14px sans-serif"; ctx.textAlign = align;
+                    ctx.fillStyle = "#555"; 
+                    ctx.fillText(label, px + (align === 'left' ? 10 : (align === 'right' ? -10 : 0)), py + 20);
+                }
+                drawPoint(Math.PI / 2, "Fondo", "center");
+                drawPoint(37 * Math.PI / 180, "Punto P (37°)", "left"); 
+
+                // Gravedad
+                drawArrow(ctx, 40, 40, 40, 90, "#888", 2);
+                ctx.font = "italic 18px serif"; ctx.textAlign = "left"; ctx.fillStyle = "#888"; 
+                ctx.fillText("g", 50, 70);
+
+                // --- VECTORES UNITARIOS Y POSICIÓN ---
+                const ur_x = Math.cos(ang); 
+                const ur_y = Math.sin(ang); 
+                const ut_x = -Math.sin(ang); 
+                const ut_y = Math.cos(ang); 
+
+                // Punto exacto sobre el riel
+                const px = cx + R_visual * ur_x; 
+                const py = cy + R_visual * ur_y;
+
+                // --- DIBUJAR PATINADOR ---
+                // Ajustes para asentar ruedas y tabla encima de la pista
+                const wheelOffset = 6.5; // Eleva el centro de la rueda respecto al riel (-ur)
+                const boardOffset = 11.5; // Eleva la tabla
+                
+                const bx = px - boardOffset*ur_x;
+                const by = py - boardOffset*ur_y;
+
+                // Ruedas
+                ctx.fillStyle = "#222";
+                ctx.beginPath(); ctx.arc(px - 14*ut_x - wheelOffset*ur_x, py - 14*ut_y - wheelOffset*ur_y, 4, 0, Math.PI*2); ctx.fill();
+                ctx.beginPath(); ctx.arc(px + 14*ut_x - wheelOffset*ur_x, py + 14*ut_y - wheelOffset*ur_y, 4, 0, Math.PI*2); ctx.fill();
+
+                // Tabla
+                ctx.beginPath(); ctx.strokeStyle = "#8B4513"; ctx.lineWidth = 4; ctx.lineCap = "round";
+                ctx.moveTo(bx - 22*ut_x, by - 22*ut_y); ctx.lineTo(bx + 22*ut_x, by + 22*ut_y); ctx.stroke();
+
+                // Esqueleto detallado
+                ctx.strokeStyle = "#111"; ctx.lineWidth = 3; ctx.lineJoin = "round";
+                const pelvisX = bx - 14*ur_x;
+                const pelvisY = by - 14*ur_y;
+                
+                // Piernas flexionadas
+                ctx.beginPath(); ctx.moveTo(bx - 12*ut_x, by); ctx.lineTo(bx - 16*ut_x - 7*ur_x, by - 7*ur_y); ctx.lineTo(pelvisX, pelvisY); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(bx + 12*ut_x, by); ctx.lineTo(bx + 16*ut_x - 7*ur_x, by - 7*ur_y); ctx.lineTo(pelvisX, pelvisY); ctx.stroke();
+
+                // Torso
+                const shoulderX = pelvisX - 14*ur_x;
+                const shoulderY = pelvisY - 14*ur_y;
+                ctx.beginPath(); ctx.moveTo(pelvisX, pelvisY); ctx.lineTo(shoulderX, shoulderY); ctx.stroke();
+
+                // Casco
+                ctx.beginPath(); ctx.fillStyle = "#d35400"; // Naranja oscuro/rojo
+                ctx.arc(shoulderX - 5*ur_x, shoulderY - 5*ur_y, 6.5, 0, Math.PI*2); ctx.fill(); ctx.stroke();
+
+                // Brazos extendidos haciendo balance
+                ctx.beginPath(); ctx.moveTo(shoulderX, shoulderY); ctx.lineTo(shoulderX - 14*ut_x + 4*ur_x, shoulderY - 14*ut_y + 4*ur_y); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(shoulderX, shoulderY); ctx.lineTo(shoulderX + 14*ut_x + 4*ur_x, shoulderY + 14*ut_y + 4*ur_y); ctx.stroke();
+
+                ctx.lineCap = "butt"; ctx.lineJoin = "miter"; // Restaurar estilos
+
+                // --- CÁLCULO DE VECTORES ---
+                const currentV = omega * R_fisico; 
+                const ac = (currentV * currentV) / R_fisico; 
+                const at_scalar = alpha * R_fisico; 
+
+                // Escalas
+                const scale_v = 12; 
+                const scale_ac = 4.5; 
+                const scale_at = 8; 
+
+                // Origen de vectores en el Centro de Masa (Pelvis)
+                const vox = pelvisX;
+                const voy = pelvisY;
+
+                const vx = ut_x * currentV * scale_v;
+                const vy = ut_y * currentV * scale_v;
+                
+                const ac_arrow_x = -ur_x * ac * scale_ac; 
+                const ac_arrow_y = -ur_y * ac * scale_ac;
+                
+                const at_arrow_x = ut_x * at_scalar * scale_at;
+                const at_arrow_y = ut_y * at_scalar * scale_at;
+                
+                const atot_arrow_x = ac_arrow_x + at_arrow_x; 
+                const atot_arrow_y = ac_arrow_y + at_arrow_y;
+                
+                // Dibujar Proyecciones Ejes
+                if (chk_ac.checked) drawProjection(vox, voy, ur_x, ur_y, "#eee");
+                if (chk_at.checked) drawProjection(vox, voy, ut_x, ut_y, "#eee");
+
+                // Dibujar Vectores
+                if (chk_v.checked) drawArrow(ctx, vox, voy, vox + vx, voy + vy, "#20c997", 4);
+                if (chk_ac.checked) drawArrow(ctx, vox, voy, vox + ac_arrow_x, voy + ac_arrow_y, "#dc3545", 4);
+                if (chk_at.checked) drawArrow(ctx, vox, voy, vox + at_arrow_x, voy + at_arrow_y, "#fd7e14", 4);
+                if (chk_atot.checked) drawArrow(ctx, vox, voy, vox + atot_arrow_x, voy + atot_arrow_y, "#6f42c1", 4);
+                
+                // Paralelogramo
+                if (chk_atot.checked && chk_ac.checked && chk_at.checked) {
+                    drawArrow(ctx, vox + ac_arrow_x, voy + ac_arrow_y, vox + atot_arrow_x, voy + atot_arrow_y, "#ccc", 1, true);
+                    drawArrow(ctx, vox + at_arrow_x, voy + at_arrow_y, vox + atot_arrow_x, voy + atot_arrow_y, "#ccc", 1, true);
+                }
+
+                if (isRunning && !isPaused) updateAudio(omega); 
+
+                requestAnimationFrame(animate);
+            }
+            
+            btn_reset.addEventListener('click', () => {
+                initAudio();
+                isRunning = true;
+                isPaused = false;
+                ang = Math.PI; 
+                omega = 0;
+                
+                btn_reset.innerText = "🔄 Reiniciar Animación";
+                btn_pause.innerText = "⏸ Pausar";
+                btn_pause.style.backgroundColor = "#ffc107";
+                btn_pause.style.color = "black";
+            });
+            
+            btn_pause.addEventListener('click', () => {
+                if (!isRunning) return; 
+                
+                isPaused = !isPaused;
+                if (isPaused) {
+                    btn_pause.innerText = "▶ Continuar";
+                    btn_pause.style.backgroundColor = "#0d6efd";
+                    btn_pause.style.color = "white";
+                    if (audioCtx && audioCtx.state === 'running') audioCtx.suspend();
+                } else {
+                    btn_pause.innerText = "⏸ Pausar";
+                    btn_pause.style.backgroundColor = "#ffc107";
+                    btn_pause.style.color = "black";
+                    if (audioCtx && audioCtx.state === 'suspended' && !isMuted) audioCtx.resume();
+                }
+            });
+            
+            btn_mute.addEventListener('click', () => {
+                isMuted = !isMuted;
+                if (gainNode) gainNode.gain.value = isMuted ? 0 : 0.25;
+                btn_mute.innerText = isMuted ? "🔇 Activar Sonido" : "🔊 Silenciar";
+                btn_mute.style.backgroundColor = isMuted ? "#dc3545" : "#6c757d";
+            });
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.font = "18px sans-serif";
+            ctx.fillStyle = "#666";
+            ctx.textAlign = "center";
+            ctx.fillText("Presiona Iniciar para ver al patinador en acción", canvas.width/2, canvas.height/2);
 
             requestAnimationFrame(animate);
         }
