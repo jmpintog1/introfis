@@ -10,4 +10,6 @@ parts:
       - file: 01_encuentro
       - file: 02_actividad
       - file: 03_circular
+  - caption: Dinámica
+    chapters:
       - file: 04_fuerzas
