@@ -10,3 +10,4 @@ parts:
       - file: 01_encuentro
       - file: 02_actividad
       - file: 03_circular
+      - file: 04_fuerzas
