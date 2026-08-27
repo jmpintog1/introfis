@@ -12,4 +12,5 @@ parts:
       - file: 03_circular
   - caption: Dinámica
     chapters:
-      - file: 04_fuerzas
+      - file: 04_roce
+      - file: 05_cuerpos

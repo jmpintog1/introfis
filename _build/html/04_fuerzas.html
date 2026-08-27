@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Fuerzas &#8212; Curso de Introducción a la Física</title>
+    <title>Fuerza de Roce &#8212; Curso de Introducción a la Física</title>
   
   
   
@@ -168,11 +168,14 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cinemática</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_encuentro.html">Ejercicio de Persecusión</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_actividad.html">Movimiento Vertical</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_circular.html">Movimiento Circular</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fuerzas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dinámica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fuerza de Roce</a></li>
 </ul>
 
     </div>
@@ -387,7 +390,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Fuerzas</h1>
+    <h1>Fuerza de Roce</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -401,8 +404,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="fuerzas">
-<h1>Fuerzas<a class="headerlink" href="#fuerzas" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="fuerza-de-roce">
+<h1>Fuerza de Roce<a class="headerlink" href="#fuerza-de-roce" title="Permalink to this heading">#</a></h1>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
@@ -415,21 +418,21 @@ document.write(`
     <!-- Controles Superiores -->
     <div style="display: flex; gap: 20px; margin-bottom: 15px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
         <div style="display: flex; gap: 15px; align-items: center;">
-            <button id="play_55824" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir</button>
-            <button id="reset_btn_55824" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">🔄 Reiniciar</button>
+            <button id="play_20545" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir</button>
+            <button id="reset_btn_20545" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">🔄 Reiniciar</button>
         </div>
         
         <div style="display: flex; gap: 20px; align-items: center;">
             <div style="display: flex; flex-direction: column; align-items: center; background: #fff; padding: 8px 15px; border-radius: 5px; border: 1px solid #ccc;">
                 <label style="font-weight: 600; font-size: 0.85em; margin-bottom: 5px; color: #0d6efd;">Fuerza Aplicada F (N)</label>
-                <input type="range" id="f_slider_55824" min="0" max="100" step="1" value="0" style="width: 200px;">
+                <input type="range" id="f_slider_20545" min="0" max="100" step="1" value="0" style="width: 200px;">
             </div>
         </div>
     </div>
     
     <!-- Canvas de la Simulación -->
     <div style="display: flex; justify-content: center; margin-bottom: 15px;">
-        <canvas id="canvas_sim_55824" width="700" height="280" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+        <canvas id="canvas_sim_20545" width="700" height="280" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
     </div>
     
     <!-- Panel de Telemetría -->
@@ -437,23 +440,23 @@ document.write(`
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; text-align: center;">
             <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; border: 1px solid #e9ecef;">
                 <div style="font-size: 0.75em; color: #6c757d; font-weight: bold; text-transform: uppercase;">Estado</div>
-                <div id="lbl_estado_55824" style="font-size: 1em; font-weight: bold; color: #6c757d; margin-top: 5px;">Reposo</div>
+                <div id="lbl_estado_20545" style="font-size: 1em; font-weight: bold; color: #6c757d; margin-top: 5px;">Reposo</div>
             </div>
             <div style="background: #e7f1ff; padding: 10px; border-radius: 5px; border: 1px solid #b6d4fe;">
                 <div style="font-size: 0.75em; color: #084298; font-weight: bold; text-transform: uppercase;">F Aplicada</div>
-                <div id="lbl_F_55824" style="font-size: 1.1em; font-weight: bold; color: #0d6efd; margin-top: 5px; font-family: monospace;">0.0 N</div>
+                <div id="lbl_F_20545" style="font-size: 1.1em; font-weight: bold; color: #0d6efd; margin-top: 5px; font-family: monospace;">0.0 N</div>
             </div>
             <div style="background: #f8d7da; padding: 10px; border-radius: 5px; border: 1px solid #f5c2c7;">
                 <div style="font-size: 0.75em; color: #842029; font-weight: bold; text-transform: uppercase;">F Roce</div>
-                <div id="lbl_fric_55824" style="font-size: 1.1em; font-weight: bold; color: #dc3545; margin-top: 5px; font-family: monospace;">0.0 N</div>
+                <div id="lbl_fric_20545" style="font-size: 1.1em; font-weight: bold; color: #dc3545; margin-top: 5px; font-family: monospace;">0.0 N</div>
             </div>
             <div style="background: #e2e3e5; padding: 10px; border-radius: 5px; border: 1px solid #d3d6d8;">
                 <div style="font-size: 0.75em; color: #41464b; font-weight: bold; text-transform: uppercase;">Aceleración</div>
-                <div id="lbl_a_55824" style="font-size: 1.1em; font-weight: bold; color: #212529; margin-top: 5px; font-family: monospace;">0.00 m/s²</div>
+                <div id="lbl_a_20545" style="font-size: 1.1em; font-weight: bold; color: #212529; margin-top: 5px; font-family: monospace;">0.00 m/s²</div>
             </div>
             <div style="background: #d1e7dd; padding: 10px; border-radius: 5px; border: 1px solid #badbcc;">
                 <div style="font-size: 0.75em; color: #0f5132; font-weight: bold; text-transform: uppercase;">Velocidad</div>
-                <div id="lbl_v_55824" style="font-size: 1.1em; font-weight: bold; color: #198754; margin-top: 5px; font-family: monospace;">0.00 m/s</div>
+                <div id="lbl_v_20545" style="font-size: 1.1em; font-weight: bold; color: #198754; margin-top: 5px; font-family: monospace;">0.00 m/s</div>
             </div>
         </div>
         <div style="text-align: center; font-size: 0.85em; color: #6c757d; margin-top: 10px;">
@@ -465,19 +468,19 @@ document.write(`
     <div style="font-size: 0.95em; padding: 10px 15px; background: #e2e3e5; border-radius: 5px; color: #383d41; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
         <strong style="margin-right: 10px;">Vectores DCL:</strong>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_F_55824" checked style="cursor: pointer;">
+            <input type="checkbox" id="chk_F_20545" checked style="cursor: pointer;">
             <span><b style="color:#0d6efd;">▬ F</b> (Aplicada)</span>
         </label>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_fric_55824" checked style="cursor: pointer;">
+            <input type="checkbox" id="chk_fric_20545" checked style="cursor: pointer;">
             <span><b style="color:#dc3545;">▬ f</b> (Roce)</span>
         </label>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_N_55824" checked style="cursor: pointer;">
+            <input type="checkbox" id="chk_N_20545" checked style="cursor: pointer;">
             <span><b style="color:#212529;">▬ N</b> (Normal)</span>
         </label>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_P_55824" checked style="cursor: pointer;">
+            <input type="checkbox" id="chk_P_20545" checked style="cursor: pointer;">
             <span><b style="color:#6f42c1;">▬ P</b> (Peso)</span>
         </label>
     </div>
@@ -486,29 +489,29 @@ document.write(`
 <script>
     (function() {
         function initSimulation() {
-            const canvas = document.getElementById('canvas_sim_55824');
+            const canvas = document.getElementById('canvas_sim_20545');
             if (!canvas) {
                 setTimeout(initSimulation, 50); 
                 return;
             }
             
             const ctx = canvas.getContext('2d');
-            const btn_play = document.getElementById('play_55824');
-            const btn_reset = document.getElementById('reset_btn_55824');
-            const f_slider = document.getElementById('f_slider_55824');
+            const btn_play = document.getElementById('play_20545');
+            const btn_reset = document.getElementById('reset_btn_20545');
+            const f_slider = document.getElementById('f_slider_20545');
             
             // Labels HTML
-            const lbl_F = document.getElementById('lbl_F_55824');
-            const lbl_fric = document.getElementById('lbl_fric_55824');
-            const lbl_a = document.getElementById('lbl_a_55824');
-            const lbl_v = document.getElementById('lbl_v_55824');
-            const lbl_estado = document.getElementById('lbl_estado_55824');
+            const lbl_F = document.getElementById('lbl_F_20545');
+            const lbl_fric = document.getElementById('lbl_fric_20545');
+            const lbl_a = document.getElementById('lbl_a_20545');
+            const lbl_v = document.getElementById('lbl_v_20545');
+            const lbl_estado = document.getElementById('lbl_estado_20545');
             
             // Checkboxes
-            const chk_F = document.getElementById('chk_F_55824');
-            const chk_fric = document.getElementById('chk_fric_55824');
-            const chk_N = document.getElementById('chk_N_55824');
-            const chk_P = document.getElementById('chk_P_55824');
+            const chk_F = document.getElementById('chk_F_20545');
+            const chk_fric = document.getElementById('chk_fric_20545');
+            const chk_N = document.getElementById('chk_N_20545');
+            const chk_P = document.getElementById('chk_P_20545');
             
             let isPlaying = true;
             let animationId;
@@ -761,16 +764,16 @@ document.write(`
     <!-- Controles Superiores -->
     <div style="display: flex; gap: 20px; margin-bottom: 15px; background: #e9ecef; padding: 15px; border-radius: 8px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
         <div style="display: flex; gap: 15px; align-items: center;">
-            <button id="play_79341" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir</button>
-            <button id="reset_btn_79341" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">🔄 Reiniciar</button>
+            <button id="play_71934" style="background-color: #198754; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">▶ Reproducir</button>
+            <button id="reset_btn_71934" style="background-color: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">🔄 Reiniciar</button>
         </div>
         
         <div style="display: flex; gap: 20px; align-items: center;">
             <div style="display: flex; flex-direction: column; align-items: center; background: #fff; padding: 8px 15px; border-radius: 5px; border: 1px solid #ccc;">
                 <label style="font-weight: 600; font-size: 0.85em; margin-bottom: 5px; color: #0d6efd;">Ángulo de Inclinación (θ)</label>
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <input type="range" id="ang_slider_79341" min="0" max="45" step="0.1" value="0" style="width: 180px;">
-                    <span id="ang_val_79341" style="font-weight: bold; font-family: monospace; font-size: 0.9em; min-width: 45px;">0.0°</span>
+                    <input type="range" id="ang_slider_71934" min="0" max="45" step="0.1" value="0" style="width: 180px;">
+                    <span id="ang_val_71934" style="font-weight: bold; font-family: monospace; font-size: 0.9em; min-width: 45px;">0.0°</span>
                 </div>
             </div>
         </div>
@@ -778,7 +781,7 @@ document.write(`
     
     <!-- Canvas de la Simulación -->
     <div style="display: flex; justify-content: center; margin-bottom: 15px;">
-        <canvas id="canvas_sim_79341" width="700" height="300" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+        <canvas id="canvas_sim_71934" width="700" height="300" style="background: #ffffff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
     </div>
     
     <!-- Panel de Telemetría -->
@@ -786,27 +789,27 @@ document.write(`
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; text-align: center;">
             <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; border: 1px solid #e9ecef;">
                 <div style="font-size: 0.7em; color: #6c757d; font-weight: bold; text-transform: uppercase;">Estado</div>
-                <div id="lbl_estado_79341" style="font-size: 1em; font-weight: bold; color: #6c757d; margin-top: 5px;">Reposo</div>
+                <div id="lbl_estado_71934" style="font-size: 1em; font-weight: bold; color: #6c757d; margin-top: 5px;">Reposo</div>
             </div>
             <div style="background: #e7f1ff; padding: 10px; border-radius: 5px; border: 1px solid #b6d4fe;">
                 <div style="font-size: 0.7em; color: #084298; font-weight: bold; text-transform: uppercase;">Normal (N)</div>
-                <div id="lbl_N_79341" style="font-size: 1.1em; font-weight: bold; color: #212529; margin-top: 5px; font-family: monospace;">100.0 N</div>
+                <div id="lbl_N_71934" style="font-size: 1.1em; font-weight: bold; color: #212529; margin-top: 5px; font-family: monospace;">100.0 N</div>
             </div>
             <div style="background: #fff3cd; padding: 10px; border-radius: 5px; border: 1px solid #ffecb5;">
                 <div style="font-size: 0.7em; color: #997404; font-weight: bold; text-transform: uppercase;">Peso en X (Px)</div>
-                <div id="lbl_Px_79341" style="font-size: 1.1em; font-weight: bold; color: #fd7e14; margin-top: 5px; font-family: monospace;">0.0 N</div>
+                <div id="lbl_Px_71934" style="font-size: 1.1em; font-weight: bold; color: #fd7e14; margin-top: 5px; font-family: monospace;">0.0 N</div>
             </div>
             <div style="background: #f8d7da; padding: 10px; border-radius: 5px; border: 1px solid #f5c2c7;">
                 <div style="font-size: 0.7em; color: #842029; font-weight: bold; text-transform: uppercase;">Fuerza Roce</div>
-                <div id="lbl_fric_79341" style="font-size: 1.1em; font-weight: bold; color: #dc3545; margin-top: 5px; font-family: monospace;">0.0 N</div>
+                <div id="lbl_fric_71934" style="font-size: 1.1em; font-weight: bold; color: #dc3545; margin-top: 5px; font-family: monospace;">0.0 N</div>
             </div>
             <div style="background: #e2e3e5; padding: 10px; border-radius: 5px; border: 1px solid #d3d6d8;">
                 <div style="font-size: 0.7em; color: #41464b; font-weight: bold; text-transform: uppercase;">Aceleración</div>
-                <div id="lbl_a_79341" style="font-size: 1.1em; font-weight: bold; color: #212529; margin-top: 5px; font-family: monospace;">0.00 m/s²</div>
+                <div id="lbl_a_71934" style="font-size: 1.1em; font-weight: bold; color: #212529; margin-top: 5px; font-family: monospace;">0.00 m/s²</div>
             </div>
             <div style="background: #d1e7dd; padding: 10px; border-radius: 5px; border: 1px solid #badbcc;">
                 <div style="font-size: 0.7em; color: #0f5132; font-weight: bold; text-transform: uppercase;">Velocidad</div>
-                <div id="lbl_v_79341" style="font-size: 1.1em; font-weight: bold; color: #198754; margin-top: 5px; font-family: monospace;">0.00 m/s</div>
+                <div id="lbl_v_71934" style="font-size: 1.1em; font-weight: bold; color: #198754; margin-top: 5px; font-family: monospace;">0.00 m/s</div>
             </div>
         </div>
         <div style="text-align: center; font-size: 0.85em; color: #6c757d; margin-top: 10px;">
@@ -818,19 +821,19 @@ document.write(`
     <div style="font-size: 0.95em; padding: 10px 15px; background: #e2e3e5; border-radius: 5px; color: #383d41; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
         <strong style="margin-right: 10px;">Vectores DCL:</strong>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_N_79341" checked style="cursor: pointer;">
+            <input type="checkbox" id="chk_N_71934" checked style="cursor: pointer;">
             <span><b style="color:#212529;">▬ N</b> (Normal)</span>
         </label>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_fric_79341" checked style="cursor: pointer;">
+            <input type="checkbox" id="chk_fric_71934" checked style="cursor: pointer;">
             <span><b style="color:#dc3545;">▬ f</b> (Roce)</span>
         </label>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_P_79341" checked style="cursor: pointer;">
+            <input type="checkbox" id="chk_P_71934" checked style="cursor: pointer;">
             <span><b style="color:#6f42c1;">▬ P</b> (Peso Total)</span>
         </label>
         <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;">
-            <input type="checkbox" id="chk_PxPy_79341" style="cursor: pointer;">
+            <input type="checkbox" id="chk_PxPy_71934" style="cursor: pointer;">
             <span><b style="color:#fd7e14;">▬ Px, Py</b> (Componentes)</span>
         </label>
     </div>
@@ -839,28 +842,28 @@ document.write(`
 <script>
     (function() {
         function initSimulation() {
-            const canvas = document.getElementById('canvas_sim_79341');
+            const canvas = document.getElementById('canvas_sim_71934');
             if (!canvas) { setTimeout(initSimulation, 50); return; }
             
             const ctx = canvas.getContext('2d');
-            const btn_play = document.getElementById('play_79341');
-            const btn_reset = document.getElementById('reset_btn_79341');
+            const btn_play = document.getElementById('play_71934');
+            const btn_reset = document.getElementById('reset_btn_71934');
             
             // Sliders y Labels
-            const ang_slider = document.getElementById('ang_slider_79341');
-            const ang_val = document.getElementById('ang_val_79341');
-            const lbl_N = document.getElementById('lbl_N_79341');
-            const lbl_Px = document.getElementById('lbl_Px_79341');
-            const lbl_fric = document.getElementById('lbl_fric_79341');
-            const lbl_a = document.getElementById('lbl_a_79341');
-            const lbl_v = document.getElementById('lbl_v_79341');
-            const lbl_estado = document.getElementById('lbl_estado_79341');
+            const ang_slider = document.getElementById('ang_slider_71934');
+            const ang_val = document.getElementById('ang_val_71934');
+            const lbl_N = document.getElementById('lbl_N_71934');
+            const lbl_Px = document.getElementById('lbl_Px_71934');
+            const lbl_fric = document.getElementById('lbl_fric_71934');
+            const lbl_a = document.getElementById('lbl_a_71934');
+            const lbl_v = document.getElementById('lbl_v_71934');
+            const lbl_estado = document.getElementById('lbl_estado_71934');
             
             // Checkboxes
-            const chk_N = document.getElementById('chk_N_79341');
-            const chk_fric = document.getElementById('chk_fric_79341');
-            const chk_P = document.getElementById('chk_P_79341');
-            const chk_PxPy = document.getElementById('chk_PxPy_79341');
+            const chk_N = document.getElementById('chk_N_71934');
+            const chk_fric = document.getElementById('chk_fric_71934');
+            const chk_P = document.getElementById('chk_P_71934');
+            const chk_PxPy = document.getElementById('chk_PxPy_71934');
             
             let isPlaying = true;
             let animationId;
