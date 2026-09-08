@@ -14,3 +14,4 @@ parts:
     chapters:
       - file: 04_roce
       - file: 05_cuerpos
+      - file: 06_circular
