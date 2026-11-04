@@ -1,0 +1,3586 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Dinámica Circular &#8212; Curso de Introducción a la Física</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06_circular';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Bloques Conectados" href="05_cuerpos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Curso de Introducción a la Física - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Curso de Introducción a la Física - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Bienvenidos al Curso de Física Mecánica
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cinemática</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_encuentro.html">Ejercicio de Persecusión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_actividad.html">Movimiento Vertical</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_circular.html">Movimiento Circular</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dinámica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="04_roce.html">Fuerza de Roce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_cuerpos.html">Bloques Conectados</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dinámica Circular</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jmpintog1/introfis/blob/main/./06_circular.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jmpintog1/introfis" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jmpintog1/introfis/issues/new?title=Issue%20on%20page%20%2F06_circular.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/06_circular.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dinámica Circular</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dinamica-circular">
+<h1>Dinámica Circular<a class="headerlink" href="#dinamica-circular" title="Permalink to this heading">#</a></h1>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div style="border: 1px solid #dee2e6; padding: 18px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 980px; margin: auto;">
+    <h3 style="margin-top:0; color: #212529; font-size: 1.3em;">Péndulo Cónico en Equilibrio Estacionario (&theta; = 30°, m = 0.3 kg, M = 0.6 kg)</h3>
+    
+    <!-- Cuadro Teórico Resumen de Ejes -->
+    <div style="background: #e9ecef; padding: 12px 16px; border-radius: 6px; font-size: 0.88em; margin-bottom: 12px; color: #212529; line-height: 1.5;">
+        <strong>Condición de Equilibrio Permanente (a<sub>y</sub> = 0):</strong>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 6px;">
+            <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #0d6efd;">
+                <b>1. Tensión de la cuerda:</b><br>
+                Masa <i>M</i> en reposo vertical &#8658;<br>
+                <i>T = M &middot; g = 0.60 &middot; 9.8 = <b>5.88 N</b></i>
+            </div>
+            <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #495057;">
+                <b>2. Eje Normal / Vertical (y):</b><br>
+                <i>a<sub>y</sub> = 0 &#8658; sin(&theta;) = m / M = 0.5 &#8658; <b>&theta; = 30.0°</b></i><br>
+                <b><i>T<sub>y</sub> = T &middot; sin(30°) = 2.94 N = m &middot; g</i></b> (Equilibrio)
+            </div>
+            <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #198754;">
+                <b>3. Eje Radial / Centrípeto (r):</b><br>
+                <i>T<sub>r</sub> = T &middot; cos(30°) = <b>5.09 N</b></i><br>
+                <i>T<sub>r</sub> = m &middot; &omega;<sup>2</sup> &middot; R &#8658; <b>&omega; = &radic;(T / (m &middot; d))</b></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de Vistas y Reproducción -->
+    <div style="display: flex; gap: 12px; margin-bottom: 12px; background: #ffffff; padding: 10px 14px; border-radius: 6px; border: 1px solid #ced4da; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <label style="font-weight: bold; font-size: 0.85em; color: #495057;">Perspectiva de la Simulación:</label>
+            <select id="sel_vista_45982" style="padding: 6px 10px; border-radius: 4px; border: 1px solid #6c757d; font-weight: bold; cursor: pointer; background: #f8f9fa;">
+                <option value="side">Vista Lateral 2D (Corte Plano Orbital)</option>
+                <option value="iso">Perspectiva 3D (Isométrica)</option>
+                <option value="top">Vista Superior (Plano Radial Centrípeto)</option>
+            </select>
+        </div>
+
+        <div style="display: flex; gap: 8px;">
+            <button id="play_45982" style="background-color: #198754; color: white; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-weight: bold;">▶ Ejecutar</button>
+            <button id="reset_45982" style="background-color: #6c757d; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">🔄 Reiniciar Posición</button>
+        </div>
+
+        <div style="font-size: 0.82em; font-weight: bold; padding: 5px 12px; border-radius: 4px; background: #d1e7dd; color: #0f5132; border: 1px solid #badbcc;">
+            ✓ T<sub>y</sub> = m&middot;g = 2.94 N (Equilibrio estricto en eje normal)
+        </div>
+    </div>
+
+    <!-- Parámetros fijos y slider de longitud d -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 12px; background: #ffffff; padding: 12px; border-radius: 6px; border: 1px solid #ced4da; margin-bottom: 12px;">
+        <!-- Masas fijas -->
+        <div style="background: #f8f9fa; padding: 8px 12px; border-radius: 4px; border: 1px solid #e9ecef;">
+            <div style="font-size: 0.76em; color: #6c757d; font-weight: bold;">MASAS FIJAS</div>
+            <div style="font-size: 0.95em; font-weight: bold; color: #212529; margin-top: 2px;">
+                m = <span style="color:#0d6efd;">0.30 kg</span> &nbsp;|&nbsp; M = <span style="color:#fd7e14;">0.60 kg</span>
+            </div>
+            <div style="font-size: 0.72em; color: #6c757d;">Razón m/M = 0.50</div>
+        </div>
+
+        <!-- Ángulo fijo -->
+        <div style="background: #f8f9fa; padding: 8px 12px; border-radius: 4px; border: 1px solid #e9ecef;">
+            <div style="font-size: 0.76em; color: #6c757d; font-weight: bold;">ÁNGULO DE EQUILIBRIO FIJO (&theta;)</div>
+            <div style="font-size: 0.95em; font-weight: bold; color: #198754; margin-top: 2px;">
+                &theta; = 30.0° <span style="font-size: 0.8em; font-weight: normal; color: #495057;">(arcsin(0.5))</span>
+            </div>
+            <div style="font-size: 0.72em; color: #6c757d;">sin(30°) = 0.5 &nbsp;|&nbsp; cos(30°) = 0.866</div>
+        </div>
+
+        <!-- Slider Longitud d -->
+        <div style="background: #ffffff; padding: 6px 10px; border-radius: 4px; border: 1px solid #dee2e6;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #6f42c1;">
+                <span>Longitud libre de cuerda (d):</span>
+                <span id="d_val_45982">0.80 m</span>
+            </div>
+            <input type="range" id="d_slider_45982" min="0.35" max="1.40" step="0.05" value="0.80" style="width: 100%; margin-top: 4px;">
+            <div style="font-size: 0.72em; color: #6c757d;">Determina el radio R = d&middot;cos(30°) y la rapidez angular &omega;</div>
+        </div>
+    </div>
+
+    <!-- Canvas Principal -->
+    <div style="display: flex; justify-content: center; margin-bottom: 12px;">
+        <canvas id="canvas_sim_45982" width="940" height="430" style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+    </div>
+
+    <!-- Telemetría Dinámica -->
+    <div style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; padding: 10px; margin-bottom: 10px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; text-align: center;">
+            <div style="background: #e7f1ff; padding: 6px; border-radius: 4px; border: 1px solid #b6d4fe;">
+                <div style="font-size: 0.68em; color: #084298; font-weight: bold;">TENSIÓN TOTAL (T = M·g)</div>
+                <div id="lbl_T_45982" style="font-size: 1em; font-weight: bold; color: #0d6efd; font-family: monospace;">5.88 N</div>
+            </div>
+            <div style="background: #d1e7dd; padding: 6px; border-radius: 4px; border: 1px solid #badbcc;">
+                <div style="font-size: 0.68em; color: #0f5132; font-weight: bold;">EJE RADIAL: T_r = T·cos(30°)</div>
+                <div id="lbl_Tr_45982" style="font-size: 1em; font-weight: bold; color: #198754; font-family: monospace;">5.09 N</div>
+            </div>
+            <div style="background: #e2e3e5; padding: 6px; border-radius: 4px; border: 1px solid #d6d8db;">
+                <div style="font-size: 0.68em; color: #495057; font-weight: bold;">EJE NORMAL: T_y = T·sin(30°)</div>
+                <div id="lbl_Ty_45982" style="font-size: 1em; font-weight: bold; color: #495057; font-family: monospace;">2.94 N</div>
+            </div>
+            <div style="background: #f8d7da; padding: 6px; border-radius: 4px; border: 1px solid #f5c2c7;">
+                <div style="font-size: 0.68em; color: #842029; font-weight: bold;">PESO DE LA MASA m (m·g)</div>
+                <div id="lbl_mg_45982" style="font-size: 1em; font-weight: bold; color: #dc3545; font-family: monospace;">2.94 N</div>
+            </div>
+            <div style="background: #fff3cd; padding: 6px; border-radius: 4px; border: 1px solid #ffecb5;">
+                <div style="font-size: 0.68em; color: #664d03; font-weight: bold;">RADIO DE GIRO R</div>
+                <div id="lbl_R_45982" style="font-size: 1em; font-weight: bold; color: #856404; font-family: monospace;">0.69 m</div>
+            </div>
+            <div style="background: #f3e5f5; padding: 6px; border-radius: 4px; border: 1px solid #e1bee7;">
+                <div style="font-size: 0.68em; color: #4a148c; font-weight: bold;">RAPIDEZ ANGULAR (&omega;)</div>
+                <div id="lbl_w_45982" style="font-size: 1em; font-weight: bold; color: #6f42c1; font-family: monospace;">4.95 rad/s</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filtros de Visualización -->
+    <div style="font-size: 0.85em; padding: 8px 12px; background: #e9ecef; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
+        <strong>Capas Gráficas:</strong>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_forces_sim_45982" checked> <b style="color: #0d6efd;">Vectores en la Escena</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_axes_45982" checked> <b style="color: #6c757d;">Ejes Coordenados (+r, +y)</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_decomp_45982" checked> <b style="color: #198754;">Componentes T_r y T_y</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_mg_45982" checked> <b style="color: #dc3545;">Vectores Peso (m·g, M·g)</b></label>
+    </div>
+</div>
+
+<script>
+(function() {
+    function initSimulation() {
+        const canvas = document.getElementById('canvas_sim_45982');
+        if (!canvas) { setTimeout(initSimulation, 50); return; }
+        const ctx = canvas.getContext('2d');
+
+        const sel_vista = document.getElementById('sel_vista_45982');
+        const d_slider = document.getElementById('d_slider_45982');
+        const d_val = document.getElementById('d_val_45982');
+
+        const lbl_T = document.getElementById('lbl_T_45982');
+        const lbl_Tr = document.getElementById('lbl_Tr_45982');
+        const lbl_Ty = document.getElementById('lbl_Ty_45982');
+        const lbl_mg = document.getElementById('lbl_mg_45982');
+        const lbl_R = document.getElementById('lbl_R_45982');
+        const lbl_w = document.getElementById('lbl_w_45982');
+
+        const btn_play = document.getElementById('play_45982');
+        const btn_reset = document.getElementById('reset_45982');
+
+        const chk_forces_sim = document.getElementById('chk_forces_sim_45982');
+        const chk_axes = document.getElementById('chk_axes_45982');
+        const chk_decomp = document.getElementById('chk_decomp_45982');
+        const chk_mg = document.getElementById('chk_mg_45982');
+
+        // Valores fijos del modelo
+        const g = 9.8;
+        const m = 0.30;
+        const M = 0.60;
+        const theta_deg = 30.0;
+        const theta = theta_deg * Math.PI / 180.0; // 30° exactos
+
+        const mg_val = m * g;                  // 2.94 N
+        const T_val = M * g;                   // 5.88 N
+        const Ty_val = T_val * Math.sin(theta); // 2.94 N (exactamente mg)
+        const Tr_val = T_val * Math.cos(theta); // 5.092 N
+
+        let isPlaying = true;
+        let phi = 0;
+        let lastTime = performance.now();
+
+        function drawArrow(context, fx, fy, tx, ty, color, lineWidth=2.5, dashed=false) {
+            const dx = tx - fx;
+            const dy = ty - fy;
+            const len = Math.hypot(dx, dy);
+            if (len < 1) return;
+            const headlen = Math.min(9, Math.max(5, len * 0.25));
+            const angle = Math.atan2(dy, dx);
+
+            context.beginPath();
+            context.strokeStyle = color;
+            context.lineWidth = lineWidth;
+            if(dashed) context.setLineDash([4, 3]);
+            context.moveTo(fx, fy);
+            context.lineTo(tx, ty);
+            context.stroke();
+            context.setLineDash([]);
+
+            context.beginPath();
+            context.fillStyle = color;
+            context.moveTo(tx, ty);
+            context.lineTo(tx - headlen * Math.cos(angle - Math.PI / 6), ty - headlen * Math.sin(angle - Math.PI / 6));
+            context.lineTo(tx - headlen * Math.cos(angle + Math.PI / 6), ty - headlen * Math.sin(angle + Math.PI / 6));
+            context.fill();
+        }
+
+        function getPhysics() {
+            const d = parseFloat(d_slider.value);
+            d_val.innerText = d.toFixed(2) + " m";
+
+            const R = d * Math.cos(theta);
+            const omega = Math.sqrt(Tr_val / (m * R));
+            const v = omega * R;
+
+            lbl_T.innerText = T_val.toFixed(2) + " N";
+            lbl_Tr.innerText = Tr_val.toFixed(2) + " N";
+            lbl_Ty.innerText = Ty_val.toFixed(2) + " N";
+            lbl_mg.innerText = mg_val.toFixed(2) + " N";
+            lbl_R.innerText = R.toFixed(2) + " m";
+            lbl_w.innerText = omega.toFixed(2) + " rad/s";
+
+            return { d, R, omega, v };
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const p = getPhysics();
+            const view = sel_vista.value;
+            const splitX = 560;
+
+            // Línea divisoria central
+            ctx.beginPath();
+            ctx.strokeStyle = "#e9ecef";
+            ctx.lineWidth = 2;
+            ctx.moveTo(splitX, 10);
+            ctx.lineTo(splitX, canvas.height - 10);
+            ctx.stroke();
+
+            // ==========================================================
+            // ESCENA FÍSICA (IZQUIERDA)
+            // ==========================================================
+            ctx.font = "bold 13px sans-serif";
+            ctx.fillStyle = "#495057";
+            let viewTitle = "Escena Física - Vista Lateral 2D (Corte Plano Orbital)";
+            if (view === "iso") viewTitle = "Escena Física - Perspectiva 3D";
+            if (view === "top") viewTitle = "Escena Física - Vista Superior (Plano Horizontal)";
+            ctx.fillText(viewTitle, 20, 25);
+
+            const scalePix = 160;
+            const fScale = 14; 
+            let topX, topY, ballX, ballY, planeY;
+
+            if (view === "side") {
+                topX = 140; topY = 90;
+                const tubeH = 170;
+                const massMY = topY + tubeH + 45;
+                const R_px = p.R * scalePix;
+                const H_px = p.d * Math.sin(theta) * scalePix;
+                ballX = topX + R_px;
+                ballY = topY + H_px;
+
+                // Eje vertical central de rotación
+                ctx.beginPath();
+                ctx.strokeStyle = "rgba(108,117,125,0.4)";
+                ctx.setLineDash([5, 5]);
+                ctx.moveTo(topX, 40); ctx.lineTo(topX, 380); ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Tubo y masa colgante M
+                ctx.fillStyle = "#6c757d"; ctx.fillRect(topX - 6, topY, 12, tubeH);
+                ctx.beginPath(); ctx.strokeStyle = "#495057"; ctx.lineWidth = 2;
+                ctx.moveTo(topX, topY + tubeH); ctx.lineTo(topX, massMY); ctx.stroke();
+                ctx.fillStyle = "#fd7e14"; ctx.fillRect(topX - 18, massMY, 36, 32);
+                ctx.fillStyle = "#fff"; ctx.font = "bold 13px sans-serif"; ctx.fillText("M", topX - 6, massMY + 21);
+
+                // Radio de giro R
+                ctx.beginPath(); ctx.strokeStyle = "#198754"; ctx.lineWidth = 1.5; ctx.setLineDash([3, 3]);
+                ctx.moveTo(topX, ballY); ctx.lineTo(ballX, ballY); ctx.stroke(); ctx.setLineDash([]);
+                ctx.fillStyle = "#198754"; ctx.font = "12px sans-serif";
+                ctx.fillText("R = " + p.R.toFixed(2) + " m", topX + R_px / 2 - 25, ballY + 16);
+
+                // Cuerda d
+                ctx.beginPath(); ctx.strokeStyle = "#fd7e14"; ctx.lineWidth = 2.5;
+                ctx.moveTo(topX, topY); ctx.lineTo(ballX, ballY); ctx.stroke();
+                ctx.fillStyle = "#c65d07"; ctx.fillText("d = " + p.d.toFixed(2) + " m", topX + R_px / 2 - 20, topY + H_px / 2 - 10);
+
+                // Ángulo theta = 30° fijo con la horizontal
+                ctx.beginPath(); ctx.strokeStyle = "#198754"; ctx.lineWidth = 1.8;
+                ctx.arc(ballX, ballY, 35, Math.PI, Math.PI - theta, false); ctx.stroke();
+                ctx.fillStyle = "#198754"; ctx.fillText("θ = 30°", ballX - 68, ballY - 10);
+
+                // Masa m
+                ctx.beginPath(); ctx.fillStyle = "#0d6efd"; ctx.arc(ballX, ballY, 14, 0, Math.PI * 2); ctx.fill();
+                ctx.strokeStyle = "#084298"; ctx.stroke();
+                ctx.fillStyle = "#fff"; ctx.font = "bold 12px sans-serif"; ctx.fillText("m", ballX - 5, ballY + 4);
+
+                // Vectores de fuerza en masa m
+                if (chk_forces_sim.checked) {
+                    const Tx_len = Tr_val * fScale * 0.8;
+                    const Ty_len = Ty_val * fScale * 0.8;
+                    const P_len = mg_val * fScale * 0.8;
+
+                    // Tensión T
+                    drawArrow(ctx, ballX, ballY, ballX - Tx_len, ballY - Ty_len, "#0d6efd", 3);
+                    ctx.fillStyle = "#0d6efd"; ctx.font = "bold 12px sans-serif";
+                    ctx.fillText("T", ballX - Tx_len - 12, ballY - Ty_len - 5);
+
+                    if (chk_decomp.checked) {
+                        // Componente radial Tr hacia el centro
+                        drawArrow(ctx, ballX, ballY, ballX - Tx_len, ballY, "#198754", 2.5, true);
+                        ctx.fillStyle = "#198754"; ctx.fillText("T_r", ballX - Tx_len - 15, ballY + 18);
+
+                        // Componente normal Ty hacia arriba
+                        drawArrow(ctx, ballX, ballY, ballX, ballY - Ty_len, "#495057", 2.5, true);
+                        ctx.fillStyle = "#495057"; ctx.fillText("T_y", ballX + 8, ballY - Ty_len + 12);
+                    }
+
+                    if (chk_mg.checked) {
+                        // Peso mg hacia abajo
+                        drawArrow(ctx, ballX, ballY, ballX, ballY + P_len, "#dc3545", 2.5);
+                        ctx.fillStyle = "#dc3545"; ctx.fillText("m·g", ballX + 8, ballY + P_len);
+                    }
+
+                    // Vectores en bloque M
+                    drawArrow(ctx, topX, massMY, topX, massMY - T_val * fScale * 0.5, "#0d6efd", 2);
+                    ctx.fillStyle = "#0d6efd"; ctx.font = "bold 11px sans-serif"; ctx.fillText("T", topX + 6, massMY - 12);
+                    if (chk_mg.checked) {
+                        drawArrow(ctx, topX, massMY + 32, topX, massMY + 32 + (M * g) * fScale * 0.5, "#dc3545", 2);
+                        ctx.fillStyle = "#dc3545"; ctx.fillText("M·g", topX + 6, massMY + 50);
+                    }
+                }
+
+            } else if (view === "iso") {
+                topX = 220; topY = 110;
+                const tubeH = 140;
+                const massMY = topY + tubeH + 45;
+                const R_px = p.R * scalePix;
+                const H_px = p.d * Math.sin(theta) * scalePix;
+                planeY = topY + H_px;
+                const ellB = R_px * 0.32;
+
+                ctx.beginPath(); ctx.strokeStyle = "#495057"; ctx.lineWidth = 2;
+                ctx.moveTo(topX, topY + tubeH); ctx.lineTo(topX, massMY); ctx.stroke();
+                ctx.fillStyle = "#fd7e14"; ctx.fillRect(topX - 20, massMY, 40, 36);
+                ctx.fillStyle = "#fff"; ctx.font = "bold 14px sans-serif"; ctx.fillText("M", topX - 7, massMY + 23);
+
+                ctx.fillStyle = "#6c757d"; ctx.fillRect(topX - 6, topY, 12, tubeH);
+
+                ctx.beginPath(); ctx.strokeStyle = "rgba(108,117,125,0.35)"; ctx.setLineDash([4, 4]);
+                ctx.ellipse(topX, planeY, R_px, ellB, 0, 0, Math.PI * 2); ctx.stroke(); ctx.setLineDash([]);
+
+                ballX = topX + R_px * Math.cos(phi);
+                ballY = planeY + ellB * Math.sin(phi);
+
+                ctx.beginPath(); ctx.strokeStyle = "#fd7e14"; ctx.lineWidth = 2.2;
+                ctx.moveTo(topX, topY); ctx.lineTo(ballX, ballY); ctx.stroke();
+
+                ctx.beginPath(); ctx.fillStyle = "#0d6efd"; ctx.arc(ballX, ballY, 14, 0, Math.PI * 2); ctx.fill();
+                ctx.fillStyle = "#fff"; ctx.font = "bold 12px sans-serif"; ctx.fillText("m", ballX - 5, ballY + 4);
+
+                if (chk_forces_sim.checked) {
+                    const dxT = topX - ballX;
+                    const dyT = topY - ballY;
+                    const distT = Math.hypot(dxT, dyT);
+                    const tLen = T_val * fScale * 0.65;
+                    drawArrow(ctx, ballX, ballY, ballX + (dxT / distT) * tLen, ballY + (dyT / distT) * tLen, "#0d6efd", 2.5);
+                    ctx.fillStyle = "#0d6efd"; ctx.font = "bold 12px sans-serif";
+                    ctx.fillText("T", ballX + (dxT / distT) * tLen - 12, ballY + (dyT / distT) * tLen - 5);
+
+                    if (chk_decomp.checked) {
+                        const dxC = topX - ballX;
+                        const dyC = planeY - ballY;
+                        const distC = Math.hypot(dxC, dyC);
+                        const trLen = Tr_val * fScale * 0.55;
+                        drawArrow(ctx, ballX, ballY, ballX + (dxC / distC) * trLen, ballY + (dyC / distC) * trLen, "#198754", 2, true);
+                        ctx.fillStyle = "#198754"; ctx.fillText("T_r", ballX + (dxC / distC) * trLen + 4, ballY + (dyC / distC) * trLen + 4);
+
+                        drawArrow(ctx, ballX, ballY, ballX, ballY - Ty_val * fScale * 0.55, "#495057", 2, true);
+                        ctx.fillStyle = "#495057"; ctx.fillText("T_y", ballX + 6, ballY - Ty_val * fScale * 0.55 + 4);
+                    }
+
+                    if (chk_mg.checked) {
+                        drawArrow(ctx, ballX, ballY, ballX, ballY + mg_val * fScale * 0.55, "#dc3545", 2);
+                        ctx.fillStyle = "#dc3545"; ctx.fillText("m·g", ballX + 6, ballY + mg_val * fScale * 0.55);
+                    }
+                }
+
+            } else if (view === "top") {
+                const cX = 260; const cY = 220;
+                const R_px = p.R * scalePix * 1.1;
+
+                ctx.beginPath(); ctx.fillStyle = "#6c757d"; ctx.arc(cX, cY, 8, 0, Math.PI * 2); ctx.fill();
+                ctx.fillStyle = "#495057"; ctx.font = "bold 11px sans-serif"; ctx.fillText("Eje Central", cX - 30, cY - 14);
+
+                ctx.beginPath(); ctx.strokeStyle = "rgba(108,117,125,0.4)"; ctx.setLineDash([4, 4]);
+                ctx.arc(cX, cY, R_px, 0, Math.PI * 2); ctx.stroke(); ctx.setLineDash([]);
+
+                ballX = cX + R_px * Math.cos(phi);
+                ballY = cY + R_px * Math.sin(phi);
+
+                ctx.beginPath(); ctx.fillStyle = "#0d6efd"; ctx.arc(ballX, ballY, 14, 0, Math.PI * 2); ctx.fill();
+                ctx.fillStyle = "#fff"; ctx.font = "bold 12px sans-serif"; ctx.fillText("m", ballX - 5, ballY + 4);
+
+                if (chk_forces_sim.checked) {
+                    const dirX = (cX - ballX) / R_px;
+                    const dirY = (cY - ballY) / R_px;
+                    const fLen = Tr_val * fScale * 0.8;
+                    drawArrow(ctx, ballX, ballY, ballX + dirX * fLen, ballY + dirY * fLen, "#198754", 3);
+                    ctx.fillStyle = "#198754"; ctx.font = "bold 12px sans-serif";
+                    ctx.fillText("T_r (Centrípeta neta)", ballX + dirX * fLen - 35, ballY + dirY * fLen - 8);
+                }
+            }
+
+            // ==========================================================
+            // DCL CON EJES RADIAL Y NORMAL (DERECHA)
+            // ==========================================================
+            const dclX = 760;
+            const dclY = 220;
+
+            ctx.fillStyle = "#212529";
+            ctx.font = "bold 14px sans-serif";
+            ctx.fillText("DCL: Masa m en Ejes (+r, +y)", 630, 25);
+            ctx.font = "italic 12px sans-serif";
+            ctx.fillStyle = "#6c757d";
+            ctx.fillText("Equilibrio exacto en eje normal: T_y = m·g = 2.94 N", 630, 42);
+
+            if (chk_axes.checked) {
+                ctx.strokeStyle = "#495057"; ctx.setLineDash([3, 3]); ctx.lineWidth = 1.5;
+                ctx.beginPath(); ctx.moveTo(dclX - 160, dclY); ctx.lineTo(dclX + 80, dclY); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(dclX, dclY - 140); ctx.lineTo(dclX, dclY + 140); ctx.stroke();
+                ctx.setLineDash([]);
+
+                ctx.fillStyle = "#495057"; ctx.font = "bold 12px sans-serif";
+                ctx.fillText("← +r (Eje Radial Centrípeto)", dclX - 160, dclY - 8);
+                ctx.fillText("+y (Eje Normal) ↑", dclX + 8, dclY - 125);
+            }
+
+            // Ángulo 30° rotulado en el DCL
+            ctx.beginPath(); ctx.strokeStyle = "#198754"; ctx.lineWidth = 1.8;
+            ctx.arc(dclX, dclY, 40, Math.PI, Math.PI - theta, false); ctx.stroke();
+            ctx.fillStyle = "#198754"; ctx.font = "bold 12px sans-serif";
+            ctx.fillText("θ = 30.0°", dclX - 72, dclY - 16);
+
+            const Tx_len = Tr_val * fScale;
+            const Ty_len = Ty_val * fScale;
+            const P_len = mg_val * fScale;
+
+            if (chk_decomp.checked) {
+                ctx.beginPath(); ctx.strokeStyle = "rgba(13, 110, 253, 0.3)"; ctx.setLineDash([3, 3]); ctx.lineWidth = 1.5;
+                ctx.moveTo(dclX - Tx_len, dclY); ctx.lineTo(dclX - Tx_len, dclY - Ty_len); ctx.lineTo(dclX, dclY - Ty_len);
+                ctx.stroke(); ctx.setLineDash([]);
+
+                // Componente Radial Tr
+                drawArrow(ctx, dclX, dclY, dclX - Tx_len, dclY, "#198754", 3);
+                ctx.fillStyle = "#198754"; ctx.font = "bold 12px sans-serif";
+                ctx.fillText("T_r = T·cos(30°) = 5.09 N", dclX - Tx_len - 60, dclY + 18);
+
+                // Componente Normal Ty
+                drawArrow(ctx, dclX, dclY, dclX, dclY - Ty_len, "#495057", 3);
+                ctx.fillStyle = "#495057"; ctx.font = "bold 12px sans-serif";
+                ctx.fillText("T_y = T·sin(30°) = 2.94 N", dclX + 8, dclY - Ty_len + 14);
+            }
+
+            // Vector Tensión Total T
+            drawArrow(ctx, dclX, dclY, dclX - Tx_len, dclY - Ty_len, "#0d6efd", 3.2);
+            ctx.fillStyle = "#0d6efd"; ctx.font = "bold 13px sans-serif";
+            ctx.fillText("T = M·g = 5.88 N", dclX - Tx_len - 30, dclY - Ty_len - 8);
+
+            // Vector Peso mg
+            if (chk_mg.checked) {
+                drawArrow(ctx, dclX, dclY, dclX, dclY + P_len, "#dc3545", 3);
+                ctx.fillStyle = "#dc3545"; ctx.font = "bold 12px sans-serif";
+                ctx.fillText("P = m·g = 2.94 N", dclX + 8, dclY + P_len);
+            }
+
+            // Nodo de masa m
+            ctx.beginPath(); ctx.fillStyle = "#212529"; ctx.arc(dclX, dclY, 5, 0, Math.PI * 2); ctx.fill();
+        }
+
+        function animate(timestamp) {
+            let dt = (timestamp - lastTime) / 1000;
+            if (dt > 0.1) dt = 0.1;
+            lastTime = timestamp;
+
+            if (isPlaying) {
+                const p = getPhysics();
+                phi += p.omega * dt;
+                if (phi > Math.PI * 2) phi -= Math.PI * 2;
+            }
+
+            draw();
+            requestAnimationFrame(animate);
+        }
+
+        d_slider.addEventListener('input', () => { getPhysics(); draw(); });
+
+        [chk_forces_sim, chk_axes, chk_decomp, chk_mg].forEach(c => {
+            c.addEventListener('change', draw);
+        });
+
+        sel_vista.addEventListener('change', draw);
+
+        btn_play.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            btn_play.innerText = isPlaying ? "⏸ Pausar" : "▶ Ejecutar";
+            btn_play.style.backgroundColor = isPlaying ? "#ffc107" : "#198754";
+            btn_play.style.color = isPlaying ? "#000" : "#fff";
+        });
+
+        btn_reset.addEventListener('click', () => { phi = 0; draw(); });
+
+        getPhysics();
+        requestAnimationFrame(animate);
+    }
+
+    initSimulation();
+})();
+</script>
+</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div style="border: 1px solid #dee2e6; padding: 18px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 980px; margin: auto;">
+    <h3 style="margin-top:0; color: #212529; font-size: 1.3em;">Problema: Masa en Mesa Horizontal Unida a Masa Colgante (2m) por Orificio Central</h3>
+    
+    <!-- Paneles de Solución Teórica y Deducción en HTML Puro -->
+    <div style="background: #e9ecef; padding: 12px 16px; border-radius: 6px; font-size: 0.88em; margin-bottom: 12px; color: #212529; line-height: 1.5;">
+        <strong>Modelo Dinámico del Sistema:</strong>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px;">
+            <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #0d6efd;">
+                <b>1. Bloque Colgante (M = 2m):</b><br>
+                Equilibrio vertical (<i>a<sub>y</sub> = 0</i>):<br>
+                <i>T - 2m&middot;g = 0 &#8658; <b>T = 2m&middot;g</b></i>
+            </div>
+            <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #198754;">
+                <b>2. Bloque Giratorio en la Mesa (m):</b><br>
+                &#8226; Eje Normal (vertical <i>y</i>): <i>N - m&middot;g = 0 &#8658; <b>N = m&middot;g</b></i><br>
+                &#8226; Eje Radial (horizontal hacia el centro <i>r</i>):<br>
+                <i>T = m &middot; a<sub>c</sub> = m &middot; &omega;<sup>2</sup> &middot; R</i>
+            </div>
+        </div>
+        <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #6f42c1; margin-top: 8px;">
+            <b>3. Rapidez angular requerida (&omega;):</b> Igualando la tensión de ambas ecuaciones:<br>
+            <i>m &middot; &omega;<sup>2</sup> &middot; R = 2m &middot; g &nbsp;&#8658;&nbsp; <b>&omega; = &radic;(2g / R)</b></i> &nbsp;(Independiente de la masa <i>m</i>).<br>
+            Para <i>R = 0.5 m</i> y <i>g = 9.8 m/s<sup>2</sup></i> &#8658; <b><i>&omega; = &radic;(19.6 / 0.5) = &radic;39.2 &approx; 6.26 rad/s</i></b> &nbsp;(<i>v &approx; 3.13 m/s</i>).
+        </div>
+    </div>
+
+    <!-- Barra de Vistas y Reproducción -->
+    <div style="display: flex; gap: 10px; margin-bottom: 12px; background: #ffffff; padding: 10px 14px; border-radius: 6px; border: 1px solid #ced4da; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <label style="font-weight: bold; font-size: 0.85em; color: #495057;">Perspectiva de la Simulación:</label>
+            <select id="sel_vista_36807" style="padding: 6px 10px; border-radius: 4px; border: 1px solid #6c757d; font-weight: bold; cursor: pointer; background: #f8f9fa;">
+                <option value="dual">Vista Simultánea (Lateral + Superior)</option>
+                <option value="side">Vista Lateral (Corte Vertical de Mesa)</option>
+                <option value="top">Vista Superior (Plano de la Mesa)</option>
+            </select>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <button id="play_36807" style="background-color: #198754; color: white; border: none; padding: 7px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">▶ Ejecutar</button>
+            <button id="reset_36807" style="background-color: #6c757d; color: white; border: none; padding: 7px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">🔄 Reiniciar</button>
+            <button id="btn_eq_36807" style="background-color: #0d6efd; color: white; border: none; padding: 7px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; font-weight: 500;">⚖ Rapidez de Equilibrio Exacta</button>
+        </div>
+
+        <div id="status_pill_36807" style="font-size: 0.85em; font-weight: bold; padding: 6px 14px; border-radius: 4px; background: #d1e7dd; color: #0f5132; border: 1px solid #badbcc;">
+            ✓ Bloque 2m en Reposo Estacionario
+        </div>
+    </div>
+
+    <!-- Sliders de Parámetros Dinámicos (m, R, omega) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; background: #ffffff; padding: 12px; border-radius: 6px; border: 1px solid #ced4da; margin-bottom: 12px;">
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #0d6efd;">
+                <span>Masa giratoria (m):</span>
+                <span id="m_val_36807">0.50 kg</span>
+            </div>
+            <input type="range" id="m_slider_36807" min="0.2" max="2.0" step="0.1" value="0.5" style="width: 100%;">
+            <div style="font-size: 0.72em; color: #6c757d;">Masa colgante: 2m = <span id="m2_val_36807">1.00 kg</span></div>
+        </div>
+
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #198754;">
+                <span>Radio de giro (R):</span>
+                <span id="R_val_36807">0.50 m</span>
+            </div>
+            <input type="range" id="R_slider_36807" min="0.25" max="1.00" step="0.05" value="0.50" style="width: 100%;">
+            <div style="font-size: 0.72em; color: #6c757d;">Distancia fija al orificio central</div>
+        </div>
+
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #6f42c1;">
+                <span>Rapidez angular (&omega;):</span>
+                <span id="w_val_36807">6.26 rad/s</span>
+            </div>
+            <input type="range" id="w_slider_36807" min="2.0" max="12.0" step="0.1" value="6.26" style="width: 100%;">
+            <div style="font-size: 0.72em; color: #6c757d;">&omega;<sub>eq</sub> = &radic;(2g / R)</div>
+        </div>
+    </div>
+
+    <!-- Canvas Principal -->
+    <div style="display: flex; justify-content: center; margin-bottom: 12px;">
+        <canvas id="canvas_sim_36807" width="940" height="430" style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+    </div>
+
+    <!-- Panel de Telemetría Numérica -->
+    <div style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; padding: 10px; margin-bottom: 10px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; text-align: center;">
+            <div style="background: #e7f1ff; padding: 6px; border-radius: 4px; border: 1px solid #b6d4fe;">
+                <div style="font-size: 0.68em; color: #084298; font-weight: bold;">TENSIÓN EN CUERDA (T)</div>
+                <div id="lbl_T_36807" style="font-size: 1.05em; font-weight: bold; color: #0d6efd; font-family: monospace;">9.80 N</div>
+            </div>
+            <div style="background: #d1e7dd; padding: 6px; border-radius: 4px; border: 1px solid #badbcc;">
+                <div style="font-size: 0.68em; color: #0f5132; font-weight: bold;">FUERZA RADIAL (F_r = m·&omega;²·R)</div>
+                <div id="lbl_Fr_36807" style="font-size: 1.05em; font-weight: bold; color: #198754; font-family: monospace;">9.80 N</div>
+            </div>
+            <div style="background: #f8d7da; padding: 6px; border-radius: 4px; border: 1px solid #f5c2c7;">
+                <div style="font-size: 0.68em; color: #842029; font-weight: bold;">PESO COLGANTE (2m·g)</div>
+                <div id="lbl_P2_36807" style="font-size: 1.05em; font-weight: bold; color: #dc3545; font-family: monospace;">9.80 N</div>
+            </div>
+            <div style="background: #e2e3e5; padding: 6px; border-radius: 4px; border: 1px solid #d6d8db;">
+                <div style="font-size: 0.68em; color: #495057; font-weight: bold;">NORMAL MESA (N = m·g)</div>
+                <div id="lbl_N_36807" style="font-size: 1.05em; font-weight: bold; color: #495057; font-family: monospace;">4.90 N</div>
+            </div>
+            <div style="background: #fff3cd; padding: 6px; border-radius: 4px; border: 1px solid #ffecb5;">
+                <div style="font-size: 0.68em; color: #664d03; font-weight: bold;">RAPIDEZ LINEAL (v = &omega;·R)</div>
+                <div id="lbl_v_36807" style="font-size: 1.05em; font-weight: bold; color: #856404; font-family: monospace;">3.13 m/s</div>
+            </div>
+            <div style="background: #f3e5f5; padding: 6px; border-radius: 4px; border: 1px solid #e1bee7;">
+                <div style="font-size: 0.68em; color: #4a148c; font-weight: bold;">&omega; DE EQUILIBRIO TEÓRICA</div>
+                <div id="lbl_weq_36807" style="font-size: 1.05em; font-weight: bold; color: #6f42c1; font-family: monospace;">6.26 rad/s</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filtros de Capas Visibles -->
+    <div style="font-size: 0.85em; padding: 8px 12px; background: #e9ecef; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
+        <strong>Capas Gráficas:</strong>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_forces_sim_36807" checked> <b style="color: #0d6efd;">Vectores en la Escena</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_axes_36807" checked> <b style="color: #6c757d;">Ejes Coordenados (+r, +y)</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_orbit_36807" checked> <b>Trayectoria Circular</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_dcl_36807" checked> <b style="color: #198754;">Diagramas DCL (m y 2m)</b></label>
+    </div>
+</div>
+
+<script>
+(function() {
+    function initSimulation() {
+        const canvas = document.getElementById('canvas_sim_36807');
+        if (!canvas) { setTimeout(initSimulation, 50); return; }
+        const ctx = canvas.getContext('2d');
+
+        const sel_vista = document.getElementById('sel_vista_36807');
+        const m_slider = document.getElementById('m_slider_36807');
+        const R_slider = document.getElementById('R_slider_36807');
+        const w_slider = document.getElementById('w_slider_36807');
+
+        const m_val = document.getElementById('m_val_36807');
+        const m2_val = document.getElementById('m2_val_36807');
+        const R_val = document.getElementById('R_val_36807');
+        const w_val = document.getElementById('w_val_36807');
+
+        const lbl_T = document.getElementById('lbl_T_36807');
+        const lbl_Fr = document.getElementById('lbl_Fr_36807');
+        const lbl_P2 = document.getElementById('lbl_P2_36807');
+        const lbl_N = document.getElementById('lbl_N_36807');
+        const lbl_v = document.getElementById('lbl_v_36807');
+        const lbl_weq = document.getElementById('lbl_weq_36807');
+        const status_pill = document.getElementById('status_pill_36807');
+
+        const btn_play = document.getElementById('play_36807');
+        const btn_reset = document.getElementById('reset_36807');
+        const btn_eq = document.getElementById('btn_eq_36807');
+
+        const chk_forces_sim = document.getElementById('chk_forces_sim_36807');
+        const chk_axes = document.getElementById('chk_axes_36807');
+        const chk_orbit = document.getElementById('chk_orbit_36807');
+        const chk_dcl = document.getElementById('chk_dcl_36807');
+
+        const g = 9.8;
+        let isPlaying = true;
+        let phi = 0; // Ángulo orbital en el plano de la mesa
+        let lastTime = performance.now();
+
+        function drawArrow(context, fx, fy, tx, ty, color, lineWidth=2.5, dashed=false) {
+            const dx = tx - fx;
+            const dy = ty - fy;
+            const len = Math.hypot(dx, dy);
+            if (len < 1) return;
+            const headlen = Math.min(9, Math.max(5, len * 0.25));
+            const angle = Math.atan2(dy, dx);
+
+            context.beginPath();
+            context.strokeStyle = color;
+            context.lineWidth = lineWidth;
+            if (dashed) context.setLineDash([4, 3]);
+            context.moveTo(fx, fy);
+            context.lineTo(tx, ty);
+            context.stroke();
+            context.setLineDash([]);
+
+            context.beginPath();
+            context.fillStyle = color;
+            context.moveTo(tx, ty);
+            context.lineTo(tx - headlen * Math.cos(angle - Math.PI / 6), ty - headlen * Math.sin(angle - Math.PI / 6));
+            context.lineTo(tx - headlen * Math.cos(angle + Math.PI / 6), ty - headlen * Math.sin(angle + Math.PI / 6));
+            context.fill();
+        }
+
+        function getPhysics() {
+            const m = parseFloat(m_slider.value);
+            const R = parseFloat(R_slider.value);
+            const w = parseFloat(w_slider.value);
+
+            m_val.innerText = m.toFixed(2) + " kg";
+            m2_val.innerText = (2 * m).toFixed(2) + " kg";
+            R_val.innerText = R.toFixed(2) + " m";
+            w_val.innerText = w.toFixed(2) + " rad/s";
+
+            const weq = Math.sqrt((2 * g) / R);
+            const v = w * R;
+            const P1 = m * g;
+            const P2 = 2 * m * g;
+            const N = P1;
+            const Fr = m * w * w * R; // Fuerza centrípeta requerida para radio R fijo
+            const T = P2; // Tensión determinada por el equilibrio del bloque colgante
+
+            lbl_T.innerText = T.toFixed(2) + " N";
+            lbl_Fr.innerText = Fr.toFixed(2) + " N";
+            lbl_P2.innerText = P2.toFixed(2) + " N";
+            lbl_N.innerText = N.toFixed(2) + " N";
+            lbl_v.innerText = v.toFixed(2) + " m/s";
+            lbl_weq.innerText = weq.toFixed(2) + " rad/s";
+
+            const diff = Fr - T;
+            if (Math.abs(diff) < 0.2) {
+                status_pill.innerHTML = "✓ Bloque 2m en Reposo Estacionario (m·&omega;²·R = 2mg)";
+                status_pill.style.background = "#d1e7dd";
+                status_pill.style.color = "#0f5132";
+                status_pill.style.borderColor = "#badbcc";
+            } else if (diff > 0) {
+                status_pill.innerHTML = "⚠ m·&omega;²·R > 2mg (Masa 2m ascendería / radio tendería a aumentar)";
+                status_pill.style.background = "#fff3cd";
+                status_pill.style.color = "#856404";
+                status_pill.style.borderColor = "#ffeeba";
+            } else {
+                status_pill.innerHTML = "⚠ m·&omega;²·R < 2mg (Masa 2m descendería / radio tendería a encogerse)";
+                status_pill.style.background = "#f8d7da";
+                status_pill.style.color = "#842029";
+                status_pill.style.borderColor = "#f5c2c7";
+            }
+
+            return { m, R, w, weq, v, P1, P2, N, Fr, T };
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const p = getPhysics();
+            const view = sel_vista.value;
+            const splitX = (view === "dual") ? 550 : 570;
+
+            // ==========================================================
+            // ESCENA FÍSICA (IZQUIERDA)
+            // ==========================================================
+            ctx.font = "bold 13px sans-serif";
+            ctx.fillStyle = "#212529";
+
+            const scalePix = 160; // px por metro
+            const R_px = p.R * scalePix;
+
+            if (view === "dual") {
+                // VISTA SUPERIOR ARRIBA, VISTA LATERAL ABAJO
+                ctx.fillText("Vista de la Situación Física (Superior y Lateral)", 20, 22);
+
+                // --- 1. Sub-bloque Superior: VISTA SUPERIOR ---
+                const topCenterX = 260;
+                const topCenterY = 100;
+                const tableW = 280;
+                const tableH = 150;
+
+                // Marco de la mesa vista superior
+                ctx.fillStyle = "#fff8e7";
+                ctx.strokeStyle = "#b07d3b";
+                ctx.lineWidth = 2.5;
+                ctx.fillRect(topCenterX - tableW/2, topCenterY - tableH/2, tableW, tableH);
+                ctx.strokeRect(topCenterX - tableW/2, topCenterY - tableH/2, tableW, tableH);
+                ctx.fillStyle = "#b07d3b";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("(vista superior)", topCenterX - tableW/2 + 8, topCenterY - tableH/2 + 15);
+
+                // Indicador de gravedad entrante a la pantalla ⊗ g
+                ctx.beginPath();
+                ctx.strokeStyle = "#495057";
+                ctx.lineWidth = 1.5;
+                ctx.arc(60, topCenterY, 8, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(60 - 5, topCenterY - 5); ctx.lineTo(60 + 5, topCenterY + 5);
+                ctx.moveTo(60 + 5, topCenterY - 5); ctx.lineTo(60 - 5, topCenterY + 5);
+                ctx.stroke();
+                ctx.fillStyle = "#495057";
+                ctx.font = "italic bold 13px serif";
+                ctx.fillText("g", 74, topCenterY + 4);
+
+                // Trayectoria circular superior
+                if (chk_orbit.checked) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = "rgba(108,117,125,0.4)";
+                    ctx.setLineDash([4, 4]);
+                    ctx.arc(topCenterX, topCenterY, R_px * 0.65, 0, Math.PI * 2);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                }
+
+                // Orificio central
+                ctx.beginPath();
+                ctx.fillStyle = "#fd7e14";
+                ctx.arc(topCenterX, topCenterY, 4, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Bloque m en vista superior
+                const bTopX = topCenterX + R_px * 0.65 * Math.cos(phi);
+                const bTopY = topCenterY + R_px * 0.65 * Math.sin(phi);
+
+                // Cuerda en vista superior
+                ctx.beginPath();
+                ctx.strokeStyle = "#212529";
+                ctx.lineWidth = 2;
+                ctx.moveTo(topCenterX, topCenterY);
+                ctx.lineTo(bTopX, bTopY);
+                ctx.stroke();
+
+                // Bloque m (cuadrado negro como en la figura)
+                ctx.fillStyle = "#212529";
+                ctx.fillRect(bTopX - 10, bTopY - 8, 20, 16);
+                ctx.fillStyle = "#ffffff";
+                ctx.font = "italic bold 10px serif";
+                ctx.fillText("m", bTopX - 4, bTopY + 4);
+
+                // Vectores en vista superior
+                if (chk_forces_sim.checked) {
+                    const dirX = (topCenterX - bTopX) / (R_px * 0.65);
+                    const dirY = (topCenterY - bTopY) / (R_px * 0.65);
+                    drawArrow(ctx, bTopX, bTopY, bTopX + dirX * 35, bTopY + dirY * 35, "#0d6efd", 2.5);
+                    ctx.fillStyle = "#0d6efd";
+                    ctx.font = "bold 11px sans-serif";
+                    ctx.fillText("T", bTopX + dirX * 35 - 5, bTopY + dirY * 35 - 6);
+
+                    // Velocidad tangencial
+                    const vx = -Math.sin(phi);
+                    const vy = Math.cos(phi);
+                    drawArrow(ctx, bTopX, bTopY, bTopX + vx * 25, bTopY + vy * 25, "#856404", 2);
+                    ctx.fillStyle = "#856404";
+                    ctx.fillText("v", bTopX + vx * 25 + 4, bTopY + vy * 25 + 4);
+                }
+
+                // --- 2. Sub-bloque Inferior: VISTA LATERAL ---
+                const sideTableX = 260;
+                const sideTableY = 260;
+                const sideTableW = 280;
+                const sideLegH = 110;
+
+                // Tablero de mesa
+                ctx.fillStyle = "#e09f3e";
+                ctx.strokeStyle = "#9e6822";
+                ctx.lineWidth = 2;
+                ctx.fillRect(sideTableX - sideTableW/2, sideTableY, sideTableW, 14);
+                ctx.strokeRect(sideTableX - sideTableW/2, sideTableY, sideTableW, 14);
+
+                // Patas de la mesa
+                ctx.fillRect(sideTableX - sideTableW/2 + 20, sideTableY + 14, 14, sideLegH);
+                ctx.fillRect(sideTableX + sideTableW/2 - 34, sideTableY + 14, 14, sideLegH);
+                ctx.strokeRect(sideTableX - sideTableW/2 + 20, sideTableY + 14, 14, sideLegH);
+                ctx.strokeRect(sideTableX + sideTableW/2 - 34, sideTableY + 14, 14, sideLegH);
+
+                // Suelo
+                const groundY = sideTableY + 14 + sideLegH;
+                ctx.strokeStyle = "#6c757d";
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(70, groundY); ctx.lineTo(460, groundY); ctx.stroke();
+
+                ctx.fillStyle = "#9e6822";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("(vista lateral)", sideTableX - 35, groundY + 16);
+
+                // Gravedad lateral
+                drawArrow(ctx, 60, sideTableY + 10, 60, sideTableY + 50, "#495057", 2);
+                ctx.fillStyle = "#495057";
+                ctx.font = "italic bold 13px serif";
+                ctx.fillText("g", 70, sideTableY + 35);
+
+                // Orificio central en mesa
+                const holeX = sideTableX;
+                const holeY = sideTableY;
+                ctx.fillStyle = "#212529";
+                ctx.fillRect(holeX - 3, holeY, 6, 14);
+
+                // Cuerda vertical y masa colgante 2m
+                const hangY = holeY + 65;
+                ctx.strokeStyle = "#212529";
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(holeX, holeY + 14);
+                ctx.lineTo(holeX, hangY);
+                ctx.stroke();
+
+                // Bloque 2m (color azul acerado como en la figura)
+                ctx.fillStyle = "#6c8ebf";
+                ctx.strokeStyle = "#385d8a";
+                ctx.lineWidth = 2;
+                ctx.fillRect(holeX - 16, hangY, 32, 28);
+                ctx.strokeRect(holeX - 16, hangY, 32, 28);
+                ctx.fillStyle = "#ffffff";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("2m", holeX - 9, hangY + 18);
+
+                // Posición de m sobre la mesa en vista lateral (proyección en X)
+                const sideBlockX = holeX + (R_px * 0.65) * Math.cos(phi);
+                const sideBlockY = sideTableY - 10;
+
+                // Cuerda horizontal sobre la mesa
+                ctx.beginPath();
+                ctx.strokeStyle = "#212529";
+                ctx.lineWidth = 2;
+                ctx.moveTo(holeX, holeY);
+                ctx.lineTo(sideBlockX, holeY);
+                ctx.stroke();
+
+                // Bloque m sobre la mesa
+                ctx.fillStyle = "#212529";
+                ctx.fillRect(sideBlockX - 10, sideBlockY, 20, 10);
+
+                // Cota R
+                ctx.strokeStyle = "#198754";
+                ctx.lineWidth = 1.2;
+                ctx.beginPath();
+                ctx.moveTo(holeX, holeY - 16); ctx.lineTo(holeX + R_px * 0.65, holeY - 16);
+                ctx.stroke();
+                ctx.fillStyle = "#198754";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("R = " + p.R.toFixed(2) + " m", holeX + (R_px * 0.65)/2 - 25, holeY - 20);
+
+                // Vectores sobre 2m en vista lateral
+                if (chk_forces_sim.checked) {
+                    drawArrow(ctx, holeX, hangY, holeX, hangY - 28, "#0d6efd", 2);
+                    ctx.fillStyle = "#0d6efd";
+                    ctx.font = "bold 10px sans-serif";
+                    ctx.fillText("T", holeX + 6, hangY - 12);
+
+                    drawArrow(ctx, holeX, hangY + 28, holeX, hangY + 28 + 28, "#dc3545", 2);
+                    ctx.fillStyle = "#dc3545";
+                    ctx.fillText("2m·g", holeX + 6, hangY + 48);
+                }
+
+            } else if (view === "side") {
+                // VISTA LATERAL PURA DETALLADA
+                ctx.fillText("Vista Lateral Ampliada (Corte Vertical de Mesa)", 20, 25);
+                const tableX = 260;
+                const tableY = 160;
+                const tableW = 380;
+                const legH = 170;
+
+                ctx.fillStyle = "#e09f3e";
+                ctx.strokeStyle = "#9e6822";
+                ctx.lineWidth = 2;
+                ctx.fillRect(tableX - tableW/2, tableY, tableW, 18);
+                ctx.strokeRect(tableX - tableW/2, tableY, tableW, 18);
+
+                ctx.fillRect(tableX - tableW/2 + 25, tableY + 18, 18, legH);
+                ctx.fillRect(tableX + tableW/2 - 43, tableY + 18, 18, legH);
+                ctx.strokeRect(tableX - tableW/2 + 25, tableY + 18, 18, legH);
+                ctx.strokeRect(tableX + tableW/2 - 43, tableY + 18, 18, legH);
+
+                const groundY = tableY + 18 + legH;
+                ctx.strokeStyle = "#6c757d"; ctx.lineWidth = 2;
+                ctx.beginPath(); ctx.moveTo(40, groundY); ctx.lineTo(480, groundY); ctx.stroke();
+
+                // Orificio central
+                ctx.fillStyle = "#212529";
+                ctx.fillRect(tableX - 4, tableY, 8, 18);
+
+                // Bloque colgante 2m
+                const hangY = tableY + 18 + 50;
+                ctx.strokeStyle = "#212529"; ctx.lineWidth = 2.5;
+                ctx.beginPath(); ctx.moveTo(tableX, tableY + 18); ctx.lineTo(tableX, hangY); ctx.stroke();
+
+                ctx.fillStyle = "#6c8ebf"; ctx.strokeStyle = "#385d8a"; ctx.lineWidth = 2;
+                ctx.fillRect(tableX - 22, hangY, 44, 38);
+                ctx.strokeRect(tableX - 22, hangY, 44, 38);
+                ctx.fillStyle = "#ffffff"; ctx.font = "bold 13px sans-serif";
+                ctx.fillText("2m", tableX - 10, hangY + 24);
+
+                // Bloque m en movimiento oscilante según perspectiva
+                const bX = tableX + R_px * Math.cos(phi);
+                const bY = tableY - 14;
+
+                ctx.beginPath(); ctx.strokeStyle = "#212529"; ctx.lineWidth = 2.5;
+                ctx.moveTo(tableX, tableY); ctx.lineTo(bX, tableY); ctx.stroke();
+
+                ctx.fillStyle = "#212529";
+                ctx.fillRect(bX - 14, bY, 28, 14);
+                ctx.fillStyle = "#ffffff"; ctx.font = "bold 11px sans-serif";
+                ctx.fillText("m", bX - 5, bY + 11);
+
+                // Cota R
+                ctx.strokeStyle = "#198754"; ctx.lineWidth = 1.5;
+                ctx.beginPath(); ctx.moveTo(tableX, tableY - 25); ctx.lineTo(tableX + R_px, tableY - 25); ctx.stroke();
+                ctx.fillStyle = "#198754"; ctx.font = "bold 12px sans-serif";
+                ctx.fillText("R = " + p.R.toFixed(2) + " m", tableX + R_px/2 - 25, tableY - 30);
+
+                // Vectores en bloque m
+                if (chk_forces_sim.checked) {
+                    const fScale = 4.5;
+                    // Tensión horizontal hacia el orificio
+                    const dirX = (tableX > bX) ? 1 : -1;
+                    drawArrow(ctx, bX, bY + 7, bX + dirX * p.T * fScale, bY + 7, "#0d6efd", 3);
+                    ctx.fillStyle = "#0d6efd"; ctx.font = "bold 11px sans-serif";
+                    ctx.fillText("T", bX + dirX * p.T * fScale + (dirX > 0 ? 5 : -15), bY + 4);
+
+                    // Normal hacia arriba
+                    drawArrow(ctx, bX, bY, bX, bY - p.N * fScale, "#495057", 2.5);
+                    ctx.fillStyle = "#495057"; ctx.fillText("N", bX + 6, bY - p.N * fScale + 10);
+
+                    // Peso hacia abajo
+                    drawArrow(ctx, bX, bY + 14, bX, bY + 14 + p.P1 * fScale, "#dc3545", 2.5);
+                    ctx.fillStyle = "#dc3545"; ctx.fillText("m·g", bX + 6, bY + 14 + p.P1 * fScale);
+
+                    // Fuerzas sobre 2m
+                    drawArrow(ctx, tableX, hangY, tableX, hangY - p.T * fScale * 0.8, "#0d6efd", 2.5);
+                    ctx.fillStyle = "#0d6efd"; ctx.fillText("T", tableX + 6, hangY - 15);
+                    drawArrow(ctx, tableX, hangY + 38, tableX, hangY + 38 + p.P2 * fScale * 0.8, "#dc3545", 2.5);
+                    ctx.fillStyle = "#dc3545"; ctx.fillText("2m·g", tableX + 6, hangY + 38 + 25);
+                }
+
+            } else if (view === "top") {
+                // VISTA SUPERIOR AMPLIADA
+                ctx.fillText("Vista Superior del Plano de la Mesa (Plano Horizontal)", 20, 25);
+                const cX = 260;
+                const cY = 220;
+
+                ctx.fillStyle = "#fff8e7";
+                ctx.strokeStyle = "#b07d3b";
+                ctx.lineWidth = 3;
+                ctx.fillRect(cX - 190, cY - 170, 380, 340);
+                ctx.strokeRect(cX - 190, cY - 170, 380, 340);
+
+                if (chk_orbit.checked) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = "rgba(108,117,125,0.4)";
+                    ctx.setLineDash([4, 4]);
+                    ctx.arc(cX, cY, R_px, 0, Math.PI * 2);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                }
+
+                // Orificio
+                ctx.beginPath(); ctx.fillStyle = "#fd7e14"; ctx.arc(cX, cY, 6, 0, Math.PI * 2); ctx.fill();
+                ctx.fillStyle = "#495057"; ctx.font = "bold 11px sans-serif";
+                ctx.fillText("Orificio central", cX - 35, cY + 18);
+
+                const bX = cX + R_px * Math.cos(phi);
+                const bY = cY + R_px * Math.sin(phi);
+
+                ctx.beginPath(); ctx.strokeStyle = "#212529"; ctx.lineWidth = 2.5;
+                ctx.moveTo(cX, cY); ctx.lineTo(bX, bY); ctx.stroke();
+
+                ctx.fillStyle = "#212529";
+                ctx.fillRect(bX - 14, bY - 14, 28, 28);
+                ctx.fillStyle = "#ffffff"; ctx.font = "bold 12px sans-serif";
+                ctx.fillText("m", bX - 6, bY + 4);
+
+                if (chk_forces_sim.checked) {
+                    const dirX = (cX - bX) / R_px;
+                    const dirY = (cY - bY) / R_px;
+                    drawArrow(ctx, bX, bY, bX + dirX * 55, bY + dirY * 55, "#0d6efd", 3);
+                    ctx.fillStyle = "#0d6efd"; ctx.font = "bold 12px sans-serif";
+                    ctx.fillText("T (Radial Centrípeto)", bX + dirX * 55 - 40, bY + dirY * 55 - 8);
+
+                    const vx = -Math.sin(phi);
+                    const vy = Math.cos(phi);
+                    drawArrow(ctx, bX, bY, bX + vx * 45, bY + vy * 45, "#856404", 2.5);
+                    ctx.fillStyle = "#856404";
+                    ctx.fillText("v = ω·R", bX + vx * 45 + 5, bY + vy * 45 + 4);
+                }
+            }
+
+            // ==========================================================
+            // SECCIÓN DERECHA: DIAGRAMAS DE CUERPO LIBRE (DCL)
+            // ==========================================================
+            if (chk_dcl.checked) {
+                // Divisoria vertical
+                ctx.beginPath();
+                ctx.strokeStyle = "#e9ecef";
+                ctx.lineWidth = 2;
+                ctx.moveTo(splitX, 10);
+                ctx.lineTo(splitX, canvas.height - 10);
+                ctx.stroke();
+
+                ctx.fillStyle = "#212529";
+                ctx.font = "bold 14px sans-serif";
+                ctx.fillText("Diagramas de Cuerpo Libre (DCL)", splitX + 20, 25);
+
+                const dclFScale = 6.0; // px / N
+
+                // --- DCL 1: Bloque Giratorio m en la mesa (Ejes r, y) ---
+                const dcl1X = splitX + 160;
+                const dcl1Y = 135;
+
+                ctx.fillStyle = "#0d6efd";
+                ctx.font = "bold 12px sans-serif";
+                ctx.fillText("1. Bloque m (Mesa sin roce):", splitX + 20, 50);
+
+                if (chk_axes.checked) {
+                    ctx.strokeStyle = "#adb5bd";
+                    ctx.setLineDash([3, 3]);
+                    ctx.lineWidth = 1.5;
+                    // Eje radial r
+                    ctx.beginPath(); ctx.moveTo(dcl1X - 110, dcl1Y); ctx.lineTo(dcl1X + 80, dcl1Y); ctx.stroke();
+                    // Eje normal y
+                    ctx.beginPath(); ctx.moveTo(dcl1X, dcl1Y - 65); ctx.lineTo(dcl1X, dcl1Y + 65); ctx.stroke();
+                    ctx.setLineDash([]);
+                    ctx.fillStyle = "#6c757d";
+                    ctx.font = "bold 10px sans-serif";
+                    ctx.fillText("← +r (Radial)", dcl1X - 110, dcl1Y - 6);
+                    ctx.fillText("+y (Normal) ↑", dcl1X + 8, dcl1Y - 55);
+                }
+
+                // Vector Tensión T (hacia el centro / eje radial)
+                drawArrow(ctx, dcl1X, dcl1Y, dcl1X - p.T * dclFScale, dcl1Y, "#0d6efd", 3);
+                ctx.fillStyle = "#0d6efd";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("T = " + p.T.toFixed(1) + " N", dcl1X - p.T * dclFScale - 15, dcl1Y + 16);
+
+                // Vector Normal N (hacia arriba)
+                drawArrow(ctx, dcl1X, dcl1Y, dcl1X, dcl1Y - p.N * dclFScale, "#495057", 2.5);
+                ctx.fillStyle = "#495057";
+                ctx.fillText("N = m·g = " + p.N.toFixed(1) + " N", dcl1X + 8, dcl1Y - p.N * dclFScale + 12);
+
+                // Vector Peso P1 (hacia abajo)
+                drawArrow(ctx, dcl1X, dcl1Y, dcl1X, dcl1Y + p.P1 * dclFScale, "#dc3545", 2.5);
+                ctx.fillStyle = "#dc3545";
+                ctx.fillText("P₁ = m·g = " + p.P1.toFixed(1) + " N", dcl1X + 8, dcl1Y + p.P1 * dclFScale);
+
+                // Nodo m
+                ctx.beginPath(); ctx.fillStyle = "#212529"; ctx.arc(dcl1X, dcl1Y, 5, 0, Math.PI * 2); ctx.fill();
+
+                // --- DCL 2: Bloque Colgante 2m ---
+                const dcl2X = splitX + 160;
+                const dcl2Y = 320;
+
+                ctx.fillStyle = "#dc3545";
+                ctx.font = "bold 12px sans-serif";
+                ctx.fillText("2. Bloque 2m (Colgante en reposo):", splitX + 20, 230);
+
+                if (chk_axes.checked) {
+                    ctx.strokeStyle = "#adb5bd";
+                    ctx.setLineDash([3, 3]);
+                    ctx.lineWidth = 1.5;
+                    ctx.beginPath(); ctx.moveTo(dcl2X, dcl2Y - 80); ctx.lineTo(dcl2X, dcl2Y + 80); ctx.stroke();
+                    ctx.setLineDash([]);
+                    ctx.fillStyle = "#6c757d";
+                    ctx.font = "bold 10px sans-serif";
+                    ctx.fillText("+y ↑", dcl2X + 8, dcl2Y - 70);
+                }
+
+                // Vector Tensión T (hacia arriba)
+                drawArrow(ctx, dcl2X, dcl2Y, dcl2X, dcl2Y - p.T * dclFScale, "#0d6efd", 3);
+                ctx.fillStyle = "#0d6efd";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("T = 2m·g = " + p.T.toFixed(1) + " N", dcl2X + 8, dcl2Y - p.T * dclFScale + 15);
+
+                // Vector Peso P2 = 2mg (hacia abajo)
+                drawArrow(ctx, dcl2X, dcl2Y, dcl2X, dcl2Y + p.P2 * dclFScale, "#dc3545", 3);
+                ctx.fillStyle = "#dc3545";
+                ctx.fillText("P₂ = 2m·g = " + p.P2.toFixed(1) + " N", dcl2X + 8, dcl2Y + p.P2 * dclFScale);
+
+                // Nodo 2m
+                ctx.beginPath(); ctx.fillStyle = "#212529"; ctx.arc(dcl2X, dcl2Y, 5, 0, Math.PI * 2); ctx.fill();
+            }
+        }
+
+        function animate(timestamp) {
+            let dt = (timestamp - lastTime) / 1000;
+            if (dt > 0.1) dt = 0.1;
+            lastTime = timestamp;
+
+            if (isPlaying) {
+                const p = getPhysics();
+                phi += p.w * dt;
+                if (phi > Math.PI * 2) phi -= Math.PI * 2;
+            }
+
+            draw();
+            requestAnimationFrame(animate);
+        }
+
+        // Eventos
+        [m_slider, R_slider, w_slider].forEach(s => {
+            s.addEventListener('input', () => { getPhysics(); draw(); });
+        });
+
+        [chk_forces_sim, chk_axes, chk_orbit, chk_dcl].forEach(c => {
+            c.addEventListener('change', draw);
+        });
+
+        sel_vista.addEventListener('change', draw);
+
+        btn_play.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            btn_play.innerText = isPlaying ? "⏸ Pausar" : "▶ Ejecutar";
+            btn_play.style.backgroundColor = isPlaying ? "#ffc107" : "#198754";
+            btn_play.style.color = isPlaying ? "#000" : "#fff";
+        });
+
+        btn_reset.addEventListener('click', () => {
+            phi = 0;
+            draw();
+        });
+
+        btn_eq.addEventListener('click', () => {
+            const R = parseFloat(R_slider.value);
+            const weq = Math.sqrt((2 * g) / R);
+            w_slider.value = weq.toFixed(2);
+            getPhysics();
+            draw();
+        });
+
+        getPhysics();
+        requestAnimationFrame(animate);
+    }
+
+    initSimulation();
+})();
+</script>
+</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div style="border: 1px solid #dee2e6; padding: 18px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 980px; margin: auto;">
+    <h3 style="margin-top:0; color: #212529; font-size: 1.3em;">Dinámica Circular: Fuerza del Asiento en una Rueda Vertical</h3>
+    
+    <!-- Paneles de Solución y Deducción Teórica -->
+    <div style="background: #e9ecef; padding: 12px 16px; border-radius: 6px; font-size: 0.88em; margin-bottom: 12px; color: #212529; line-height: 1.5;">
+        <strong>Modelo Dinámico General:</strong>
+        <div>
+            Segunda Ley de Newton sobre la persona: <i>&Sigma;F&#8407; = F&#8407;<sub>A</sub> + P&#8407; = m &middot; a&#8407;<sub>c</sub> &nbsp;&#8658;&nbsp; F&#8407;<sub>A</sub> = m &middot; a&#8407;<sub>c</sub> - m &middot; g&#8407;</i>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px;">
+            <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #0d6efd;">
+                <b>Posición P (Punto inferior vertical):</b><br>
+                <i>a&#8407;<sub>c</sub></i> apunta hacia arriba (+&#309;) hacia el centro E.<br>
+                <i>F<sub>A,P</sub> - m&middot;g = m&middot;&omega;<sup>2</sup>&middot;R</i><br>
+                <b><i>F<sub>A,P</sub> = m &middot; (g + &omega;<sup>2</sup>&middot;R)</i></b> &nbsp;(Magnitud máxima)
+            </div>
+            <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #198754;">
+                <b>Posición S (Punto lateral horizontal):</b><br>
+                Eje horizontal (radial): <i>F<sub>Ax</sub> = m&middot;&omega;<sup>2</sup>&middot;R</i> (hacia el centro E)<br>
+                Eje vertical: <i>F<sub>Ay</sub> = m&middot;g</i> (sostiene el peso)<br>
+                <b><i>F<sub>A,S</sub> = &radic;((m&middot;g)<sup>2</sup> + (m&middot;&omega;<sup>2</sup>&middot;R)<sup>2</sup>)</i></b>
+            </div>
+        </div>
+        <div style="margin-top: 8px; font-size: 0.9em; color: #495057;">
+            <b>¿Es la misma durante la trayectoria?</b> <u>No</u>. Varía continuamente en módulo y dirección. Es máxima en <b>P</b> y mínima en el punto más alto (Cénit).
+        </div>
+    </div>
+
+    <!-- Controles de Simulación y Selección de Posición Rápida -->
+    <div style="display: flex; gap: 12px; margin-bottom: 12px; background: #ffffff; padding: 10px 14px; border-radius: 6px; border: 1px solid #ced4da; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <button id="play_22262" style="background-color: #198754; color: white; border: none; padding: 7px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">▶ Ejecutar</button>
+            <button id="btn_posP_22262" style="background-color: #0d6efd; color: white; border: none; padding: 7px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">Ir a Posición P</button>
+            <button id="btn_posS_22262" style="background-color: #198754; color: white; border: none; padding: 7px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">Ir a Posición S</button>
+        </div>
+
+        <div id="lbl_pos_actual_22262" style="font-size: 0.85em; font-weight: bold; padding: 6px 12px; border-radius: 4px; background: #e7f1ff; color: #084298; border: 1px solid #b6d4fe;">
+            Posición: Libre
+        </div>
+    </div>
+
+    <!-- Sliders de Parámetros Dinámicos (m, R, omega) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; background: #ffffff; padding: 12px; border-radius: 6px; border: 1px solid #ced4da; margin-bottom: 12px;">
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #0d6efd;">
+                <span>Masa de la persona (m):</span>
+                <span id="m_val_22262">60 kg</span>
+            </div>
+            <input type="range" id="m_slider_22262" min="30" max="100" step="5" value="60" style="width: 100%;">
+        </div>
+
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #198754;">
+                <span>Radio de la rueda (R):</span>
+                <span id="R_val_22262">5.0 m</span>
+            </div>
+            <input type="range" id="R_slider_22262" min="2.0" max="10.0" step="0.5" value="5.0" style="width: 100%;">
+        </div>
+
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #fd7e14;">
+                <span>Rapidez angular (&omega;):</span>
+                <span id="w_val_22262">1.20 rad/s</span>
+            </div>
+            <input type="range" id="w_slider_22262" min="0.2" max="2.5" step="0.05" value="1.20" style="width: 100%;">
+        </div>
+    </div>
+
+    <!-- Canvas Principal -->
+    <div style="display: flex; justify-content: center; margin-bottom: 12px;">
+        <canvas id="canvas_sim_22262" width="940" height="430" style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+    </div>
+
+    <!-- Telemetría Dinámica -->
+    <div style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; padding: 10px; margin-bottom: 10px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; text-align: center;">
+            <div style="background: #e7f1ff; padding: 6px; border-radius: 4px; border: 1px solid #b6d4fe;">
+                <div style="font-size: 0.68em; color: #084298; font-weight: bold;">FUERZA ASIENTO (F_A)</div>
+                <div id="lbl_FA_22262" style="font-size: 1.05em; font-weight: bold; color: #0d6efd; font-family: monospace;">0.0 N</div>
+            </div>
+            <div style="background: #f8d7da; padding: 6px; border-radius: 4px; border: 1px solid #f5c2c7;">
+                <div style="font-size: 0.68em; color: #842029; font-weight: bold;">PESO (P = m·g)</div>
+                <div id="lbl_P_22262" style="font-size: 1.05em; font-weight: bold; color: #dc3545; font-family: monospace;">588.0 N</div>
+            </div>
+            <div style="background: #d1e7dd; padding: 6px; border-radius: 4px; border: 1px solid #badbcc;">
+                <div style="font-size: 0.68em; color: #0f5132; font-weight: bold;">FUERZA CENTRÍPETA (m·a_c)</div>
+                <div id="lbl_Fc_22262" style="font-size: 1.05em; font-weight: bold; color: #198754; font-family: monospace;">432.0 N</div>
+            </div>
+            <div style="background: #e2e3e5; padding: 6px; border-radius: 4px; border: 1px solid #d6d8db;">
+                <div style="font-size: 0.68em; color: #495057; font-weight: bold;">EN POSICIÓN P</div>
+                <div id="lbl_FAP_22262" style="font-size: 1.05em; font-weight: bold; color: #0d6efd; font-family: monospace;">1020.0 N</div>
+            </div>
+            <div style="background: #e2e3e5; padding: 6px; border-radius: 4px; border: 1px solid #d6d8db;">
+                <div style="font-size: 0.68em; color: #495057; font-weight: bold;">EN POSICIÓN S</div>
+                <div id="lbl_FAS_22262" style="font-size: 1.05em; font-weight: bold; color: #198754; font-family: monospace;">729.6 N</div>
+            </div>
+            <div style="background: #fff3cd; padding: 6px; border-radius: 4px; border: 1px solid #ffecb5;">
+                <div style="font-size: 0.68em; color: #664d03; font-weight: bold;">ACEL. CENTRÍPETA (a_c)</div>
+                <div id="lbl_ac_22262" style="font-size: 1.05em; font-weight: bold; color: #b78103; font-family: monospace;">7.20 m/s²</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filtros de Capas Gráficas -->
+    <div style="font-size: 0.85em; padding: 8px 12px; background: #e9ecef; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
+        <strong>Capas Gráficas:</strong>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_forces_sim_22262" checked> <b style="color: #0d6efd;">Fuerzas en la Rueda</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_axes_22262" checked> <b style="color: #6c757d;">Ejes Coordenados en DCL (+r, +t)</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_decomp_22262" checked> <b style="color: #6f42c1;">Componentes de F_A (F_Ax, F_Ay)</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_ac_22262" checked> <b style="color: #198754;">Aceleración Centrípeta (a_c)</b></label>
+    </div>
+</div>
+
+<script>
+(function() {
+    function initSimulation() {
+        const canvas = document.getElementById('canvas_sim_22262');
+        if (!canvas) { setTimeout(initSimulation, 50); return; }
+        const ctx = canvas.getContext('2d');
+
+        const m_slider = document.getElementById('m_slider_22262');
+        const R_slider = document.getElementById('R_slider_22262');
+        const w_slider = document.getElementById('w_slider_22262');
+
+        const m_val = document.getElementById('m_val_22262');
+        const R_val = document.getElementById('R_val_22262');
+        const w_val = document.getElementById('w_val_22262');
+
+        const lbl_FA = document.getElementById('lbl_FA_22262');
+        const lbl_P = document.getElementById('lbl_P_22262');
+        const lbl_Fc = document.getElementById('lbl_Fc_22262');
+        const lbl_FAP = document.getElementById('lbl_FAP_22262');
+        const lbl_FAS = document.getElementById('lbl_FAS_22262');
+        const lbl_ac = document.getElementById('lbl_ac_22262');
+        const lbl_pos_actual = document.getElementById('lbl_pos_actual_22262');
+
+        const btn_play = document.getElementById('play_22262');
+        const btn_posP = document.getElementById('btn_posP_22262');
+        const btn_posS = document.getElementById('btn_posS_22262');
+
+        const chk_forces_sim = document.getElementById('chk_forces_sim_22262');
+        const chk_axes = document.getElementById('chk_axes_22262');
+        const chk_decomp = document.getElementById('chk_decomp_22262');
+        const chk_ac = document.getElementById('chk_ac_22262');
+
+        const g = 9.8;
+        let isPlaying = true;
+        // theta: ángulo respecto a la horizontal derecha (0 = posición S, -pi/2 o 3pi/2 = posición P)
+        // En la imagen la rotación es horaria (sentido horario: theta disminuye)
+        let theta = -Math.PI / 2; // Inicia en P
+        let lastTime = performance.now();
+
+        function drawArrow(context, fx, fy, tx, ty, color, lineWidth=2.5, dashed=false) {
+            const dx = tx - fx;
+            const dy = ty - fy;
+            const len = Math.hypot(dx, dy);
+            if (len < 1) return;
+            const headlen = Math.min(10, Math.max(6, len * 0.25));
+            const angle = Math.atan2(dy, dx);
+
+            context.beginPath();
+            context.strokeStyle = color;
+            context.lineWidth = lineWidth;
+            if (dashed) context.setLineDash([4, 3]);
+            context.moveTo(fx, fy);
+            context.lineTo(tx, ty);
+            context.stroke();
+            context.setLineDash([]);
+
+            context.beginPath();
+            context.fillStyle = color;
+            context.moveTo(tx, ty);
+            context.lineTo(tx - headlen * Math.cos(angle - Math.PI / 6), ty - headlen * Math.sin(angle - Math.PI / 6));
+            context.lineTo(tx - headlen * Math.cos(angle + Math.PI / 6), ty - headlen * Math.sin(angle + Math.PI / 6));
+            context.fill();
+        }
+
+        function getPhysics() {
+            const m = parseFloat(m_slider.value);
+            const R = parseFloat(R_slider.value);
+            const w = parseFloat(w_slider.value);
+
+            m_val.innerText = m.toFixed(0) + " kg";
+            R_val.innerText = R.toFixed(1) + " m";
+            w_val.innerText = w.toFixed(2) + " rad/s";
+
+            const P = m * g;
+            const ac = w * w * R;
+            const Fc = m * ac;
+
+            // En cualquier ángulo theta:
+            // Posición relativa al centro E: (R*cos(theta), R*sin(theta))
+            // Aceleración centrípeta hacia E: a_c = -omega^2 * R * (cos(theta) i + sin(theta) j)
+            // F_A + P_vec = m * a_c
+            // F_Ax = -m * omega^2 * R * cos(theta)
+            // F_Ay - m*g = -m * omega^2 * R * sin(theta)  =>  F_Ay = m*g - m*omega^2*R*sin(theta)
+            const FAx = -Fc * Math.cos(theta);
+            const FAy = P - Fc * Math.sin(theta);
+            const FA_mag = Math.hypot(FAx, FAy);
+
+            // Valores teóricos en P (theta = -pi/2) y S (theta = 0)
+            const FAP = m * (g + ac);
+            const FAS = Math.sqrt(P * P + Fc * Fc);
+
+            lbl_FA.innerText = FA_mag.toFixed(1) + " N";
+            lbl_P.innerText = P.toFixed(1) + " N";
+            lbl_Fc.innerText = Fc.toFixed(1) + " N";
+            lbl_FAP.innerText = FAP.toFixed(1) + " N";
+            lbl_FAS.innerText = FAS.toFixed(1) + " N";
+            lbl_ac.innerText = ac.toFixed(2) + " m/s²";
+
+            // Indicador de posición
+            const normTheta = ((theta % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+            const diffP = Math.min(Math.abs(normTheta - 3 * Math.PI / 2), Math.abs(normTheta + Math.PI / 2));
+            const diffS = Math.min(Math.abs(normTheta - 0), Math.abs(normTheta - 2 * Math.PI));
+
+            if (diffP < 0.08) {
+                lbl_pos_actual.innerText = "Posición P (Inferior vertical)";
+                lbl_pos_actual.style.background = "#e7f1ff";
+                lbl_pos_actual.style.color = "#084298";
+                lbl_pos_actual.style.borderColor = "#b6d4fe";
+            } else if (diffS < 0.08) {
+                lbl_pos_actual.innerText = "Posición S (Horizontal lateral)";
+                lbl_pos_actual.style.background = "#d1e7dd";
+                lbl_pos_actual.style.color = "#0f5132";
+                lbl_pos_actual.style.borderColor = "#badbcc";
+            } else {
+                lbl_pos_actual.innerText = "Posición: Trayectoria circular";
+                lbl_pos_actual.style.background = "#f8f9fa";
+                lbl_pos_actual.style.color = "#495057";
+                lbl_pos_actual.style.borderColor = "#ced4da";
+            }
+
+            return { m, R, w, P, ac, Fc, FAx, FAy, FA_mag, FAP, FAS };
+        }
+
+        function drawPerson(context, x, y, angle) {
+            // Asiento
+            context.save();
+            context.translate(x, y);
+            context.strokeStyle = "#343a40";
+            context.lineWidth = 3;
+
+            // Base del asiento y respaldo vertical orientado hacia arriba
+            context.beginPath();
+            context.moveTo(-12, 10);
+            context.lineTo(12, 10);
+            context.lineTo(12, -14);
+            context.stroke();
+
+            // Dibujo esquemático de la persona sentada
+            context.strokeStyle = "#0d6efd";
+            context.fillStyle = "#0d6efd";
+            context.lineWidth = 2.5;
+
+            // Cabeza
+            context.beginPath();
+            context.arc(0, -22, 5, 0, Math.PI * 2);
+            context.fill();
+
+            // Torso
+            context.beginPath();
+            context.moveTo(0, -17);
+            context.lineTo(0, 4);
+            // Muslos (hacia adelante)
+            context.lineTo(-10, 4);
+            // Piernas (hacia abajo)
+            context.lineTo(-10, 16);
+            context.stroke();
+
+            // Brazos hacia adelante
+            context.beginPath();
+            context.moveTo(0, -10);
+            context.lineTo(-8, -4);
+            context.stroke();
+
+            context.restore();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const p = getPhysics();
+            const splitX = 540;
+
+            // Línea divisoria central
+            ctx.beginPath();
+            ctx.strokeStyle = "#e9ecef";
+            ctx.lineWidth = 2;
+            ctx.moveTo(splitX, 10);
+            ctx.lineTo(splitX, canvas.height - 10);
+            ctx.stroke();
+
+            // ==========================================================
+            // SECCIÓN IZQUIERDA: RUEDA VERTICAL Y MECANISMO
+            // ==========================================================
+            const wheelX = 260;
+            const wheelY = 210;
+            const wheelRadiusPx = 135;
+
+            // Título
+            ctx.fillStyle = "#212529";
+            ctx.font = "bold 13px sans-serif";
+            ctx.fillText("Rueda Vertical con Eje Horizontal E (Giro Horario)", 20, 25);
+
+            // Suelo con rayas de anclaje
+            const groundY = wheelY + wheelRadiusPx + 35;
+            ctx.strokeStyle = "#6c757d";
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(70, groundY);
+            ctx.lineTo(450, groundY);
+            ctx.stroke();
+
+            // Rayado de suelo
+            ctx.lineWidth = 1;
+            for (let rx = 80; rx <= 440; rx += 14) {
+                ctx.beginPath();
+                ctx.moveTo(rx, groundY);
+                ctx.lineTo(rx - 8, groundY + 10);
+                ctx.stroke();
+            }
+
+            // Soporte vertical del eje E
+            ctx.fillStyle = "#ced4da";
+            ctx.strokeStyle = "#495057";
+            ctx.lineWidth = 2;
+            ctx.fillRect(wheelX - 18, wheelY, 36, groundY - wheelY);
+            ctx.strokeRect(wheelX - 18, wheelY, 36, groundY - wheelY);
+
+            // Líneas de referencia para posiciones P y S
+            ctx.strokeStyle = "rgba(108,117,125,0.3)";
+            ctx.lineWidth = 1.5;
+            ctx.setLineDash([4, 4]);
+            // Vertical (hacia P)
+            ctx.beginPath();
+            ctx.moveTo(wheelX, wheelY - wheelRadiusPx - 15);
+            ctx.lineTo(wheelX, wheelY + wheelRadiusPx + 15);
+            ctx.stroke();
+            // Horizontal (hacia S)
+            ctx.beginPath();
+            ctx.moveTo(wheelX - wheelRadiusPx - 15, wheelY);
+            ctx.lineTo(wheelX + wheelRadiusPx + 25, wheelY);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Círculo de la rueda vertical
+            ctx.beginPath();
+            ctx.strokeStyle = "#212529";
+            ctx.lineWidth = 2.5;
+            ctx.arc(wheelX, wheelY, wheelRadiusPx, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Centro y eje E
+            ctx.beginPath();
+            ctx.fillStyle = "#ffffff";
+            ctx.strokeStyle = "#212529";
+            ctx.lineWidth = 2;
+            ctx.arc(wheelX, wheelY, 7, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            ctx.fillStyle = "#212529";
+            ctx.font = "bold 13px sans-serif";
+            ctx.fillText("E", wheelX - 18, wheelY - 10);
+
+            // Marcas de P y S
+            ctx.fillStyle = "#0d6efd";
+            ctx.font = "bold 13px sans-serif";
+            ctx.fillText("P", wheelX + 10, wheelY + wheelRadiusPx + 20);
+            ctx.fillStyle = "#198754";
+            ctx.fillText("S", wheelX + wheelRadiusPx + 10, wheelY - 10);
+
+            // Indicador de giro horario con flecha curva
+            ctx.beginPath();
+            ctx.strokeStyle = "#495057";
+            ctx.lineWidth = 1.8;
+            ctx.arc(wheelX, wheelY, 45, -Math.PI / 3, Math.PI / 2, false);
+            ctx.stroke();
+            // Flecha en el extremo inferior del arco
+            const headAngle = Math.PI / 2;
+            const hx = wheelX + 45 * Math.cos(headAngle);
+            const hy = wheelY + 45 * Math.sin(headAngle);
+            ctx.beginPath();
+            ctx.fillStyle = "#495057";
+            ctx.moveTo(hx, hy);
+            ctx.lineTo(hx - 7, hy - 6);
+            ctx.lineTo(hx + 3, hy - 7);
+            ctx.fill();
+            ctx.fillStyle = "#495057";
+            ctx.font = "italic bold 13px serif";
+            ctx.fillText("ω", wheelX - 6, wheelY - 50);
+
+            // Gravedad g
+            drawArrow(ctx, 50, 60, 50, 110, "#212529", 2);
+            ctx.fillStyle = "#212529";
+            ctx.font = "italic bold 14px serif";
+            ctx.fillText("g", 58, 90);
+
+            // Radio R indicado con cota
+            ctx.strokeStyle = "#198754";
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.moveTo(wheelX, wheelY);
+            ctx.lineTo(wheelX + wheelRadiusPx, wheelY);
+            ctx.stroke();
+            ctx.fillStyle = "#198754";
+            ctx.font = "bold 12px sans-serif";
+            ctx.fillText("R", wheelX + wheelRadiusPx / 2 - 5, wheelY - 6);
+
+            // Posición dinámica de la persona sobre la rueda
+            const personX = wheelX + wheelRadiusPx * Math.cos(theta);
+            // En canvas el eje Y va hacia abajo, por lo que usamos -sin(theta)
+            const personY = wheelY - wheelRadiusPx * Math.sin(theta);
+
+            // Radio conector al asiento
+            ctx.strokeStyle = "rgba(52, 58, 64, 0.4)";
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(wheelX, wheelY);
+            ctx.lineTo(personX, personY);
+            ctx.stroke();
+
+            // Dibujar la persona sentada
+            drawPerson(ctx, personX, personY, theta);
+
+            // Escala de fuerzas para visualización (px/N)
+            const fScale = 0.08;
+
+            // Vectores sobre la persona en la rueda
+            if (chk_forces_sim.checked) {
+                // Vector Peso: vertical hacia abajo
+                const pLen = p.P * fScale;
+                drawArrow(ctx, personX, personY, personX, personY + pLen, "#dc3545", 2.5);
+                ctx.fillStyle = "#dc3545";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("P = m·g", personX + 8, personY + pLen);
+
+                // Vector Fuerza del Asiento F_A: componentes en coordenadas de canvas (FAy positivo hacia arriba = -FAy en canvas)
+                const fax_px = p.FAx * fScale;
+                const fay_px = -p.FAy * fScale;
+                drawArrow(ctx, personX, personY, personX + fax_px, personY + fay_px, "#0d6efd", 3);
+                ctx.fillStyle = "#0d6efd";
+                ctx.font = "bold 12px sans-serif";
+                ctx.fillText("F_A", personX + fax_px - 8, personY + fay_px - 8);
+
+                // Aceleración centrípeta hacia E
+                if (chk_ac.checked) {
+                    const acLen = 40;
+                    const dirX = (wheelX - personX) / wheelRadiusPx;
+                    const dirY = (wheelY - personY) / wheelRadiusPx;
+                    drawArrow(ctx, personX, personY, personX + dirX * acLen, personY + dirY * acLen, "#198754", 2.5);
+                    ctx.fillStyle = "#198754";
+                    ctx.font = "bold 11px sans-serif";
+                    ctx.fillText("a_c", personX + dirX * acLen + 6, personY + dirY * acLen + 4);
+                }
+            }
+
+            // ==========================================================
+            // SECCIÓN DERECHA: DCL AISLADO CON EJES RADIAL / NORMAL
+            // ==========================================================
+            const dclX = 740;
+            const dclY = 220;
+
+            ctx.fillStyle = "#212529";
+            ctx.font = "bold 14px sans-serif";
+            ctx.fillText("Diagrama de Cuerpo Libre (DCL)", 590, 25);
+            ctx.font = "italic 12px sans-serif";
+            ctx.fillStyle = "#6c757d";
+            ctx.fillText("Fuerzas ejercidas sobre la persona de masa m", 590, 42);
+
+            // Ejes coordenados intrínsecos (Radial hacia E y Tangencial al movimiento)
+            if (chk_axes.checked) {
+                ctx.strokeStyle = "#adb5bd";
+                ctx.setLineDash([3, 3]);
+                ctx.lineWidth = 1.5;
+
+                // Eje radial (apunta hacia el centro E: ángulo theta + pi)
+                const cosRad = -Math.cos(theta);
+                const sinRad = Math.sin(theta); // en canvas Y positivo hacia abajo
+                ctx.beginPath();
+                ctx.moveTo(dclX - cosRad * 130, dclY - sinRad * 130);
+                ctx.lineTo(dclX + cosRad * 130, dclY + sinRad * 130);
+                ctx.stroke();
+
+                // Eje tangencial (perpendicular)
+                const cosTan = sinRad;
+                const sinTan = -cosRad;
+                ctx.beginPath();
+                ctx.moveTo(dclX - cosTan * 110, dclY - sinTan * 110);
+                ctx.lineTo(dclX + cosTan * 110, dclY + sinTan * 110);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Rótulos de ejes
+                ctx.fillStyle = "#495057";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("+r (Radial hacia E)", dclX + cosRad * 130 - 30, dclY + sinRad * 130 + 14);
+                ctx.fillText("+t (Tangencial)", dclX + cosTan * 110 + 6, dclY + sinTan * 110);
+            }
+
+            const dclScale = 0.11; // escala de visualización en el DCL
+            const dcl_PLen = p.P * dclScale;
+            const dcl_FAx = p.FAx * dclScale;
+            const dcl_FAy = -p.FAy * dclScale;
+
+            // Componentes de F_A punteadas
+            if (chk_decomp.checked) {
+                ctx.beginPath();
+                ctx.strokeStyle = "rgba(13, 110, 253, 0.35)";
+                ctx.setLineDash([3, 3]);
+                ctx.lineWidth = 1.5;
+                ctx.moveTo(dclX + dcl_FAx, dclY);
+                ctx.lineTo(dclX + dcl_FAx, dclY + dcl_FAy);
+                ctx.lineTo(dclX, dclY + dcl_FAy);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Componente horizontal F_Ax
+                if (Math.abs(p.FAx) > 5) {
+                    drawArrow(ctx, dclX, dclY, dclX + dcl_FAx, dclY, "#6f42c1", 2.2);
+                    ctx.fillStyle = "#6f42c1";
+                    ctx.font = "bold 11px sans-serif";
+                    ctx.fillText("F_Ax = " + Math.abs(p.FAx).toFixed(0) + " N", dclX + dcl_FAx - 35, dclY + 18);
+                }
+
+                // Componente vertical F_Ay
+                drawArrow(ctx, dclX, dclY, dclX, dclY + dcl_FAy, "#495057", 2.2);
+                ctx.fillStyle = "#495057";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("F_Ay = " + p.FAy.toFixed(0) + " N", dclX + 8, dclY + dcl_FAy + 12);
+            }
+
+            // Vector Fuerza Total del Asiento F_A
+            drawArrow(ctx, dclX, dclY, dclX + dcl_FAx, dclY + dcl_FAy, "#0d6efd", 3.2);
+            ctx.fillStyle = "#0d6efd";
+            ctx.font = "bold 13px sans-serif";
+            ctx.fillText("F_A (Asiento) = " + p.FA_mag.toFixed(1) + " N", dclX + dcl_FAx - 40, dclY + dcl_FAy - 10);
+
+            // Vector Peso P
+            drawArrow(ctx, dclX, dclY, dclX, dclY + dcl_PLen, "#dc3545", 3);
+            ctx.fillStyle = "#dc3545";
+            ctx.font = "bold 12px sans-serif";
+            ctx.fillText("P = m·g = " + p.P.toFixed(1) + " N", dclX + 8, dclY + dcl_PLen);
+
+            // Fuerza Centrípeta Neta (vector resultante punteado o flecha)
+            if (chk_ac.checked) {
+                const netX = -p.Fc * Math.cos(theta) * dclScale;
+                const netY = p.Fc * Math.sin(theta) * dclScale;
+                drawArrow(ctx, dclX, dclY, dclX + netX, dclY + netY, "#198754", 2.5, true);
+                ctx.fillStyle = "#198754";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("F_neta = m·a_c", dclX + netX + 6, dclY + netY - 4);
+            }
+
+            // Nodo de la partícula
+            ctx.beginPath();
+            ctx.fillStyle = "#212529";
+            ctx.arc(dclX, dclY, 6, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function animate(timestamp) {
+            let dt = (timestamp - lastTime) / 1000;
+            if (dt > 0.1) dt = 0.1;
+            lastTime = timestamp;
+
+            if (isPlaying) {
+                const p = getPhysics();
+                // Giro horario: theta decrece
+                theta -= p.w * dt;
+                if (theta < -Math.PI * 2) theta += Math.PI * 2;
+            }
+
+            draw();
+            requestAnimationFrame(animate);
+        }
+
+        // Eventos de controles
+        [m_slider, R_slider, w_slider].forEach(s => {
+            s.addEventListener('input', () => { getPhysics(); draw(); });
+        });
+
+        [chk_forces_sim, chk_axes, chk_decomp, chk_ac].forEach(c => {
+            c.addEventListener('change', draw);
+        });
+
+        btn_play.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            btn_play.innerText = isPlaying ? "⏸ Pausar" : "▶ Ejecutar";
+            btn_play.style.backgroundColor = isPlaying ? "#ffc107" : "#198754";
+            btn_play.style.color = isPlaying ? "#000" : "#fff";
+        });
+
+        btn_posP.addEventListener('click', () => {
+            isPlaying = false;
+            btn_play.innerText = "▶ Ejecutar";
+            btn_play.style.backgroundColor = "#198754";
+            btn_play.style.color = "#fff";
+            theta = -Math.PI / 2; // Posición P (vertical inferior)
+            draw();
+        });
+
+        btn_posS.addEventListener('click', () => {
+            isPlaying = false;
+            btn_play.innerText = "▶ Ejecutar";
+            btn_play.style.backgroundColor = "#198754";
+            btn_play.style.color = "#fff";
+            theta = 0; // Posición S (horizontal a la derecha)
+            draw();
+        });
+
+        getPhysics();
+        requestAnimationFrame(animate);
+    }
+
+    initSimulation();
+})();
+</script>
+</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div style="border: 1px solid #dee2e6; padding: 18px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 980px; margin: auto;">
+    <h3 style="margin-top:0; color: #212529; font-size: 1.3em;">Problema 2: Pelota con Doble Cuerda en Barra Vertical</h3>
+    
+    <!-- Paneles de Solución Teórica en HTML Puro -->
+    <div style="background: #e9ecef; padding: 12px 16px; border-radius: 6px; font-size: 0.88em; margin-bottom: 12px; color: #212529; line-height: 1.5;">
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px;">
+            <!-- Parte a -->
+            <div style="background: #ffffff; padding: 10px 14px; border-radius: 4px; border-left: 4px solid #0d6efd;">
+                <b>a) Sistema en Equilibrio Horizontal (2 Cuerdas):</b><br>
+                Geometría simétrica: <i>h = 1.5 m</i>, <i>L = 2.0 m</i> &#8658; <i>sin(&theta;) = 1.5/2.0 = 0.75</i>, <i>R = 1.32 m</i>.<br>
+                <ul style="margin: 4px 0 4px 16px; padding: 0;">
+                    <li>Eje vertical (a<sub>y</sub> = 0): <i>(T<sub>1</sub> - T<sub>2</sub>)&middot;sin(&theta;) = m&middot;g</i></li>
+                    <li>Eje radial (centrípeto): <i>(T<sub>1</sub> + T<sub>2</sub>)&middot;cos(&theta;) = m&middot;v<sup>2</sup> / R</i></li>
+                </ul>
+                Sumando y restando: <b><i>T<sub>1</sub> &approx; 108.4 N</i></b> &nbsp;|&nbsp; <b><i>T<sub>2</sub> &approx; 56.2 N</i></b>
+            </div>
+
+            <!-- Parte b -->
+            <div style="background: #ffffff; padding: 10px 14px; border-radius: 4px; border-left: 4px solid #dc3545;">
+                <b>b) Corte de Cuerda Inferior (T<sub>2</sub> = 0):</b><br>
+                Pasa a ser un péndulo cónico simple.<br>
+                Para mantener la misma rapidez angular <i>&omega; = v / R &approx; 4.54 rad/s</i>:<br>
+                <i>sin(&theta;') = g / (L &middot; &omega;<sup>2</sup>) &approx; 0.238 &#8658; <b>&theta;' &approx; 13.8°</b></i><br>
+                <b>Conclusión:</b> La pelota desciende verticalmente y abre su radio a <i>R' = 1.94 m</i>.
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de Control de Escenario y Reproducción -->
+    <div style="display: flex; gap: 10px; margin-bottom: 12px; background: #ffffff; padding: 10px 14px; border-radius: 6px; border: 1px solid #ced4da; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <label style="font-weight: bold; font-size: 0.85em; color: #495057;">Estado del Sistema:</label>
+            <button id="btn_intact_85065" style="background-color: #0d6efd; color: white; border: none; padding: 7px 14px; border-radius: 4px; cursor: pointer; font-weight: bold;">🧵 Caso a: Ambas Cuerdas Activas</button>
+            <button id="btn_cut_85065" style="background-color: #dc3545; color: white; border: none; padding: 7px 14px; border-radius: 4px; cursor: pointer; font-weight: bold;">✂ Caso b: Cortar Cuerda Inferior</button>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <button id="play_85065" style="background-color: #198754; color: white; border: none; padding: 7px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">▶ Ejecutar</button>
+            <button id="reset_85065" style="background-color: #6c757d; color: white; border: none; padding: 7px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">🔄 Reiniciar</button>
+        </div>
+    </div>
+
+    <!-- Sliders de Parámetros Dinámicos (v, m, L, H) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; background: #ffffff; padding: 12px; border-radius: 6px; border: 1px solid #ced4da; margin-bottom: 12px;">
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #0d6efd;">
+                <span>Rapidez tangencial (v):</span>
+                <span id="v_val_85065">6.0 m/s</span>
+            </div>
+            <input type="range" id="v_slider_85065" min="3.0" max="10.0" step="0.5" value="6.0" style="width: 100%;">
+        </div>
+
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #198754;">
+                <span>Masa de la pelota (m):</span>
+                <span id="m_val_85065">4.0 kg</span>
+            </div>
+            <input type="range" id="m_slider_85065" min="1.0" max="10.0" step="0.5" value="4.0" style="width: 100%;">
+        </div>
+
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #6f42c1;">
+                <span>Longitud cuerdas (L):</span>
+                <span id="L_val_85065">2.0 m</span>
+            </div>
+            <input type="range" id="L_slider_85065" min="1.6" max="3.0" step="0.1" value="2.0" style="width: 100%;">
+        </div>
+
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #fd7e14;">
+                <span>Separación vertical (H):</span>
+                <span id="H_val_85065">3.0 m</span>
+            </div>
+            <input type="range" id="H_slider_85065" min="2.0" max="3.6" step="0.1" value="3.0" style="width: 100%;">
+        </div>
+    </div>
+
+    <!-- Canvas Principal -->
+    <div style="display: flex; justify-content: center; margin-bottom: 12px;">
+        <canvas id="canvas_sim_85065" width="940" height="430" style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+    </div>
+
+    <!-- Panel de Telemetría Numérica -->
+    <div style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; padding: 10px; margin-bottom: 10px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; text-align: center;">
+            <div style="background: #e7f1ff; padding: 6px; border-radius: 4px; border: 1px solid #b6d4fe;">
+                <div style="font-size: 0.68em; color: #084298; font-weight: bold;">TENSIÓN SUPERIOR (T₁)</div>
+                <div id="lbl_T1_85065" style="font-size: 1.05em; font-weight: bold; color: #0d6efd; font-family: monospace;">108.4 N</div>
+            </div>
+            <div style="background: #f8d7da; padding: 6px; border-radius: 4px; border: 1px solid #f5c2c7;">
+                <div style="font-size: 0.68em; color: #842029; font-weight: bold;">TENSIÓN INFERIOR (T₂)</div>
+                <div id="lbl_T2_85065" style="font-size: 1.05em; font-weight: bold; color: #dc3545; font-family: monospace;">56.2 N</div>
+            </div>
+            <div style="background: #d1e7dd; padding: 6px; border-radius: 4px; border: 1px solid #badbcc;">
+                <div style="font-size: 0.68em; color: #0f5132; font-weight: bold;">FUERZA CENTRÍPETA (F_r)</div>
+                <div id="lbl_Fc_85065" style="font-size: 1.05em; font-weight: bold; color: #198754; font-family: monospace;">108.9 N</div>
+            </div>
+            <div style="background: #fff3cd; padding: 6px; border-radius: 4px; border: 1px solid #ffecb5;">
+                <div style="font-size: 0.68em; color: #664d03; font-weight: bold;">RADIO DE GIRO (R)</div>
+                <div id="lbl_R_85065" style="font-size: 1.05em; font-weight: bold; color: #856404; font-family: monospace;">1.32 m</div>
+            </div>
+            <div style="background: #f3e5f5; padding: 6px; border-radius: 4px; border: 1px solid #e1bee7;">
+                <div style="font-size: 0.68em; color: #4a148c; font-weight: bold;">RAPIDEZ ANGULAR (&omega;)</div>
+                <div id="lbl_w_85065" style="font-size: 1.05em; font-weight: bold; color: #6f42c1; font-family: monospace;">4.54 rad/s</div>
+            </div>
+            <div style="background: #e2e3e5; padding: 6px; border-radius: 4px; border: 1px solid #d6d8db;">
+                <div style="font-size: 0.68em; color: #495057; font-weight: bold;">ÁNGULO &theta; (HORIZ.)</div>
+                <div id="lbl_theta_85065" style="font-size: 1.05em; font-weight: bold; color: #495057; font-family: monospace;">48.6°</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filtros de Capas Visibles -->
+    <div style="font-size: 0.85em; padding: 8px 12px; background: #e9ecef; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
+        <strong>Capas Gráficas:</strong>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_forces_sim_85065" checked> <b style="color: #0d6efd;">Vectores en la Escena</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_axes_85065" checked> <b style="color: #6c757d;">Ejes Coordenados (+r, +y)</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_decomp_85065" checked> <b style="color: #198754;">Componentes de T₁ y T₂</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_mg_85065" checked> <b style="color: #dc3545;">Vector Peso (m·g)</b></label>
+    </div>
+</div>
+
+<script>
+(function() {
+    function initSimulation() {
+        const canvas = document.getElementById('canvas_sim_85065');
+        if (!canvas) { setTimeout(initSimulation, 50); return; }
+        const ctx = canvas.getContext('2d');
+
+        const v_slider = document.getElementById('v_slider_85065');
+        const m_slider = document.getElementById('m_slider_85065');
+        const L_slider = document.getElementById('L_slider_85065');
+        const H_slider = document.getElementById('H_slider_85065');
+
+        const v_val = document.getElementById('v_val_85065');
+        const m_val = document.getElementById('m_val_85065');
+        const L_val = document.getElementById('L_val_85065');
+        const H_val = document.getElementById('H_val_85065');
+
+        const lbl_T1 = document.getElementById('lbl_T1_85065');
+        const lbl_T2 = document.getElementById('lbl_T2_85065');
+        const lbl_Fc = document.getElementById('lbl_Fc_85065');
+        const lbl_R = document.getElementById('lbl_R_85065');
+        const lbl_w = document.getElementById('lbl_w_85065');
+        const lbl_theta = document.getElementById('lbl_theta_85065');
+
+        const btn_play = document.getElementById('play_85065');
+        const btn_reset = document.getElementById('reset_85065');
+        const btn_intact = document.getElementById('btn_intact_85065');
+        const btn_cut = document.getElementById('btn_cut_85065');
+
+        const chk_forces_sim = document.getElementById('chk_forces_sim_85065');
+        const chk_axes = document.getElementById('chk_axes_85065');
+        const chk_decomp = document.getElementById('chk_decomp_85065');
+        const chk_mg = document.getElementById('chk_mg_85065');
+
+        const g = 9.8;
+        let isPlaying = true;
+        let isCut = false;
+        let phi = 0; // Ángulo orbital horizontal
+        let lastTime = performance.now();
+
+        function drawArrow(context, fx, fy, tx, ty, color, lineWidth=2.5, dashed=false) {
+            const dx = tx - fx;
+            const dy = ty - fy;
+            const len = Math.hypot(dx, dy);
+            if (len < 1) return;
+            const headlen = Math.min(9, Math.max(5, len * 0.25));
+            const angle = Math.atan2(dy, dx);
+
+            context.beginPath();
+            context.strokeStyle = color;
+            context.lineWidth = lineWidth;
+            if (dashed) context.setLineDash([4, 3]);
+            context.moveTo(fx, fy);
+            context.lineTo(tx, ty);
+            context.stroke();
+            context.setLineDash([]);
+
+            context.beginPath();
+            context.fillStyle = color;
+            context.moveTo(tx, ty);
+            context.lineTo(tx - headlen * Math.cos(angle - Math.PI / 6), ty - headlen * Math.sin(angle - Math.PI / 6));
+            context.lineTo(tx - headlen * Math.cos(angle + Math.PI / 6), ty - headlen * Math.sin(angle + Math.PI / 6));
+            context.fill();
+        }
+
+        function getPhysics() {
+            let v = parseFloat(v_slider.value);
+            const m = parseFloat(m_slider.value);
+            let L = parseFloat(L_slider.value);
+            let H = parseFloat(H_slider.value);
+
+            // Restricción geométrica: H < 2L
+            if (H >= 2 * L) {
+                H = 1.95 * L;
+                H_slider.value = H.toFixed(1);
+            }
+
+            v_val.innerText = v.toFixed(1) + " m/s";
+            m_val.innerText = m.toFixed(1) + " kg";
+            L_val.innerText = L.toFixed(1) + " m";
+            H_val.innerText = H.toFixed(1) + " m";
+
+            const h_nominal = H / 2.0;
+            const sinThetaNominal = h_nominal / L;
+            const thetaNominal = Math.asin(Math.min(0.98, Math.max(0.05, sinThetaNominal)));
+            const R_nominal = L * Math.cos(thetaNominal);
+            const omega_nominal = v / R_nominal;
+
+            let T1, T2, R, theta, omega, Fc, yOffset;
+
+            if (!isCut) {
+                // Caso a: Dos cuerdas intactas
+                theta = thetaNominal;
+                R = R_nominal;
+                omega = omega_nominal;
+                Fc = m * omega * omega * R;
+
+                // Sistema de ecuaciones:
+                // (T1 - T2)*sin(theta) = m*g
+                // (T1 + T2)*cos(theta) = Fc
+                const diffT = (m * g) / Math.sin(theta);
+                const sumT = Fc / Math.cos(theta);
+
+                T1 = (sumT + diffT) / 2.0;
+                T2 = (sumT - diffT) / 2.0;
+                yOffset = 0; // en el plano medio simétrico
+            } else {
+                // Caso b: Cuerda inferior cortada, se conserva omega
+                omega = omega_nominal;
+                // En péndulo cónico: T1*sin(theta') = m*g y T1 = m*omega^2*L  =>  sin(theta') = g / (L * omega^2)
+                const sinVal = Math.min(0.95, Math.max(0.05, g / (L * omega * omega)));
+                theta = Math.asin(sinVal);
+                R = L * Math.cos(theta);
+                T1 = m * omega * omega * L;
+                T2 = 0.0;
+                Fc = m * omega * omega * R;
+                // La pelota desciende: nueva distancia vertical desde el anclaje superior = L*sin(theta)
+                // Offset respecto al plano medio original:
+                yOffset = L * Math.sin(theta) - h_nominal;
+            }
+
+            const theta_deg = theta * 180.0 / Math.PI;
+
+            lbl_T1.innerText = Math.max(0, T1).toFixed(1) + " N";
+            lbl_T2.innerText = isCut ? "0.0 N (Cortada)" : Math.max(0, T2).toFixed(1) + " N";
+            lbl_Fc.innerText = Fc.toFixed(1) + " N";
+            lbl_R.innerText = R.toFixed(2) + " m";
+            lbl_w.innerText = omega.toFixed(2) + " rad/s";
+            lbl_theta.innerText = theta_deg.toFixed(1) + "°";
+
+            return { m, L, H, v, R, theta, theta_deg, omega, T1, T2, Fc, yOffset };
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const p = getPhysics();
+            const splitX = 540;
+
+            // Divisoria vertical
+            ctx.beginPath();
+            ctx.strokeStyle = "#e9ecef";
+            ctx.lineWidth = 2;
+            ctx.moveTo(splitX, 10);
+            ctx.lineTo(splitX, canvas.height - 10);
+            ctx.stroke();
+
+            // ==========================================================
+            // SECCIÓN IZQUIERDA: ESCENA FÍSICA Y BARRA VERTICAL
+            // ==========================================================
+            ctx.fillStyle = "#212529";
+            ctx.font = "bold 13px sans-serif";
+            const modoTexto = isCut ? "Caso b: Cuerda Inferior Cortada (Péndulo Cónico Simple)" : "Caso a: Sistema de Doble Cuerda Simétrica";
+            ctx.fillText(modoTexto, 20, 25);
+
+            const scalePix = 95; // escala geométrica px/m
+            const poleX = 220;
+            const poleCenterY = 215;
+            const poleH_px = 320;
+            const poleW_px = 16;
+
+            const anc1_Y = poleCenterY - (p.H / 2.0) * scalePix;
+            const anc2_Y = poleCenterY + (p.H / 2.0) * scalePix;
+
+            // Barra vertical cilíndrica
+            const grad = ctx.createLinearGradient(poleX - poleW_px/2, 0, poleX + poleW_px/2, 0);
+            grad.addColorStop(0, "#495057");
+            grad.addColorStop(0.5, "#adb5bd");
+            grad.addColorStop(1, "#343a40");
+            ctx.fillStyle = grad;
+            ctx.fillRect(poleX - poleW_px/2, poleCenterY - poleH_px/2, poleW_px, poleH_px);
+
+            // Anclajes superior e inferior en la barra
+            ctx.fillStyle = "#212529";
+            ctx.beginPath(); ctx.arc(poleX, anc1_Y, 4, 0, Math.PI * 2); ctx.fill();
+            ctx.beginPath(); ctx.arc(poleX, anc2_Y, 4, 0, Math.PI * 2); ctx.fill();
+
+            // Cotas de separación H
+            ctx.strokeStyle = "#6c757d";
+            ctx.lineWidth = 1.2;
+            ctx.beginPath();
+            ctx.moveTo(poleX - 25, anc1_Y); ctx.lineTo(poleX - 25, anc2_Y);
+            ctx.moveTo(poleX - 30, anc1_Y); ctx.lineTo(poleX - 20, anc1_Y);
+            ctx.moveTo(poleX - 30, anc2_Y); ctx.lineTo(poleX - 20, anc2_Y);
+            ctx.stroke();
+            ctx.fillStyle = "#495057";
+            ctx.font = "bold 11px sans-serif";
+            ctx.fillText("H = " + p.H.toFixed(1) + " m", poleX - 78, poleCenterY + 4);
+
+            // Posición de la pelota
+            const currentCenterY = poleCenterY + p.yOffset * scalePix;
+            const R_px = p.R * scalePix;
+            const ellB = R_px * 0.28; // achatamiento en perspectiva
+
+            // Trayectoria orbital elíptica
+            ctx.beginPath();
+            ctx.strokeStyle = "rgba(108,117,125,0.35)";
+            ctx.setLineDash([4, 4]);
+            ctx.ellipse(poleX, currentCenterY, R_px, ellB, 0, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Coordenadas instantáneas de la pelota
+            const ballX = poleX + R_px * Math.cos(phi);
+            const ballY = currentCenterY + ellB * Math.sin(phi);
+
+            // Cuerda superior
+            ctx.beginPath();
+            ctx.strokeStyle = "#495057";
+            ctx.lineWidth = 2.5;
+            ctx.moveTo(poleX, anc1_Y);
+            ctx.lineTo(ballX, ballY);
+            ctx.stroke();
+            ctx.fillStyle = "#495057";
+            ctx.font = "11px sans-serif";
+            ctx.fillText("2.0 m", (poleX + ballX)/2 - 25, (anc1_Y + ballY)/2 - 6);
+
+            // Cuerda inferior (si no está cortada)
+            if (!isCut) {
+                ctx.beginPath();
+                ctx.strokeStyle = "#495057";
+                ctx.lineWidth = 2.5;
+                ctx.moveTo(poleX, anc2_Y);
+                ctx.lineTo(ballX, ballY);
+                ctx.stroke();
+                ctx.fillText("2.0 m", (poleX + ballX)/2 - 25, (anc2_Y + ballY)/2 + 15);
+            } else {
+                // Fragmento cortado colgando de la barra
+                ctx.beginPath();
+                ctx.strokeStyle = "rgba(220,53,69,0.6)";
+                ctx.lineWidth = 2;
+                ctx.setLineDash([3, 3]);
+                ctx.moveTo(poleX, anc2_Y);
+                ctx.lineTo(poleX + 15, anc2_Y + 30);
+                ctx.stroke();
+                ctx.setLineDash([]);
+                ctx.fillStyle = "#dc3545";
+                ctx.font = "italic 10px sans-serif";
+                ctx.fillText("Cortada", poleX + 20, anc2_Y + 25);
+            }
+
+            // Pelota de masa m
+            const ballRadius = 14;
+            const ballGrad = ctx.createRadialGradient(ballX - 3, ballY - 3, 2, ballX, ballY, ballRadius);
+            ballGrad.addColorStop(0, "#ffb74d");
+            ballGrad.addColorStop(1, "#e65100");
+            ctx.beginPath();
+            ctx.fillStyle = ballGrad;
+            ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = "#bf360c";
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+
+            // Gravedad g
+            drawArrow(ctx, 40, 60, 40, 110, "#212529", 2);
+            ctx.fillStyle = "#212529";
+            ctx.font = "italic bold 14px serif";
+            ctx.fillText("g", 48, 90);
+
+            // Vectores de fuerza directamente sobre la pelota
+            const fScaleSim = 0.5; // escala px/N
+            if (chk_forces_sim.checked) {
+                // Tensión 1 (hacia anclaje 1)
+                const d1x = poleX - ballX;
+                const d1y = anc1_Y - ballY;
+                const dist1 = Math.hypot(d1x, d1y);
+                const t1Len = p.T1 * fScaleSim;
+                drawArrow(ctx, ballX, ballY, ballX + (d1x/dist1)*t1Len, ballY + (d1y/dist1)*t1Len, "#0d6efd", 2.8);
+                ctx.fillStyle = "#0d6efd";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("T₁", ballX + (d1x/dist1)*t1Len - 12, ballY + (d1y/dist1)*t1Len - 6);
+
+                // Tensión 2 (hacia anclaje 2)
+                if (!isCut && p.T2 > 0) {
+                    const d2x = poleX - ballX;
+                    const d2y = anc2_Y - ballY;
+                    const dist2 = Math.hypot(d2x, d2y);
+                    const t2Len = p.T2 * fScaleSim;
+                    drawArrow(ctx, ballX, ballY, ballX + (d2x/dist2)*t2Len, ballY + (d2y/dist2)*t2Len, "#dc3545", 2.8);
+                    ctx.fillStyle = "#dc3545";
+                    ctx.fillText("T₂", ballX + (d2x/dist2)*t2Len - 12, ballY + (d2y/dist2)*t2Len + 14);
+                }
+
+                // Peso m*g hacia abajo
+                if (chk_mg.checked) {
+                    const pLen = (p.m * g) * fScaleSim;
+                    drawArrow(ctx, ballX, ballY, ballX, ballY + pLen, "#212529", 2.2);
+                    ctx.fillStyle = "#212529";
+                    ctx.fillText("m·g", ballX + 8, ballY + pLen);
+                }
+            }
+
+            // ==========================================================
+            // SECCIÓN DERECHA: DCL CON RESOLUCIÓN EN EJES (+r, +y)
+            // ==========================================================
+            const dclX = 750;
+            const dclY = 220;
+
+            ctx.fillStyle = "#212529";
+            ctx.font = "bold 14px sans-serif";
+            ctx.fillText("Diagrama de Cuerpo Libre (DCL)", 600, 25);
+            ctx.font = "italic 12px sans-serif";
+            ctx.fillStyle = "#6c757d";
+            ctx.fillText(isCut ? "Péndulo cónico: T₁·sin(θ') = m·g" : "Doble cuerda: (T₁ - T₂)·sin(θ) = m·g", 600, 42);
+
+            // Ejes coordenados (+r hacia el centro de giro a la izquierda, +y hacia arriba)
+            if (chk_axes.checked) {
+                ctx.strokeStyle = "#495057";
+                ctx.setLineDash([3, 3]);
+                ctx.lineWidth = 1.5;
+
+                // Eje radial r horizontal (apuntando a la barra)
+                ctx.beginPath();
+                ctx.moveTo(dclX - 170, dclY); ctx.lineTo(dclX + 80, dclY);
+                ctx.stroke();
+
+                // Eje vertical y
+                ctx.beginPath();
+                ctx.moveTo(dclX, dclY - 145); ctx.lineTo(dclX, dclY + 145);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                ctx.fillStyle = "#495057";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("← +r (Eje Radial Centrípeto)", dclX - 170, dclY - 8);
+                ctx.fillText("+y (Eje Normal) ↑", dclX + 8, dclY - 130);
+            }
+
+            const dclFScale = 1.1; // escala px/N para el DCL
+            const cosT = Math.cos(p.theta);
+            const sinT = Math.sin(p.theta);
+
+            // Arco de ángulo theta en el DCL
+            ctx.beginPath();
+            ctx.strokeStyle = "#198754";
+            ctx.lineWidth = 1.8;
+            ctx.arc(dclX, dclY, 40, Math.PI, Math.PI - p.theta, false);
+            ctx.stroke();
+            ctx.fillStyle = "#198754";
+            ctx.font = "bold 12px sans-serif";
+            ctx.fillText("θ = " + p.theta_deg.toFixed(1) + "°", dclX - 70, dclY - 16);
+
+            // Componentes de T1
+            const T1x = p.T1 * cosT * dclFScale;
+            const T1y = p.T1 * sinT * dclFScale;
+
+            if (chk_decomp.checked) {
+                // Proyecciones punteadas T1
+                ctx.beginPath();
+                ctx.strokeStyle = "rgba(13, 110, 253, 0.35)";
+                ctx.setLineDash([3, 3]);
+                ctx.moveTo(dclX - T1x, dclY);
+                ctx.lineTo(dclX - T1x, dclY - T1y);
+                ctx.lineTo(dclX, dclY - T1y);
+                ctx.stroke();
+
+                // Componente radial T1r
+                drawArrow(ctx, dclX, dclY, dclX - T1x, dclY, "#198754", 2.5);
+                ctx.fillStyle = "#198754";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("T₁·cos(θ)", dclX - T1x - 30, dclY - 10);
+
+                // Componente vertical T1y
+                drawArrow(ctx, dclX, dclY, dclX, dclY - T1y, "#0d6efd", 2.5);
+                ctx.fillStyle = "#0d6efd";
+                ctx.fillText("T₁·sin(θ)", dclX + 8, dclY - T1y + 12);
+            }
+
+            // Vector T1
+            drawArrow(ctx, dclX, dclY, dclX - T1x, dclY - T1y, "#0d6efd", 3.2);
+            ctx.fillStyle = "#0d6efd";
+            ctx.font = "bold 12px sans-serif";
+            ctx.fillText("T₁ = " + p.T1.toFixed(1) + " N", dclX - T1x - 35, dclY - T1y - 8);
+
+            // Componentes y vector T2 (si existe)
+            if (!isCut && p.T2 > 0) {
+                const T2x = p.T2 * cosT * dclFScale;
+                const T2y = p.T2 * sinT * dclFScale;
+
+                if (chk_decomp.checked) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = "rgba(220, 53, 69, 0.35)";
+                    ctx.setLineDash([3, 3]);
+                    ctx.moveTo(dclX - T2x, dclY);
+                    ctx.lineTo(dclX - T2x, dclY + T2y);
+                    ctx.lineTo(dclX, dclY + T2y);
+                    ctx.stroke();
+
+                    // Componente radial T2r
+                    drawArrow(ctx, dclX, dclY, dclX - T2x, dclY, "#198754", 2.2);
+                    ctx.fillStyle = "#198754";
+                    ctx.fillText("T₂·cos(θ)", dclX - T2x - 30, dclY + 18);
+
+                    // Componente vertical T2y (hacia abajo)
+                    drawArrow(ctx, dclX, dclY, dclX, dclY + T2y, "#dc3545", 2.2);
+                    ctx.fillStyle = "#dc3545";
+                    ctx.fillText("T₂·sin(θ)", dclX - 55, dclY + T2y - 6);
+                }
+
+                // Vector T2
+                drawArrow(ctx, dclX, dclY, dclX - T2x, dclY + T2y, "#dc3545", 3);
+                ctx.fillStyle = "#dc3545";
+                ctx.font = "bold 12px sans-serif";
+                ctx.fillText("T₂ = " + p.T2.toFixed(1) + " N", dclX - T2x - 35, dclY + T2y + 16);
+            }
+
+            // Vector Peso mg hacia abajo
+            if (chk_mg.checked) {
+                const P_len = (p.m * g) * dclFScale;
+                drawArrow(ctx, dclX, dclY, dclX, dclY + P_len, "#212529", 3);
+                ctx.fillStyle = "#212529";
+                ctx.font = "bold 12px sans-serif";
+                ctx.fillText("P = m·g = " + (p.m * g).toFixed(1) + " N", dclX + 8, dclY + P_len);
+            }
+
+            // Nodo central de la masa
+            ctx.beginPath();
+            ctx.fillStyle = "#212529";
+            ctx.arc(dclX, dclY, 5, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function animate(timestamp) {
+            let dt = (timestamp - lastTime) / 1000;
+            if (dt > 0.1) dt = 0.1;
+            lastTime = timestamp;
+
+            if (isPlaying) {
+                const p = getPhysics();
+                phi += p.omega * dt;
+                if (phi > Math.PI * 2) phi -= Math.PI * 2;
+            }
+
+            draw();
+            requestAnimationFrame(animate);
+        }
+
+        // Eventos de controles
+        [v_slider, m_slider, L_slider, H_slider].forEach(s => {
+            s.addEventListener('input', () => { getPhysics(); draw(); });
+        });
+
+        [chk_forces_sim, chk_axes, chk_decomp, chk_mg].forEach(c => {
+            c.addEventListener('change', draw);
+        });
+
+        btn_play.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            btn_play.innerText = isPlaying ? "⏸ Pausar" : "▶ Ejecutar";
+            btn_play.style.backgroundColor = isPlaying ? "#ffc107" : "#198754";
+            btn_play.style.color = isPlaying ? "#000" : "#fff";
+        });
+
+        btn_reset.addEventListener('click', () => {
+            phi = 0;
+            draw();
+        });
+
+        btn_intact.addEventListener('click', () => {
+            isCut = false;
+            btn_intact.style.boxShadow = "0 0 0 3px rgba(13,110,253,0.35)";
+            btn_cut.style.boxShadow = "none";
+            draw();
+        });
+
+        btn_cut.addEventListener('click', () => {
+            isCut = true;
+            btn_cut.style.boxShadow = "0 0 0 3px rgba(220,53,69,0.35)";
+            btn_intact.style.boxShadow = "none";
+            draw();
+        });
+
+        getPhysics();
+        requestAnimationFrame(animate);
+    }
+
+    initSimulation();
+})();
+</script>
+</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div style="border: 1px solid #dee2e6; padding: 18px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 980px; margin: auto;">
+    <h3 style="margin-top:0; color: #212529; font-size: 1.3em;">Problema Propuesto: Automóvil en Curva Sin Peralte (Rapidez Máxima y Derrape)</h3>
+    
+    <!-- Cuadro Resumen Teórico en HTML Puro -->
+    <div style="background: #e9ecef; padding: 12px 16px; border-radius: 6px; font-size: 0.88em; margin-bottom: 12px; color: #212529; line-height: 1.5;">
+        <strong>Modelo Dinámico del Sistema:</strong>
+        <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 12px; margin-top: 6px;">
+            <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #0d6efd;">
+                <b>1. Ejes de Movimiento:</b><br>
+                &#8226; Eje Normal (vertical <i>y</i>): <i>N - m&middot;g = 0 &#8658; <b>N = m&middot;g</b></i><br>
+                &#8226; Eje Radial (horizontal hacia el centro <i>r</i>):<br>
+                La única fuerza radial es el roce estático: <b><i>f<sub>s</sub> = m &middot; (v<sup>2</sup> / R)</i></b>
+            </div>
+            <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #198754;">
+                <b>2. Condición de No Derrape (<i>f<sub>s</sub> &le; f<sub>s,max</sub></i>):</b><br>
+                <i>f<sub>s,max</sub> = &mu;<sub>s</sub> &middot; N = &mu;<sub>s</sub> &middot; m &middot; g</i><br>
+                <i>m &middot; (v<sup>2</sup> / R) &le; &mu;<sub>s</sub> &middot; m &middot; g &#8658; <b>v<sub>max</sub> = &radic;(&mu;<sub>s</sub> &middot; g &middot; R)</b></i><br>
+                <i>* Independiente de la masa m del vehículo.</i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de Controles y Acciones Rápidas -->
+    <div style="display: flex; gap: 10px; margin-bottom: 12px; background: #ffffff; padding: 10px 14px; border-radius: 6px; border: 1px solid #ced4da; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <button id="play_55468" style="background-color: #198754; color: white; border: none; padding: 7px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">▶ Ejecutar</button>
+            <button id="reset_55468" style="background-color: #6c757d; color: white; border: none; padding: 7px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">🔄 Reiniciar</button>
+            <button id="btn_vmax_55468" style="background-color: #0d6efd; color: white; border: none; padding: 7px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85em; font-weight: 500;">⚡ Ajustar a v = v<sub>max</sub></button>
+        </div>
+
+        <div id="status_pill_55468" style="font-size: 0.85em; font-weight: bold; padding: 6px 14px; border-radius: 4px; background: #d1e7dd; color: #0f5132; border: 1px solid #badbcc;">
+            ✓ Trayectoria Segura (v &le; v_max)
+        </div>
+    </div>
+
+    <!-- Sliders de Parámetros Físicos (v, mu_s, R, m) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; background: #ffffff; padding: 12px; border-radius: 6px; border: 1px solid #ced4da; margin-bottom: 12px;">
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #0d6efd;">
+                <span>Rapidez actual (v):</span>
+                <span id="v_val_55468">18.0 m/s</span>
+            </div>
+            <input type="range" id="v_slider_55468" min="5.0" max="35.0" step="0.5" value="18.0" style="width: 100%;">
+            <div style="font-size: 0.72em; color: #6c757d;" id="v_kmh_55468">64.8 km/h</div>
+        </div>
+
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #fd7e14;">
+                <span>Coeficiente roce estático (&mu;<sub>s</sub>):</span>
+                <span id="mus_val_55468">0.70</span>
+            </div>
+            <input type="range" id="mus_slider_55468" min="0.10" max="1.10" step="0.05" value="0.70" style="width: 100%;">
+            <div style="font-size: 0.72em; color: #6c757d;">Asfalto seco &approx; 0.7 - 0.9 | Húmedo &approx; 0.3</div>
+        </div>
+
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #198754;">
+                <span>Radio de la curva (R):</span>
+                <span id="R_val_55468">50.0 m</span>
+            </div>
+            <input type="range" id="R_slider_55468" min="20.0" max="120.0" step="5.0" value="50.0" style="width: 100%;">
+            <div style="font-size: 0.72em; color: #6c757d;">Radio desde el centro de curvatura</div>
+        </div>
+
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #6f42c1;">
+                <span>Masa del vehículo (m):</span>
+                <span id="m_val_55468">1200 kg</span>
+            </div>
+            <input type="range" id="m_slider_55468" min="800" max="2500" step="50" value="1200" style="width: 100%;">
+            <div style="font-size: 0.72em; color: #6c757d;">No influye en v_max pero sí en las fuerzas N y f_s</div>
+        </div>
+    </div>
+
+    <!-- Canvas de la Simulación -->
+    <div style="display: flex; justify-content: center; margin-bottom: 12px;">
+        <canvas id="canvas_sim_55468" width="940" height="430" style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+    </div>
+
+    <!-- Panel de Telemetría Numérica -->
+    <div style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; padding: 10px; margin-bottom: 10px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; text-align: center;">
+            <div style="background: #e7f1ff; padding: 6px; border-radius: 4px; border: 1px solid #b6d4fe;">
+                <div style="font-size: 0.68em; color: #084298; font-weight: bold;">RAPIDEZ MÁXIMA (v_max)</div>
+                <div id="lbl_vmax_55468" style="font-size: 1.05em; font-weight: bold; color: #0d6efd; font-family: monospace;">18.52 m/s</div>
+                <div id="lbl_vmax_kmh_55468" style="font-size: 0.72em; color: #084298;">66.7 km/h</div>
+            </div>
+            <div style="background: #d1e7dd; padding: 6px; border-radius: 4px; border: 1px solid #badbcc;">
+                <div style="font-size: 0.68em; color: #0f5132; font-weight: bold;">ROCE ESTÁTICO EXIGIDO (f_s)</div>
+                <div id="lbl_fs_55468" style="font-size: 1.05em; font-weight: bold; color: #198754; font-family: monospace;">7776 N</div>
+            </div>
+            <div style="background: #fff3cd; padding: 6px; border-radius: 4px; border: 1px solid #ffecb5;">
+                <div style="font-size: 0.68em; color: #664d03; font-weight: bold;">ROCE MÁXIMO DISPONIBLE</div>
+                <div id="lbl_fsmax_55468" style="font-size: 1.05em; font-weight: bold; color: #856404; font-family: monospace;">8232 N</div>
+            </div>
+            <div style="background: #e2e3e5; padding: 6px; border-radius: 4px; border: 1px solid #d6d8db;">
+                <div style="font-size: 0.68em; color: #495057; font-weight: bold;">NORMAL (N = m·g)</div>
+                <div id="lbl_N_55468" style="font-size: 1.05em; font-weight: bold; color: #495057; font-family: monospace;">11760 N</div>
+            </div>
+            <div style="background: #f3e5f5; padding: 6px; border-radius: 4px; border: 1px solid #e1bee7;">
+                <div style="font-size: 0.68em; color: #4a148c; font-weight: bold;">ACEL. CENTRÍPETA (a_c)</div>
+                <div id="lbl_ac_55468" style="font-size: 1.05em; font-weight: bold; color: #6f42c1; font-family: monospace;">6.48 m/s²</div>
+            </div>
+            <div style="background: #f8d7da; padding: 6px; border-radius: 4px; border: 1px solid #f5c2c7;">
+                <div style="font-size: 0.68em; color: #842029; font-weight: bold;">ESTADO DE ADHERENCIA</div>
+                <div id="lbl_adherencia_55468" style="font-size: 1.0em; font-weight: bold; color: #dc3545; font-family: monospace;">94.5 %</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filtros de Capas Gráficas -->
+    <div style="font-size: 0.85em; padding: 8px 12px; background: #e9ecef; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
+        <strong>Capas Gráficas:</strong>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_forces_sim_55468" checked> <b style="color: #0d6efd;">Vectores en la Pista</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_axes_55468" checked> <b style="color: #6c757d;">Ejes Coordenados (+r, +y)</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_skid_trail_55468" checked> <b style="color: #dc3545;">Rastro de Derrape</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_ac_55468" checked> <b style="color: #198754;">Vector Aceleración Centrípeta (a_c)</b></label>
+    </div>
+</div>
+
+<script>
+(function() {
+    function initSimulation() {
+        const canvas = document.getElementById('canvas_sim_55468');
+        if (!canvas) { setTimeout(initSimulation, 50); return; }
+        const ctx = canvas.getContext('2d');
+
+        const v_slider = document.getElementById('v_slider_55468');
+        const mus_slider = document.getElementById('mus_slider_55468');
+        const R_slider = document.getElementById('R_slider_55468');
+        const m_slider = document.getElementById('m_slider_55468');
+
+        const v_val = document.getElementById('v_val_55468');
+        const v_kmh = document.getElementById('v_kmh_55468');
+        const mus_val = document.getElementById('mus_val_55468');
+        const R_val = document.getElementById('R_val_55468');
+        const m_val = document.getElementById('m_val_55468');
+
+        const lbl_vmax = document.getElementById('lbl_vmax_55468');
+        const lbl_vmax_kmh = document.getElementById('lbl_vmax_kmh_55468');
+        const lbl_fs = document.getElementById('lbl_fs_55468');
+        const lbl_fsmax = document.getElementById('lbl_fsmax_55468');
+        const lbl_N = document.getElementById('lbl_N_55468');
+        const lbl_ac = document.getElementById('lbl_ac_55468');
+        const lbl_adherencia = document.getElementById('lbl_adherencia_55468');
+        const status_pill = document.getElementById('status_pill_55468');
+
+        const btn_play = document.getElementById('play_55468');
+        const btn_reset = document.getElementById('reset_55468');
+        const btn_vmax = document.getElementById('btn_vmax_55468');
+
+        const chk_forces_sim = document.getElementById('chk_forces_sim_55468');
+        const chk_axes = document.getElementById('chk_axes_55468');
+        const chk_skid_trail = document.getElementById('chk_skid_trail_55468');
+        const chk_ac = document.getElementById('chk_ac_55468');
+
+        const g = 9.8;
+        let isPlaying = true;
+        let lastTime = performance.now();
+
+        // Variables cinemáticas del vehículo
+        let carAngle = Math.PI; // Inicia en el vértice izquierdo (180°)
+        let currentRadiusOffset = 0; // Se incrementa si derrapa hacia afuera
+        let trail = [];
+
+        function drawArrow(context, fx, fy, tx, ty, color, lineWidth=2.5, dashed=false) {
+            const dx = tx - fx;
+            const dy = ty - fy;
+            const len = Math.hypot(dx, dy);
+            if (len < 1) return;
+            const headlen = Math.min(9, Math.max(5, len * 0.25));
+            const angle = Math.atan2(dy, dx);
+
+            context.beginPath();
+            context.strokeStyle = color;
+            context.lineWidth = lineWidth;
+            if (dashed) context.setLineDash([4, 3]);
+            context.moveTo(fx, fy);
+            context.lineTo(tx, ty);
+            context.stroke();
+            context.setLineDash([]);
+
+            context.beginPath();
+            context.fillStyle = color;
+            context.moveTo(tx, ty);
+            context.lineTo(tx - headlen * Math.cos(angle - Math.PI / 6), ty - headlen * Math.sin(angle - Math.PI / 6));
+            context.lineTo(tx - headlen * Math.cos(angle + Math.PI / 6), ty - headlen * Math.sin(angle + Math.PI / 6));
+            context.fill();
+        }
+
+        function getPhysics() {
+            const v = parseFloat(v_slider.value);
+            const mus = parseFloat(mus_slider.value);
+            const R = parseFloat(R_slider.value);
+            const m = parseFloat(m_slider.value);
+
+            v_val.innerText = v.toFixed(1) + " m/s";
+            v_kmh.innerText = (v * 3.6).toFixed(1) + " km/h";
+            mus_val.innerText = mus.toFixed(2);
+            R_val.innerText = R.toFixed(1) + " m";
+            m_val.innerText = m.toFixed(0) + " kg";
+
+            // Cálculos físicos
+            const vmax = Math.sqrt(mus * g * R);
+            const N = m * g;
+            const fs_max = mus * N;
+            const ac = (v * v) / R;
+            const fs_req = m * ac;
+            const ratio = (fs_req / fs_max) * 100.0;
+            const isSkidding = v > vmax;
+
+            lbl_vmax.innerText = vmax.toFixed(2) + " m/s";
+            lbl_vmax_kmh.innerText = (vmax * 3.6).toFixed(1) + " km/h";
+            lbl_fs.innerText = fs_req.toFixed(0) + " N";
+            lbl_fsmax.innerText = fs_max.toFixed(0) + " N";
+            lbl_N.innerText = N.toFixed(0) + " N";
+            lbl_ac.innerText = ac.toFixed(2) + " m/s²";
+            lbl_adherencia.innerText = ratio.toFixed(1) + " %";
+
+            if (!isSkidding) {
+                status_pill.innerHTML = "✓ Adherencia Óptima (v &le; v<sub>max</sub>)";
+                status_pill.style.background = "#d1e7dd";
+                status_pill.style.color = "#0f5132";
+                status_pill.style.borderColor = "#badbcc";
+            } else {
+                status_pill.innerHTML = "⚠ ¡DERRAPANDO! Exceso de Rapidez (v > v<sub>max</sub>)";
+                status_pill.style.background = "#f8d7da";
+                status_pill.style.color = "#842029";
+                status_pill.style.borderColor = "#f5c2c7";
+            }
+
+            return { v, mus, R, m, vmax, N, fs_max, fs_req, ac, ratio, isSkidding };
+        }
+
+        function drawCarTopView(context, x, y, headingAngle, isSkidding) {
+            context.save();
+            context.translate(x, y);
+            context.rotate(headingAngle);
+
+            // Carrocería deportiva
+            context.fillStyle = isSkidding ? "#e63946" : "#f77f00";
+            context.strokeStyle = "#212529";
+            context.lineWidth = 2;
+
+            // Chasis
+            context.beginPath();
+            context.roundRect(-22, -12, 44, 24, 6);
+            context.fill();
+            context.stroke();
+
+            // Parabrisas y techo
+            context.fillStyle = "#1d3557";
+            context.beginPath();
+            context.roundRect(-10, -9, 20, 18, 3);
+            context.fill();
+
+            // Ruedas / Neumáticos
+            context.fillStyle = "#212529";
+            context.fillRect(-18, -14, 10, 4); // Delantera izq
+            context.fillRect(-18, 10, 10, 4);  // Delantera der
+            context.fillRect(8, -14, 10, 4);   // Trasera izq
+            context.fillRect(8, 10, 10, 4);    // Trasera der
+
+            // Faros delanteros
+            context.fillStyle = "#ffeb3b";
+            context.fillRect(20, -10, 3, 5);
+            context.fillRect(20, 5, 3, 5);
+
+            context.restore();
+        }
+
+        function drawCarRearView(context, cx, cy, p) {
+            // DCL en corte transversal (vista trasera del automóvil)
+            const carW = 70;
+            const carH = 34;
+
+            // Línea de suelo / asfalto
+            context.strokeStyle = "#495057";
+            context.lineWidth = 2.5;
+            context.beginPath();
+            context.moveTo(cx - 100, cy + carH/2 + 8);
+            context.lineTo(cx + 100, cy + carH/2 + 8);
+            context.stroke();
+
+            // Sombra
+            context.fillStyle = "rgba(0,0,0,0.15)";
+            context.beginPath();
+            context.ellipse(cx, cy + carH/2 + 7, carW/2, 5, 0, 0, Math.PI * 2);
+            context.fill();
+
+            // Ruedas traseras
+            context.fillStyle = "#212529";
+            context.fillRect(cx - carW/2 - 2, cy + carH/2 - 12, 10, 18);
+            context.fillRect(cx + carW/2 - 8, cy + carH/2 - 12, 10, 18);
+
+            // Carrocería trasera
+            context.fillStyle = p.isSkidding ? "#e63946" : "#f77f00";
+            context.strokeStyle = "#212529";
+            context.lineWidth = 2;
+            context.beginPath();
+            context.roundRect(cx - carW/2 + 2, cy - carH/2, carW - 4, carH, 6);
+            context.fill();
+            context.stroke();
+
+            // Ventana trasera
+            context.fillStyle = "#1d3557";
+            context.beginPath();
+            context.roundRect(cx - carW/2 + 12, cy - carH/2 + 4, carW - 24, 14, 3);
+            context.fill();
+
+            // Luces traseras rojas
+            context.fillStyle = "#d90429";
+            context.fillRect(cx - carW/2 + 4, cy + 2, 8, 6);
+            context.fillRect(cx + carW/2 - 12, cy + 2, 8, 6);
+
+            // Patente / Placa
+            context.fillStyle = "#ffffff";
+            context.fillRect(cx - 12, cy + 6, 24, 8);
+            context.strokeRect(cx - 12, cy + 6, 24, 8);
+
+            // Centro de masa (nodo de fuerzas)
+            context.beginPath();
+            context.fillStyle = "#212529";
+            context.arc(cx, cy, 4, 0, Math.PI * 2);
+            context.fill();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const p = getPhysics();
+            const splitX = 540;
+
+            // Divisoria vertical
+            ctx.beginPath();
+            ctx.strokeStyle = "#e9ecef";
+            ctx.lineWidth = 2;
+            ctx.moveTo(splitX, 10);
+            ctx.lineTo(splitX, canvas.height - 10);
+            ctx.stroke();
+
+            // ==========================================================
+            // SECCIÓN IZQUIERDA: PISTA Y MOVIMIENTO EN PERSPECTIVA
+            // ==========================================================
+            ctx.fillStyle = "#212529";
+            ctx.font = "bold 13px sans-serif";
+            ctx.fillText("Vista de la Pista (Curva Plana Horizontal de Radio R)", 20, 25);
+
+            // Centro de curvatura E
+            const centerX = 400;
+            const centerY = 215;
+            const scalePix = 2.4; // px por metro para dibujo de pista
+            const trackR_px = p.R * scalePix;
+            const laneWidth = 48;
+
+            // Dibujo de la calzada asfáltica (curva)
+            ctx.beginPath();
+            ctx.strokeStyle = "#adb5bd";
+            ctx.lineWidth = laneWidth + 12;
+            ctx.arc(centerX, centerY, trackR_px, Math.PI * 0.65, Math.PI * 1.35, false);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle = "#495057";
+            ctx.lineWidth = laneWidth;
+            ctx.arc(centerX, centerY, trackR_px, Math.PI * 0.65, Math.PI * 1.35, false);
+            ctx.stroke();
+
+            // Línea segmentada central (trayectoria nominal azul discontinua como en el problema)
+            ctx.beginPath();
+            ctx.strokeStyle = "#00b4d8";
+            ctx.lineWidth = 2;
+            ctx.setLineDash([8, 6]);
+            ctx.arc(centerX, centerY, trackR_px, Math.PI * 0.65, Math.PI * 1.35, false);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Centro de giro
+            ctx.beginPath();
+            ctx.fillStyle = "#212529";
+            ctx.arc(centerX, centerY, 5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = "#212529";
+            ctx.font = "bold 12px sans-serif";
+            ctx.fillText("Centro de curvatura", centerX - 60, centerY + 20);
+
+            // Flecha indicadora del radio R desde el centro al vértice
+            const leftVertexX = centerX - trackR_px;
+            ctx.strokeStyle = "#198754";
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(leftVertexX, centerY);
+            ctx.stroke();
+            ctx.fillStyle = "#198754";
+            ctx.font = "bold 12px sans-serif";
+            ctx.fillText("R = " + p.R.toFixed(0) + " m", (centerX + leftVertexX) / 2 - 25, centerY - 6);
+
+            // Rastro de derrape
+            if (chk_skid_trail.checked && trail.length > 1) {
+                ctx.strokeStyle = "rgba(220, 53, 69, 0.45)";
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(trail[0].x, trail[0].y);
+                for (let i = 1; i < trail.length; i++) {
+                    ctx.lineTo(trail[i].x, trail[i].y);
+                }
+                ctx.stroke();
+            }
+
+            // Posición instantánea del auto
+            const effectiveR = trackR_px + currentRadiusOffset;
+            const carX = centerX + effectiveR * Math.cos(carAngle);
+            const carY = centerY + effectiveR * Math.sin(carAngle);
+
+            // Ángulo de orientación tangencial
+            // Para giro horario: ángulo de avance = carAngle - Math.PI / 2
+            const headingAngle = carAngle - Math.PI / 2;
+
+            drawCarTopView(ctx, carX, carY, headingAngle, p.isSkidding);
+
+            // Vectores en la pista
+            if (chk_forces_sim.checked) {
+                // Vector Fuerza de Roce Estático f_s hacia el centro de curvatura
+                const dirToCenterX = (centerX - carX) / Math.hypot(centerX - carX, centerY - carY);
+                const dirToCenterY = (centerY - carY) / Math.hypot(centerX - carX, centerY - carY);
+                const fsLen = Math.min(65, (p.fs_req / p.fs_max) * 50);
+
+                drawArrow(ctx, carX, carY, carX + dirToCenterX * fsLen, carY + dirToCenterY * fsLen, p.isSkidding ? "#dc3545" : "#198754", 3);
+                ctx.fillStyle = p.isSkidding ? "#dc3545" : "#198754";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText(p.isSkidding ? "f_k (deslizamiento)" : "f_s (radial hacia centro)", carX + dirToCenterX * fsLen - 30, carY + dirToCenterY * fsLen - 8);
+
+                // Vector velocidad tangencial
+                const vDirX = -Math.sin(carAngle);
+                const vDirY = Math.cos(carAngle);
+                drawArrow(ctx, carX, carY, carX + vDirX * 40, carY + vDirY * 40, "#0d6efd", 2.5);
+                ctx.fillStyle = "#0d6efd";
+                ctx.fillText("v = " + p.v.toFixed(1) + " m/s", carX + vDirX * 40 + 5, carY + vDirY * 40 + 4);
+
+                // Vector aceleración centrípeta
+                if (chk_ac.checked) {
+                    drawArrow(ctx, carX, carY, carX + dirToCenterX * 35, carY + dirToCenterY * 35, "#6f42c1", 2, true);
+                    ctx.fillStyle = "#6f42c1";
+                    ctx.fillText("a_c", carX + dirToCenterX * 35 + 4, carY + dirToCenterY * 35 + 14);
+                }
+            }
+
+            // ==========================================================
+            // SECCIÓN DERECHA: DCL CORTE TRANSVERSAL (EJES RADIAL Y NORMAL)
+            // ==========================================================
+            const dclX = 740;
+            const dclY = 220;
+
+            ctx.fillStyle = "#212529";
+            ctx.font = "bold 14px sans-serif";
+            ctx.fillText("Diagrama de Cuerpo Libre (DCL)", 600, 25);
+            ctx.font = "italic 12px sans-serif";
+            ctx.fillStyle = "#6c757d";
+            ctx.fillText("Corte transversal trasero: Eje radial hacia el centro (E)", 600, 42);
+
+            // Ejes coordenados intrínsecos (+r hacia la derecha hacia el centro, +y hacia arriba)
+            if (chk_axes.checked) {
+                ctx.strokeStyle = "#495057";
+                ctx.setLineDash([3, 3]);
+                ctx.lineWidth = 1.5;
+
+                // Eje radial r horizontal (apuntando a la derecha hacia el centro E de la curva)
+                ctx.beginPath();
+                ctx.moveTo(dclX - 120, dclY);
+                ctx.lineTo(dclX + 160, dclY);
+                ctx.stroke();
+
+                // Eje normal vertical y
+                ctx.beginPath();
+                ctx.moveTo(dclX, dclY - 140);
+                ctx.lineTo(dclX, dclY + 140);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                ctx.fillStyle = "#495057";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("+r (Hacia el centro E) →", dclX + 35, dclY - 8);
+                ctx.fillText("+y (Eje Normal) ↑", dclX + 8, dclY - 125);
+            }
+
+            // Dibujo esquemático del auto visto desde atrás en el centro del DCL
+            drawCarRearView(ctx, dclX, dclY, p);
+
+            // Escala para vectores en el DCL
+            const fScaleDCL = 0.0075;
+            const N_len = p.N * fScaleDCL;
+            const P_len = p.N * fScaleDCL; // P = mg = N
+            const fs_len = p.fs_req * fScaleDCL;
+            const fsmax_len = p.fs_max * fScaleDCL;
+
+            // 1. Vector Normal N (hacia arriba)
+            drawArrow(ctx, dclX, dclY - 17, dclX, dclY - 17 - N_len, "#495057", 3);
+            ctx.fillStyle = "#495057";
+            ctx.font = "bold 12px sans-serif";
+            ctx.fillText("N = " + p.N.toFixed(0) + " N", dclX + 8, dclY - 17 - N_len + 15);
+
+            // 2. Vector Peso P (hacia abajo)
+            drawArrow(ctx, dclX, dclY + 17, dclX, dclY + 17 + P_len, "#212529", 3);
+            ctx.fillStyle = "#212529";
+            ctx.font = "bold 12px sans-serif";
+            ctx.fillText("P = m·g = " + p.N.toFixed(0) + " N", dclX + 8, dclY + 17 + P_len);
+
+            // 3. Vector Fuerza de Roce Estático f_s (hacia la derecha, hacia el centro E)
+            const fsColor = p.isSkidding ? "#dc3545" : "#198754";
+            drawArrow(ctx, dclX + 35, dclY + 22, dclX + 35 + fs_len, dclY + 22, fsColor, 3.2);
+            ctx.fillStyle = fsColor;
+            ctx.font = "bold 12px sans-serif";
+            ctx.fillText("f_s = " + p.fs_req.toFixed(0) + " N", dclX + 35 + fs_len + 5, dclY + 26);
+
+            // Cota límite de f_s,max
+            ctx.strokeStyle = "rgba(133, 100, 4, 0.6)";
+            ctx.setLineDash([2, 2]);
+            ctx.beginPath();
+            ctx.moveTo(dclX + 35 + fsmax_len, dclY + 10);
+            ctx.lineTo(dclX + 35 + fsmax_len, dclY + 34);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = "#856404";
+            ctx.font = "italic 10px sans-serif";
+            ctx.fillText("f_{s,max} = " + p.fs_max.toFixed(0) + " N", dclX + 35 + fsmax_len - 30, dclY + 45);
+
+            // Alerta visual de derrape en el DCL
+            if (p.isSkidding) {
+                ctx.fillStyle = "#dc3545";
+                ctx.font = "bold 12px sans-serif";
+                ctx.fillText("¡f_s requerida > f_{s,max}!", dclX - 70, dclY + 75);
+                ctx.font = "italic 11px sans-serif";
+                ctx.fillText("El auto resbala radialmente hacia afuera (+r opuesto)", dclX - 110, dclY + 92);
+            } else {
+                ctx.fillStyle = "#0f5132";
+                ctx.font = "bold 11px sans-serif";
+                ctx.fillText("✓ f_s &le; f_{s,max} (Sin derrape)", dclX - 45, dclY + 75);
+            }
+        }
+
+        function animate(timestamp) {
+            let dt = (timestamp - lastTime) / 1000;
+            if (dt > 0.1) dt = 0.1;
+            lastTime = timestamp;
+
+            if (isPlaying) {
+                const p = getPhysics();
+                const omega = p.v / p.R;
+
+                // Giro horario a lo largo de la curva
+                carAngle += omega * dt * 0.8;
+                if (carAngle > Math.PI * 1.35) {
+                    carAngle = Math.PI * 0.65;
+                    currentRadiusOffset = 0;
+                    trail = [];
+                }
+
+                // Si derrapa, se desplaza hacia el exterior de la curva
+                if (p.isSkidding) {
+                    currentRadiusOffset += (p.v - p.vmax) * dt * 25;
+                } else {
+                    currentRadiusOffset = Math.max(0, currentRadiusOffset - 40 * dt);
+                }
+
+                // Guardar rastro
+                const centerX = 400;
+                const centerY = 215;
+                const scalePix = 2.4;
+                const effR = p.R * scalePix + currentRadiusOffset;
+                trail.push({
+                    x: centerX + effR * Math.cos(carAngle),
+                    y: centerY + effR * Math.sin(carAngle)
+                });
+                if (trail.length > 50) trail.shift();
+            }
+
+            draw();
+            requestAnimationFrame(animate);
+        }
+
+        // Eventos
+        [v_slider, mus_slider, R_slider, m_slider].forEach(s => {
+            s.addEventListener('input', () => { getPhysics(); draw(); });
+        });
+
+        [chk_forces_sim, chk_axes, chk_skid_trail, chk_ac].forEach(c => {
+            c.addEventListener('change', draw);
+        });
+
+        btn_play.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            btn_play.innerText = isPlaying ? "⏸ Pausar" : "▶ Ejecutar";
+            btn_play.style.backgroundColor = isPlaying ? "#ffc107" : "#198754";
+            btn_play.style.color = isPlaying ? "#000" : "#fff";
+        });
+
+        btn_reset.addEventListener('click', () => {
+            carAngle = Math.PI;
+            currentRadiusOffset = 0;
+            trail = [];
+            draw();
+        });
+
+        btn_vmax.addEventListener('click', () => {
+            const mus = parseFloat(mus_slider.value);
+            const R = parseFloat(R_slider.value);
+            const vmax = Math.sqrt(mus * g * R);
+            v_slider.value = vmax.toFixed(1);
+            currentRadiusOffset = 0;
+            trail = [];
+            getPhysics();
+            draw();
+        });
+
+        getPhysics();
+        requestAnimationFrame(animate);
+    }
+
+    initSimulation();
+})();
+</script>
+</div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05_cuerpos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bloques Conectados</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Miguel Pinto
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

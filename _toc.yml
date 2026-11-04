@@ -15,3 +15,9 @@ parts:
       - file: 04_roce
       - file: 05_cuerpos
       - file: 06_circular
+  - caption: Trabajo y Energía
+    chapters:
+      - file: 07_trabajo
+  - caption: Dinámica de Cuerpo Rígido
+    chapters:
+      - file: 08_rodadura
