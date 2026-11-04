@@ -1,0 +1,932 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Teorema Trabajo Total Energía Cinética &#8212; Curso de Introducción a la Física</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '07_trabajo';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Movimiento de Rodadura" href="08_rodadura.html" />
+    <link rel="prev" title="Dinámica Circular" href="06_circular.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Curso de Introducción a la Física - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Curso de Introducción a la Física - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Bienvenidos al Curso de Física Mecánica
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cinemática</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_encuentro.html">Ejercicio de Persecusión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_actividad.html">Movimiento Vertical</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_circular.html">Movimiento Circular</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dinámica</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="04_roce.html">Fuerza de Roce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_cuerpos.html">Bloques Conectados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_circular.html">Dinámica Circular</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Trabajo y Energía</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Teorema Trabajo Total Energía Cinética</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dinámica de Cuerpo Rígido</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="08_rodadura.html">Movimiento de Rodadura</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jmpintog1/introfis/blob/main/./07_trabajo.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jmpintog1/introfis" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jmpintog1/introfis/issues/new?title=Issue%20on%20page%20%2F07_trabajo.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/07_trabajo.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Teorema Trabajo Total Energía Cinética</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="teorema-trabajo-total-energia-cinetica">
+<h1>Teorema Trabajo Total Energía Cinética<a class="headerlink" href="#teorema-trabajo-total-energia-cinetica" title="Permalink to this heading">#</a></h1>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div style="border: 1px solid #dee2e6; padding: 18px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 980px; margin: auto;">
+    <h3 style="margin-top:0; color: #212529; font-size: 1.3em;">Análisis de Fuerzas: Perpendicularidad de la Normal (m = 0.5 kg)</h3>
+    
+    <!-- Cuadro Teórico Resumen -->
+    <div style="background: #e9ecef; padding: 12px 16px; border-radius: 6px; font-size: 0.88em; margin-bottom: 12px; color: #212529; line-height: 1.5;">
+        <strong>Dirección y Magnitud de la Normal:</strong>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 6px;">
+            <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #198754;">
+                <b>1. Ángulo Geométrico (Siempre 90°):</b><br>
+                La fuerza Normal (N) es una fuerza de contacto. Su dirección es <b>estrictamente perpendicular</b> al plano tangente de la superficie en todo momento.
+            </div>
+            <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #0d6efd;">
+                <b>2. Magnitud Dinámica:</b><br>
+                <i>N = m&middot;g&middot;cos(&theta;) &plusmn; m&middot;v&sup2;/R</i><br>
+                Varía según la inclinación local y el término centrípeto por curvatura.
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de Controles -->
+    <div style="display: flex; gap: 12px; margin-bottom: 12px; background: #ffffff; padding: 10px 14px; border-radius: 6px; border: 1px solid #ced4da; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <div style="display: flex; gap: 8px;">
+            <button id="play_62590" style="background-color: #ffc107; color: #000; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-weight: bold;">⏸ Pausar Animación</button>
+            <button id="reset_62590" style="background-color: #6c757d; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">🔄 Inicio (Punto A)</button>
+        </div>
+        <div style="font-size: 0.82em; font-weight: bold; padding: 5px 12px; border-radius: 4px; background: #d1e7dd; color: #0f5132; border: 1px solid #badbcc;">
+            ✓ Sistema renderizado con transformaciones locales (N &perp; Superficie)
+        </div>
+    </div>
+
+    <!-- Slider de posición manual -->
+    <div style="display: flex; gap: 12px; background: #ffffff; padding: 12px; border-radius: 6px; border: 1px solid #ced4da; margin-bottom: 12px;">
+        <div style="flex: 1; padding: 6px 10px; border-radius: 4px; border: 1px solid #dee2e6;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.85em; font-weight: bold; color: #495057;">
+                <span>Desliza para examinar el vector Normal punto a punto:</span>
+                <span id="pos_val_62590" style="color: #0d6efd; font-family: monospace;">x = 50.0 px</span>
+            </div>
+            <input type="range" id="x_slider_62590" min="50" max="480" step="0.5" value="50" style="width: 100%; margin-top: 8px;">
+        </div>
+    </div>
+
+    <!-- Canvas Principal -->
+    <div style="display: flex; justify-content: center; margin-bottom: 12px;">
+        <canvas id="canvas_sim_62590" width="940" height="400" style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+    </div>
+
+    <!-- Telemetría Dinámica -->
+    <div style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; padding: 10px; margin-bottom: 10px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; text-align: center;">
+            <div style="background: #e7f1ff; padding: 6px; border-radius: 4px; border: 1px solid #b6d4fe;">
+                <div style="font-size: 0.68em; color: #084298; font-weight: bold;">INCLINACIÓN SUPERFICIE (&theta;)</div>
+                <div id="lbl_ang_62590" style="font-size: 1.1em; font-weight: bold; color: #0d6efd; font-family: monospace;">0.0 °</div>
+            </div>
+            <div style="background: #e2e3e5; padding: 6px; border-radius: 4px; border: 1px solid #d6d8db;">
+                <div style="font-size: 0.68em; color: #495057; font-weight: bold;">RAPIDEZ (v)</div>
+                <div id="lbl_v_62590" style="font-size: 1.1em; font-weight: bold; color: #495057; font-family: monospace;">0.00 m/s</div>
+            </div>
+            <div style="background: #fff3cd; padding: 6px; border-radius: 4px; border: 1px solid #ffecb5;">
+                <div style="font-size: 0.68em; color: #664d03; font-weight: bold;">FUERZA NORMAL (N)</div>
+                <div id="lbl_N_62590" style="font-size: 1.1em; font-weight: bold; color: #856404; font-family: monospace;">3.71 N</div>
+            </div>
+            <div style="background: #f8d7da; padding: 6px; border-radius: 4px; border: 1px solid #f5c2c7;">
+                <div style="font-size: 0.68em; color: #842029; font-weight: bold;">ROCE CINÉTICO (f_k)</div>
+                <div id="lbl_fk_62590" style="font-size: 1.1em; font-weight: bold; color: #dc3545; font-family: monospace;">0.00 N</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    function initSimulation() {
+        const canvas = document.getElementById('canvas_sim_62590');
+        if (!canvas) { setTimeout(initSimulation, 50); return; }
+        const ctx = canvas.getContext('2d');
+
+        const x_slider = document.getElementById('x_slider_62590');
+        const pos_val = document.getElementById('pos_val_62590');
+        const lbl_v = document.getElementById('lbl_v_62590');
+        const lbl_ang = document.getElementById('lbl_ang_62590');
+        const lbl_N = document.getElementById('lbl_N_62590');
+        const lbl_fk = document.getElementById('lbl_fk_62590');
+
+        const btn_play = document.getElementById('play_62590');
+        const btn_reset = document.getElementById('reset_62590');
+
+        const g = 9.8;
+        const m = 0.50;
+        const scalePx = 180; 
+        
+        let isPlaying = true;
+        let lastTime = performance.now();
+        let currentX = 50.1;
+
+        function drawArrow(context, fx, fy, tx, ty, color, lineWidth=2.5, dashed=false) {
+            const dx = tx - fx;
+            const dy = ty - fy;
+            const len = Math.hypot(dx, dy);
+            if (len < 1) return;
+            const headlen = Math.min(10, Math.max(6, len * 0.25));
+            const angle = Math.atan2(dy, dx);
+
+            context.beginPath();
+            context.strokeStyle = color;
+            context.lineWidth = lineWidth;
+            if(dashed) context.setLineDash([4, 3]);
+            context.moveTo(fx, fy);
+            context.lineTo(tx, ty);
+            context.stroke();
+            context.setLineDash([]);
+
+            context.beginPath();
+            context.fillStyle = color;
+            context.moveTo(tx, ty);
+            context.lineTo(tx - headlen * Math.cos(angle - Math.PI / 6), ty - headlen * Math.sin(angle - Math.PI / 6));
+            context.lineTo(tx - headlen * Math.cos(angle + Math.PI / 6), ty - headlen * Math.sin(angle + Math.PI / 6));
+            context.fill();
+        }
+
+        // Pista con perfil ondulado
+        function getTrack(x) {
+            let y, yp, ypp;
+            if (x < 150) {
+                y = 0.8 * (x - 50) + 50;
+                yp = 0.8;
+                ypp = 0;
+            } else if (x <= 400) {
+                let t = (x - 150) / 250;
+                let y_base = -80*t*t*t + 20*t*t + 200*t + 130;
+                let yp_base = -240*t*t + 40*t + 200;
+                let ypp_base = -480*t + 40;
+                
+                let w = -70 * Math.sin(2*Math.PI*t) * t * (1-t);
+                let dw = -70 * ( 2*Math.PI*Math.cos(2*Math.PI*t)*t*(1-t) + Math.sin(2*Math.PI*t)*(1-2*t) );
+                let d2w = -70 * ( -4*Math.PI*Math.PI*Math.sin(2*Math.PI*t)*t*(1-t) + 4*Math.PI*Math.cos(2*Math.PI*t)*(1-2*t) - 2*Math.sin(2*Math.PI*t) );
+
+                y = y_base + w;
+                yp = (yp_base + dw) / 250;
+                ypp = (ypp_base + d2w) / 62500;
+            } else {
+                y = 270;
+                yp = 0;
+                ypp = 0;
+            }
+            return { x, y, yp, ypp };
+        }
+
+        // Energía mecánica inicial calculada en la cota de inicio (x = 50, y = 50)
+        const H_init = (270 - 50) / scalePx; // ~1.222 m
+        const E_total_init = m * g * H_init + 0.05; // Margen para iniciar con v pequeña
+
+        function getPhysics(x) {
+            const tr = getTrack(x);
+            let H = (270 - tr.y) / scalePx;
+            if (H < 0) H = 0;
+
+            let U = m * g * H;
+            let E = E_total_init; 
+            let fk = 0;
+            
+            // Fricción disipativa en el tramo irregular
+            if (x > 150 && x <= 400) {
+                let t = (x - 150) / 250;
+                let loss = 2.65 * t;
+                E = E_total_init - loss; 
+                let ds_dx = Math.sqrt(1 + tr.yp * tr.yp);
+                fk = (2.65 / 250) / ds_dx * scalePx; 
+            } else if (x > 400) {
+                E = E_total_init - 2.65; 
+            }
+
+            let K = E - U;
+            if (K < 0.02) K = 0.02; // Garantiza movimiento continuo
+            let v = Math.sqrt(2 * K / m);
+
+            let theta = Math.atan(tr.yp);
+            let R_m = Infinity;
+            if (Math.abs(tr.ypp) > 1e-6) {
+                R_m = Math.pow(1 + tr.yp * tr.yp, 1.5) / (Math.abs(tr.ypp) * scalePx);
+            }
+            
+            let centripetal = (m * v * v / R_m);
+            if (tr.ypp < 0) centripetal = -centripetal; 
+            
+            let N = m * g * Math.cos(theta) + centripetal;
+            if (N < 0.2) N = 0.2; 
+
+            lbl_v.innerText = v.toFixed(2) + " m/s";
+            lbl_ang.innerText = (theta * 180 / Math.PI).toFixed(1) + " °";
+            lbl_N.innerText = N.toFixed(2) + " N";
+            lbl_fk.innerText = fk.toFixed(2) + " N";
+            if (pos_val) pos_val.innerText = "x = " + x.toFixed(1) + " px";
+
+            return { tr, theta, N, fk, v };
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const p = getPhysics(currentX);
+            const splitX = 580;
+
+            ctx.beginPath();
+            ctx.strokeStyle = "#e9ecef";
+            ctx.lineWidth = 2;
+            ctx.moveTo(splitX, 10); ctx.lineTo(splitX, canvas.height - 10);
+            ctx.stroke();
+
+            // ==========================================================
+            // ESCENA FÍSICA (IZQUIERDA)
+            // ==========================================================
+            ctx.font = "bold 13px sans-serif";
+            ctx.fillStyle = "#495057";
+            ctx.fillText("Trayectoria con Superficie Irregular", 20, 25);
+
+            // Trazado de Pista
+            ctx.beginPath();
+            ctx.moveTo(0, getTrack(0).y);
+            for(let px = 0; px <= splitX; px += 3) {
+                ctx.lineTo(px, getTrack(px).y);
+            }
+            ctx.strokeStyle = "#868e96"; ctx.lineWidth = 4; ctx.stroke();
+            
+            ctx.fillStyle = "rgba(0,0,0,0.5)"; ctx.font = "bold 12px sans-serif";
+            ctx.fillText("Pto. A", 45, 35);
+            ctx.fillText("Pto. B", 450, 260);
+
+            // Secciones Pista
+            ctx.beginPath(); ctx.setLineDash([4,4]); ctx.strokeStyle = "#dee2e6";
+            ctx.moveTo(150, 70); ctx.lineTo(150, 290);
+            ctx.moveTo(400, 200); ctx.lineTo(400, 290);
+            ctx.stroke(); ctx.setLineDash([]);
+
+            // ========== RENDERIZADO LOCAL DEL BLOQUE Y VECTORES ==========
+            ctx.save();
+            ctx.translate(p.tr.x, p.tr.y);  // Mover al punto de contacto
+            ctx.rotate(p.theta);            // Alinear plano local
+
+            // Línea del plano tangente local
+            ctx.beginPath();
+            ctx.strokeStyle = "rgba(0, 0, 0, 0.3)";
+            ctx.lineWidth = 1.5;
+            ctx.setLineDash([4, 4]);
+            ctx.moveTo(-50, 0);
+            ctx.lineTo(50, 0);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Símbolo explícito de 90 grados
+            ctx.beginPath();
+            ctx.strokeStyle = "#198754";
+            ctx.lineWidth = 1.5;
+            ctx.moveTo(12, 0);
+            ctx.lineTo(12, -12);
+            ctx.lineTo(0, -12);
+            ctx.stroke();
+
+            // Bloque (base apoyada en 0,0)
+            ctx.fillStyle = "#e74c3c";
+            ctx.fillRect(-15, -30, 30, 30);
+            ctx.strokeStyle = "#c0392b"; ctx.lineWidth = 2;
+            ctx.strokeRect(-15, -30, 30, 30);
+
+            const vs = 14; 
+            
+            // Fuerza Normal (Perpendicular al plano local)
+            drawArrow(ctx, 0, 0, 0, -p.N*vs, "#198754", 3);
+            
+            // Roce (Tangencial opuesto al avance)
+            if (p.fk > 0) {
+                drawArrow(ctx, 0, 0, -p.fk*vs, 0, "#dc3545", 3);
+            }
+
+            // Peso (Vertical global)
+            let P_len = (m * g) * vs;
+            drawArrow(ctx, 0, -15, P_len * Math.sin(p.theta), -15 + P_len * Math.cos(p.theta), "#4a148c", 2.5);
+
+            ctx.restore();
+
+            // ==========================================================
+            // DIAGRAMA DE CUERPO LIBRE AISLADO (DERECHA)
+            // ==========================================================
+            const dclX = 760;
+            const dclY = 200;
+
+            ctx.fillStyle = "#212529";
+            ctx.font = "bold 14px sans-serif";
+            ctx.fillText("D.C.L. (Ejes Fijos Globales)", splitX + 20, 25);
+            
+            // Ejes Globales Cartesianos
+            ctx.strokeStyle = "#ced4da"; ctx.setLineDash([4, 4]); ctx.lineWidth = 1.5;
+            ctx.beginPath(); ctx.moveTo(dclX - 120, dclY); ctx.lineTo(dclX + 120, dclY); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(dclX, dclY - 140); ctx.lineTo(dclX, dclY + 140); ctx.stroke();
+            ctx.setLineDash([]);
+            
+            ctx.fillStyle = "#adb5bd"; ctx.font = "bold 11px sans-serif";
+            ctx.fillText("+X", dclX + 105, dclY - 8);
+            ctx.fillText("+Y", dclX + 8, dclY - 125);
+
+            const vScale = 22; 
+            let p_len = (m*g) * vScale;
+            let n_len = p.N * vScale;
+            let fk_len = p.fk * vScale;
+
+            ctx.save();
+            ctx.translate(dclX, dclY);
+
+            // Vector Peso (+Y Global)
+            drawArrow(ctx, 0, 0, 0, p_len, "#4a148c", 3.5);
+
+            // Rotar entorno DCL al ángulo tangente local
+            ctx.rotate(p.theta);
+            
+            // Plano tangente virtual
+            ctx.beginPath(); ctx.strokeStyle = "rgba(0,0,0,0.15)"; ctx.lineWidth = 2;
+            ctx.moveTo(-60, 0); ctx.lineTo(60, 0); ctx.stroke();
+            
+            // Ángulo 90 grados en DCL
+            ctx.beginPath(); ctx.strokeStyle = "#198754"; ctx.lineWidth = 1.5;
+            ctx.moveTo(12, 0); ctx.lineTo(12, -12); ctx.lineTo(0, -12); ctx.stroke();
+
+            // Vector Normal (-Y Local)
+            drawArrow(ctx, 0, 0, 0, -n_len, "#198754", 4);
+
+            // Vector Roce (-X Local)
+            if (p.fk > 0) {
+                drawArrow(ctx, 0, 0, -fk_len, 0, "#dc3545", 3.5);
+            }
+            ctx.restore();
+
+            // Textos DCL globales
+            ctx.fillStyle = "#4a148c"; ctx.font = "bold 13px sans-serif"; 
+            ctx.fillText("P (m·g)", dclX + 10, dclY + p_len);
+            
+            let Nx_txt = dclX + n_len * Math.sin(p.theta);
+            let Ny_txt = dclY - n_len * Math.cos(p.theta);
+            ctx.fillStyle = "#198754"; 
+            ctx.fillText("N", Nx_txt - 15, Ny_txt - 10);
+
+            if (p.fk > 0) {
+                let fkx_txt = dclX - fk_len * Math.cos(p.theta);
+                let fky_txt = dclY - fk_len * Math.sin(p.theta);
+                ctx.fillStyle = "#dc3545"; 
+                ctx.fillText("f_k", fkx_txt - 20, fky_txt + 15);
+            }
+
+            // Partícula central
+            ctx.beginPath(); ctx.fillStyle = "#e74c3c"; ctx.arc(dclX, dclY, 6, 0, Math.PI * 2); ctx.fill();
+        }
+
+        function animate(timestamp) {
+            let dt = (timestamp - lastTime) / 1000;
+            if (dt > 0.08) dt = 0.08;
+            lastTime = timestamp;
+
+            if (isPlaying) {
+                const p = getPhysics(currentX);
+                // Proyección del avance sobre la curva
+                let ds = p.v * dt * 45; 
+                let dx = ds / Math.sqrt(1 + p.tr.yp * p.tr.yp);
+                
+                currentX += dx;
+                
+                if (currentX > 480) {
+                    currentX = 50.1;
+                }
+                x_slider.value = currentX;
+            }
+
+            draw();
+            requestAnimationFrame(animate);
+        }
+
+        x_slider.addEventListener('input', () => { 
+            isPlaying = false; 
+            btn_play.innerText = "▶ Ejecutar Automático";
+            btn_play.style.backgroundColor = "#198754";
+            btn_play.style.color = "#fff";
+            currentX = parseFloat(x_slider.value);
+            draw(); 
+        });
+
+        btn_play.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            btn_play.innerText = isPlaying ? "⏸ Pausar Animación" : "▶ Ejecutar Automático";
+            btn_play.style.backgroundColor = isPlaying ? "#ffc107" : "#198754";
+            btn_play.style.color = isPlaying ? "#000" : "#fff";
+        });
+
+        btn_reset.addEventListener('click', () => { 
+            currentX = 50.1; 
+            x_slider.value = 50.1; 
+            draw(); 
+        });
+
+        draw();
+        requestAnimationFrame(animate);
+    }
+
+    initSimulation();
+})();
+</script>
+</div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="06_circular.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Dinámica Circular</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="08_rodadura.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Movimiento de Rodadura</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Miguel Pinto
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
