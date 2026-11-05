@@ -420,7 +420,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <div style="border: 1px solid #dee2e6; padding: 18px; border-radius: 8px; background-color: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 980px; margin: auto;">
-    <h3 style="margin-top:0; color: #212529; font-size: 1.3em;">Dinámica del Carrete: Lupa Zoom en la Zona de Contacto y Patinaje</h3>
+    <h3 style="margin-top:0; color: #212529; font-size: 1.3em;">Dinámica del Carrete: Giro Horario Estricto (↻) y Lupa de Contacto</h3>
     
     <!-- Cuadro Teórico Resumen -->
     <div style="background: #e9ecef; padding: 12px 16px; border-radius: 6px; font-size: 0.88em; margin-bottom: 12px; color: #212529; line-height: 1.5;">
@@ -434,11 +434,11 @@ document.write(`
             <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #198754;">
                 <b>2. Rodadura Pura (F &le; 20.58 N):</b><br>
                 <i>v<sub>contacto</sub> = v<sub>CM</sub> - R&omega; = <b>0 m/s</b></i><br>
-                Sin rozamiento cinético. La lupa muestra agarre estático.
+                Giro horario ↻ acoplado con cicloide pura en suelo.
             </div>
             <div style="background: #ffffff; padding: 8px 12px; border-radius: 4px; border-left: 4px solid #dc3545;">
                 <b>3. Deslizamiento (F &gt; 20.58 N):</b><br>
-                <i>v<sub>contacto</sub> &lt; 0</i> (patina hacia atrás)<br>
+                <i>v<sub>contacto</sub> &lt; 0</i> (el borde patina hacia atrás)<br>
                 <b>Chispas y vector v<sub>rel</sub></b> visibles en la lupa ampliada.
             </div>
         </div>
@@ -447,23 +447,23 @@ document.write(`
     <!-- Barra de Controles y Velocidad de Animación -->
     <div style="display: flex; gap: 12px; margin-bottom: 12px; background: #ffffff; padding: 10px 14px; border-radius: 6px; border: 1px solid #ced4da; flex-wrap: wrap; align-items: center; justify-content: space-between;">
         <div style="display: flex; align-items: center; gap: 8px;">
-            <button id="play_11024" style="background-color: #198754; color: white; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-weight: bold;">▶ Ejecutar</button>
-            <button id="reset_11024" style="background-color: #6c757d; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">🔄 Reiniciar</button>
+            <button id="play_63130" style="background-color: #198754; color: white; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-weight: bold;">▶ Ejecutar</button>
+            <button id="reset_63130" style="background-color: #6c757d; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">🔄 Reiniciar</button>
         </div>
 
         <!-- Control de velocidad -->
         <div style="display: flex; align-items: center; gap: 8px; background: #f8f9fa; padding: 4px 10px; border-radius: 4px; border: 1px solid #dee2e6;">
             <label style="font-size: 0.82em; font-weight: bold; color: #495057;">Velocidad:</label>
-            <input type="range" id="speed_slider_11024" min="0.04" max="0.30" step="0.02" value="0.10" style="width: 95px;">
-            <span id="speed_val_11024" style="font-size: 0.82em; font-weight: bold; color: #0d6efd; min-width: 45px;">0.10x</span>
+            <input type="range" id="speed_slider_63130" min="0.04" max="0.30" step="0.02" value="0.10" style="width: 95px;">
+            <span id="speed_val_63130" style="font-size: 0.82em; font-weight: bold; color: #0d6efd; min-width: 45px;">0.10x</span>
         </div>
 
         <div style="display: flex; gap: 8px;">
-            <button id="btn_preset_roll_11024" style="background: #e7f1ff; border: 1px solid #0d6efd; color: #084298; padding: 5px 10px; border-radius: 4px; font-size: 0.82em; cursor: pointer; font-weight: bold;">F = 12 N (Rodadura)</button>
-            <button id="btn_preset_slip_11024" style="background: #f8d7da; border: 1px solid #dc3545; color: #842029; padding: 5px 10px; border-radius: 4px; font-size: 0.82em; cursor: pointer; font-weight: bold;">F = 28 N (Desliza)</button>
+            <button id="btn_preset_roll_63130" style="background: #e7f1ff; border: 1px solid #0d6efd; color: #084298; padding: 5px 10px; border-radius: 4px; font-size: 0.82em; cursor: pointer; font-weight: bold;">F = 12 N (Rodadura)</button>
+            <button id="btn_preset_slip_63130" style="background: #f8d7da; border: 1px solid #dc3545; color: #842029; padding: 5px 10px; border-radius: 4px; font-size: 0.82em; cursor: pointer; font-weight: bold;">F = 28 N (Desliza)</button>
         </div>
 
-        <div id="badge_regimen_11024" style="font-size: 0.85em; font-weight: bold; padding: 5px 12px; border-radius: 4px; background: #d1e7dd; color: #0f5132; border: 1px solid #badbcc;">
+        <div id="badge_regimen_63130" style="font-size: 0.85em; font-weight: bold; padding: 5px 12px; border-radius: 4px; background: #d1e7dd; color: #0f5132; border: 1px solid #badbcc;">
             ✓ Rodadura pura
         </div>
     </div>
@@ -473,9 +473,9 @@ document.write(`
         <div style="background: #f8f9fa; padding: 8px 12px; border-radius: 4px; border: 1px solid #e9ecef;">
             <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #0d6efd;">
                 <span>Fuerza horizontal en la cima (F):</span>
-                <span id="f_val_11024">12.0 N</span>
+                <span id="f_val_63130">12.0 N</span>
             </div>
-            <input type="range" id="f_slider_11024" min="2.0" max="36.0" step="0.5" value="12.0" style="width: 100%; margin-top: 4px;">
+            <input type="range" id="f_slider_63130" min="2.0" max="36.0" step="0.5" value="12.0" style="width: 100%; margin-top: 4px;">
             <div style="font-size: 0.72em; color: #6c757d; margin-top: 2px;">
                 F<sub>crítico</sub> = <b>20.58 N</b>
             </div>
@@ -492,7 +492,7 @@ document.write(`
 
     <!-- Canvas Principal -->
     <div style="display: flex; justify-content: center; margin-bottom: 12px;">
-        <canvas id="canvas_sim_11024" width="940" height="390" style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+        <canvas id="canvas_sim_63130" width="940" height="390" style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
     </div>
 
     <!-- Telemetría Dinámica -->
@@ -500,27 +500,27 @@ document.write(`
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; text-align: center;">
             <div style="background: #e7f1ff; padding: 6px; border-radius: 4px; border: 1px solid #b6d4fe;">
                 <div style="font-size: 0.68em; color: #084298; font-weight: bold;">FUERZA APLICADA (F)</div>
-                <div id="lbl_F_11024" style="font-size: 1em; font-weight: bold; color: #0d6efd; font-family: monospace;">12.00 N</div>
+                <div id="lbl_F_63130" style="font-size: 1em; font-weight: bold; color: #0d6efd; font-family: monospace;">12.00 N</div>
             </div>
             <div style="background: #d1e7dd; padding: 6px; border-radius: 4px; border: 1px solid #badbcc;">
                 <div style="font-size: 0.68em; color: #0f5132; font-weight: bold;">FRICCIÓN PISO (f)</div>
-                <div id="lbl_f_11024" style="font-size: 1em; font-weight: bold; color: #198754; font-family: monospace;">4.00 N</div>
+                <div id="lbl_f_63130" style="font-size: 1em; font-weight: bold; color: #198754; font-family: monospace;">4.00 N</div>
             </div>
             <div style="background: #fff3cd; padding: 6px; border-radius: 4px; border: 1px solid #ffecb5;">
                 <div style="font-size: 0.68em; color: #664d03; font-weight: bold;">ACEL. LINEAL (a_CM)</div>
-                <div id="lbl_a_11024" style="font-size: 1em; font-weight: bold; color: #856404; font-family: monospace;">8.00 m/s²</div>
+                <div id="lbl_a_63130" style="font-size: 1em; font-weight: bold; color: #856404; font-family: monospace;">8.00 m/s²</div>
             </div>
             <div style="background: #f3e5f5; padding: 6px; border-radius: 4px; border: 1px solid #e1bee7;">
                 <div style="font-size: 0.68em; color: #4a148c; font-weight: bold;">ACEL. ANGULAR (&alpha;)</div>
-                <div id="lbl_alpha_11024" style="font-size: 1em; font-weight: bold; color: #6f42c1; font-family: monospace;">16.00 rad/s²</div>
+                <div id="lbl_alpha_63130" style="font-size: 1em; font-weight: bold; color: #6f42c1; font-family: monospace;">16.00 rad/s²</div>
             </div>
             <div style="background: #f8d7da; padding: 6px; border-radius: 4px; border: 1px solid #f5c2c7;">
                 <div style="font-size: 0.68em; color: #842029; font-weight: bold;">VUELTAS COMPLETADAS</div>
-                <div id="lbl_turns_11024" style="font-size: 1em; font-weight: bold; color: #dc3545; font-family: monospace;">0.00 rev</div>
+                <div id="lbl_turns_63130" style="font-size: 1em; font-weight: bold; color: #dc3545; font-family: monospace;">0.00 rev</div>
             </div>
-            <div id="box_slip_speed_11024" style="background: #e2f0d9; padding: 6px; border-radius: 4px; border: 1px solid #badbcc;">
+            <div id="box_slip_speed_63130" style="background: #e2f0d9; padding: 6px; border-radius: 4px; border: 1px solid #badbcc;">
                 <div style="font-size: 0.68em; color: #276a3c; font-weight: bold;">RAPIDEZ PATINAJE (v_rel)</div>
-                <div id="lbl_vslip_11024" style="font-size: 1em; font-weight: bold; color: #276a3c; font-family: monospace;">0.00 m/s</div>
+                <div id="lbl_vslip_63130" style="font-size: 1em; font-weight: bold; color: #276a3c; font-family: monospace;">0.00 m/s</div>
             </div>
         </div>
     </div>
@@ -528,43 +528,43 @@ document.write(`
     <!-- Filtros de Visualización -->
     <div style="font-size: 0.85em; padding: 8px 12px; background: #e9ecef; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
         <strong>Capas Gráficas:</strong>
-        <label style="cursor: pointer;"><input type="checkbox" id="chk_vectors_11024" checked> <b style="color: #0d6efd;">Vectores de Fuerza</b></label>
-        <label style="cursor: pointer;"><input type="checkbox" id="chk_trajectory_11024" checked> <b style="color: #d63384;">Trayectoria (Cicloide)</b></label>
-        <label style="cursor: pointer;"><input type="checkbox" id="chk_zoom_11024" checked> <b style="color: #fd7e14;">Lupa Zoom (Punto de Contacto)</b></label>
-        <label style="cursor: pointer;"><input type="checkbox" id="chk_dcle_11024" checked> <b style="color: #495057;">Diagrama DCLE</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_vectors_63130" checked> <b style="color: #0d6efd;">Vectores de Fuerza</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_trajectory_63130" checked> <b style="color: #d63384;">Trayectoria Cicloide</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_zoom_63130" checked> <b style="color: #fd7e14;">Lupa Zoom (Contacto)</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_dcle_63130" checked> <b style="color: #495057;">Diagrama DCLE</b></label>
     </div>
 </div>
 
 <script>
 (function() {
     function initSimulation() {
-        const canvas = document.getElementById('canvas_sim_11024');
+        const canvas = document.getElementById('canvas_sim_63130');
         if (!canvas) { setTimeout(initSimulation, 50); return; }
         const ctx = canvas.getContext('2d');
 
-        const f_slider = document.getElementById('f_slider_11024');
-        const f_val = document.getElementById('f_val_11024');
-        const speed_slider = document.getElementById('speed_slider_11024');
-        const speed_val = document.getElementById('speed_val_11024');
+        const f_slider = document.getElementById('f_slider_63130');
+        const f_val = document.getElementById('f_val_63130');
+        const speed_slider = document.getElementById('speed_slider_63130');
+        const speed_val = document.getElementById('speed_val_63130');
 
-        const btn_play = document.getElementById('play_11024');
-        const btn_reset = document.getElementById('reset_11024');
-        const btn_preset_roll = document.getElementById('btn_preset_roll_11024');
-        const btn_preset_slip = document.getElementById('btn_preset_slip_11024');
+        const btn_play = document.getElementById('play_63130');
+        const btn_reset = document.getElementById('reset_63130');
+        const btn_preset_roll = document.getElementById('btn_preset_roll_63130');
+        const btn_preset_slip = document.getElementById('btn_preset_slip_63130');
 
-        const lbl_F = document.getElementById('lbl_F_11024');
-        const lbl_f = document.getElementById('lbl_f_11024');
-        const lbl_a = document.getElementById('lbl_a_11024');
-        const lbl_alpha = document.getElementById('lbl_alpha_11024');
-        const lbl_turns = document.getElementById('lbl_turns_11024');
-        const lbl_vslip = document.getElementById('lbl_vslip_11024');
-        const box_slip_speed = document.getElementById('box_slip_speed_11024');
-        const badge_regimen = document.getElementById('badge_regimen_11024');
+        const lbl_F = document.getElementById('lbl_F_63130');
+        const lbl_f = document.getElementById('lbl_f_63130');
+        const lbl_a = document.getElementById('lbl_a_63130');
+        const lbl_alpha = document.getElementById('lbl_alpha_63130');
+        const lbl_turns = document.getElementById('lbl_turns_63130');
+        const lbl_vslip = document.getElementById('lbl_vslip_63130');
+        const box_slip_speed = document.getElementById('box_slip_speed_63130');
+        const badge_regimen = document.getElementById('badge_regimen_63130');
 
-        const chk_vectors = document.getElementById('chk_vectors_11024');
-        const chk_trajectory = document.getElementById('chk_trajectory_11024');
-        const chk_zoom = document.getElementById('chk_zoom_11024');
-        const chk_dcle = document.getElementById('chk_dcle_11024');
+        const chk_vectors = document.getElementById('chk_vectors_63130');
+        const chk_trajectory = document.getElementById('chk_trajectory_63130');
+        const chk_zoom = document.getElementById('chk_zoom_63130');
+        const chk_dcle = document.getElementById('chk_dcle_63130');
 
         // Constantes físicas
         const g = 9.8;
@@ -588,7 +588,7 @@ document.write(`
         let omega = 0;
         let lastTime = performance.now();
         let pathTrace = [];
-        let particles = []; // Chispas por fricción al patinar
+        let particles = [];
 
         function drawArrow(context, fx, fy, tx, ty, color, lineWidth=2.2, dashed=false) {
             const dx = tx - fx;
@@ -633,7 +633,6 @@ document.write(`
             }
 
             const turns = theta / (2 * Math.PI);
-            // Velocidad relativa en el contacto (v_rel = v_cm - omega * R)
             const v_slip = Math.abs(omega * R - v_cm);
 
             lbl_F.innerText = F.toFixed(2) + " N";
@@ -715,7 +714,6 @@ document.write(`
             const cx = startX + x_m * pxPerMeter;
             const cy = floorY - R_px;
 
-            // Punto de contacto con el suelo
             const contactX = cx;
             const contactY = floorY;
 
@@ -725,14 +723,13 @@ document.write(`
                     particles.push({
                         x: contactX,
                         y: contactY - 1,
-                        vx: -(Math.random() * 2.5 + 1.2), // saltan hacia atrás
+                        vx: -(Math.random() * 2.5 + 1.2),
                         vy: -(Math.random() * 2.0 + 0.5),
                         life: 1.0
                     });
                 }
             }
 
-            // Actualizar y dibujar partículas
             for (let i = particles.length - 1; i >= 0; i--) {
                 const part = particles[i];
                 part.x += part.vx;
@@ -748,7 +745,7 @@ document.write(`
                 }
             }
 
-            // Punto en el borde con sentido horario
+            // Punto en el borde: Parte en el piso (θ=0) y sube por atrás girando horario ↻
             const ptX = cx - R_px * Math.sin(theta);
             const ptY = cy + R_px * Math.cos(theta);
 
@@ -791,11 +788,11 @@ document.write(`
             ctx.lineWidth = 1.2;
             ctx.stroke();
 
-            // Rayos en rotación
+            // Rayos en rotación HORARIA sincronizada con el punto testigo
             ctx.strokeStyle = "#6c757d";
             ctx.lineWidth = 1.5;
             for (let a = 0; a < 6; a++) {
-                const ang = -theta + (a * Math.PI / 3);
+                const ang = theta + Math.PI / 2 + (a * Math.PI / 3);
                 ctx.beginPath();
                 ctx.moveTo(cx, cy);
                 ctx.lineTo(cx + R_px * Math.cos(ang), cy + R_px * Math.sin(ang));
@@ -808,7 +805,7 @@ document.write(`
             ctx.arc(cx, cy, 3.5, 0, Math.PI * 2);
             ctx.fill();
 
-            // Punto testigo en el borde
+            // Punto testigo magenta
             ctx.beginPath();
             ctx.fillStyle = "#d63384";
             ctx.arc(ptX, ptY, 4.5, 0, Math.PI * 2);
@@ -827,7 +824,7 @@ document.write(`
             ctx.lineTo(Math.min(splitX - 25, topSpoolX + 75), topSpoolY);
             ctx.stroke();
 
-            // Vectores en la escena principal
+            // Vectores
             if (chk_vectors.checked) {
                 const fVecScale = 1.8;
                 drawArrow(ctx, topSpoolX, topSpoolY, topSpoolX + p.F * fVecScale, topSpoolY, "#0d6efd", 2.5);
@@ -842,7 +839,7 @@ document.write(`
             }
 
             // ==========================================================
-            // RECUADRO ZOOM (LUPA DE LA ZONA DE CONTACTO)
+            // RECUADRO ZOOM (LUPA DE CONTACTO)
             // ==========================================================
             if (chk_zoom.checked) {
                 const zBoxX = 25;
@@ -850,7 +847,6 @@ document.write(`
                 const zBoxW = 210;
                 const zBoxH = 140;
 
-                // Marco exterior de la lupa
                 ctx.save();
                 ctx.fillStyle = "#ffffff";
                 ctx.strokeStyle = p.isRolling ? "#198754" : "#dc3545";
@@ -858,23 +854,19 @@ document.write(`
                 ctx.fillRect(zBoxX, zBoxY, zBoxW, zBoxH);
                 ctx.strokeRect(zBoxX, zBoxY, zBoxW, zBoxH);
 
-                // Título de la lupa
                 ctx.fillStyle = p.isRolling ? "#0f5132" : "#842029";
                 ctx.font = "bold 11px sans-serif";
                 ctx.fillText(p.isRolling ? "🔍 ZOOM: Contacto en Reposo" : "🔍 ZOOM: Patina hacia atrás!", zBoxX + 8, zBoxY + 16);
 
-                // Clip para renderizar adentro del cuadro de zoom
                 ctx.beginPath();
                 ctx.rect(zBoxX + 2, zBoxY + 22, zBoxW - 4, zBoxH - 24);
                 ctx.clip();
 
-                // Parámetros de transformación zoom (2.5x centrado en el contacto)
                 const zoomFactor = 2.6;
                 const zFloorY = zBoxY + 88;
                 const zCenterX = zBoxX + zBoxW / 2;
                 const zR = R_px * zoomFactor;
 
-                // Suelo ampliado con marcas de referencia fijas
                 ctx.beginPath();
                 ctx.strokeStyle = "#495057";
                 ctx.lineWidth = 4;
@@ -882,7 +874,6 @@ document.write(`
                 ctx.lineTo(zBoxX + zBoxW, zFloorY);
                 ctx.stroke();
 
-                // Marcas de suelo fijas para evidenciar el desplazamiento relativo
                 ctx.strokeStyle = "#6c757d";
                 ctx.lineWidth = 1.5;
                 const groundOffset = -(x_m * pxPerMeter * zoomFactor) % 25;
@@ -894,7 +885,6 @@ document.write(`
                     ctx.stroke();
                 }
 
-                // Arco inferior del carrete ampliado
                 ctx.beginPath();
                 ctx.fillStyle = "#f8f9fa";
                 ctx.arc(zCenterX, zFloorY - zR, zR, 0, Math.PI * 2);
@@ -903,18 +893,18 @@ document.write(`
                 ctx.lineWidth = 3;
                 ctx.stroke();
 
-                // Rayos ampliados para ver la velocidad de rotación
+                // Rayos ampliados con rotación horaria
                 ctx.strokeStyle = "#6c757d";
                 ctx.lineWidth = 2.2;
                 for (let a = 0; a < 8; a++) {
-                    const ang = -theta + (a * Math.PI / 4);
+                    const ang = theta + Math.PI / 2 + (a * Math.PI / 4);
                     ctx.beginPath();
                     ctx.moveTo(zCenterX, zFloorY - zR);
                     ctx.lineTo(zCenterX + zR * Math.cos(ang), (zFloorY - zR) + zR * Math.sin(ang));
                     ctx.stroke();
                 }
 
-                // Punto testigo ampliado si pasa por la zona inferior
+                // Punto testigo ampliado
                 const zPtX = zCenterX - zR * Math.sin(theta);
                 const zPtY = (zFloorY - zR) + zR * Math.cos(theta);
                 ctx.beginPath();
@@ -925,10 +915,10 @@ document.write(`
                 ctx.lineWidth = 1.5;
                 ctx.stroke();
 
-                // Vector de velocidad relativa de resbalamiento (v_rel = v_CM - R*omega)
-                const v_rel = v_cm - (omega * R); // Negativo en este caso (hacia atrás)
+                // Vector velocidad relativa
+                const v_rel = v_cm - (omega * R);
                 if (Math.abs(v_rel) > 0.05) {
-                    const vArrowLen = Math.max(-75, Math.min(75, v_rel * 22)); // escala gráfica
+                    const vArrowLen = Math.max(-75, Math.min(75, v_rel * 22));
                     drawArrow(ctx, zCenterX, zFloorY - 6, zCenterX + vArrowLen, zFloorY - 6, "#dc3545", 3);
                     ctx.fillStyle = "#dc3545";
                     ctx.font = "bold 11px sans-serif";
@@ -941,7 +931,6 @@ document.write(`
 
                 ctx.restore();
 
-                // Líneas conectoras sutiles que unen la lupa con la zona real
                 ctx.strokeStyle = "rgba(253, 126, 20, 0.35)";
                 ctx.setLineDash([2, 3]);
                 ctx.lineWidth = 1.2;
@@ -982,35 +971,29 @@ document.write(`
 
                 const vecScale = 2.0;
 
-                // F
                 drawArrow(ctx, dclX, dclY - dclR, dclX + p.F * vecScale, dclY - dclR, "#0d6efd", 3.2);
                 ctx.fillStyle = "#0d6efd";
                 ctx.font = "bold 12px sans-serif";
                 ctx.fillText("F", dclX + p.F * vecScale + 6, dclY - dclR - 4);
 
-                // f
                 const fCol = p.isRolling ? "#198754" : "#dc3545";
                 drawArrow(ctx, dclX, dclY + dclR, dclX + p.f_friction * vecScale * 1.8, dclY + dclR, fCol, 3.2);
                 ctx.fillStyle = fCol;
                 ctx.fillText(p.isRolling ? "f_s" : "f_k", dclX + p.f_friction * vecScale * 1.8 + 6, dclY + dclR + 15);
 
-                // N
                 drawArrow(ctx, dclX, dclY + dclR, dclX, dclY + dclR - 50, "#495057", 2.5);
                 ctx.fillStyle = "#495057";
                 ctx.fillText("N", dclX + 8, dclY + dclR - 40);
 
-                // P
                 drawArrow(ctx, dclX, dclY, dclX, dclY + 50, "#dc3545", 2.5);
                 ctx.fillStyle = "#dc3545";
                 ctx.fillText("P = M·g", dclX + 8, dclY + 45);
 
-                // CM
                 ctx.beginPath();
                 ctx.fillStyle = "#212529";
                 ctx.arc(dclX, dclY, 4, 0, Math.PI * 2);
                 ctx.fill();
 
-                // Ecuaciones
                 ctx.fillStyle = "#212529";
                 ctx.font = "bold 12px monospace";
                 ctx.fillText("∑ F_x = F + f = M·a_CM", 620, dclY + 115);
