@@ -447,23 +447,23 @@ document.write(`
     <!-- Barra de Controles y Velocidad de Animación -->
     <div style="display: flex; gap: 12px; margin-bottom: 12px; background: #ffffff; padding: 10px 14px; border-radius: 6px; border: 1px solid #ced4da; flex-wrap: wrap; align-items: center; justify-content: space-between;">
         <div style="display: flex; align-items: center; gap: 8px;">
-            <button id="play_97146" style="background-color: #198754; color: white; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-weight: bold;">▶ Ejecutar</button>
-            <button id="reset_97146" style="background-color: #6c757d; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">🔄 Reiniciar</button>
+            <button id="play_33289" style="background-color: #198754; color: white; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-weight: bold;">▶ Ejecutar</button>
+            <button id="reset_33289" style="background-color: #6c757d; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold;">🔄 Reiniciar</button>
         </div>
 
         <!-- Control de velocidad -->
         <div style="display: flex; align-items: center; gap: 8px; background: #f8f9fa; padding: 4px 10px; border-radius: 4px; border: 1px solid #dee2e6;">
             <label style="font-size: 0.82em; font-weight: bold; color: #495057;">Velocidad:</label>
-            <input type="range" id="speed_slider_97146" min="0.04" max="0.30" step="0.02" value="0.10" style="width: 95px;">
-            <span id="speed_val_97146" style="font-size: 0.82em; font-weight: bold; color: #0d6efd; min-width: 45px;">0.10x</span>
+            <input type="range" id="speed_slider_33289" min="0.04" max="0.30" step="0.02" value="0.10" style="width: 95px;">
+            <span id="speed_val_33289" style="font-size: 0.82em; font-weight: bold; color: #0d6efd; min-width: 45px;">0.10x</span>
         </div>
 
         <div style="display: flex; gap: 8px;">
-            <button id="btn_preset_roll_97146" style="background: #e7f1ff; border: 1px solid #0d6efd; color: #084298; padding: 5px 10px; border-radius: 4px; font-size: 0.82em; cursor: pointer; font-weight: bold;">F = 12 N (Rodadura)</button>
-            <button id="btn_preset_slip_97146" style="background: #f8d7da; border: 1px solid #dc3545; color: #842029; padding: 5px 10px; border-radius: 4px; font-size: 0.82em; cursor: pointer; font-weight: bold;">F = 28 N (Desliza)</button>
+            <button id="btn_preset_roll_33289" style="background: #e7f1ff; border: 1px solid #0d6efd; color: #084298; padding: 5px 10px; border-radius: 4px; font-size: 0.82em; cursor: pointer; font-weight: bold;">F = 12 N (Rodadura)</button>
+            <button id="btn_preset_slip_33289" style="background: #f8d7da; border: 1px solid #dc3545; color: #842029; padding: 5px 10px; border-radius: 4px; font-size: 0.82em; cursor: pointer; font-weight: bold;">F = 28 N (Desliza)</button>
         </div>
 
-        <div id="badge_regimen_97146" style="font-size: 0.85em; font-weight: bold; padding: 5px 12px; border-radius: 4px; background: #d1e7dd; color: #0f5132; border: 1px solid #badbcc;">
+        <div id="badge_regimen_33289" style="font-size: 0.85em; font-weight: bold; padding: 5px 12px; border-radius: 4px; background: #d1e7dd; color: #0f5132; border: 1px solid #badbcc;">
             ✓ Rodadura pura
         </div>
     </div>
@@ -473,9 +473,9 @@ document.write(`
         <div style="background: #f8f9fa; padding: 8px 12px; border-radius: 4px; border: 1px solid #e9ecef;">
             <div style="display: flex; justify-content: space-between; font-size: 0.82em; font-weight: bold; color: #0d6efd;">
                 <span>Fuerza horizontal en la cima (F):</span>
-                <span id="f_val_97146">12.0 N</span>
+                <span id="f_val_33289">12.0 N</span>
             </div>
-            <input type="range" id="f_slider_97146" min="2.0" max="36.0" step="0.5" value="12.0" style="width: 100%; margin-top: 4px;">
+            <input type="range" id="f_slider_33289" min="2.0" max="36.0" step="0.5" value="12.0" style="width: 100%; margin-top: 4px;">
             <div style="font-size: 0.72em; color: #6c757d; margin-top: 2px;">
                 F<sub>crítico</sub> = <b>20.58 N</b>
             </div>
@@ -492,7 +492,7 @@ document.write(`
 
     <!-- Canvas Principal -->
     <div style="display: flex; justify-content: center; margin-bottom: 12px;">
-        <canvas id="canvas_sim_97146" width="940" height="390" style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
+        <canvas id="canvas_sim_33289" width="940" height="390" style="background: #ffffff; border: 1px solid #ced4da; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 100%;"></canvas>
     </div>
 
     <!-- Telemetría Dinámica -->
@@ -500,27 +500,27 @@ document.write(`
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; text-align: center;">
             <div style="background: #e7f1ff; padding: 6px; border-radius: 4px; border: 1px solid #b6d4fe;">
                 <div style="font-size: 0.68em; color: #084298; font-weight: bold;">FUERZA APLICADA (F)</div>
-                <div id="lbl_F_97146" style="font-size: 1em; font-weight: bold; color: #0d6efd; font-family: monospace;">12.00 N</div>
+                <div id="lbl_F_33289" style="font-size: 1em; font-weight: bold; color: #0d6efd; font-family: monospace;">12.00 N</div>
             </div>
             <div style="background: #d1e7dd; padding: 6px; border-radius: 4px; border: 1px solid #badbcc;">
                 <div style="font-size: 0.68em; color: #0f5132; font-weight: bold;">FRICCIÓN PISO (f)</div>
-                <div id="lbl_f_97146" style="font-size: 1em; font-weight: bold; color: #198754; font-family: monospace;">4.00 N</div>
+                <div id="lbl_f_33289" style="font-size: 1em; font-weight: bold; color: #198754; font-family: monospace;">4.00 N</div>
             </div>
             <div style="background: #fff3cd; padding: 6px; border-radius: 4px; border: 1px solid #ffecb5;">
                 <div style="font-size: 0.68em; color: #664d03; font-weight: bold;">ACEL. LINEAL (a_CM)</div>
-                <div id="lbl_a_97146" style="font-size: 1em; font-weight: bold; color: #856404; font-family: monospace;">8.00 m/s²</div>
+                <div id="lbl_a_33289" style="font-size: 1em; font-weight: bold; color: #856404; font-family: monospace;">8.00 m/s²</div>
             </div>
             <div style="background: #f3e5f5; padding: 6px; border-radius: 4px; border: 1px solid #e1bee7;">
                 <div style="font-size: 0.68em; color: #4a148c; font-weight: bold;">ACEL. ANGULAR (&alpha;)</div>
-                <div id="lbl_alpha_97146" style="font-size: 1em; font-weight: bold; color: #6f42c1; font-family: monospace;">16.00 rad/s²</div>
+                <div id="lbl_alpha_33289" style="font-size: 1em; font-weight: bold; color: #6f42c1; font-family: monospace;">16.00 rad/s²</div>
             </div>
             <div style="background: #f8d7da; padding: 6px; border-radius: 4px; border: 1px solid #f5c2c7;">
                 <div style="font-size: 0.68em; color: #842029; font-weight: bold;">VUELTAS COMPLETADAS</div>
-                <div id="lbl_turns_97146" style="font-size: 1em; font-weight: bold; color: #dc3545; font-family: monospace;">0.00 rev</div>
+                <div id="lbl_turns_33289" style="font-size: 1em; font-weight: bold; color: #dc3545; font-family: monospace;">0.00 rev</div>
             </div>
-            <div id="box_slip_speed_97146" style="background: #e2f0d9; padding: 6px; border-radius: 4px; border: 1px solid #badbcc;">
+            <div id="box_slip_speed_33289" style="background: #e2f0d9; padding: 6px; border-radius: 4px; border: 1px solid #badbcc;">
                 <div style="font-size: 0.68em; color: #276a3c; font-weight: bold;">RAPIDEZ PATINAJE (v_rel)</div>
-                <div id="lbl_vslip_97146" style="font-size: 1em; font-weight: bold; color: #276a3c; font-family: monospace;">0.00 m/s</div>
+                <div id="lbl_vslip_33289" style="font-size: 1em; font-weight: bold; color: #276a3c; font-family: monospace;">0.00 m/s</div>
             </div>
         </div>
     </div>
@@ -528,43 +528,43 @@ document.write(`
     <!-- Filtros de Visualización -->
     <div style="font-size: 0.85em; padding: 8px 12px; background: #e9ecef; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; user-select: none;">
         <strong>Capas Gráficas:</strong>
-        <label style="cursor: pointer;"><input type="checkbox" id="chk_vectors_97146" checked> <b style="color: #0d6efd;">Vectores de Fuerza</b></label>
-        <label style="cursor: pointer;"><input type="checkbox" id="chk_trajectory_97146" checked> <b style="color: #d63384;">Trayectoria Cicloide</b></label>
-        <label style="cursor: pointer;"><input type="checkbox" id="chk_zoom_97146" checked> <b style="color: #fd7e14;">Lupa Zoom (Contacto)</b></label>
-        <label style="cursor: pointer;"><input type="checkbox" id="chk_dcle_97146" checked> <b style="color: #495057;">Diagrama DCLE</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_vectors_33289" checked> <b style="color: #0d6efd;">Vectores de Fuerza</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_trajectory_33289" checked> <b style="color: #d63384;">Trayectoria Cicloide</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_zoom_33289" checked> <b style="color: #fd7e14;">Lupa Zoom (Contacto)</b></label>
+        <label style="cursor: pointer;"><input type="checkbox" id="chk_dcle_33289" checked> <b style="color: #495057;">Diagrama DCLE</b></label>
     </div>
 </div>
 
 <script>
 (function() {
     function initSimulation() {
-        const canvas = document.getElementById('canvas_sim_97146');
+        const canvas = document.getElementById('canvas_sim_33289');
         if (!canvas) { setTimeout(initSimulation, 50); return; }
         const ctx = canvas.getContext('2d');
 
-        const f_slider = document.getElementById('f_slider_97146');
-        const f_val = document.getElementById('f_val_97146');
-        const speed_slider = document.getElementById('speed_slider_97146');
-        const speed_val = document.getElementById('speed_val_97146');
+        const f_slider = document.getElementById('f_slider_33289');
+        const f_val = document.getElementById('f_val_33289');
+        const speed_slider = document.getElementById('speed_slider_33289');
+        const speed_val = document.getElementById('speed_val_33289');
 
-        const btn_play = document.getElementById('play_97146');
-        const btn_reset = document.getElementById('reset_97146');
-        const btn_preset_roll = document.getElementById('btn_preset_roll_97146');
-        const btn_preset_slip = document.getElementById('btn_preset_slip_97146');
+        const btn_play = document.getElementById('play_33289');
+        const btn_reset = document.getElementById('reset_33289');
+        const btn_preset_roll = document.getElementById('btn_preset_roll_33289');
+        const btn_preset_slip = document.getElementById('btn_preset_slip_33289');
 
-        const lbl_F = document.getElementById('lbl_F_97146');
-        const lbl_f = document.getElementById('lbl_f_97146');
-        const lbl_a = document.getElementById('lbl_a_97146');
-        const lbl_alpha = document.getElementById('lbl_alpha_97146');
-        const lbl_turns = document.getElementById('lbl_turns_97146');
-        const lbl_vslip = document.getElementById('lbl_vslip_97146');
-        const box_slip_speed = document.getElementById('box_slip_speed_97146');
-        const badge_regimen = document.getElementById('badge_regimen_97146');
+        const lbl_F = document.getElementById('lbl_F_33289');
+        const lbl_f = document.getElementById('lbl_f_33289');
+        const lbl_a = document.getElementById('lbl_a_33289');
+        const lbl_alpha = document.getElementById('lbl_alpha_33289');
+        const lbl_turns = document.getElementById('lbl_turns_33289');
+        const lbl_vslip = document.getElementById('lbl_vslip_33289');
+        const box_slip_speed = document.getElementById('box_slip_speed_33289');
+        const badge_regimen = document.getElementById('badge_regimen_33289');
 
-        const chk_vectors = document.getElementById('chk_vectors_97146');
-        const chk_trajectory = document.getElementById('chk_trajectory_97146');
-        const chk_zoom = document.getElementById('chk_zoom_97146');
-        const chk_dcle = document.getElementById('chk_dcle_97146');
+        const chk_vectors = document.getElementById('chk_vectors_33289');
+        const chk_trajectory = document.getElementById('chk_trajectory_33289');
+        const chk_zoom = document.getElementById('chk_zoom_33289');
+        const chk_dcle = document.getElementById('chk_dcle_33289');
 
         // Constantes físicas
         const g = 9.8;
